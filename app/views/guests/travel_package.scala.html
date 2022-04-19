@@ -1,0 +1,11 @@
+@import play.Configuration
+@import play.libs.Crypto
+
+@layouts.main("Flight", scripts) {
+    User is amaazing in the list of user as @session.get("role")
+}
+
+@scripts = {
+
+    <script type="text/javascript" src="@routes.Assets.at("my_js/jsAuthReg.js")"></script>
+}

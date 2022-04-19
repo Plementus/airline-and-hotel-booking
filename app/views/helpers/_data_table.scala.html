@@ -1,0 +1,68 @@
+@(title: String, fields: Array[String])
+@layouts.admin(title, scripts) {
+    <div class="panel">
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.at("vendor/plugins/datatables/media/css/dataTables.bootstrap.css")">
+        <header class="panel-heading">
+            <h2 class="panel-name">@title</h2>
+            @if(request().getQueryString("paymentMethod") != null){
+                <article class="module width_full">
+                    <div class="module_content">
+                        <a class="btn btn-md btn-primary" href="@controllers.console.routes.SystemController.getCreatePaymentMethod(request().getQueryString("paymentMethod"), 0)"><i class="fa fa-plus"> Create New @request().getQueryString("paymentMethod")</i></a>
+                    </div>
+                </article>
+            }
+        </header>
+        <div class="panel-body width_full">
+            @helpers._flash.render()
+            <table class="table table-striped table-bordered table-hover" id="datatable3" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                    @if(fields.length != 0) {
+                        @for(label: String <- fields) {
+                            <th>@label</th>
+                        }
+                    }
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+}
+@scripts = {
+      <!-- Datatables -->
+      <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datatables/media/js/jquery.dataTables.min.js")"></script>
+      <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datatables/media/js/dataTables.bootstrap.js")"></script>
+      <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js")"></script>
+      <script type="text/javascript" src="@routes.Assets.at("v1/js/jQuery.copyToClipboard.js")"></script>
+      <script>
+             $('#datatable3').dataTable({
+                "aoColumnDefs": [{
+                    'bSortable': true,
+                    'aTargets': [-1]
+                }],
+                "processing": true,
+                @if(request().uri().toLowerCase.indexOf("?".toLowerCase) != -1) {
+                "ajax": '@request().uri().concat("&source=ajax")',
+                } else {
+                "ajax": '@request().uri().concat("?source=ajax")',
+                }
+                "oLanguage": {
+                    "oPaginate": {
+                        "sPrevious": "",
+                        "sNext": ""
+                    }
+                },
+                 "order": [[ 0, "desc" ]],
+                "iDisplayLength": 50,
+                "aLengthMenu": [
+                    [10, 25, 50, -1],
+                    [10, 25, 50, "All"]
+                ],
+                "sDom": 'T<"dt-panelmenu clearfix"lfr>t<"dt-panelfooter clearfix"ip>',
+                "oTableTools": {
+                    "sSwfPath": "@routes.Assets.at("vendor/plugins/datatables/extensions/TableTools/swf/copy_csv_xls_pdf.swf")"
+                }
+            });
+      </script>
+}

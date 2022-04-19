@@ -1,0 +1,22 @@
+@import java.util
+@(flightBookings: List[FlightBookings])
+@defining(new Array[String](9)) { responseJson =>
+    @if(flightBookings != null && flightBookings.size() != 0) {
+        @defining(new util.ArrayList[Array[String]]()) { r =>
+            @for(booking <- flightBookings) {
+                @responseJson.update(0, booking.payment_history_id.trans_ref)
+                @responseJson.update(1, booking.pnr_ref)
+                @responseJson.update(2, booking.contact_firstname + " " + booking.contact_surname)
+                @responseJson.update(3, booking.contact_phone)
+                @responseJson.update(4, booking.contact_email)
+                @responseJson.update(5, booking.airline_name.concat("(" + booking.airline_code + ")"))
+                @responseJson.update(6, booking.payment_history_id.currency + " " + booking.payment_history_id.amount)
+                @responseJson.update(7, booking.created_at.toLocaleString)
+                @responseJson.update(8, "<a href=\"#\" class=\"btn btn-xs ajax btn-primary\">View Itinerary</a> <a href=\"#\" class=\"btn btn-xs ajax btn-primary\"><i class=\"fa fa-forward\"></i>Forward</a> ")
+                @r.append(responseJson)
+            }
+            @play.libs.Json.toJson(r)
+        }
+    }
+
+}

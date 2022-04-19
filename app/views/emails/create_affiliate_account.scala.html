@@ -1,0 +1,30 @@
+@(affiliate: B2bUsers, user: Users)
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <body bgcolor="#f6f6f6">
+        <table class="body-wrap">
+            <tr>
+                <td></td>
+                <td class="container" bgcolor="#FFFFFF">
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <td>
+                                    <h3>Thank you @user.first_name @user.last_name
+                                        for Signing Up on Swift</h3>
+                                    <table>
+                                        <tr>
+                                            <td class="padding">
+                                                <h4>
+                                                    <a href="@play.Configuration.root().getString("project.domain_http").concat(routes.AuthenticationController.getAccountActivation(user.activation_token).toString)" style="color : #000000;">Activate Account</a></h4>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

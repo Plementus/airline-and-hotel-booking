@@ -1,0 +1,37 @@
+@(url: String, exception: Throwable)
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <body bgcolor="#f6f6f6">
+        <table class="body-wrap">
+            <tr>
+                <td></td>
+                <td class="container" bgcolor="#FFFFFF">
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <td>
+                                    <h3>URL <strong>@url</strong></h3>
+                                    <table>
+                                        <tr>
+                                            <td> @exception.fillInStackTrace().getMessage</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="padding">
+                                                @for(err <- exception.getStackTrace) {
+                                                    @err.getClassName<br />
+                                                    @err.getFileName<br />
+                                                    @err.getLineNumber<br />
+                                                    @err.getMethodName<br />
+                                                    <hr />
+                                                }
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

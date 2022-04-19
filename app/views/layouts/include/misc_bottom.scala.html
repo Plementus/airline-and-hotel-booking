@@ -1,0 +1,38 @@
+
+<script>
+    jQuery(function() {
+        $('body').on('click', '.ajax', function (e) {
+            //alert("here");
+            e.preventDefault();
+            var title = $(this).attr('title'); // "Member Information"; //$(this).attr('name');
+            var remote = $(this).attr('href');
+            // var memId = $("#memberId").val();
+            if (remote === "") {
+                alert("Invalid url");
+            } else {
+                Layout.alert(title, remote, {});
+            }
+        });
+        Layout = {};
+        Layout.alert = function (title, content, options) {
+            $modalTitle = $('<b>').text(title);
+            $modalDismiss = $('<span class="close" data-dismiss="modal">').html();
+            $modal = $('<div class="modal fade modal_close">');
+            $modalHeader = $('<div class="modal-header">').append($modalTitle).append($modalDismiss);
+            $modalBody = $('<div class="modal-body">')     //loading message
+                    .append("<p class=''><b>loading, please wait...</b></p>");
+            //.append(content);
+            $footerBtn1 = $('<button type="button" class="" data-dismiss="modal">Close</button>');
+            //  $footerBtn2 = $('<button type="button" class="btn btn-primary">Save changes</button>');
+            $modalFooter = $(' <div class="modal-footer">').append($footerBtn1); //.append($footerBtn2);
+            $modalContent = $('<div class="modal-content">').append($modalHeader).append($modalBody).append($modalFooter);
+            $modalDialog = $('<div class="modal-dialog">').append($modalContent);
+            $one = $modal.append($modalDialog);
+            // alert($one.html());
+            $modal.append($modalDialog).modal({
+                remote: content
+            }).width(options.width);
+            return;
+        };
+    });
+</script>

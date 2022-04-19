@@ -1,0 +1,91 @@
+@import java.util
+@import com.dropbox.core.v2.DbxFiles
+@import core.DropBox
+@(dbxFiles: util.List[DbxFiles.Metadata])
+@layouts.admin("File Upload", scripts) {
+    <link href="@routes.Assets.at("vendor/plugins/dropzone/downloads/css/dropzone.css")" rel="stylesheet"/>
+    <section class="panel">
+        <div class="panel-body">
+            <div class="col-md-12">
+                <header class="panel-heading">
+                 All List Of The Files
+                </header>
+                @*<form action="@controllers.console.routes.FileManagerController.postAjaxUpload" class="dropzone" id="my-awesome-dropzone"></form>*@
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-12">
+                @helpers._flash.render()
+                <table class="table table-striped table-responsive datatable">
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <td>Name</td>
+                            <td>Type</td>
+                            <td>Size</td>
+                            <td>URL</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @defining(DropBox.getInstance().getFilesDirectories("")) { directories =>
+                            @if(directories != null) {
+                                @for(child <- directories.values()) {
+                                    @defining(core.DropBox.getInstance().getSharedLinkInfo(child.pathLower)) { sharedLinkInfo =>
+                                        <tr>
+                                            @*<td><img class="img" style="height : 15px" height="15px" src="@routes.Assets.at("admin/v1/img/folder-icon.png")" /></td>*@
+                                            @*<td><img height="55px" src="@core.DropBox.downloadUrl(sharedLinkInfo.url)" class="img img-thumbnail" width=" 15px" height= "15px"/></td>*@
+                                            <td><a href="@core.DropBox.getInstance().getSharedLinkInfo(child.pathLower).url" target="_blank">@child.name</a></td>
+                                            <td>File</td>
+                                            <td>...</td>
+                                            <td>@child.pathLower</td>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="...">
+                                                    <div class="btn-group" role="group">
+                                                        <button type="button" class="btn btn-default dropdown-toggle btn-xs btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <span class="caret"></span>
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a style="cursor : pointer" data-value="@sharedLinkInfo.url" class="copy_to_clip">Copy URL</a></li>
+                                                            <li><a target="_blank" href="@sharedLinkInfo.url">Download</a></li>
+                                                            <li><a target="_blank" href="@sharedLinkInfo.url">Preview</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            } else {
+                                <strong>No file exists</strong>
+                            }
+                        }
+                        @*if(dbxFiles != null && dbxFiles.size() != 0) {
+                        @for(file <- dbxFiles) {
+                        <tr>
+                        <td><img src="@core.DropBox.getInstance().getFileInfo(file.pathLower).url" /></td>
+                        <td>@file.name</td>
+                        <td>Type</td>
+                        <td>Size</td>
+                        <td>@core.DropBox.getInstance().getFileInfo(file.pathLower).url</td>
+                        </tr>
+                        }
+                        }*@
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <hr />
+}
+@scripts = {
+    <script src="@routes.Assets.at("vendor/plugins/fancybox/source/jquery.fancybox.js")"></script>
+    <script src="@routes.Assets.at("vendor/plugins/dropzone/downloads/dropzone.min.js")"></script>
+    <script src="@routes.Assets.at("admin/v1/js/modernizr.custom.js")"></script>
+    <script src="@routes.Assets.at("admin/v1/js/toucheffects.js")"></script>
+    <script type="text/javascript">
+      $(function() {
+          jQuery(".fancybox").fancybox();
+          $(".datatable").dataTable();
+      });
+    </script>
+}

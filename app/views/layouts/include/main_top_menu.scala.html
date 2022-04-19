@@ -1,0 +1,51 @@
+<li style="margin-top: -2px; border-radius: 5px;">
+@if(core.security.Auth.user() != null && core.security.Auth.role() != null) {
+    @if(!core.security.Auth.role().equals(core.security.AuthServices.ROLE_CUSTOMER)) {
+        <a target="_blank" style="cursor:pointer; line-height: 6px; border-radius: 5px ; padding: 7px ; background: #F47621 ; color: #fff; font-family: proxima_nova_rgregular; text-transform: capitalize" href="@controllers.console.routes.ApplicationController.index()"><img src="@routes.Assets.at("v1/images/console.png")" /> Console</a>
+    } else {
+        @defining(core.security.Auth.user()) { user =>
+            <div class="dropdown u_logged_in_active">
+                <button class="dropdown-toggle btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="cursor:pointer; line-height: 6px; border-radius: 5px ; padding: 7px ; background: #F47621 ; color: #fff; font-family: proxima_nova_rgregular; text-transform: capitalize" onclick="displayInHtml('u_logged_in_active');">
+                    <span>
+                        @if(user.avatar_url == null) {
+                            <img src="@routes.Assets.at("v1/images/circle.png")" />
+                        } else {
+                            <img src="@user.avatar_url" class="img img-rounded" height="32px" style="height: 32px; border-radius: 20px;" />
+                        }
+                    </span>
+                    Howdy! @user.first_name! <i class="icon icon-caret-down"></i>
+                </button>
+                <div class="dropdown-menu row" style="padding: 6px 0 6px 10px;margin-top: 0px;border-radius: 0px;min-width: 500px; margin-top: 7px; border: 0; border-bottom: 3px solid; text-transform: capitalize;">
+                    <div class="col-md-8 col-lg-8 col-xs-12">
+                        <a href="@controllers.routes.UserController.getUserDashboard()">Manage Booking</a>
+                        <a href="">View E-Ticket</a>
+                        <a href="">Change Travel Date</a>
+                        <a href="">Cancel Booking</a>
+                        <a href="">Check Refund</a>
+                        <a href="">Make Payment</a>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xs-12 pull-right">
+                        <a href="">My Account</a>
+                        <div class="divider"></div>
+                        <a href="@controllers.routes.AuthenticationController.getLogout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+} else {
+    <a style="line-height: 6px; padding: 7px; font-family: proxima_nova_rgregular; border: 1px solid; border-radius: 3px; text-transform: capitalize" href="#" class="login-action"><span><img src="@routes.Assets.at("v1/images/circle2.png")" /></span> Log In / Sign Up </a>
+}
+</li>
+<script>
+    function displayInHtml(className) {
+        $(function() {
+            var $this = $('.'+ className);
+            if($this.hasClass('open')) {
+                $this.removeClass('open');
+            } else {
+                $this.addClass('open');
+            }
+        });
+    }
+</script>

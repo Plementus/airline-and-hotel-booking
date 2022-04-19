@@ -1,0 +1,219 @@
+
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+
+GET         /                                                             controllers.ApplicationController.index()
+GET         /test-page                                                    controllers.ApplicationController.getTestPage()
+POST        /test-form                                                    controllers.ApplicationController.postTestForm()
+GET         /api-call                                                     controllers.ApplicationController.persistCities()
+
+#GET         /api-test-gtpay                                               controllers.PaymentControllers.reQueryGTPay(transRef, amt)
+
+GET         /home                                                         controllers.ApplicationController.getSecureUniqueUserCookie(cookie_id: String, redirect_to: String)
+
+POST        /flight/process-booking                                       controllers.FlightController.postProcessBooking()
+GET         /flight/search/:locale                                        controllers.FlightController.getSearch(locale: String)
+GET         /flight/r/:locale                                             controllers.FlightController.getFlightResult(locale: String)
+POST        /flight/flight-result-json                                    controllers.FlightController.postFlightResultJson
+GET         /flight/flight-result-json                                    controllers.FlightController.postFlightResultJson
+GET         /flight/no-result                                             controllers.FlightController.notFlightResult
+GET         /flight/complete-booking                                      controllers.FlightController.getCompleteBooking(flightBookingId: Long, status: String)
+GET         /flights/flight-passenger-itinerary                           controllers.FlightController.getPassengerItinerary()
+
+GET         /hotel/search                                                 controllers.HotelController.getSearch
+GET         /hotel/search-result                                          controllers.HotelController.getSearchResult()
+GET         /hotel/view-hotel-details                                     controllers.HotelController.getViewHotelDetail()
+GET         /hotel/room-cancellation-policy                               controllers.HotelController.getRoomCancellationPolicy(searchID: Int, hotelID: Int, roomID: Int)
+GET         /hotel/book-room                                              controllers.HotelController.getBookRoom()
+POST        /hotel/book-room                                              controllers.HotelController.postBookRoom()
+GET         /guest-search                                                 controllers.ApplicationController.getSearchApplication(search: String ?= null)
+POST        /newsletter-subscribe                                         controllers.ApplicationController.postNewsletterSubscribe()
+GET         /hotel-cities                                                 controllers.HotelController.cityJSON
+
+GET         /assets/*file                                                 controllers.Assets.at(path="/public/assets", file)
+#GET         /assets-static/:version/*file                            controllers.StaticAssets.at(path="/public", version, file)
+
+
+# Map static resources from the /public folder to the /assets URL path
+
+GET         /404                                                          controllers.abstracts.BaseController.PAGE_404
+
+## Route for Authentication and Account Creation
+GET         /login                                                        controllers.AuthenticationController.getLogin()
+POST        /login                                                        controllers.AuthenticationController.postLogin
+GET         /sso/callback                                                 controllers.AuthenticationController.ssoIDCallback()
+GET         /register                                                     controllers.AuthenticationController.getRegister()
+POST        /register                                                     controllers.AuthenticationController.postRegister()
+POST        /auth/social-auth/:socialMedia                                controllers.AuthenticationController.postSocialRegistration(socialMedia: String)
+GET         /forget-password                                              controllers.AuthenticationController.getForgetPassword()
+POST        /forget-password                                              controllers.AuthenticationController.postForgetPassword()
+GET         /new-password/:token                                          controllers.AuthenticationController.getNewPassword(token: String)
+POST        /new-password                                                 controllers.AuthenticationController.postNewPassword()
+GET         /validate-email-ajax                                          controllers.AuthenticationController.getCheckEmailAjax(email: String)
+GET         /account-activation/:token                                    controllers.AuthenticationController.getAccountActivation(token: String)
+GET         /register-swift                                               controllers.AuthenticationController.getRegisterAffiliateAccount()
+
+GET         /switch-currency                                              controllers.ApplicationController.getSwitchCurrency(countryId: Long ?= 0)
+
+## Route for Facebook SignIn
+GET         /fb-authenticate                                              controllers.AuthenticationController.getFbAuthenticate()
+GET         /google-plus/                                                 controllers.AuthenticationController.getGooglePlus()
+
+# NOCSRF
+POST        /payment-gateway/transactionresponse/:gatewayName             controllers.PaymentControllers.getTransactionResponse(gatewayName: String)
+GET         /payment-gateway/transactionresponse/:gatewayName             controllers.PaymentControllers.getTransactionResponse(gatewayName: String)
+GET         /paymentsuccess.php                                           controllers.PaymentControllers.getTransactionResponse(gatewayName: String = "globalpay")
+
+
+#
+GET         /logout                                                       controllers.AuthenticationController.getLogout()
+
+# System User Module
+GET         /dashboard                                                    controllers.ApplicationController.getDashboard()
+
+GET         /u/complete-profile                                           controllers.UserController.getCompleteProfile()
+GET         /support                                                      controllers.SupportController.getIndex
+GET         /support/create-ticket                                        controllers.SupportController.getCreateTicket(id: Long ?= 0)
+POST        /support/create-ticket                                        controllers.SupportController.postCreateTicket
+GET         /user/dashboard                                               controllers.UserController.getUserDashboard
+
+# All user can access this routes, but this require authentication
+GET         /support/chat                                                 controllers.ChatController.getIndex()
+
+
+# B2b <- Swift Routes
+GET         /b2b                                                          controllers.swift.ApplicationController.getIndex()
+GET         /b2b/                                                         controllers.swift.ApplicationController.getIndex()
+GET         /b2b/login                                                    controllers.AuthenticationController.getSwiftLogin()
+GET         /b2b/dashboard                                                controllers.swift.ApplicationController.getDashboard()
+GET         /b2b/user/create-new-agent                                    controllers.swift.UserController.getCreateUser(id: Long ?= 0)
+POST        /b2b/user/create-new-agent                                    controllers.swift.UserController.postCreateUser()
+GET         /b2b/user/agent                                               controllers.swift.UserController.getIndex()
+GET         /b2b/flight                                                   controllers.swift.FlightController.getFlight()
+GET         /b2b/flight/get-markup-price                                  controllers.swift.FlightController.getMarkupPrice()
+GET         /b2b/flight/report                                            controllers.swift.FlightController.getReport()
+GET         /b2b/flight/search                                            controllers.swift.FlightController.getSearchFlight()
+GET         /b2b/flight/result                                            controllers.swift.FlightController.getDisplayFlight()
+POST        /b2b/flight/booking-flight                                    controllers.swift.FlightController.postBookFlight()
+POST        /b2b/flight/process-booking                                   controllers.swift.FlightController.postProcessBooking()
+POST        /b2b/flight/complete-booking                                  controllers.swift.FlightController.postCompleteBooking()
+POST        /b2b/flight/booking-result                                    controllers.swift.FlightController.getBookingResult(flightBooking: String, status: String)
+GET         /b2b/flight/booking-result                                    controllers.swift.FlightController.getBookingResult(flightBooking: String, status: String)
+GET         /b2b/account-settings                                         controllers.swift.ApplicationController.getAccountSettings
+POST        /b2b/update-profile                                           controllers.swift.ApplicationController.postUpdateProfile
+
+
+# ConsoleSecurityInterceptor Routes
+GET         /tfx                                                          controllers.console.ApplicationController.index()
+GET         /tfx/token                                                    controllers.AuthenticationController.generateToken()
+GET         /tfx/login                                                    controllers.AuthenticationController.getConsoleLogin()
+POST        /tfx/token                                                    controllers.AuthenticationController.postTokenAuth()
+
+GET         /tfx/system/airports                                          controllers.console.SystemController.getAirports()
+GET         /tfx/system/create-airports                                   controllers.console.SystemController.getCreateAirport(id: Long ?= 0)
+GET         /tfx/system/countries                                         controllers.console.SystemController.getCountriesState()
+GET         /tfx/system/statesapplica-cities                              controllers.console.SystemController.getStatesCities()
+GET         /tfx/system/airline                                           controllers.console.SystemController.getAirline()
+GET         /tfx/system/create-airline                                    controllers.console.SystemController.getCreateAirline(id: Long ?= 0)
+POST        /tfx/system/create-airline                                    controllers.console.SystemController.postCreateAirline()
+GET         /tfx/system/payment-categories                                controllers.console.SystemController.getPaymentCategories()
+GET         /tfx/system/payment-methods                                   controllers.console.SystemController.getPaymentMethod(paymentMethod: String)
+GET         /tfx/system/create-payment-methods                            controllers.console.SystemController.getCreatePaymentMethod(paymentCategory: String, id: Long ?= 0)
+POST        /tfx/system/create-payment-methods                            controllers.console.SystemController.postCreatePaymentMethod
+GET         /tfx/system/currency-conversion-rates                         controllers.console.SystemController.getCurrencyConversion
+POST        /tfx/system/currency-conversion-rates                         controllers.console.SystemController.postCurrencyConversion
+POST        /tfx/system/save-control-panel                                controllers.console.SystemController.postSaveControlPanel
+GET         /tfx/system/general-settings                                  controllers.console.SystemController.getGeneralSettings()
+
+GET         /tfx/markup/airline-incentives                                controllers.console.AirlineIncentiveController.getIndex
+GET         /tfx/markup/create-airline-incentives                         controllers.console.AirlineIncentiveController.getCreate(id: Long ?= 0)
+POST        /tfx/markup/create-airline-incentives                         controllers.console.AirlineIncentiveController.postCreate
+GET         /tfx/markup/delete-airline-incentives                         controllers.console.AirlineIncentiveController.getDelete(id: Long ?= 0)
+GET         /tfx/markup/flight-markup-rules                               controllers.console.FlightMarkUpDownRuleController.getIndex()
+GET         /tfx/markup/create-flight-markup-rule                         controllers.console.FlightMarkUpDownRuleController.getCreate
+GET         /tfx/markup/edit-flight-markup-rule                           controllers.console.FlightMarkUpDownRuleController.getEdit(id: Long ?= 0)
+POST        /tfx/markup/create-flight-markup-rule                         controllers.console.FlightMarkUpDownRuleController.postCreate
+GET         /tfx/markup/delete-flight-markup-rule                         controllers.console.FlightMarkUpDownRuleController.getDelete(id: Long ?= 0)
+GET         /tfx/markup/view-markup-price-info                            controllers.console.FlightMarkUpDownRuleController.getViewPriceInfo(id: Long ?= 0)
+GET         /tfx/markup/airline-markup-down                               controllers.console.AirlineFlightMarkDirectionController.getIndex(ruleId: Long ?= 0)
+GET         /tfx/markup/create-airline-markup-down                        controllers.console.AirlineFlightMarkDirectionController.getCreate(id: Long ?= 0, ruleId: Long ?= 0)
+POST        /tfx/markup/create-airline-markup-down                        controllers.console.AirlineFlightMarkDirectionController.postCreate
+GET         /tfx/markup/delete-airline-markup-down                        controllers.console.AirlineFlightMarkDirectionController.getDelete(id: Long ?= 0)
+
+GET         /tfx/transaction/get-transaction-information/:transRef        controllers.console.TransactionController.getTransRefDetails(transRef: String)
+GET         /tfx/user                                                     controllers.console.UserController.getIndex(userCategory: String ?= null)
+GET         /tfx/user/create                                              controllers.console.UserController.getCreate(id:Long ?= 0)
+POST        /tfx/user/create                                              controllers.console.UserController.postCreate()
+GET         /tfx/user/user-group                                          controllers.console.UserController.getUserGroup()
+GET         /tfx/user/create-user-group                                   controllers.console.UserController.getCreateGroup(id: String ?= null)
+POST        /tfx/user/create-user-group                                   controllers.console.UserController.postCreateGroup
+
+GET         /tfx/flight/all-queues                                        controllers.console.FlightController.getQueues
+GET         /tfx/flight/view-itinerary/:id/:source                        controllers.console.FlightController.getViewItinerary(id: Long, source: String)
+
+GET         /tfx/support                                                  controllers.console.SupportController.getIndex()
+GET         /tfx/support/tickets                                          controllers.console.SupportController.getTickets(status ?= null)
+GET         /tfx/support/view-ticket/:ticketId                            controllers.console.SupportController.getViewTicket(ticketId: Long)
+GET         /tfx/support/create-client-ticket                             controllers.console.SupportController.getCreateTicket(id: Long ?= 0)
+POST        /tfx/support/create-client-ticket                             controllers.console.SupportController.postCreateTicket
+GET         /tfx/data-bank/file-manager                                   controllers.console.FileManagerController.getIndex
+GET         /tfx/data-bank/file-manager/create                            controllers.console.FileManagerController.newUpload()
+POST        /tfx/data-bank/ajax-upload                                    controllers.console.FileManagerController.postAjaxUpload()
+POST        /tfx/data-bank/upload-file                                    controllers.console.FileManagerController.postUpload()
+POST        /tfx/data-bank/delete-file/:filePath                          controllers.console.FileManagerController.getDeleteFile(filePath)
+
+GET         /tfx/cms/categories                                           controllers.console.cms.ContentCategoryController.getIndex()
+GET         /tfx/cms/categories/create                                    controllers.console.cms.ContentCategoryController.getCreate(id: Long ?= 0)
+POST        /tfx/cms/categories/create                                    controllers.console.cms.ContentCategoryController.postCreate
+GET         /tfx/cms/categories/delete                                    controllers.console.cms.ContentCategoryController.getDelete(id: Long ?= 0)
+GET         /tfx/cms/template                                             controllers.console.cms.TemplateController.getIndex
+GET         /tfx/cms/template/item                                        controllers.console.cms.TemplateController.getItem(id: Long)
+GET         /tfx/cms/template/create                                      controllers.console.cms.TemplateController.getCreate
+GET         /tfx/cms/template/edit/:id                                    controllers.console.cms.TemplateController.getEdit(id: Long)
+POST        /tfx/cms/template/create                                      controllers.console.cms.TemplateController.postCreate
+GET         /tfx/cms/template/delete                                      controllers.console.cms.TemplateController.getDelete(id: Long ?= 0)
+GET         /tfx/cms/template/preview/:id                                 controllers.console.cms.TemplateController.getPreviewTemplate(id: Long)
+GET         /tfx/cms/container/json                                       controllers.console.cms.ContainerController.getContainerJson(id: Long ?= 0)
+GET         /tfx/cms/containers                                           controllers.console.cms.ContainerController.getIndex
+GET         /tfx/cms/create-container                                     controllers.console.cms.ContainerController.getCreate(id: Long ?= 0)
+POST        /tfx/cms/create-container                                     controllers.console.cms.ContainerController.postCreate()
+GET         /tfx/cms/delete-container                                     controllers.console.cms.ContainerController.getDelete(id: Long ?= 0)
+GET         /tfx/cms/announcement                                         controllers.console.cms.ApplicationController.getManageAnnouncement()
+GET         /tfx/cms/create-announcement                                  controllers.console.cms.ApplicationController.getCreateAnnouncement(id: Long ?= 0)
+POST        /tfx/cms/create-announcement                                  controllers.console.cms.ApplicationController.postCreateAnnouncement()
+GET         /tfx/cms/page                                                 controllers.console.cms.PageController.getIndex()
+GET         /tfx/cms/page/create                                          controllers.console.cms.PageController.getCreatePage(id: Long ?= 0)
+POST        /tfx/cms/page/create                                          controllers.console.cms.PageController.postCreatePage
+GET         /tfx/cms/page/delete                                          controllers.console.cms.PageController.getDeletePage(id: Long)
+GET         /tfx/cms/link                                                 controllers.console.cms.ApplicationController.getLink()
+GET         /tfx/cms/link/create                                          controllers.console.cms.ApplicationController.getCreateLink(id: Long ?= 0)
+GET         /tfx/cms/link/delete-link                                     controllers.console.cms.ApplicationController.getDeleteLink(id: Long ?= 0)
+POST        /tfx/cms/link/create                                          controllers.console.cms.ApplicationController.postCreateLink
+GET         /tfx/cms/appearance                                           controllers.console.cms.ApplicationController.getApperance
+POST        /tfx/cms/appearance                                           controllers.console.cms.ApplicationController.postApperance
+GET         /tfx/cms/widget                                               controllers.console.cms.ApplicationController.getWidget
+GET         /tfx/cms/create-widget                                        controllers.console.cms.ApplicationController.getCreateWidget(id: Long ?= 0)
+POST        /tfx/cms/create-widget                                        controllers.console.cms.ApplicationController.postCreateWidget()
+GET         /tfx/cms/delete-widget                                        controllers.console.cms.ApplicationController.getDeleteWidget(id: Long ?= 0)
+GET         /tfx/cms/terms-and-conditions                                 controllers.console.cms.ApplicationController.getTermsAndConditions
+GET         /tfx/cms/create-ad                                            controllers.console.cms.ApplicationController.getCreateAd
+GET         /tfx/cms/manage-ads                                           controllers.console.cms.ApplicationController.getManageAds
+
+
+#################################################
+#  Webservice API                               #
+#################################################
+GET         /api/get-countries                                            controllers.api.APISystemController.getCountries()
+GET         /api/get-currencies                                           controllers.api.APISystemController.getCurrencies(code: String)
+GET         /api/get-nearby-airport/:latitude/:longitude                  controllers.api.APISystemController.getNearByAirports(latitude: Double, longitude: Double)
+GET         /api/get-airports                                             controllers.api.APISystemController.getAirports(airportCode: String ?= null)
+GET         /api/get-state                                                controllers.api.APISystemController.getStates(countryId: Long ?= 0)
+GET         /api/get-cities                                               controllers.api.APISystemController.getCities
+POST        /api/conversion-rate/:currencyCode                            controllers.api.APISystemController.postCurrencyConversationRate(currencyCode: String)
+
+
+
+GET         /*slugUrl                                                     controllers.ApplicationController.getPage(slugUrl: String)

@@ -1,0 +1,56 @@
+@(transaction: PaymentHistories, flightBooking: FlightBookings, firstName: String, lastName: String, email: String, conf: play.Configuration, currency: Int)
+@import org.apache.commons.codec.digest.DigestUtils; val amt = Math.multiplyExact(transaction.amount.toInt, 100); val url = "http://" + request().getHeader(Http.HeaderNames.HOST).concat(conf.getString("gtpay.default.returnUrl") + "?csrfToken=" + play.filters.csrf.CSRF.getToken(request()).get().value); val transHash = DigestUtils.sha512Hex(conf.getInt("gtpay.merchantId") + transaction.trans_ref + amt + currency + email + url + conf.getString("gtpay.hashKey")); var desc = "Flight Booking for #TransRef: " + transaction.trans_ref
+@layouts.main("Payment with GTPay") {
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h2 class="text-success-dk">
+                <strong>Booking Confirmation!</strong>
+            </h2>
+            <p><strong>Flight Reservation was successful. Page will redirect automatically in 10secs.</strong></p>
+            <table border="0" class="table table-box">
+                <tbody>
+                    <tr>
+                        <th>PNR No</th>
+                        <td>@flightBooking.pnr_ref</td>
+                    </tr>
+                    <tr>
+                        <th>Transaction Ref No.</th>
+                        <td>@flightBooking.tfx_ticket_ref</td>
+                    </tr>
+                    <tr>
+                        <th>Amount</th>
+                        <td>@transaction.currency @core.Utilities.moneyFormat(transaction.amount.toString)</td>
+                    </tr>
+                </tbody>
+            </table>
+            @play.api.Logger.info(conf.getString("gtpay.merchantId") + transaction.trans_ref + amt + 566 + email + conf.getString("gtpay.default.returnUrl").concat("?csrfToken=" + play.filters.csrf.CSRF.getToken(request()).get().value) + conf.getString("gtpay.hashKey"))
+            <html>
+                <body>
+                    <form name="submit2gtpay_form" action="@conf.getString("gtpay.default.url")" target="_self" method="post">
+                        <input type="hidden" name="gtpay_mert_id" value="@conf.getInt("gtpay.merchantId")" />
+                        <input type="hidden" name="gtpay_tranx_id" value="@transaction.trans_ref" />
+                        <input type="hidden" name="gtpay_tranx_amt" value="@amt" />
+                        <input type="hidden" name="gtpay_tranx_curr" value="@currency" />
+                        <input type="hidden" name="gtpay_cust_id" value="@email" />
+                        <input type="hidden" name="gtpay_cust_name" value="@firstName @lastName" />
+                        <input type="hidden" name="gtpay_tranx_memo" value="@desc" />
+                        <input type="hidden" name="gtpay_echo_data" value="@transaction.service_category.name()" />
+                        <input type="hidden" name="gtpay_gway_name" value="webpay" />
+                        <input type="hidden" name="gtpay_no_show_gtbank" value="@conf.getString("gtpay.default.showGTPay")" />
+                        <input type="hidden" name="gtpay_hash" value="@transHash" />
+                        <input type="hidden" name="gtpay_tranx_noti_url" value="@url" />
+                        <input type="submit" class="btn btn-primary" value="Pay with GTPay" name="btnSubmit"/>
+                        <input type="hidden" name="gtpay_echo_data" value="@desc">
+                    </form>
+                </body>
+            </html>
+        </div>
+    </div>
+    <script>
+        $(function() {
+           setTimeout(function() {
+                $("form[name=submit2gtpay_form]").submit();
+           }, 10000);
+        });
+    </script>
+}

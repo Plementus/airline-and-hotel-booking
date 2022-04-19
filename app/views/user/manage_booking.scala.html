@@ -1,0 +1,131 @@
+@(user: Users)
+@layouts.main("Manage Booking") {
+    <div class="col-md-12 col-xs-12 user-name">
+        <div class="col-md-12">
+            <h3>Welcome, @user.first_name @user.last_name</h3>
+        </div>
+
+    </div>
+    <div class="col-md-2 col-sm-2">
+        <div class="user-profile-tabs">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#profile-overview" class="text-center"><i class="fa fa-bolt"></i> <span>Overview</span></a></li>
+                <li><a data-toggle="tab" href="#booking" class="text-center"><i class="fa fa-briefcase"></i> <span>Bookings</span></a></li>
+                <li><a data-toggle="tab" href="#profile" class="text-center"><i class="fa fa-user"></i> <span>Profile</span></a></li>
+                <li><a data-toggle="tab" href="#wishlist" class="text-center"><i class="fa fa-heart-o"></i> <span>Wishlist</span></a></li>
+                <li><a data-toggle="tab" href="#cards" class="text-center"><i class="fa fa-credit-card"></i> <span>My Cards</span></a></li>
+                <li><a data-toggle="tab" href="#complaint" class="text-center"><i class="fa fa-edit"></i> <span>Complaints</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-10 col-sm-10">
+        <div class="tab-content">
+            <div id="profile-overview" class="tab-pane fade in active">
+                <div class="col-md-6 user-profile">
+                    @userProfile(true)
+                    <div class="user-notification">
+                        <h4>Notification</h4>
+                        <div class="notification-body">
+                            <div class="notification-entry">
+                                <p><i class="fa fa-plane"></i> Domestic Flights Starting from $199 <span class="pull-right">1m ago</span></p>
+                            </div>
+                            <div class="notification-entry">
+                                <p><i class="fa fa-bed"></i> 20% Cashback on hotel booking <span class="pull-right">1h ago</span></p>
+                            </div>
+                            <div class="notification-entry">
+                                <p><i class="fa fa-bolt"></i> 50% off on all items <span class="pull-right">08h ago</span></p>
+                            </div>
+                            <div class="notification-entry">
+                                <p><i class="fa fa-sun-o"></i> New Year special offer <span class="pull-right">1d ago</span></p>
+                            </div>
+                            <div class="notification-entry">
+                                <p><i class="fa fa-plane"></i> Domestic Flights Starting from $199 <span class="pull-right">1m ago</span></p>
+                            </div>
+                            <div class="notification-entry">
+                                <p><i class="fa fa-bed"></i> 20% Cashback on hotel booking <span class="pull-right">1h ago</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="user-profile-offer">
+                        <h4>Offers For You</h4>
+                        <div class="offer-body">
+                            <div class="offer-entry">
+                                <div class="col-md-4 col-sm-4 col-xs-4 offer-left text-center">
+                                    <p>20% OFF</p>
+                                </div>
+                                <div class="col-md-8 col-sm-8 col-xs-8 offer-right">
+                                    <p>Get 20% OFF on flights when you pay with your Bank of America Credit Card. <a href="#">Book Now</a></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="offer-entry">
+                                <div class="col-md-4 col-sm-4 col-xs-4 offer-left text-center">
+                                    <p>30% OFF</p>
+                                </div>
+                                <div class="col-md-8 col-sm-8 col-xs-8 offer-right">
+                                    <p>Get 30% OFF on flights when you pay with your Bank of America Credit Card. <a href="#">Book Now</a></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="offer-entry">
+                                <div class="col-md-4 col-sm-4 col-xs-4 offer-left text-center">
+                                    <p>10% OFF</p>
+                                </div>
+                                <div class="col-md-8 col-sm-8 col-xs-8 offer-right">
+                                    <p>Get 10% OFF on flights when you pay with your Bank of America Credit Card. <a href="#">Book Now</a></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="booking" class="tab-pane fade in">
+
+            </div>
+            <div id="profile" class="tab-pane fade in">
+                <div class="col-md-6 user-profile">
+                    @userProfile(false)
+                </div>
+            </div>
+            <div id="wishlist" class="tab-pane fade in">
+
+            </div>
+            <div id="cards" class="tab-pane fade in">
+
+            </div>
+            <div id="complaint" class="tab-pane fade in">
+
+            </div>
+        </div>
+    </div>
+
+}
+@userProfile(displayEditProfile: Boolean) = {
+    <div class="brief-info">
+        <div class="col-md-2 col-sm-2 clear-padding">
+        @if(user.avatar_url == null) {
+            <img src="@routes.Assets.at("v1/images/circle.png")" />
+        } else {
+            <img src="@user.avatar_url" alt="@user.email" />
+        }
+        </div>
+        <div class="col-md-8 col-sm-10">
+            <h3>@user.first_name @user.last_name</h3>
+            <h5><i class="fa fa-envelope-o"></i>@user.email</h5>
+            <h5><i class="fa fa-phone"></i>@if(user.phone == null) { Not available } else { @user.phone }</h5>
+            <h5><i class="fa fa-calendar"></i>@user.dob.toLocaleString</h5>
+            <h5><i class="fa fa-map-marker"></i>@if(user.contact_address1 == null) { Not available } else { @user.contact_address1 }</h5>
+        </div>
+        <div class="clearfix"></div>
+        @if(displayEditProfile) {
+            <div class="brief-info-footer">
+                <a href="#" ng-click="editProfile()">Edit Profile</a>
+                <a href="#" ng-click="addTravelPreference()">Add Travel Preference</a>
+            </div>
+        }
+    </div>
+}

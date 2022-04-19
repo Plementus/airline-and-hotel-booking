@@ -1,0 +1,154 @@
+<div class="row">
+    <div class="col-md-1 col-xs-1 col-lg-1 text-white">Flight</div>
+    <div class="col-md-11 col-xs-11 col-lg-11">
+        <form method="get" action="" data-validate="parsley" id="flight_search">
+        <input type="hidden" name="num_of_destination" @if(request().getQueryString("num_of_destination") != null) { value="@request().getQueryString("num_of_destination")" } else { value="1" }>
+        <input type="hidden" name="destination_locale" @if(request().getQueryString("destination_locale") != null) { value="@request().getQueryString("destination_locale")" } >
+        <div class="radio-tabs">
+        @for(tripType <- TripType.values()) {
+            @if(!tripType.equals(TripType.MULTI_CITY)) {
+                <div class="radio-custom @if(request().getQueryString("trip_type") != null && request().getQueryString("trip_type").equals(tripType.name())) { current  } else { @if(tripType.name().equals(TripType.MULTI_CITY.name()) && request().getQueryString("trip_type") == null) { current } }">
+                    <label>
+                        <input type="radio" name="trip_type" value="@tripType.name()" @if(request().getQueryString("trip_type") != null && request().getQueryString("trip_type").equals(tripType.name())) { checked="checked" id="checked" } else { @if(tripType.name().equals(TripType.MULTI_CITY.name())) { checked="checked" id="checked" } } > @tripType.name().replaceAllLiterally("_", " ")
+                    </label>
+                </div>
+            }
+        }
+        </div>
+        <div class="tab-pane" >
+            <div class="clearfix search-wrap">
+                <div class="input-append col-sm-3 col-xs-12 bdr border-btm">
+                    <input class="input-box search_airport_from" name="departure_airport" @if(request().getQueryString("departure_airport") != null) { value="@request().getQueryString("departure_airport")" } data-section="1" autoselect="true" data-error-message="Departure airport is required" data-required="true" autocomplete="off" aria-autocomplete="none" placeholder="Departing Airport" >
+                    <input type="hidden" name="departure_airport_id_1" @if(request().getQueryString("departure_airport_id_1") != null) { value="@request().getQueryString("departure_airport_id_1")" }>
+                    <input type="hidden" name="departure_country_1" @if(request().getQueryString("departure_country_1") != null) { value="@request().getQueryString("departure_country_1")" }>
+                    <i class="icon icon-map-marker"></i>
+                </div>
+                <div class="input-append col-sm-3 col-xs-12 bdr border-btm">
+                    <input class="input-box search_airport_to" name="arrival_airport" @if(request().getQueryString("arrival_airport") != null) { value="@request().getQueryString("arrival_airport")" } data-section="1" autocomplete="off" autoselect="true" data-error-message="Arrival airport is required" data-required="true" aria-autocomplete="none" placeholder="Arrival Airport" >
+                    <input type="hidden" name="arrival_airport_id_1" @if(request().getQueryString("arrival_airport_id_1") != null) { value="@request().getQueryString("arrival_airport_id_1")" }>
+                    <input type="hidden" name="arrival_country_1" @if(request().getQueryString("arrival_country_1") != null) { value="@request().getQueryString("arrival_country_1")" }>
+
+                    <i class="icon icon-map-marker"></i>
+                </div>
+                <div id="div_dt_from" class="input-append col-sm-2 col-xs-6 bdr border-btm">
+                    <input class="input-box departure_date" readonly data-type="dateIso" @if(request().getQueryString("departure_date_1") != null) { value="@request().getQueryString("departure_date_1")" }  placeholder="Departing" data-required="true" name="departure_date_1" data-error-message="Incorrect Date Specified" type="text">
+                    <i class="icon icon-calendar departure_date_icon"></i>
+                </div>
+                <div id="div_dt_to" class="input-append col-sm-2 col-xs-6 bdr border-btm">
+                    <input class="input-box arrival_date" readonly @if(request().getQueryString("arrival_date_1") != null) { value="@request().getQueryString("arrival_date_1")" } placeholder="Arriving" data-required="true" data-error-message="Incorrect Date Specified" name="arrival_date_1" type="text">
+                    <i class="icon icon-calendar arrival_date_icon"></i>
+                </div>
+                <div class="input-append col-sm-3 col-xs-6 bdr ">
+                    <input type="text" name="passengers" @if(request().getQueryString("passengers") != null) { value="@request().getQueryString("passengers")" } class="input-box passenger_onclick" style="cursor : pointer ;" value="1 Adult" readonly >
+                    <i class="icon icon-user passenger_onclick"></i>
+                </div>
+                <div class="modal fade" id="passenger-modal" tabindex="-1" role="dialog" aria-labelledby="passengerModal">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content panel panel-primary">
+                            <div class="panel-heading">
+                                <span class="panel-name">Passenger Details</span>
+                                <div class="widget-menu pull-right">
+                                    <a class="mr10 bg-primary dark p3 ph5" style="cursor : pointer" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></a>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div id="js-travellers" class="traveller-nudgers">
+                                    <label for="js-adults" style="color : #555" class="text-gray">Adults</label>
+                                    <button type="button" class="decrement adults" data-selector="#js-adults" tabindex="1">−</button>
+                                    <input type="text" name="num_of_adult" @if(request().getQueryString("num_of_adult") != null) { value="@request().getQueryString("num_of_adult")" } id="js-adults" value="1" readonly >
+                                    <button type="button" class="increment adults" data-selector="#js-adults" tabindex="1">+</button>
+                                    <span>12+ years</span> <label for="js-children" style="color : #555" class="text-gray">Children</label>
+                                    <button type="button" class="decrement children" data-selector="#js-children" tabindex="1">−</button>
+                                    <input type="text" name="num_of_children" @if(request().getQueryString("num_of_children") != null) { value="@request().getQueryString("num_of_children")" } id="js-children" value="0" readonly >
+                                    <button type="button" class="increment children" data-selector="#js-children" tabindex="1">+</button>
+                                    <span>under 12</span> <label for="js-infants" style="color : #555" class="text-gray">Infants</label>
+                                    <button type="button" class="decrement infants" data-selector="#js-infants" tabindex="1">−</button>
+                                    <input type="text" name="num_of_infant" @if(request().getQueryString("num_of_children") != null) { value="@request().getQueryString("num_of_children")" } id="js-infants" value="0" readonly >
+                                    <button type="button" class="increment infants" data-selector="#js-infants" tabindex="1">+</button>
+                                    <span>under 2</span>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-dismiss="modal">Done</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3 col-xs-6 ">
+                    <select class="form-control" name="cabin_class">
+                        @*<option value="">Preferred Cabin Class</option>*@
+                        @for(cabinClass <- CabinPreference.values()) {
+                            <option @if(request().getQueryString("cabin_class") != null && request().getQueryString("cabin_class").equals(cabinClass.name())) { selected="selected" }  value="@cabinClass.name()">@cabinClass.name()</option>
+                        }
+                    </select>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </form>
+    </div>
+    <div class="col-md-1 col-xs-1 col-lg-1 text-white">Hotel</div>
+    <div class="col-md-11 col-xs-11 col-lg-11"><form method="get" action="" data-validate="parsley" id="hotel_search">
+        <div class="tab-pane">
+            <div class="clearfix search-wrap">
+                <div class="input-append col-sm-4 col-xs-12 bdr border-btm">
+                    <input class="input-box destination" name="city" data-section="1" autoselect="true" data-error-message="City, landmark or airport is required" data-required="true" autocomplete="off" aria-autocomplete="none" placeholder="City name, landmark or airports" />
+                    <input name="iso_city_code" type="hidden" />
+                    <i class="icon icon-map-marker"></i>
+                </div>
+                <div id="" class="input-append col-sm-1 col-xs-6 bdr border-btm">
+                    <input class="input-box" readonly data-type="dateIso" placeholder="Check-in" data-required="true" name="check_in_date" data-error-message="Incorrect Date Specified" type="text">
+                    <i class="icon icon-calendar ht_departure_date_icon"></i>
+                </div>
+                <div id="" class="input-append col-sm-1 col-xs-6 bdr border-btm">
+                    <input class="input-box" readonly placeholder="Check-out" data-required="true" name="check_out_date" data-error-message="Incorrect Date Specified" type="text">
+                    <i class="icon icon-calendar ht_arrival_date_icon"></i>
+                </div>
+                <div id="" class="input-append col-sm-2 col-xs-3 bdr border-btm">
+                    <input class="input-box col-md-1 col-xs-1 col-sm-1" placeholder="1 Room" value="1 Room" name="rooms" data-required="true" data-require="true" data-error-message="Required" readonly style="width: 80%;">
+                    <input class="input-box col-md-1 col-xs-1 col-sm-1" name="num_of_rooms" value="1" type="hidden" data-required="true" data-require="true" data-error-message="Required">
+                    <button type="button" data-input="num_of_rooms" data-action="increment" data-label="rooms" class="btn btn-xs btn-default action-attr-count" tabindex="1" style="width: 25px; margin-top: 3px; border-radius: 0">+</button>
+                    <button type="button" data-input="num_of_rooms" data-action="decrement" data-label="rooms" class="btn btn-xs btn-default action-attr-count" tabindex="1" style="width: 25px; border-radius: 0">-</button>
+                </div>
+                <div id="" class="input-append col-sm-2 col-xs-3 bdr border-btm">
+                    <input class="input-box  col-md-1 col-xs-1 col-sm-1" placeholder="1 Adult/Room" value="1 Adult/Room" name="Adults" data-required="true" data-error-message="Required" readonly style="width: 80%;">
+                    <input class="input-box  col-md-1 col-xs-1 col-sm-1" name="num_of_adults" value="1" data-required="true" data-error-message="Required" type="hidden">
+                    <button type="button" data-input="num_of_adults" data-action="increment" data-label="Adults" class="btn btn-xs btn-default action-attr-count" tabindex="1" style="width: 25px; margin-top: 3px; border-radius: 0">+</button>
+                    <button type="button" data-input="num_of_adults" data-action="decrement" data-label="Adults" class="btn btn-xs btn-default action-attr-count" tabindex="1" style="width: 25px; border-radius: 0">-</button>
+                </div>
+                <div id="" class="input-append col-sm-3 col-xs-4 bdr border-btm">
+                    <input class="input-box col-md-1 col-xs-1 col-sm-1" placeholder="Children" value="No Child" name="Children" readonly style="width: 80%;" />
+                    <input class="input-box col-md-1 col-xs-1 col-sm-1" value="0" type="hidden"  name="num_of_children" />
+                    <button type="button" data-input="num_of_children" data-action="increment" data-label="Children" class="btn btn-xs btn-default action-attr-count" tabindex="1" style="width: 25px; margin-top: 3px; border-radius: 0">+</button>
+                    <button type="button" data-input="num_of_children" data-action="decrement" data-label="Children" class="btn btn-xs btn-default action-attr-count" tabindex="1" style="width: 25px; border-radius: 0">-</button>
+                </div>
+                <div class="clearfix"></div>
+                <small><a href="#" class="add-more-option text-white pull-right">More search option <i class="icon icon-caret-down"></i></a></small>
+                <div class="more-options" style="display: none; margin-top: 5px">
+                    <div id="" class="col-sm-2 col-xs-3 bdr border-btm">
+                        <select name="hotel-stars" class="input-append input-box form-control">
+                            <option value="">Any Stars</option>
+                            <option value="2">2 Stars &amp; Up</option>
+                            <option value="3">3 Stars &amp; Up</option>
+                            <option value="4">4 Stars &amp; Up</option>
+                            <option value="5">4 Stars &amp; Up</option>
+                        </select>
+                    </div>
+                    <div id="" class="col-sm-2 col-xs-3 bdr border-btm">
+                        <select name="price-range" class="input-append input-box form-control">
+                            <option>Any Price</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form></div>
+</div>
+
+@*
+<script>
+    if (localStorage.getItem("tfx_states") === 'undefined' || localStorage.getItem("tfx_states") === null) {
+        var statesJsonCache = [];
+    }
+</script>
+*@

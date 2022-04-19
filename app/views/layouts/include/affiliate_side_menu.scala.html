@@ -1,0 +1,14 @@
+<ul class="nav sidebar-menu">
+      <li class="sidebar-label pt15">Menu</li>
+      <li><a href="@controllers.swift.routes.ApplicationController.getDashboard()"><span class="fa fa-home"></span><span class="sidebar-name"> Dashboard</span></a></li>
+      <li class="sidebar-label pt15">Flights</li>
+      <li><a href="@controllers.swift.routes.FlightController.getFlight()"><span class="fa fa-plane"></span><span class="sidebar-name"> Flight Booking</span></a></li>
+      @if(session().get("role").equalsIgnoreCase("role_agency_administrator")) {
+          <li class="sidebar-label pt15">User Management</li>
+          <li><a href="@controllers.swift.routes.UserController.getCreateUser()"><span class="fa fa-plus"></span><span class="sidebar-name"> Create User</span></a></li>
+          <li><a href="@controllers.swift.routes.UserController.getIndex()"><span class="fa fa-users"></span><span class="sidebar-name"> Manage User</span></a></li>
+      }
+      <li class="sidebar-label pt15">Reports</li>
+      <li><a href="@controllers.swift.routes.FlightController.getReport()"><span class="fa fa-file-o"></span><span class="sidebar-name"> Reports</span></a></li>
+</ul>
+@import core.security.Auth

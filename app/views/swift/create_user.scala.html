@@ -1,0 +1,128 @@
+@(registerForm: Form[B2bSubUsers], markupForm: Form[B2bMarkups])
+@import helper._; var prefix = Seq("" -> "Select", "Mr" -> "Mr.", "Mrs" -> "Mrs.")
+@layouts.swift("Create New Agent") {
+    <div class="content">
+        <div class="tray tray-center va-t post animated-long" data-animate="[&quot;800&quot;,&quot;fadeIn&quot;]">
+            <h2 class="lh30 mt10">Setup Agent Profile</h2>
+            <div class="theme-primary">
+                <div id="p1" class="panel panel-default">
+                    <div class="panel-body bg-light">
+                        <h3>Create New Agent</h3>
+                        <div class="row">
+                            <form action="@controllers.swift.routes.UserController.postCreateUser()" method="post" data-validate="parsley" class="form">
+                                @CSRF.formField
+                                @if(registerForm.get() != null) {
+                                    <input type="hidden" name="id" value="@registerForm.get().id" />
+                                }
+                                @if(markupForm.get() != null) {
+                                    <input type="hidden" name="bsb_markup_id" value="@markupForm.get().id" />
+                                }
+                                <input type="hidden" name="affiliate_user_id" />
+                                <div class="col-md-12"><h4>Agent Profile</h4></div>
+                                <div class="form-group col-md-4">
+                                    @helper.inputText(registerForm("user_id.email"), 'class -> "form-control", 'placeholder -> "Enter valid email address", 'type -> "email", '_label -> "Email (Required for login)*", 'required -> "required", 'id -> "email")
+                                    <small class="email-val-ajax"></small>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Agent Role</label>
+                                    <select name="role" class="form-control" required="required">
+                                        <option>Select User Role</option>
+                                        @for(role: Roles <- Roles.find.where().eq("level", 2).findList()) {
+                                            <option @if(role.role_code.equals(registerForm("role_code").value())) { selected="selected" } value="@role.role_code">@role.role_title</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                @helper.inputText(registerForm("user_id.phone"), 'class -> "form-control", '_label -> "Agent Mobile Phone *", 'required -> "required", 'required -> "required")
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group col-md-2">
+                                @helper.select(registerForm("user_id.prefix"), prefix, 'class -> "form-control", '_label -> "Title *", 'id -> "name")
+                                </div>
+                                <div class="form-group col-md-3">
+                                @helper.inputText(registerForm("user_id.first_name"), 'class -> "form-control", 'id -> "first_name", '_label -> "First Name *", 'required -> "required")
+                                </div>
+                                <div class="form-group col-md-3">
+                                @helper.inputText(registerForm("user_id.last_name"), 'class -> "form-control", 'id -> "last_name", '_label -> "Last Name *", 'required -> "required")
+                                </div>
+
+                                <div class="col-md-2">
+                                @helper.inputText(registerForm("user_id.dob"), '_label -> "Date of Birth", 'placeholder -> "Date of Birth", 'class -> "form-control", '_showConstraints -> false)
+                                </div>
+                                <div class="col-md-2">
+                                @helper.select(registerForm("user_id.gender"), Seq("" -> "Select", "MALE" -> "Male", "FEMALE" -> "Female"), '_label -> "Gender", 'class -> "form-control", '_showConstraints -> false)
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-md-12"><h4>Mark-up Settings</h4></div><br /><br />
+                                <div class="form-group col-md-4">
+                                    <div class="checkbox-custom mb5">
+                                        <input type="checkbox" name="can_add_markup" value="1" id="can_add_markup">
+                                        <label for="can_add_markup">Can add Markup While Booking</label>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <div class="checkbox-custom mb5">
+                                        <input type="checkbox" name="can_generate_pnr" value="1" id="can_generate_pnr">
+                                        <label for="can_generate_pnr">Can Generate PNR</label>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <ul class="list-inline">
+                                        <li><label>Apply Markup as: </label></li>
+                                        <li>
+                                            <div class="radio-custom mb5">
+                                                <input type="radio" value="Yes" id="is_percent_yes" name="is_percent">
+                                                <label for="is_percent_yes">Percentage</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="radio-custom mb5">
+                                                <input type="radio" value="No" id="is_percent_no" name="is_percent">
+                                                <label for="is_percent_no">Money</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group col-md-4">
+                                @helper.inputText(markupForm("b2b_adult_oneway"), 'class -> "form-control", 'id -> "b2b_adult_oneway", '_label -> "Adult One Way", 'placeholder -> "Adult One Way")
+                                </div>
+                                <div class="form-group col-md-4">
+                                @helper.inputText(markupForm("b2b_adult_round"), 'class -> "form-control", 'id -> "b2b_adult_round", '_label -> "Adult Round Trip", 'placeholder -> "Adult Round Trip")
+                                </div>
+                                <div class="form-group col-md-4">
+                                @helper.inputText(markupForm("b2b_adult_multi"), 'class -> "form-control", 'id -> "b2b_adult_multi", '_label -> "Adult Multi City", 'placeholder -> "Adult Multi City")
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group col-md-4">
+                                @helper.inputText(markupForm("b2b_child_oneway"), 'class -> "form-control", 'id -> "b2b_child_oneway", '_label -> "Child One Way", 'placeholder -> "Child One Way")
+                                </div>
+                                <div class="form-group col-md-4">
+                                @helper.inputText(markupForm("b2b_child_round"), 'class -> "form-control", 'id -> "b2b_child_round", '_label -> "Child Round Trip", 'placeholder -> "Child Round Trip")
+                                </div>
+                                <div class="form-group col-md-4">
+                                @helper.inputText(markupForm("b2b_child_multi"), 'class -> "form-control", 'id -> "b2b_child_multi", '_label -> "Child Multi City", 'placeholder -> "Child Multi City")
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group col-md-4">
+                                @helper.inputText(markupForm("b2b_infant_oneway"), 'class -> "form-control", 'id -> "b2b_infant_oneway", '_label -> "Infant One Way", 'placeholder -> "Infant One Way")
+                                </div>
+                                <div class="form-group col-md-4">
+                                @helper.inputText(markupForm("b2b_infant_round"), 'class -> "form-control", 'id -> "b2b_infant_round", '_label -> "Infant Round Trip", 'placeholder -> "Infant Round Trip")
+                                </div>
+                                <div class="form-group col-md-4">
+                                @helper.inputText(markupForm("b2b_infant_multi"), 'class -> "form-control", 'id -> "b2b_infant_multi", '_label -> "Infant Multi City", 'placeholder -> "Infant Multi City")
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group col-md-12">
+                                    <button type="reset" class="btn btn-danger btn-md" name="action" value="cancel">Cancel</button>
+                                    <button type="submit" class="btn btn-success btn-md" name="action" value="cancel">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

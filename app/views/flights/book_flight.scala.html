@@ -1,0 +1,471 @@
+@import helper._
+@import java.util
+@import core.gdsbookingengine.{FlightSearchResponse, PassengerCode, PricedItineraryWSResponse}
+@import core._
+@import java.util.Calendar
+@import play.data.DynamicForm
+@import core.security.Auth
+@(postData: util.Map[String, Object], flightInfo: PricedItineraryWSResponse, form: DynamicForm, flightBookingField: util.List[AppFormField], productServices: util.List[ProductServices], paymentMethods: util.List[PaymentMethods])
+@layouts.main("Flight Details", scripts, style) {
+    <form method="post" action="@routes.FlightController.postProcessBooking()" id="flight-booking" data-validate="parsley">
+        <div ng-controller="flightBookingCtrl" class="container clearfix">
+            <div style="margin: 10px 0 ;"></div>
+            <div class="review_steps clearfix append_bottom15">
+                <div class="review_borderbottom">
+                    <p class="review_steps_info">
+                        <span class="step_left active" id="pagination_1" href="#">
+                            <span class="block step_icon">1</span>
+                            <span id="pagination_1_tick" class="block step_icon_select" style="display: none ;"></span>
+                            <span class="block step_label">REVIEW</span>
+                        </span>
+                        <span class="step_center tobe_select selected" id="pagination_2">
+                            <span class="block step_icon">2</span>
+                            <span id="pagination_2_tick" class="block step_icon_select" style="display: none ;"></span>
+                            <span class="block step_label">TRAVELLERS</span>
+                        </span>
+                        <span class="step_right tobe_select" id="pagination_3">
+                            <span class="block step_icon">3</span>
+                            <span class="block step_icon_select"></span>
+                            <span class="block step_label">PAYMENTS</span>
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="flight_review">
+                <div class="row" style="margin: 20px 0 ;">
+                    <div style="width: 73.2%" class="review_left pull-left col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                        <div style="margin: 0 ; border: 1px solid #ACABAB ; border-radius: 2px ; background: #fff" class="search-result-wrapper">
+                            <div class="responsive-tabs-container accordion-xs accordion-sm">
+                                <ul class="nav nav-tabs responsive-tabs">
+                                    <li style="width: 15%" class="active flight-details"><a href="#itinerary" aria-controls="itineraryKQ" role="tab" data-toggle="tab">
+                                        Itinerary</a></li>
+                                    <li style="width: 15%" class="flight-details"><a href="#baggageinfo" aria-controls="messages" role="tab" data-toggle="tab">
+                                        Baggage</a></li>
+                                    <li style="width: 15%" class="flight-details"><a href="#ammenities" aria-controls="settings" role="tab" data-toggle="tab">
+                                        Amenities</a></li>
+                                </ul>
+                                <div class="tab-content" style="background: rgb(248, 248, 248) ; padding: 10px ;">
+                                    <a href="#itinerary" aria-controls="itinerary" role="tab" data-toggle="tab" class="accordion-link active first">
+                                        Itinerary</a>
+                                    <div role="tabpanel" class="tab-pane active row" id="itinerary">
+                                    @for((item, index) <- flightInfo.getAirItineraryWSResponse.getOriginDestinationWSResponses.zipWithIndex) {
+                                        <div class="col-md-9">
+                                            <i class="icon icon-departure"></i> @item.getOriginAirport
+                                            (@item.getOriginAirportCode) <span> <i class="icon icon-long-arrow-right"></i> </span> <i class="icon icon-arrival"></i> @item.getDestinationAirport
+                                            (@item.getDestinationAirportCode)
+                                        </div>
+                                        <div class="col-md-3 pull-right">
+                                            <strong>Duration: @core.Utilities.getFlightDuration(item.getDepartureDateTime, item.getArrivalDateTime)</strong>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <table class="table table-responsive" cellspacing="0" width="100%">
+                                                <tbody>
+                                                @for(flightSegment <- item.getFlightSegmentWSResponses) {
+                                                    <tr>
+                                                        <td>
+                                                            <p class="text-center">
+                                                                <img src="@play.Configuration.root().getString("amazon.aws.s3Url").concat("images/airlines/").concat(flightSegment.getMarketingAirlineCode.toLowerCase.concat(".jpg"))" class="img img-responsive img-thumbnail" height="10px;" style="height: 30px ;"><br />
+                                                                <small>
+                                                                    <strong>
+                                                                        @flightSegment.getMarketingAirline<br />
+                                                                        (@flightSegment.getMarketingAirlineCode @flightSegment.getFlightNumber)
+                                                                    </strong>
+                                                                </small>
+                                                            </p>
+                                                        </td>
+                                                        <td>
+                                                            <strong>
+                                                            @defining(core.Utilities.parseDate(flightSegment.getDepartureDateTime)) { depDt =>
+                                                                @if(depDt != null) {
+                                                                    @displayFlightTime(depDt)
+                                                                }
+                                                            }
+                                                            </strong> <br />
+                                                            <small>@flightSegment.getDepartureAirport
+                                                                (@flightSegment.getDepartureAirportCode)</small>
+                                                        </td>
+                                                        <td><i class="icon icon-long-arrow-right"></i></td>
+                                                        <td>
+                                                            <strong>
+                                                            @defining(core.Utilities.parseDate(flightSegment.getArrivalDateTime)) { depDt =>
+                                                                @if(depDt != null) {
+                                                                    @displayFlightTime(depDt)
+                                                                }
+                                                            }
+                                                            </strong><br />
+                                                            <small>@flightSegment.getArrivalAirport
+                                                                (@flightSegment.getArrivalAirportCode)</small>
+                                                        </td>
+
+                                                        <td>
+                                                            @core.Utilities.getFlightDuration(flightSegment.getDepartureDateTime, flightSegment.getArrivalDateTime) <br />
+                                                        <small>
+                                                        @if(flightSegment.getStopQuantity == 0) {
+                                                            Non Stop
+                                                        } else {
+                                                            @if(flightSegment.getStopQuantity > 1) {
+                                                                @flightSegment.getStopQuantity stops
+                                                            } else {
+                                                                @flightSegment.getStopQuantity stop
+                                                            }
+                                                        }
+                                                        </small>
+                                                        <div class="clearfix"></div>
+                                                        <small class="text-muted">@flightSegment.getCabin</small> <div class="clearfix"></div>
+                                                        <small class="text-primary">@flightSegment.getResBookDesigCode
+                                                            Class</small>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    }
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="baggageinfo">...</div>
+                                    <div role="tabpanel" class="tab-pane" id="ammenities">...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review_right pull-right col-lg-3 col-md-4 hidden-sm hidden-xs" style="padding:0px ;">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 fare_details_parent append_bottom10">
+                            <p class="clearfix append_bottom5"><span class="pull-left fare_revw_labl">
+                                FARE SUMMARY</span></p>
+                            <div class="review_fare_details">
+                                <p class="clearfix review_baselabel append_bottom6 col-xs-12"><span class="pull-left"><strong><span>
+                                    BASE FARE</span> :</strong></span></p>
+                                <div class="review_hide col-xs-12 append_bottom20">
+                                    <p class="clearfix fare_txt fare_border RobotoRegular append_bottom5"><span class="pull-left">@request().getQueryString("num_of_adult") <span>Adult@if(Integer.parseInt(request().getQueryString("num_of_adult")) > 1) {s}</span> (1 X @core.Utilities.moneyFormat(Math.floorDiv(flightInfo.getPricingInfoWSResponse.getAdultBaseFair.longValue(), Integer.parseInt(request().getQueryString("num_of_adult")))))‎ </span> <span class="pull-right"><span></span> @core.Utilities.moneyFormat(flightInfo.getPricingInfoWSResponse.getAdultBaseFair.toString)</span></p>
+                                </div>
+                                @if(Integer.parseInt(request().getQueryString("num_of_children")) >= 1) {
+                                    <div class="review_hide col-xs-12 append_bottom20">
+                                        <p class="clearfix fare_txt fare_border RobotoRegular append_bottom5"><span class="pull-left">@request().getQueryString("num_of_children") <span>@if(Integer.parseInt(request().getQueryString("num_of_children")) > 1) {Children} else {Child}</span>(1 X @core.Utilities.moneyFormat(Math.floorDiv(flightInfo.getPricingInfoWSResponse.getChildrenBaseFair.longValue(), Integer.parseInt(request().getQueryString("num_of_children")))))‎ </span> <span class="pull-right"><span></span>  @core.Utilities.moneyFormat(flightInfo.getPricingInfoWSResponse.getChildrenBaseFair.toString)</span></p>
+                                    </div>
+                                }
+                                @if(Integer.parseInt(request().getQueryString("num_of_infant")) >= 1) {
+                                    <div class="review_hide col-xs-12 append_bottom20">
+                                        <p class="clearfix fare_txt fare_border RobotoRegular append_bottom5"><span class="pull-left">@request().getQueryString("num_of_infant") <span>Infant@if(Integer.parseInt(request().getQueryString("num_of_infant")) > 1) {s}</span>(1 X @core.Utilities.moneyFormat(Math.floorDiv(flightInfo.getPricingInfoWSResponse.getInfantBaseFair.longValue(), Integer.parseInt(request().getQueryString("num_of_infant")))))‎ </span> <span class="pull-right"><span></span>  @core.Utilities.moneyFormat(flightInfo.getPricingInfoWSResponse.getInfantBaseFair.toString)</span></p>
+                                    </div>
+                                }
+                                <p class="clearfix review_baselabel append_bottom6 col-xs-12"><span class="pull-left"><strong><span>
+                                    TAXES</span> :</strong></span></p>
+                                <div class="review_hide col-xs-12 append_bottom20">
+                                    <p class="clearfix fare_txt fare_border RobotoRegular append_bottom5"><span class="pull-left">@request().getQueryString("num_of_adult") <span>Adult@if(Integer.parseInt(request().getQueryString("num_of_adult")) > 1) {s}</span>(1 X @core.Utilities.moneyFormat(Math.floorDiv(flightInfo.getPricingInfoWSResponse.getAdultTaxFair.longValue(), Integer.parseInt(request().getQueryString("num_of_adult")))))‎ </span> <span class="pull-right"><span></span>  @core.Utilities.moneyFormat(flightInfo.getPricingInfoWSResponse.getAdultTaxFair.toString)</span></p>
+                                </div>
+                                @if(Integer.parseInt(request().getQueryString("num_of_children")) >= 1) {
+                                    <div class="review_hide col-xs-12 append_bottom20">
+                                        <p class="clearfix fare_txt fare_border RobotoRegular append_bottom5"><span class="pull-left">@request().getQueryString("num_of_children") <span>@if(Integer.parseInt(request().getQueryString("num_of_children")) > 1) {Children} else {Child}</span>(1 X @core.Utilities.moneyFormat(Math.floorDiv(flightInfo.getPricingInfoWSResponse.getChildrenTaxFair.longValue(), Integer.parseInt(request().getQueryString("num_of_children")))))‎ </span> <span class="pull-right"><span></span>  @core.Utilities.moneyFormat(flightInfo.getPricingInfoWSResponse.getChildrenTaxFair.toString)</span></p>
+                                    </div>
+                                }
+                                @if(Integer.parseInt(request().getQueryString("num_of_infant")) >= 1) {
+                                    <div class="review_hide col-xs-12 append_bottom20">
+                                        <p class="clearfix fare_txt fare_border RobotoRegular append_bottom5"><span class="pull-left">@request().getQueryString("num_of_infant") <span>Infant@if(Integer.parseInt(request().getQueryString("num_of_infant")) > 1) {s}</span>(1 X @core.Utilities.moneyFormat(Math.floorDiv(flightInfo.getPricingInfoWSResponse.getInfantTaxFair.longValue(), Integer.parseInt(request().getQueryString("num_of_infant")))))‎ </span> <span class="pull-right"><span></span>  @core.Utilities.moneyFormat(flightInfo.getPricingInfoWSResponse.getInfantTaxFair.toString)</span></p>
+                                    </div>
+                                }
+                                <p class="clearfix roundtrip_discount ng-hide">
+                                    <span class="pull-left col-lg-8 col-md-8 col-sm-8 col-xs-8">DISCOUNT</span>
+                                    <span class="pull-left col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right"> - <span>N</span>0</span>
+                                </p>
+                                <p class="review_grandtotal clearfix">
+                                    <span>
+                                        <span class="pull-left col-lg-7 col-md-7 col-sm-7 col-xs-8">GRAND TOTAL</span>
+                                        <span class="pull-left col-lg-5 col-md-5 col-sm-5 col-xs-4 text-right review_red"><span class="@if(request().cookie("user_currency") != null) { @request().cookie("user_currency").value() } else { NGN }"></span>@core.Utilities.moneyFormat(flightInfo.getPricingInfoWSResponse.getTotalFare.toString)</span>
+                                    </span>
+                                </p>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="section_box append_bottom10 clearfix">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-7 col-sm-5 col-xs-6 hidden-xs visible-stb">
+                                    <p class="have_discount_coupon append_bottom5"><span>
+                                        Have a discount / promo code to redeem</span>
+                                        <span class="light_gray">(optional)</span>
+                                    </p>
+                                </div>
+                                <div class="col-lg-12 col-md-5 col-sm-7 col-xs-6 mobile_fullwidth">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12">
+                                            <form role="form" class="">
+                                                <div class="input-group">
+                                                    <input type="text" class="input-md form-control" ng-model="couponcode" placeholder="Enter Coupon code">
+                                                    <a class="input-group-addon btn btn-lg btn-secondary" ng-click="validateCouponCode" href="javascript:void(0)">Apply</a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="traveller_bio_data" style="display: none">
+                <div class="search-result-wrapper">
+                    @CSRF.formField
+                    @for((key, value) <- postData) {
+                        <input type="hidden" name="@key" value="@value.toString" />
+                    }
+                    <div class="console-form theme-primary">
+                        <div class="panel-body bg-light">
+                            @helpers._flash.render()
+                            <h4><strong>Adult's Details</strong></h4>
+                            @if(flightBookingField != null && flightBookingField.size() != 0) {
+                                @for(index <- 1 to Integer.parseInt(postData.get("num_of_adult").toString)) {
+                                    <h5><strong>Adult @index Details</strong></h5>
+                                    @for(field <- flightBookingField) {
+                                        @if(field.form_field_id.getName != null && field.form_field_id.getName.equalsIgnoreCase("title")) {
+                                            @field.form_field_id.getSelect_options.put("", "Select")
+                                            @for(title <- Titles.values()) {
+                                                @field.form_field_id.getSelect_options.put(title.name(), title.name())
+                                            }
+                                        }
+                                        @field.setIs_array_field(true)
+                                        <div class="form-group col-md-3 col-lg-3 col-xs-3">
+                                        @defining(core.FormFieldHelper) { htmlRender =>
+                                            @if(field.form_field_id.getName != null && field.form_field_id.getName.equalsIgnoreCase("passenger_age_category")) {
+                                                @field.form_field_id.setDefault_value(PassengerCode.ADULT.name())
+                                            }
+                                            @htmlRender.renderFormField(field)
+                                        }
+                                        </div>
+                                    }
+                                    <div class="clearfix"></div>
+                                }
+                            }
+                            @if(Integer.parseInt(postData.get("num_of_children").toString) >= 1) {
+                                <h4><strong>Children's Details</strong> <small>Age of 2-15</small></h4>
+                            }
+                            @for(index <- 1 to Integer.parseInt(postData.get("num_of_children").toString)) {
+                                <h5><strong>Child @index Details</strong></h5>
+                                @for(field <- flightBookingField) {
+                                    @field.setIs_array_field(true)
+                                    @if(field.form_field_id.name != null && field.form_field_id.name.equalsIgnoreCase("title")) {
+                                        @field.form_field_id.getSelect_options.put("", "Select")
+                                        @for(title <- Titles.values()) {
+                                            @field.form_field_id.getSelect_options.put(title.name(), title.name())
+                                        }
+                                    }
+                                    <div class="form-group col-md-3 col-lg-3 col-xs-3">
+                                    @defining(core.FormFieldHelper) { htmlRender =>
+                                        @if(field.form_field_id.name != null && field.form_field_id.name.equalsIgnoreCase("passenger_age_category")) {
+                                            @field.form_field_id.setDefault_value(PassengerCode.CHILD.name())
+                                        }
+                                        @htmlRender.renderFormField(field)
+                                    }
+                                    </div>
+                                }
+                                <div class="clearfix"></div>
+                            }
+                            @if(Integer.parseInt(postData.get("num_of_infant").toString) >= 1) {
+                                <h3><strong>Infant's Details</strong></h3>
+                            }
+                            @for(index <- 1 to Integer.parseInt(postData.get("num_of_infant").toString)) {
+                                <h5><strong>Infant @index Details</strong></h5>
+                                @for(field <- flightBookingField) {
+                                    @field.setIs_array_field(true)
+                                    @if(field.form_field_id.name != null && field.form_field_id.name.equalsIgnoreCase("title")) {
+                                        @field.form_field_id.getSelect_options.put("", "Select")
+                                        @for(title <- Titles.values()) {
+                                            @field.form_field_id.getSelect_options.put(title.name(), title.name())
+                                        }
+                                    }
+                                    <div class="form-group col-md-3 col-lg-3 col-xs-3">
+                                    @defining(core.FormFieldHelper) { htmlRender =>
+                                        @if(field.form_field_id.name != null && field.form_field_id.name.equalsIgnoreCase("passenger_age_category")) {
+                                            @field.form_field_id.setDefault_value(PassengerCode.INFANT.name())
+                                        }
+                                        @htmlRender.renderFormField(field)
+                                    }
+                                    </div>
+                                }
+                                <div class="clearfix"></div>
+                            }
+                            <div class="col-md-12 row">
+                                <h3>
+                                    <strong>Contact Details</strong>
+                                    <small><label><input type="checkbox" value="1" name="same_as_adult1" />
+                                        Same as first adult?</label></small>
+                                </h3>
+                                <div class="form-group col-md-2">
+                                    <label>Title</label>
+                                    <select name="contact_title" data-required="true" class="form-control">
+                                        <option value="">Select</option>
+                                        @for(title <- Titles.values()) {
+                                            <option value="@title.name()">@title.name()</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>First Name</label>
+                                    <input name="contact_first_name" class="form-control" data-required="true" required="required" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>Surname</label>
+                                    <input name="contact_surname" class="form-control" data-required="true" required="required" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>Email</label>
+                                    <input name="contact_email" type="email" data-type="email" class="form-control" data-required="true" required="required" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>Country Calling code</label>
+                                    <select name="contact_calling_code" class="form-control">
+                                    @for(country <- Countries.getCountries) {
+                                        @if(country.iso_code_2.equals("NG")) {
+                                            <option selected="selected" value="@country.calling_code">@country.name
+                                                (@country.calling_code)</option>
+                                        } else {
+                                            <option value="@country.calling_code">@country.name
+                                                (@country.calling_code)</option>
+                                        }
+                                    }
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>Mobile phone</label>
+                                    <input name="contact_phone" type="text" placeholder="Phone number" data-format="ddd-ddd-dddd" class="form-control bfh-phone" data-required="true" required="required" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin: 10px 0 ;"></div>
+            <div class="payment_section" style="display: none">
+                <p class="clearfix append_bottom8" id="paymentWidgetHeader">
+                    <span class="col-lg-8 col-md-8 col-sm-8 col-xs-8 convnce_width">
+                        <span class="block mode_txt">CHOOSE PAYMENT MODE</span>
+                    </span>
+                    <a class="btn btn-md btn-secondary need_help col-lg-1 col-md-2 col-sm-2 col-xs-4 pull-right hidden-xs" id="needHelp" data-toggle="popover" href="javascript:void(0)" data-original-name="" name="">Need Help?</a>
+                </p>
+                <div class="search-result-wrapper">
+                    <div class="responsive-tabs-container accordion-xs accordion-sm">
+                        <ul class="nav nav-tabs responsive-tabs">
+                        @for((paymentCategory, index) <- PaymentCategories.values().zipWithIndex) {
+                            <li style="width: 15%" class="@if(index == 0) { active } flight-details"><a href="#@paymentCategory.name()" aria-controls="itinerary" role="tab" data-toggle="tab">@paymentCategory.name().replaceAllLiterally("_", " ")</a></li>
+                        }
+                        </ul>
+                        <div class="tab-content" style="padding: 10px ;">
+                        @for((paymentCategory, index) <- PaymentCategories.values().zipWithIndex) {
+                            <div role="tabpanel" class="tab-pane @if(index == 0) { active } row" id="@paymentCategory.name()">
+                                @if(paymentCategory.equals(PaymentCategories.Pay_By_Cash)) {
+                                    @for(paymentMethod <- PaymentMethods.find.where().eq("payment_category", PaymentCategories.Pay_By_Cash).findList()) {
+                                        <div class="col-md-12 col-xs-12 col-lg-12">
+                                            <label for="@paymentMethod.id.toString">
+                                                <input type="radio" required="required" name="payment_method_id" value="@paymentMethod.id.toString" />
+                                                <strong>@paymentMethod.name / @paymentMethod.bank_account_no / @paymentMethod.bank_account_name</strong>
+                                            </label>
+                                        </div>
+                                    }
+                                }
+                                @if(paymentCategory.equals(PaymentCategories.Debit_Card)) {
+                                    @for(paymentMethod <- paymentMethods) {
+                                        <div class="col-md-12 col-xs-12 col-lg-12">
+                                            <label for="@paymentMethod.id.toString">
+                                                <input type="radio" required="required" checked="checked" name="payment_method_id" value="@paymentMethod.id.toString" />
+                                                <img src="@routes.Assets.at("data_bank/" + paymentMethod.gateway_logo_id.file_name).toString" class="img" height="35px" style="height: 35px ;" />
+                                                <strong>@paymentMethod.gateway_display_name</strong>
+                                            </label>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        }
+                        </div>
+                    </div>
+                </div>
+                @if(productServices != null && productServices.size() != 0) {
+                    <hr />
+                    <p class="clearfix append_bottom8">
+                        <span class="col-lg-8 col-md-8 col-sm-8 col-xs-8 convnce_width">
+                            <span class="block mode_txt h4"><strong>Add Other Services</strong></span>
+                        </span>
+                    @for(productService <- productServices) {
+                        <div class="col-md-8" style="border: 1px solid #C4C4C4; padding: 5px">
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    @productService.name <label class="pull-right"><input @if(productService.is_mandatory.equals(YesNoEnum.Yes)) { checked="checked" disabled="disabled" } type="checkbox" name="addon__@productService.id" /> <strong>@Utilities.moneyFormat(productService.amount.toString)</strong></label>
+                                </header>
+                                <div class="panel-body">
+                                    @Html.apply(productService.short_desc)
+                                <div class="clearfix"><br /></div>
+                                <a href="#" onclick="moreInfo(@productService.id);">More Info</a>
+                                <div class="@productService.id" style="display: none">
+                                @Html.apply(productService.full_desc)
+                                </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="clearfix"></div>
+                    }
+                    </p>
+                }
+                <hr />
+                <div style="margin: 10px 0 ;"></div>
+                <p class="clearfix append_bottom8">Amount to Pay: <strong class="amount-to-pay h3 text-primary">@Utilities.moneyFormat(flightInfo.getPricingInfoWSResponse.getTotalFare)</strong></p>
+            </div>
+
+            <div style="margin: 10px 0 ;"></div>
+            <div class="continue_login append_bottom10">
+                @if(Auth.isAuthenticated) {
+                    <p class="clearfix col-md-12">
+                        You are booking with account <span class="text-primary">@Auth.user().first_name @Auth.user().last_name</span></p>
+                    <br/>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5 fullWidth">
+                        <a href="@routes.AuthenticationController.getLogout()?redirect=@request().uri()" class="btn btn-lg btn-block btn-secondary">
+                            Logout, Continue as Guest</a>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 fullWidth text-center make_relative">
+                        <span class="OR_seprator_review"><strong>OR</strong></span>
+                    </div>
+                } else {
+                    <div class="col-md-4">
+                        <h4><a style="cursor: pointer ;" data-toggle="modal" data-target="#loginModal">
+                            Sign in to your account</a></h4>
+                        <label for="create-account"><input type="radio" name="u_session" value="create_account" />
+                            Create an account for me</label><br />
+                        <label for="create-account"><input type="radio" name="u_session" value="guest" checked="checked" />
+                            Continue as guest</label>
+                    </div>
+                    <div class="col-md-5">
+                        <h4>Why create an account?</h4>
+                        <ol>
+                            <li>Save your details</li>
+                            <li>Track all booking</li>
+                            <li>Checkout faster</li>
+                            <li>Amazing offers and discount prices</li>
+                        </ol>
+                    </div>
+                }
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5 fullWidth append_bottom8">
+                    <button type="submit" class="btn btn-lg btn-block btn-primary-red continue-flight-booking-step" data-step="1">
+                        Continue Booking</button>
+                </div>
+            </div>
+        </div>
+        <div style="margin: 10px 0 ;"></div>
+    </form>
+    <div style="margin: 10px 0 ;"></div>
+    @views.html.layouts.include.login.render()
+}
+@displayFlightTime(calendar: Calendar) = {
+    @calendar.get(Calendar.DAY_OF_MONTH) @core.Utilities.getCalendarMonth(calendar.get(Calendar.MONTH)), @calendar.get(Calendar.HOUR_OF_DAY):@calendar.get(Calendar.MINUTE)
+    @if(calendar.get(Calendar.HOUR_OF_DAY) == 0) {AM (Midnight)}
+    @if(calendar.get(Calendar.HOUR_OF_DAY) < 12) {AM}
+    @if(calendar.get(Calendar.HOUR_OF_DAY) > 12) {PM}
+}
+@scripts = {
+    <script type="text/javascript" src="@routes.Assets.at("v1/js/bootstrap-formhelpers-phone.js")"></script>s
+    <script>
+        function toggleEffect(className) {
+            dom = document.getElementsByClassName(className);
+
+        }
+    </script>
+}
+
+@style = {
+    <link href="@routes.Assets.at("v1/css/flight-review.css?v=7")" rel="stylesheet" type="text/css">
+}

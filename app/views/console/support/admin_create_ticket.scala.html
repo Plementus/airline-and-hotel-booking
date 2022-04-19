@@ -1,0 +1,47 @@
+@(supportForm: Form[SupportTickets], users: java.util.List[Users])
+@import scala.collection.JavaConversions._
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-name"><i class="fa fa-envelope-o"></i> Open New Ticket</h4>
+</div>
+@if(users.size() == 0) {
+    <h3>No Customer Exists</h3>
+} else {
+    @helper.form(action = controllers.console.routes.SupportController.postCreateTicket, 'enctype -> "multipart/form-data", 'class -> "form console-create-ticket") {
+        <div class="modal-body">
+            <aside class="alert alert-success alert-dismissible success text-center hide" style="margin-bottom: 10px ; padding: 8px"></aside>
+            <aside class="alert alert-danger alert-dismissible error text-center hide" style="margin-bottom: 10px ; padding: 8px"></aside>
+            <div class="form-group">
+                <label>Support Title</label>
+                <input type="text" data-required="true" name="@supportForm("ticket_title").name" value="@supportForm("ticket_title").value" class="form-control" placeholder="Support Title" />
+            </div>
+            <div class="">
+                @helper.select(supportForm("users.actor_user_id"), null, '_label -> "Select Customer", 'class -> "form-control")
+            </div><br />
+            <div class="">
+                @helper.select(supportForm("support_categories.id"), Seq("1"->"Category 1", "2" -> "Category 2"), '_label -> "Select Customer", 'class -> "form-control")
+            </div><br />
+            <div class="form-group">
+                <label>Status: </label>
+                <select name="status" class="form-control">
+                    <option>Select</option>
+                    @for( status <- SupportStatus.values()) {
+                        <option value="@status.name()">@status.name()</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <textarea rows="14" data-required="true" cols="20" name="message" class="form-control" placeholder="Write something here" style="height: 120px"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="file" name="attachment"/>
+            </div>
+        </div>
+        <div class="modal-footer clearfix">
+            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Discard </button>
+            <button type="submit" class="btn btn-primary submit-btn pull-left"><i class="fa fa-envelope"></i>
+                Submit Ticket </button>
+        </div>
+    }
+    <script src="@routes.Assets.at("my_js/jsSupport.js")"></script>
+}

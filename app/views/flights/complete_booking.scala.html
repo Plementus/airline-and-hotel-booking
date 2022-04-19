@@ -1,0 +1,65 @@
+@import core.PaymentCategories
+@(flightBooking: FlightBookings, status: String)
+@layouts.main("Flight Booking Confirmation") {
+    <div class="container spacer30">
+        <div class="medium-container myDivToPrint">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-xs-12 text-center">
+                @if(status.equalsIgnoreCase("success") && flightBooking != null) {
+                    <img src="@routes.Assets.at("v1/images/success.png")" class="img img-responsive" style="margin: 0 auto ; width: 14em ; margin-top: 10px ;" /> <hr />
+                    <h1 class="heading2">Booking Confirmed.</h1>
+                    <p style="text-align: left">
+                        Please be informed that this is not your E-Ticket. You will receive your e-ticket once you have made payment and we have processed both payment and booking.<br />
+                        This is your Flight Booking Confirmation. Kindly go through your itinerary, the passenger names, destination airports and travel dates. If any of the information you provided during the booking process is inaccurate, please contact us immediately.
+                        You can send us an email via enquiries@@travelfix.co or call us on +2349053888881. We will respond to your queries.
+                    </p>
+                    <hr />
+                    <section class="search-bar flight-search">
+                        <h2 class="heading2">Booking/Reservation Details</h2>
+                        <table class="table table-responsive">
+                            <tr>
+                                <td><strong>PNR No.</strong></td>
+                                <td>@flightBooking.pnr_ref</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Amount to Pay</strong></td>
+                                <td>@flightBooking.payment_history_id.currency @flightBooking.payment_history_id.amount</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Transaction Reference</strong></td>
+                                <td>@flightBooking.payment_history_id.trans_ref</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Preferred Payment Method Method</strong></td>
+                                <td>@flightBooking.payment_history_id.payment_method_id.payment_category.name()</td>
+                            </tr>
+                        </table>
+                        <hr />
+                        <h2 class="heading2">@play.Configuration.root().getString("project.name") Bank Acct. Details</h2>
+                        <table class="table table-responsive">
+                            @for(bankDetails <- PaymentMethods.find.where().eq("payment_category", PaymentCategories.Pay_By_Cash).findList()) {
+                                <tr>
+                                    <td><strong>@bankDetails.bank_account_name</strong></td>
+                                    <td><strong>@bankDetails.name</strong></td>
+                                    <td><strong>@bankDetails.bank_account_no</strong></td>
+                                    <td></td>
+                                </tr>
+                            }
+                        </table>
+                        <a onclick="javascript: window.print();" style="cursor: pointer ;" class="btn btn-info"><i class="icon icon-print"></i> Print Page</a>
+                    </section>
+                } else {
+                    <img src="@routes.Assets.at("v1/images/failed.png")" class="img img-responsive" style="margin: 0 auto ; width: 14em ; margin-top: 10px ;" /> <hr />
+                    <h1 class="heading2">Booking Failed.</h1>
+                    <h4>Booking could not be processed. Please try again later.</h4>
+                    <hr />
+                    <section class="search-bar flight-search" style="text-align: left;">
+                        <h2 class="heading2">Search Again</h2>
+                        @views.html._include._flight_form.render()
+                    </section>
+                }
+                </div>
+            </div>
+        </div>
+    </div>
+}

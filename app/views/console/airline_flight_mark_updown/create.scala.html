@@ -1,0 +1,152 @@
+@import helper._
+@(form: Form[AirlineFlightMarkUpDown])
+@layouts.admin("Airline FLight Mark Up/Down", script) {
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-name"> Airline Mark Direction</span>
+        </div>
+        <div class="panel-body row">
+            @helper.form(action = controllers.console.routes.AirlineFlightMarkDirectionController.postCreate(), 'enctype -> "application/x-www-form-urlencoded") {
+                @CSRF.formField
+                @helpers._error(form)
+                @helpers._flash.render()
+                @if(form.get().flight_markup_down_rule_id != null) {
+                    <input type="hidden" name="@form("flight_markup_down_rule_id.id").name()",value="@form("flight_markup_down_rule_id.id").value()" />
+                }
+                <div class="col-md-6">
+                    @select(form("airline_incentive_id.id"), options(AirlineIncentives.options()), '_default -> form("airline_incentive_id.id").valueOr("-- Select --"),'class -> "form-control", '_label -> "Select an Airline/Incentive")
+                </div>
+                <div class="col-md-6">
+                    @select(form("flight_markup_down_rule_id.id"), options(FlightMarkUpDownRules.options()), 'class -> "form-control", '_default -> form("flight_markup_down_rule_id.id").valueOr("-- Select --"), '_label -> "Select Mark Up/Down Rule")
+                </div>
+                <div class="col-md-12">
+                    <h4><strong>Price Rule</strong></h4>
+                </div>
+                <div class="col-md-8 row">
+                    <div class="col-md-3">
+                    @inputRadioGroup(form("display_gds_fare"), options("1" -> "Yes", "0" -> "No"), '_label -> "Display GDS Fares")
+                    </div>
+                    <div class="col-md-2">
+                        @inputRadioGroup(form("apply_coupon"), options("1" -> "Yes", "0" -> "No"), '_label -> "Apply Coupon?")
+                        <div id="coupon_d" style="display : none">
+                        @select(form("coupon_id.id"), options(Coupons.options()), '_label -> "Select a Coupon", '_default -> "-- Select --", 'class -> "form-control")
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                    @select(form("formCurrency[]"), options(Currencies.options()), '_label -> "Select Currencies", 'class -> "form-control chosen-select")
+                    </div>
+                    <div class="col-md-4">
+                    @select(form("is_fare_type_markup"), options("1" -> "Apply to Fare Price", "0" -> "Apply to Passenger Booking Category"), '_label -> "Pricing Rule Configuration?", 'class -> "form-control")
+                    </div>
+                    <div class="clearfix"></div>
+                    <div id="fare_markup" style="display : block ;">
+                        <div class="clearfix"></div>
+                        <hr />
+                        <span class="col-md-3">
+                        @select(form("ft_direction"), options(FlightMarkupPriceDirection.options()), '_label -> "Mark Up/Down", '_default -> form("ft_direction").valueOr("--- Select ---"), 'class -> "form-control")
+                        </span>
+                        <span class="col-md-3">
+                        @select(form("ft_fare_option"), options(GdsFareOptions.options()), '_label -> "Select Fare", '_default -> form("ft_fare_option").valueOr("--- Select ---"), 'class -> "form-control")
+                        </span>
+                        <span class="col-md-3">
+                        @select(form("ft_value_type"), options(ValueTypes.options()), '_label -> "Value Type", '_default -> form("ft_value_type").valueOr("--- Select ---"), 'class -> "form-control")
+                        </span>
+                        <span class="col-md-3">
+                        @inputText(form("ft_value"), '_label -> "Markup Value", '_default -> form("ft_value").value, 'class -> "form-control")
+                        </span>
+                    </div>
+                    <div id="passenger_category" style="display : none ;">
+                        <div class="clearfix"></div>
+                        <hr />
+                        <h5 style="padding-left : 15px"><strong>(Per)Adult Passenger </strong></h5>
+                        <span class="col-md-3">
+                        @select(form("adt_direction"), options(FlightMarkupPriceDirection.options()), '_label -> "Mark Up/Down", '_default -> form("adt_direction").valueOr("--- Select ---"), 'class -> "form-control")
+                        </span>
+                        <span class="col-md-3">
+                        @select(form("adt_fare_option"), options(GdsFareOptions.options()), '_label -> "Select Fare", '_default -> form("ft_fare_option").valueOr("--- Select ---"), 'class -> "form-control")
+                        </span>
+                        <span class="col-md-3">
+                        @select(form("adt_value_type"), options(ValueTypes.options()), '_label -> "Value Type", '_default -> form("adt_value_type").valueOr("--- Select ---"), 'class -> "form-control")
+                        </span>
+                        <span class="col-md-3">
+                        @inputText(form("adt_value"), '_label -> "Markup Value", '_default -> form("adt_value").value, 'class -> "form-control")
+                        </span>
+                        <div class="clearfix"></div>
+                        <hr />
+                        <h5 style="padding-left : 15px"><strong>(Per)Child Passenger </strong></h5>
+                        <span class="col-md-3">
+                        @select(form("chd_direction"), options(FlightMarkupPriceDirection.options()), '_label -> "Mark Up/Down", '_default -> form("chd_direction").valueOr("--- Select ---"), 'class -> "form-control")
+                        </span>
+                        <span class="col-md-3">
+                        @select(form("chd_fare_option"), options(GdsFareOptions.options()), '_label -> "Select Fare", '_default -> form("ft_fare_option").valueOr("--- Select ---"), 'class -> "form-control")
+                        </span>
+                        <span class="col-md-3">
+                        @select(form("chd_value_type"), options(ValueTypes.options()), '_label -> "Value Type", '_default -> form("chd_value_type").valueOr("--- Select ---"), 'class -> "form-control")
+                        </span>
+                        <span class="col-md-3">
+                        @inputText(form("chd_value"), '_label -> "Markup Value", '_default -> form("chd_value").value, 'class -> "form-control")
+                        </span>
+                        <div class="clearfix"></div>
+                        <hr />
+                        <h5 style="padding-left : 15px"><strong>(Per)Child Passenger </strong></h5>
+                        <span class="col-md-3">
+                        @select(form("inf_direction"), options(FlightMarkupPriceDirection.options()), '_label -> "Mark Up/Down", '_default -> form("inf_direction").valueOr("--- Select ---"), 'class -> "form-control")
+                        </span>
+                        <span class="col-md-3">
+                        @select(form("inf_fare_option"), options(GdsFareOptions.options()), '_label -> "Select Fare", '_default -> form("ft_fare_option").valueOr("--- Select ---"), 'class -> "form-control")
+                        </span>
+                        <span class="col-md-3">
+                        @select(form("inf_value_type"), options(ValueTypes.options()), '_label -> "Value Type", '_default -> form("inf_value_type").valueOr("--- Select ---"), 'class -> "form-control")
+                        </span>
+                        <span class="col-md-3">
+                        @inputText(form("inf_value"), '_label -> "Markup Value", '_default -> form("inf_value").value, 'class -> "form-control")
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <small class="text-muted">
+                        <h4><strong>Apply to Fare Option</strong></h4>
+                        Apply commission to the the fare option selected either BASE_FARE, TAX_FARE or TOTAL_FARE. This will either add or reduce the price of the selected option.
+                        <h4><strong>Apply to Booking Passengers</strong></h4>
+                        Apply booking to passengers category selected during booking. This give the change of adding mockup based on the passenger category.
+                    </small>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12">
+                    <a href="@controllers.console.routes.FlightMarkUpDownRuleController.getIndex" class="btn btn-danger btn-md">Cancel</a>
+                    <button type="submit" class="btn btn-primary btn-md">Create Rule</button>
+                </div>
+                <div class="clearfix"><div/>
+            }
+        </div>
+        </div>
+    </div>
+}
+@script = {
+    <script>
+            $(function () {
+                $("#is_fare_type_markup").on('change', function () {
+                    $("#fare_markup").hide();
+                    $("#passenger_category").hide();
+                    var markupType = $(this).val();
+                    if (markupType === "1") {
+                        $("#fare_markup").show();
+                    } else {
+                        $("#passenger_category").show();
+                    }
+                });
+
+                var couponField = $("input[name=apply_coupon]");
+                couponField.click(function () {
+                    var obj = $("#coupon_d"), applyCoupon = $(this).val();
+                    if (applyCoupon === "1") {
+                        obj.show();
+                    } else {
+                        obj.hide();
+                        $("#coupon_id_id").val(null);
+                        $("#coupon_id_id").attr('value', '');
+                    }
+                });
+            })
+    </script>
+}

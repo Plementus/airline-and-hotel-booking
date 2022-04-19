@@ -1,0 +1,87 @@
+@(cmsLinks: java.util.List[CmsLinks])
+@layouts.admin("Links", scripts, "tables-datatables-page") {
+    <div class="row">
+        @helpers._flash.render()
+        <div class="col-md-12">
+            <div class="panel panel-visible">
+                <div class="panel-heading">
+                    @*<h2 class="panel-name hidden-xs"><strong>Links</strong></h2><div class="clearfix"></div>*@
+                    <a href="@controllers.console.cms.routes.ApplicationController.getCreateLink()" class="btn btn-default"><i class="fa fa-plus"></i> Create New Link</a><br />
+                </div>
+                <div class="panel-body pn">
+                    <table class="table table-striped table-bordered table-hover" id="datatable3" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Link Type</th>
+                                <th>Show in Menu</th>
+                                <th>Category</th>
+                                <th>Author</th>
+                                <th>Is Publish</th>
+                                <th>Created at</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @defining(cmsLinks) { links =>
+                              @if(cmsLinks.size() != 0) {
+                                  @for(item <- links) {
+                                      <tr>
+                                          <td>#@item.id</td>
+                                          <td>@Html.apply(item.title)</td>
+                                          <td>@item.link_type</td>
+                                          <td>@item.show_in_menu</td>
+                                          <td>
+                                          @if(item.category_id == null){
+                                              ...
+                                          } else {
+                                              @item.category_id.name
+                                          }
+                                          </td>
+                                          <td>@item.auth_user_id.first_name @item.auth_user_id.last_name</td>
+                                          <td>@item.is_published.name()</td>
+                                          <td>@item.created_at</td>
+                                          <td>
+                                              <span><a href="@controllers.console.cms.routes.ApplicationController.getCreateLink(item.id)" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a> </span>
+                                              <span><a href="@controllers.console.cms.routes.ApplicationController.getDeleteLink(item.id)" class="btn btn-xs btn-danger"><i class="fa fa-times"></i> Delete</a> </span>
+                                          </td>
+                                      </tr>
+                                  }
+                              }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
+@scripts = {
+
+    <!-- Datatables -->
+    <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datatables/media/js/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datatables/media/js/dataTables.bootstrap.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js")"></script>
+    <script>
+             $('#datatable3').dataTable({
+                "aoColumnDefs": [{
+                    'bSortable': true,
+                    'aTargets': [-1]
+                }],
+                "processing": true,
+                "oLanguage": {
+                    "oPaginate": {
+                        "sPrevious": "",
+                        "sNext": ""
+                    }
+                },
+                "iDisplayLength": 10,
+                "aLengthMenu": [
+                    [10, 25, 50, -1],
+                    [10, 25, 50, "All"]
+                ]
+            });
+      </script>
+}

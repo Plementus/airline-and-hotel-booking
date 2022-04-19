@@ -1,0 +1,16 @@
+{
+  "gtpay_tranx_id": "TFX_NG_FL4D83DE109C",
+  "gtpay_tranx_status_code": "00",
+  "gtpay_gway_name": "webpay",
+  "gtpay_full_verification_hash": "3F26438A2C0429FEF7BE9C8A7506C1F76B182078010643C16BEB92FFF147B52D747817F3C7C7BB32F325C898BF6BB2AF091DD1793DBAB66E6B0CFF08A3BA601B",
+  "site_redirect_url": "http://travelfix.com:9005/payment-gateway/transactionresponse/gtpay?csrfToken=923567facb2ad9b50b7807a39782108de703da57-1462886569861-5ecc6fef6ea9f1c5935b6ef9",
+  "gtpay_tranx_status_msg": "Approved by Financial Institution",
+  "gtpay_tranx_curr": "NGN",
+  "gtpay_verification_hash": "C2AB1540129BA43C266E6ED786A3A32177306EC3FAFB52920D7AB17E16B9F114BF7A13ED1F3F3D9079497691BA40982BC15A4AE0F2C40C3C7B5B902C13D3CFA2",
+  "gtpay_echo_data": "FLIGHT,Flight Booking for #TransRef: TFX_NG_FL4D83DE109C",
+  "csrfToken": "923567facb2ad9b50b7807a39782108de703da57-1462886569861-5ecc6fef6ea9f1c5935b6ef9",
+  "gtpay_tranx_hash": "41737EF01483041033645A009CDD428A8B91F1715F156604B6CE8238D2098B07FDF57ADA79C2762399C57EC23FFAD47002DB2D58FDC2D2E26F313A087C070DD1",
+  "gtpay_tranx_amt": "130140.00",
+  "gtpay_cust_id": "engrgermyu09@gmail.com",
+  "gtpay_tranx_amt_small_denom": "13014000"
+}

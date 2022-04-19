@@ -1,0 +1,105 @@
+@import core.ControlPanelMeta
+@(title: String, scripts: Html = Html(""), styleSheet: Html = Html(""), headMeta: Html = Html(""), controlPanel: core.ControlPanel = core.ControlPanel.getInstance())(content: Html)
+<!DOCTYPE html >
+<html lang="en" ng-app="appInit">
+    <head>
+        <meta charset="utf-8">
+        <title>@title - Flight, Hotel Online Booking</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="@controlPanel.getMetaValue(ControlPanelMeta.cms_head_seo_meta_name)">
+        <meta name="keyword" content="@controlPanel.getMetaValue(ControlPanelMeta.cms_head_seo_meta_content)">
+        @*
+        <meta http-equiv="cache-control" content="max-age=0">
+        <meta http-equiv="cache-control" content="no-cache">
+        <meta http-equiv="cache-control" content="no-store">
+        <meta http-equiv="cache-control" content="must-revalidate">
+        <meta http-equiv="X-Content-Type-Options" content="nosniff">
+        <meta http-equiv="Strict-Transport-Security: max-age=31536000" content="includeSubDomains">
+        <meta http-equiv="X-Frame-Options" content="DENY">
+        <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+        <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
+        <meta http-equiv="pragma" content="no-cache">
+        *@
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("v1/css/bootstrap.css")" />
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("v1/css/bootstrap-responsive-tabs.css")" />
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.at("vendor/plugins/Bootstrap-Image-Gallery/css/bootstrap-image-gallery.min.css")" />
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("v1/css/animate.css")" />
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("v1/css/nprogress.css")" />
+        <link href="@routes.Assets.at("admin/v1/font-awesome/css/font-awesome.css")" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("v1/css/font-awesome.css")" />
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("v1/css/jquery.growl.css")" />
+        @*<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("vendor/plugins/chosen/chosen.css")" />*@
+        <link rel="stylesheet" media="all" href="@routes.Assets.at("vendor/plugins/parsley/parsley.css")" />
+        <link rel="stylesheet" media="all" href="@routes.Assets.at("vendor/plugins/easyautocomplete/easy-autocomplete-2.css")" />
+        <link rel="stylesheet" media="all" href="@routes.Assets.at("vendor/plugins/BootstrapFormHelpers/dist/css/bootstrap-formhelpers.min.css")" />
+        <link rel="stylesheet" media="all" href="@routes.Assets.at("vendor/plugins/datepicker2/datepicker.min.css")" />
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.ico")">
+        <script charset="UTF-8" src="//cdn.sendpulse.com/js/push/0ee2e9671ad3de39e4b173283090ea2b_0.js" async></script>
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="@routes.Assets.at("admin/v1/js/html5shiv.js")"></script>
+          <script src="@routes.Assets.at("admin/v1/js/respond.min.js")"></script>
+        <![endif]-->
+        @styleSheet
+        <link href="@routes.Assets.at("v1/css/modify-search.css")" rel="stylesheet" type="text/css" />
+        <link href="@routes.Assets.at("v1/css/more_clone.css")" rel="stylesheet" type="text/css" />
+        <link href="@routes.Assets.at("v1/css/style.css")" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="@routes.Assets.at("v1/js/jquery-2.1.1.min.js")"></script>
+        @headMeta
+
+        <!-- Start of travelfix Zendesk Widget script -->
+        <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.name="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("//assets.zendesk.com/embeddable_framework/main.js","travelfix.zendesk.com");/*]]>*/</script>
+        <!-- End of travelfix Zendesk Widget script -->
+    </head>
+    <body class="">
+        <div id="load_screen">
+            <div id="loading">
+                <div class="loading-box">
+                    <div class="spinner">
+                        <div class="double-bounce1"></div>
+                        <div class="double-bounce2"></div>
+                    </div>
+                    <h4>Loading...</h4>
+                    <div class="loading-msg"></div>
+                </div>
+            </div>
+        </div>
+
+        @*Page Header Logic*@
+        @defining(controlPanel.getMetaValue(ControlPanelMeta.cms_header_html)) { header =>
+            @if(controlPanel.getMetaValue(ControlPanelMeta.cms_logo_data_bank_id) != null) {
+                @Html.apply(header.replaceAllLiterally("{{logo}}", "<img height=\"50px\" src=\"" + routes.Assets.at("data_bank/" + DataBank.find.byId(Long.parseLong(controlPanel.getMetaValue(ControlPanelMeta.cms_logo_data_bank_id))).file_name) + "\">")
+                        .replaceAllLiterally("{{menu}}", defining(header) { h => views.html.layouts.include.main_top_menu.render().body }.toString)
+                        .replaceAllLiterally("{{currency}}", defining(header) { h => views.html.layouts.include.currency_switcher.render().body }.toString)
+                        .replaceAllLiterally("{{shoppingCart}}", defining(header) { h => views.html.layouts.include.shopping_cart.render().body }.toString)
+                )
+            } else {
+                @*Not Logo Exist in the data-bank*@
+                <h3>@play.Configuration.root().getString("project.name")</h3>
+                @views.html.layouts.include.main_top_menu.render()
+                @*Just Include the header *@
+            }
+        }
+        @*End of Page Header Logic*@
+
+        <div id="wrap">
+            <div id="main">
+                @content
+            </div>
+        </div>
+
+
+        @*End of Page Footer Logic*@
+        @if(controlPanel.getMetaValue(ControlPanelMeta.cms_footer_html) != null) {
+            @defining(controlPanel.getMetaValue(ControlPanelMeta.cms_footer_html)) { footer =>
+                @if(true) {
+                    @Html.apply(footer)
+                }
+            }
+        }
+        @*End of Page Footer Logic*@
+
+        @views.html.layouts.include._footer.render(controlPanel, null)
+        @scripts
+    </body>
+</html>

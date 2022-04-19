@@ -1,0 +1,55 @@
+@import helper._
+@layouts.admin("Terms and Conditions", scripts) {
+    <br /><br />
+    <h4>Terms and Conditions</h4>
+    @helper.form(action = controllers.console.routes.SystemController.postSaveControlPanel()) {
+        @CSRF.formField
+        <ul class="nav nav-tabs nav-stacked col-md-3">
+            <li class="active"><a href="#layouts" data-toggle="tab">Flight Booking</a></li>
+            @*<li><a href="#bgLogo" data-toggle="tab">Background & Logo</a></li>*@
+            @*<li><a href="#meta" data-toggle="tab">Layout Meta</a></li>*@
+        </ul>
+        <div class="col-md-9 pull-right" style="padding-left: 40px; margin-top: -70px;">
+            <div class="tab-content tasi-tab">
+                <div class="tab-pane row active" id="layouts">
+                    @views.html.helpers._flash.render()
+                    <div class="form-group">
+                    <label>Flight Booking Terms and Condition</label>
+                    <textarea name="@core.ControlPanelMeta.flight_terms_and_condition.name()" rows="10" class="form-control sm-editor">@core.ControlPanel.getInstance().getMetaValue(core.ControlPanelMeta.flight_terms_and_condition)</textarea>
+                    </div>
+                </div>
+                <div class="tab-pane" id="bgLogo">
+                    <div class="form-group">
+                        <label>Select Logo from the photo bank <strong>Goto file manager to upload new logo</strong></label>
+                    </div>
+                    <div class="form-group">
+                        <label>Logo Width (Optional)</label>
+                        <input type="number" min="0" max="500" name="@core.ControlPanelMeta.cms_logo_width.name()" value="@core.ControlPanel.getInstance().getMetaValue(core.ControlPanelMeta.cms_logo_width.name())"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Logo Height (Optional)</label>
+                        <input type="number" min="0" max="500" name="@core.ControlPanelMeta.cms_logo_height.name()" value="@core.ControlPanel.getInstance().getMetaValue(core.ControlPanelMeta.cms_logo_height.name())" />
+                    </div>
+                </div>
+                <div class="tab-pane" id="meta">
+                    <div class="form-group">
+                        <label>Meta Keywords (Separated by comma ',')</label>
+                        <textarea name="@core.ControlPanelMeta.cms_head_seo_meta_name.name()" autofocus="autofocus" rows="10" class="form-control">@core.ControlPanel.getInstance().getMetaValue(core.ControlPanelMeta.cms_head_seo_meta_name)</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Meta Description</label>
+                        <textarea name="@core.ControlPanelMeta.cms_head_seo_meta_content.name()" autofocus="autofocus" rows="10" class="form-control">@core.ControlPanel.getInstance().getMetaValue(core.ControlPanelMeta.cms_head_seo_meta_content)</textarea>
+                    </div>
+                </div>
+            </div>
+            <button class="form-control btn btn-primary" type="submit">Submit</button>
+        </div>
+    }
+}
+@scripts = {
+    <script>
+        $(function() {
+
+        });
+    </script>
+}

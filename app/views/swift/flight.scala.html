@@ -1,0 +1,31 @@
+@layouts.swift("Flight Booking", scripts, "onload-check sb-l-m ui-progress-bars-page") { @*sb-l-m*@
+    <div class="tray tray-center va-t posr animated-long" data-animate="[&quot;800&quot;,&quot;fadeIn&quot;]">
+        <h2 class="lh30 mt10">Search and Book <b class="text-dark"> Cheap Flight </b></h2>
+        @*<p class="lead">*@
+        @*We even included dozens of prebuilt form layouts so you can leave work early*@
+        @*</p>*@
+            <!-- begin: .admin-form -->
+        <div class="admin-form theme-primary">
+            <div id="p1" class="panel heading-border panel-dark">
+                <div class="panel-body bg-light">
+                    @views.html._include._swift_flight.render(false)
+                    <ul class="list-group">
+                    @defining(core.ShoppingCart.getInstance(request()).getSaveFlightSearch) { searchHistory =>
+                        @if(searchHistory.size() != 0) {
+                            <hr />
+                            <h4>Most Recent Search</h4>
+                            @for(history <- searchHistory) {
+                                <li class="list-group-item">@history.getDepartureAirports.get(0).state to @history.getArrivalAirports.get(0).state <span class="text-warning">&lt;&lt;&gt;&gt; </span><strong class="text-muted">@history.getDepartureDates.get(0) -  @history.getArrivalDates.get(0)</strong> <span class="text-warning">&lt;&lt;&gt;&gt; </span> @history.getPreferredCabin.name() <span class="text-warning">&lt;&lt;&gt;&gt; </span> @defining(history.getNumberOfAdults+history.getNumberOfChildren+history.getNumberOfInfant) { passenger => @passenger Passenger@if(passenger > 1){s} } <span class="pull-right"><a class="btn btn-primary btn-xs research-flight" href="@history.getRequestUrl&action=reload">Search Again</a></span></li>
+                            }
+                        }
+                    }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end: .admin-form -->
+    </div>
+}
+@scripts = {
+    <script src="@routes.Assets.at("my_js/jsAffiliateFlight.js")"></script>
+}

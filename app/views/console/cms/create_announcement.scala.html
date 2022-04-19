@@ -1,0 +1,29 @@
+@import helper._
+@(form: Form[CmsAnnouncements])
+@layouts.admin("Create Announcement") {
+
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-name">Create New Announcement</span>
+        </div>
+        <div class="panel-body">
+            @helpers._error(form)
+            @helper.form(action = controllers.console.cms.routes.ApplicationController.postCreateAnnouncement()) {
+                @CSRF.formField
+                @if(form.get() != null) {
+                    <input type="hidden" value="@form.get().id" name="id" />
+                }
+                @helper.inputText(form("name"), 'class -> "form-control", '_label -> "Title")
+                @helper.textarea(form("message_html"), 'class -> "form-control editor", 'id -> "editor", '_label -> "Announcement Message")
+                <div class="form-group">
+                    <label>Selct User Roles/Group</label>
+                    @for(role: Roles <- Roles.find.all()) {
+                        <label><input type="checkbox" name="r_group[]" value="@role.role_code" /> @role.role_title</label>
+                    }
+                </div>
+                @helper.select(form("is_published"), Seq("" -> "", "Yes" -> "Yes", "No" -> "No"), 'class -> "form-control tinymce", '_label -> "Publish Announcement")
+                <button type="submit" name="submit" class="btn form-control btn-primary">Submit</button>
+            }
+        </div>
+    </div>
+}

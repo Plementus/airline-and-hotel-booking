@@ -1,0 +1,74 @@
+@import core.gdsbookingengine.PassengerCode
+@import helper._
+@(flightBookingField: java.util.List[AppFormField])
+@layouts.main("") {
+    <form method="post" action="@controllers.routes.ApplicationController.postTestForm()">
+    @CSRF.formField
+        @for(index <- 1 to 1) {
+            <h5><strong>Adult @index Details</strong></h5>
+            @for(field <- flightBookingField) {
+                @if(field.form_field_id.getName != null && field.form_field_id.getName.equalsIgnoreCase("name")) {
+                    @field.form_field_id.getSelect_options.put("", "Select")
+                    @for(title <- Titles.values()) {
+                        @field.form_field_id.getSelect_options.put(title.name(), title.name())
+                    }
+                }
+                @field.setIs_array_field(true)
+                <div class="form-group col-md-3 col-lg-3 col-xs-3">
+                @defining(core.FormFieldHelper) { htmlRender =>
+                    @if(field.form_field_id.getName != null && field.form_field_id.getName.equalsIgnoreCase("passenger_age_category")) {
+                        @field.form_field_id.setDefault_value(PassengerCode.ADULT.name())
+                    }
+                    @htmlRender.renderFormField(field)
+                }
+                </div>
+            }
+            <div class="clearfix"></div>
+        }
+        <br /><br />
+        @for(index <- 1 to 1) {
+            <h5><strong>Child @index Details</strong></h5>
+            @for(field <- flightBookingField) {
+                @field.setIs_array_field(true)
+                @if(field.form_field_id.name != null && field.form_field_id.name.equalsIgnoreCase("name")) {
+                    @field.form_field_id.getSelect_options.put("", "Select")
+                    @for(title <- Titles.values()) {
+                        @field.form_field_id.getSelect_options.put(title.name(), title.name())
+                    }
+                }
+                <div class="form-group col-md-3 col-lg-3 col-xs-3">
+                @defining(core.FormFieldHelper) { htmlRender =>
+                    @if(field.form_field_id.name != null && field.form_field_id.name.equalsIgnoreCase("passenger_age_category")) {
+                        @field.form_field_id.setDefault_value(PassengerCode.CHILD.name())
+                    }
+                    @htmlRender.renderFormField(field)
+                }
+                </div>
+            }
+            <div class="clearfix"></div>
+        }
+        <br /><br />
+        @for(index <- 1 to 1) {
+            <h5><strong>Infant @index Details</strong></h5>
+            @for(field <- flightBookingField) {
+                @field.setIs_array_field(true)
+                @if(field.form_field_id.name != null && field.form_field_id.name.equalsIgnoreCase("name")) {
+                    @field.form_field_id.getSelect_options.put("", "Select")
+                    @for(title <- Titles.values()) {
+                        @field.form_field_id.getSelect_options.put(title.name(), title.name())
+                    }
+                }
+                <div class="form-group col-md-3 col-lg-3 col-xs-3">
+                @defining(core.FormFieldHelper) { htmlRender =>
+                    @if(field.form_field_id.name != null && field.form_field_id.name.equalsIgnoreCase("passenger_age_category")) {
+                        @field.form_field_id.setDefault_value(PassengerCode.INFANT.name())
+                    }
+                    @htmlRender.renderFormField(field)
+                }
+                </div>
+            }
+            <div class="clearfix"></div>
+        }
+    <button type="submit" name="submit">Submit</button>
+    </form>
+}

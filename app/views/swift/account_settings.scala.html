@@ -1,0 +1,29 @@
+@layouts.swift("Account Settings") {
+    <h2>Account &amp; Profile Settings</h2>
+    <div class="row mb10 panel">
+        <div class="panel-body">
+            <div class="col-md-3">
+                <ul class="nav nav-tabs nav-stacked" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Personal Information</a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+                </ul>
+            </div>
+            <div class="col-md-9 pull-right">
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="home">
+                        @helper.form(CSRF(controllers.swift.routes.ApplicationController.postUpdateProfile)) {
+
+                            <button type="submit" class="btn btn-success btn-md">Update Profile</button>
+                        }
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="profile">Profile</div>
+                    <div role="tabpanel" class="tab-pane fade" id="messages">Messages</div>
+                    <div role="tabpanel" class="tab-pane fade" id="settings">Settings</div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@import views.html.helper.CSRF

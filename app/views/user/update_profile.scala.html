@@ -1,0 +1,10 @@
+@(user: Users)
+
+@layouts.main("Update Profile", scripts) {
+      <h1>Thanks for signing up with us!</h1>
+      <p>Please complete your profile to enjoy our service.</p>
+
+}
+@scripts = {
+      <script src="@routes.Assets.at("my_js/jsAuthReg.js")"></script>
+}

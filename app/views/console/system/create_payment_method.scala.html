@@ -1,0 +1,66 @@
+@import helper._
+@import core.PaymentCategories
+@(form: Form[PaymentMethods])
+@layouts.admin("Create Payment Method", scripts) {
+    <article class="module width_full">
+        <header><h3>Create Payment Method</h3></header>
+        <div class="module_content">
+            @helpers._error(form)
+            @helper.form(action = controllers.console.routes.SystemController.postCreatePaymentMethod(), 'enctype -> "multipart/form-data") {
+                @CSRF.formField
+                <input type="hidden" name="payment_category" value="@request().getQueryString("paymentCategory")" />
+                @if(form.get() != null) {
+                    <input type="hidden" value="@form.get().id" name="id" />
+                }
+                @if(request().getQueryString("paymentCategory").equals(PaymentCategories.Pay_By_Cash.name())) {
+                    <div class="form-group col-md-3">
+                        <label>Operating Bank</label>
+                        <select required name="@form("name").name()" class="form-control">
+                            <option>Select a Bank</option>
+                            @for(banks: Banks <- Banks.find.all()) {
+                                <option @if(form.get().payment_category != null && form.get().bank_account_name.equals(banks.name)) { selected="selected" } value="@banks.name">@banks.name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>Bank Account Number</label>
+                        <input type="text" name="@form("bank_account_no").name()" value="@form("bank_account_no").value()" class="form-control">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>Account Name</label>
+                        <input name="@form("bank_account_name").name()" value="@form("bank_account_name").value()" class="form-control">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>Account Type</label>
+                        <select required name="@form("bank_account_type").name()" class="form-control">
+                            <option>Account Type</option>
+                            <option @if(form.get().bank_account_type != null && form.get().bank_account_type.equals("Savings")) { selected="selected" } value="Savings">Savings</option>
+                            <option @if(form.get().bank_account_type != null && form.get().bank_account_type.equals("Current")) { selected="selected" } value="Current">Current</option>
+                        </select>
+                    </div>
+                }
+                @if(request().getQueryString("paymentCategory").equals(PaymentCategories.Debit_Card.name())) {
+                    <div class="form-group col-md-4">
+                        <label>Payment Gateway Name</label>
+                        <input type="text" class="form-control" name="@form("name").name()" required value="@form("name").value()" placeholder="e.g. GTPay, GlobalPay, Interswitch etc." />
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Payment Gateway Display Name</label>
+                        <input type="text" class="form-control" name="@form("gateway_display_name").name()" required value="@form("gateway_display_name").value()" placeholder="e.g. GTPay, GlobalPay, Interswitch etc." />
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Display logo (Supported jpg, png and gif)</label>
+                        <input type="file" class="form-control" name="logo" required/>
+                    </div>
+                }
+                <br /> <br />
+                <button type="submit" name="submit" class="btn form-control btn-primary">Submit</button>
+            }
+        </div>
+    </article>
+}
+@scripts = {
+    <script>
+
+    </script>
+}

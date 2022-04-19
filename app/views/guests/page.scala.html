@@ -1,0 +1,125 @@
+@import core.cms.TemplatesManager
+@import views.html.helper.CSRF
+@(page: CmsPages, tempMgr: TemplatesManager)
+@import core.ControlPanelMeta; val controlPanel: core.ControlPanel = core.ControlPanel.getInstance();
+<!DOCTYPE html>
+<html ng-app="appInit">
+    @views.html.layouts.include._header.render(controlPanel, page.name, tempMgr.getAttrValue("description"), page.inline_css)
+    <meta name="description" content="@page.meta_description">
+    <meta name="keyword" content="@page.meta_keywords">
+    <body class="">
+            <!-- WS API Loading -->
+        <div id="load_screen">
+            <div id="loading">
+                <div class="loading-box">
+                    <div class="spinner">
+                        <div class="double-bounce1"></div>
+                        <div class="double-bounce2"></div>
+                        <div class="double-bounce3"></div>
+                        <div class="double-bounce4"></div>
+                    </div>
+                    <div class="loading-msg"></div>
+                </div>
+            </div>
+        </div>
+            <!-- End WS API  loading -->
+
+        @if(tempMgr.getAttrValue("header") != null && tempMgr.getAttrValue("header").equalsIgnoreCase("Yes")) {
+            @*Page Header Logic*@
+            @defining(controlPanel.getMetaValue(ControlPanelMeta.cms_header_html)) { header =>
+                @if(controlPanel.getMetaValue(ControlPanelMeta.cms_logo_data_bank_id) != null) {
+                    @Html.apply(header
+                            .replaceAllLiterally("{{logo}}", "<img height=\"50px\" src=\"" + routes.Assets.at("data_bank/" + DataBank.find.byId(Long.parseLong(controlPanel.getMetaValue(ControlPanelMeta.cms_logo_data_bank_id))).file_name) + "\">")
+                            .replaceAllLiterally("{{menu}}", defining(header) { h => views.html.layouts.include.main_top_menu.render().body }.toString)
+                            .replaceAllLiterally("{{currency}}", defining(header) { h => views.html.layouts.include.currency_switcher.render().body }.toString)
+                            .replaceAllLiterally("{{shoppingCart}}", defining(header) { h => views.html.layouts.include.shopping_cart.render().body }.toString).replaceAllLiterally("{{flightBookingEngine}}", views.html._include._flight_form.render().body)
+                            .replaceAllLiterally("{{flightBookingEngine}}", defining(header) { h => views.html._include._flight_form.render().body }.toString)
+                            .replaceAllLiterally("{{hotelBookingEngine}}", defining(header) { h => views.html._include._hotel_form.render().body }.toString)
+                            .replaceAllLiterally("{{flightHotelBookingEngine}}", defining(header) { h => views.html._include._flight_hotel_form.render().body }.toString)
+                            .replaceAllLiterally("{{csrfToken}}", defining(tempMgr) { h => CSRF.formField }.toString)
+                    )
+                } else {
+                    @*Not Logo Exist in the data-bank*@
+                    <h3>@play.Configuration.root().getString("project.name")</h3>
+                    @views.html.layouts.include.main_top_menu.render()
+                    @*Just Include the header *@
+                }
+            }
+            @*End of Page Header Logic*@
+        }
+
+        <div id="wrap">
+            <div id="main">
+            @defining(new TemplatesManager().parsePage(page)) { tmpM =>
+                <div class="@tmpM.getSidebarDivClass(page.cms_template_id.getAttrValue("sidebar_perc_ratio")).apply(1)">
+                @for(item <- page.cms_template_id.cmsTemplateAttrList) {
+                    @if(item.attr.equals("num_body_rows")) {
+                        @for(bodyIndex <- 1 to Integer.parseInt(page.cms_template_id.getAttrValue("num_body_rows"))) {
+                            @* Loop throught the number of inner HTML within a BodyRows *@
+                            <div id="@page.cms_template_id.getAttrValue("body_rows" + bodyIndex)" class="row">
+                            @if(page.cms_template_id.getAttrValue("inner_col" + bodyIndex) != null) {
+                                @for(innerBodyIndex <- 1 to Integer.parseInt(page.cms_template_id.getAttrValue("inner_col" + bodyIndex))) {
+                                    @defining(page.cms_template_id.getAttrValue("body_rows" + bodyIndex).replaceAllLiterally("__col", "__hasContainer")) { hasContainer =>
+                                        @if(page.cms_template_id.getAttrValue(hasContainer) != null && page.cms_template_id.getAttrValue(hasContainer).equalsIgnoreCase("yes")) {
+                                            <div class="container">
+                                        }
+                                        <div class="@tmpM.getBodyDivClass(page.cms_template_id.getAttrValue("body_rows" + bodyIndex), bodyIndex)">
+                                            @defining(tmpM.getContainerValue(tmpM.getAttrValue(innerBodyIndex.toString + page.cms_template_id.getAttrValue("body_rows" + bodyIndex).substring(1, page.cms_template_id.getAttrValue("body_rows" + bodyIndex).length)))) { body =>
+                                                @if(body != null) {
+                                                    @Html.apply(body.html_code
+                                                            .replaceAllLiterally("{{logo}}", "<img src=\"" + routes.Assets.at("data_bank/" + DataBank.find.byId(Long.parseLong(controlPanel.getMetaValue(ControlPanelMeta.cms_logo_data_bank_id))).file_name) + "\">")
+                                                            .replaceAllLiterally("{{menu}}", defining(tmpM) { h => views.html.layouts.include.main_top_menu.render().body }.toString)
+                                                            .replaceAllLiterally("{{currency}}", defining(tmpM) { h => views.html.layouts.include.currency_switcher.render().body }.toString)
+                                                            .replaceAllLiterally("{{shoppingCart}}", defining(tmpM) { h => views.html.layouts.include.shopping_cart.render().body }.toString)
+                                                            .replaceAllLiterally("{{flightBookingEngine}}", views.html._include._flight_form.render().body)
+                                                            .replaceAllLiterally("{{flightBookingEngine}}", defining(tmpM) { h => views.html._include._flight_form.render().body }.toString)
+                                                            .replaceAllLiterally("{{hotelBookingEngine}}", defining(tmpM) { h => views.html._include._hotel_form.render().body }.toString)
+                                                            .replaceAllLiterally("{{csrfToken}}", defining(page) { h => CSRF.formField }.toString)
+                                                            .replaceAllLiterally("{{flightHotelBookingEngine}}", defining(page) { h => views.html._include._flight_hotel_form.render().body }.toString)
+                                                    )
+                                                }
+                                            }
+                                        </div>
+                                        @if(hasContainer != null && hasContainer.equalsIgnoreCase("yes")) {
+                                            </div>
+                                        }
+                                        @tmpM.inc(page.cms_template_id.getAttrValue("body_rows" + bodyIndex), bodyIndex)
+                                    }
+                                }
+                            }
+                            </div>
+                            <div class="clearfix"></div>
+                        }
+                    }
+                }
+                </div>
+            @if(page.cms_template_id.getAttrValue("sidebar_perc_ratio") != null && !(page.cms_template_id.getAttrValue("sidebar_content_1").equals("") || page.cms_template_id.getAttrValue("sidebar_content_1").isEmpty)) {
+                <div class="@tmpM.getSidebarDivClass(page.cms_template_id.getAttrValue("sidebar_perc_ratio")).apply(0)">
+                @Html.apply(tmpM.getContainerValue(page.cms_template_id.getAttrValue("sidebar_content_1")).html_code
+                        .replaceAllLiterally("{{logo}}", "<img src=\"" + routes.Assets.at("data_bank/" + DataBank.find.byId(Long.parseLong(controlPanel.getMetaValue(ControlPanelMeta.cms_logo_data_bank_id))).file_name) + "\">")
+                        .replaceAllLiterally("{{menu}}", defining(page) { h => views.html.layouts.include.main_top_menu.render().body }.toString)
+                        .replaceAllLiterally("{{currency}}", defining(page) { h => views.html.layouts.include.currency_switcher.render().body }.toString)
+                        .replaceAllLiterally("{{shoppingCart}}", defining(page) { h => views.html.layouts.include.shopping_cart.render().body }.toString).replaceAllLiterally("{{flightBookingEngine}}", views.html._include._flight_form.render().body)
+                        .replaceAllLiterally("{{flightBookingEngine}}", defining(page) { h => views.html._include._flight_form.render().body }.toString)
+                        .replaceAllLiterally("{{hotelBookingEngine}}", defining(page) { h => views.html._include._hotel_form.render().body }.toString)
+                        .replaceAllLiterally("{{csrfToken}}", defining(page) { h => CSRF.formField }.toString)
+                )
+                </div>
+            }
+            }
+            </div>
+        </div>
+        @views.html.layouts.include._footer.render(controlPanel, tempMgr)
+        @if(tempMgr != null && tempMgr.getAttrValue("footer") != null && tempMgr.getAttrValue("footer").equalsIgnoreCase("Yes")) {
+            @*End of Page Footer Logic*@
+            @if(controlPanel.getMetaValue(ControlPanelMeta.cms_footer_html) != null) {
+                @defining(controlPanel.getMetaValue(ControlPanelMeta.cms_footer_html)) { footer =>
+                    @Html.apply(footer)
+                }
+            }
+        }
+        <script>
+            @page.inline_js
+        </script>
+    </body>
+</html>

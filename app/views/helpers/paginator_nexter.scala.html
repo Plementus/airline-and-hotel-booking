@@ -1,0 +1,11 @@
+@(pageTitle: String, size: Int)
+<ul>
+    <li><a href="?@pageTitle">Page</a> </li>
+</ul>
+
+<ul class="pagination pagination" id="pagination">
+    paginationAbstract <li class="prev"><a href="#"><i class="icon"><img src="@routes.Assets.at("v1/images/left-arrow.png")" alt="" /></i></a></li>
+    <li class="page"><a href="#">1</a></li><li class="page active"><a href="#">
+    2</a></li><li class="page"><a href="#">3</a></li>
+    <li class="next"><a href="#"><i class="icon"><img src="@routes.Assets.at("v1/images/right-arrow.png")" alt="" /></i></a></li>
+</ul>

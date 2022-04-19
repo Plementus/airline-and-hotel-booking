@@ -1,0 +1,484 @@
+@import core.gdsbookingengine.FlightDataGroup
+@import play.libs.Json
+@(searchResult: FlightDataGroup)
+@layouts.main("Flight Result") {
+    <div class="container spacer30" ng-controller="flightResultCtrl" ng-cloak>
+        <script>
+            var stop_overs = @Json.toJson(searchResult.getNumberOfStops())
+            var price_range = @Json.toJson(searchResult.getPriceRange)
+        </script>
+        <section class="search-bar flight-search">
+            <h2 class="heading2">
+                Flight Details
+            </h2>
+            @views.html._include._flight_form.render()
+        </section>
+
+        <div class="spacer30" ng-show="flexibleDate == 1">
+            <section class="search-bar hotel-search">
+
+                <h2 class="heading2">Lowest fares found <span><a href="#">Last 24 Hours</a> <i>(Subject to Availability)</i> </span></h2>
+
+                <div class="table-responsive" ng-cloak>
+                    <table class="col-sm-12 table-condensed table-bordered" id="table-container">
+                        <thead class="cf">
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th ng-repeat="(depArrDate, items) in flightResults.groupByDepartureDates"><span>Return </span> <p> {{ dtSplit(depArrDate, 1) | date:'EEE, dd MMM yy' }}</p></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="(depArrDate, items) in flightResults.groupByDepartureDates">
+                                <td><span>Depart</span><p>{{ dtSplit(depArrDate, 0) | date:'EEE, dd MMM yy' }}</p></td>
+                                <td ng-repeat="price in items" ng-click="showMatrixFlInfo($index + 'pop')" ng-class="parseDate(dtSplit(depArrDate, 0)).getTime() == parseDate(dpDate).getTime() ? 'selecteddt' : ''" class="popp">
+                                    <a href="#"><span class="{{ currency.code }}"></span>{{ displayPrice(price.pricingInfoWSResponse).totalFare | number }}<br /><small ng-show="(parseDate(dtSplit(depArrDate, 0)).getTime() == parseDate(dpDate).getTime()) && (parseDate(dtSplit(depArrDate, 1)).getTime() == parseDate(arrDate).getTime())">Your Selected Date</small> </a>
+                                </td>
+                                <td ng-show="items.length < 6" ng-repeat="rpt in [] | range: rpItem(items.length)"> - </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-bottom">
+                    <div class="row">
+                        <div class="col-sm-2 col-md-2 col-xs-12">
+                            <img src="images/litalia.jpg" alt="" />
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-xs-12">
+                            <ul>
+                                <li><i class="icon icon-plane"> </i> <span>LOS</span>    <span class="gray">01:50</span>   — <i class="icon icon-clock-o"> </i> 20h 15m —   01:50 DXB</li>
+                                <li><i class="icon icon-plane return"> </i> <span>DXB</span>   <span class="gray">03:24</span>   — <i class="icon icon-clock-o"> </i> 20h 15m —   12:10 LOS</li>
+                            </ul>
+
+                        </div>
+                        <div class="col-sm-2 col-md-2 col-xs-12">
+                            <ul>
+                                <li><i class="icon icon-briefcase"></i> 1 Stop 	Economy</li>
+                                <li><i class="icon icon-briefcase"></i> 1 Stop 	Economy</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-xs-12">
+                            <i class="fare"><span>N</span>137,001</i>
+                            <a href="#" class="gray-btn"> <i class="icon icon-plane yellow"> </i> View Flight Details</a>
+                            <a href="#" class="yellow-btn">Continue <i class="icon icon-caret-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="container spacer30">
+            <div class="medium-container">
+                <div class="row">
+                    @*Filter flight search*@
+                    <div class="col-sm-3 col-md-3 col-xs-12">
+                        <h4 class="heading3" style="text-align: left">Filter your Search <button type="reset" ng-click="resetFilter" name="action" value="reset" class="btn btn-link pull-right">Reset All</button></h4>
+                        <div class="sidebar-listing">
+                            <h5>Price Range</h5>
+                            <ul>
+                                <li class="price-range">
+                                    <input type="text" id="price_range" ng-model="pricingInfoWSResponse.totalFare" value="" name="price_range" />
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-listing">
+                            <h5>Stop Overs</h5>
+                            <ul>
+                                <li class="price-range">
+                                    <input type="text" id="stop_overs" ng-model="filter.stopovers" value="" name="stop_overs" />
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-listing">
+                            <h5>Airlines</h5>
+                            <ul>
+                                <li ng-repeat="airline in searchResult.availableAirline"><input ng-model="filter.airline" type="checkbox" value="{{ airline }}" id="{{ airline }}"> <label for="{{ airline }}">{{ airline }}</label></li>
+                            </ul>
+                        </div>
+                        <input type="submit" value="Filter" class="search-button btn" />
+                    </div>
+                    @*End of filter flight search*@
+                    <div class="col-sm-9 col-md-9 col-xs-12">
+                        <p class="text"> From @request().getQueryString("departure_airport") to @request().getQueryString("arrival_airport") - <span class="yellow">@request().getQueryString("departure_date_1") to @request().getQueryString("arrival_date_1")</span></p>
+                        @*<div class="high-light">
+                            <strong>Save up to 15%*</strong> when you book your Flight and Hotel together. Shop Flight + Hotel <i class="icon icon-arrow-circle-right yellow-dark"></i>
+                        </div>*@
+                        <div class="search-result-wrapper">
+                            @views.html.helpers._flash.render()
+                            <ul class="nav nav-tabs responsive-tabs">
+                                <li class="active"><a href="#lowestPrice"> Lowest Price</a></li>
+                                <li><a href="#shortest">Shortest Time</a></li>
+                                <li><a href="#flexibleDate">Flexible Dates</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="text-center" ng-show="isLoading == true">
+                                    <div class="spinner2">
+                                        <div class="rect1"></div>
+                                        <div class="rect2"></div>
+                                        <div class="rect3"></div>
+                                        <div class="rect4"></div>
+                                        <div class="rect5"></div>
+                                    </div>
+                                    <h2 class="heading2">Loading... Please wait!</h2>
+                                </div>
+                                <!-- Lowest Price Section -->
+                                <div class="tab-pane active" id="lowestPrice">
+                                    <div ng-repeat="flightItem in flightResults.groupByAirlines | orderBy: 'pricingInfoWSResponse.totalFare' | filter: {totalFare: pricingInfoWSResponse.totalFare}" class="search-result search-result-text data-sortable">
+                                        <div data-amount="{{ flightItem.pricingInfoWSResponse.totalFare }}" data-stop="{{ flightItem.airItineraryWSResponse.originDestinationWSResponses[0].numberOfStops }}" data-airline="{{ flightItem.airline }}">
+                                            <div class="row">
+                                                <div class="col-sm-10 col-md-10 col-xs-12">
+                                                    <div class="row space14">
+                                                        <div class="col-sm-2 col-md-2 col-xs-4 text-left">
+                                                            <ul class="list-inline text-center" style="font-size: 12.3px;">
+                                                                <li class="image"><img data-original="@play.Configuration.root().getString("amazon.aws.s3Url")images/airlines/{{ flightItem.airlineCode + '.jpg' | lowercase }}" ng-src="@play.Configuration.root().getString("amazon.aws.s3Url")images/airlines/{{ flightItem.airlineCode + '.jpg' | lowercase }}" alt="{{  flightItem.airlineCode }}" class="img img-thumbnail img-responsive" /></li>
+                                                                <li> {{ flightItem.airline }} </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-sm-1 col-md-1 col-xs-4">
+                                                            <ul class="flight-schedule">
+                                                                <li data-toggle="tooltip" data-placement="top" name="{{ departure.originAirport }}" ng-repeat="departure in flightItem.airItineraryWSResponse.originDestinationWSResponses"> {{ departure.originAirportCode }}</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-sm-1 col-md-1 col-xs-4">
+                                                            <ul class="flight-schedule">
+                                                                <li ng-repeat="arrival in flightItem.airItineraryWSResponse.originDestinationWSResponses" data-toggle="tooltip" data-placement="top" name="{{ arrival.destinationAirport }}"> {{ arrival.destinationAirportCode }}</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-sm-4 col-md-4 col-xs-12 pull-left" style="margin-right: -40px">
+                                                            <ul class="date-schedule">
+                                                                <li ng-repeat="departure in flightItem.airItineraryWSResponse.originDestinationWSResponses"><i class="icon icon-calendar"></i> {{ departure.departureDateTime | date:"EEE d/MM/yy h:mm a" }}</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-sm-3 col-md-3 col-xs-6" style="margin-right: -30px">
+                                                            <ul class="list-inline">
+                                                                <li>
+                                                                    <ul class="time-schedule">
+                                                                        <li name="Flight Duration" ng-repeat="departure in flightItem.airItineraryWSResponse.originDestinationWSResponses"><i class="icon icon-clock-o"></i> {{ departure.duration | lowercase }}</li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li>
+                                                                    <ul class="time-schedule">
+                                                                        <li ng-repeat="departure in flightItem.airItineraryWSResponse.originDestinationWSResponses"> {{departure.numberOfStops + ' stop' | lowercase }}<span ng-show="departure.numberOfStops > 1">s</span></li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-sm-2 col-md-2 col-xs-6">
+                                                            @org.apache.commons.lang3.text.WordUtils.capitalize(request().getQueryString("cabin_class"))<div class="clearfix"></div>
+                                                            <a style="cursor: pointer" data-target="{{ $index }}" class="text-primary" ng-click="flightDetails($index, $event)"><strong style="font-size: 13px;">Flight Details</strong></a>
+                                                        </div>
+                                                        <div class="clearfix">
+                                                            <div ng-show="flightResults.airlineFlights[flightItem.airlineCode].length > 1" class="col-sm-12 col-md-9 col-xs-12"><a style="cursor: pointer; border: 1px solid" ng-click="showMoreFlightResult(flightItem.airline, flightItem.airlineCode, $event)" class="small-text btn btn-xs"><i class="icon icon-plus-circle"></i> Show <span>{{ flightResults.airlineFlights[flightItem.airlineCode].length }}</span> More Results for {{ flightItem.airline }}</a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-2 col-md-2 col-xs-12 text-center pull-right space12">
+                                                    <div class="price">
+                                                        <span class="{{ currency.code }}"></span> <span>{{ displayPrice(flightItem.pricingInfoWSResponse).totalFare | number }}</span>
+                                                    </div>
+                                                    <div class="day">@request().getQueryString("trip_type").replaceAll("_", " ").toUpperCase</div>
+                                                    <a ng-href="/flights/flight-passenger-itinerary?flight_itinerary={{ flightItem.cacheIndex }}&airline_commission_id=@for((key, uriValue) <- request().queryString()){&@key=@uriValue}" class="reserve hotel-suggest-modal">BOOK</a><br />
+                                                </div>
+                                            </div>
+                                                <!-- Flight Details Drop Down Menu. Give more information about a flight -->
+                                            <div id="{{ $index }}" style="display: none" class="pd10 search-result-wrapper">
+                                                <div class="responsive-tabs-container accordion-xs accordion-sm">
+                                                    <ul class="nav nav-tabs responsive-tabs">
+                                                        <li style="width: 15%" class="active flight-details"><a ng-href="#itinerary{{ flightItem.airlineCode }}" aria-controls="itinerary{{ flightItem.airlineCode }}" role="tab" data-toggle="tab">Itinerary</a></li>
+                                                        <li style="width: 15%" class="flight-details"><a ng-href="#priceInfo{{ flightItem.airlineCode }}" aria-controls="priceInfo{{ flightItem.airlineCode }}" role="tab" data-toggle="tab">Fare Details</a></li>
+                                                        <li style="width: 15%" class="flight-details"><a ng-href="#messages{{ flightItem.airlineCode }}" aria-controls="messages" role="tab" data-toggle="tab">Baggage</a></li>
+                                                        <li style="width: 15%" class="flight-details"><a ng-href="#settings{{ flightItem.airlineCode }}" aria-controls="settings" role="tab" data-toggle="tab">Amenities</a></li>
+                                                        <a class="pull-right text-muted" ng-click="flightDetails($index, $event)" href="#" data-target="{{ $index }}"><i class="fa fa-times" style="padding-right: 10px; padding-top: 5px;"></i></a>
+                                                    </ul>
+                                                    <div class="tab-content" style="padding: 10px; background: rgba(255, 90, 0, 0.08);">
+                                                        <div role="tabpanel" class="tab-pane active row" id="itinerary{{ flightItem.airlineCode }}">
+                                                            <div ng-repeat="item in flightItem.airItineraryWSResponse.originDestinationWSResponses">
+                                                                <div class="col-md-9"><i class="icon icon-departure"></i>{{ item.originAirport }} <span> <i class="icon icon-long-arrow-right"></i> </span> <i class="icon icon-arrival"></i> {{ item.destinationAirport }} </div>
+                                                                <div class="col-md-3 pull-right">Duration: {{ item.duration | lowercase }}</div>
+                                                                <div class="clearfix"></div>
+                                                                <div class="col-md-12">
+                                                                    <table class="table table-responsive" cellspacing="0" width="100%">
+                                                                        <tbody>
+                                                                            <tr ng-repeat="flightSegment in item.flightSegmentWSResponses">
+                                                                                <td>
+                                                                                    <img ng-src="@play.Configuration.root().getString("amazon.aws.s3Url")images/airlines/{{ flightSegment.marketingAirlineCode + '.jpg' | lowercase }}" class="img img-responsive img-thumbnail image lazy-load" height="10px;" style="height: 30px ;" />
+                                                                                    <div class="clearfix"></div>
+                                                                                    <small><strong>{{ flightSegment.marketingAirline }} ({{ flightSegment.marketingAirlineCode }})</strong></small>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <strong>
+                                                                                        {{ flightSegment.departureDateTime | date:"EEE d/MM/yy h:mm a" }}
+                                                                                    </strong><br />
+                                                                                    <small> {{ flightSegment.departureAirport }} ({{ flightSegment.departureAirportCode }})</small>
+                                                                                </td>
+                                                                                <td><i class="icon icon-long-arrow-right"></i></td>
+                                                                                <td>
+                                                                                    <strong>
+                                                                                        {{ flightSegment.arrivalDateTime | date:"EEE d/MM/yy h:mm a" }}
+                                                                                    </strong><br />
+                                                                                    <small>{{ flightSegment.arrivalAirport }} ({{ flightSegment.arrivalAirportCode }})</small>
+                                                                                </td>
+
+                                                                                <td class="text-center" width="12%">
+                                                                                    {{ flightSegment.duration | lowercase }}<br />
+                                                                                    <small>
+                                                                                        <span ng-show="flightSegment.stopQuantity <= 0">Non Stop</span>
+                                                                                        <span ng-show="flightSegment.stopQuantity >= 1">{{ flightSegment.stopQuantity + ' stop' }}<span ng-show="flightSegment.stopQuantity > 1">s</span></span>
+                                                                                    </small>
+                                                                                    <div class="clearfix"></div>
+                                                                                    <small class="text-primary">{{ flightSegment.resBookDesigCode + ' Class' }}</small>
+                                                                                    <div class="clearfix"></div>
+                                                                                    <small class="text-muted">{{ flightSegment.cabin }}</small>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div role="tabpanel" class="tab-pane row" id="priceInfo{{ flightItem.airlineCode }}">
+                                                            <div class="col-md-4">
+                                                                <h5><strong>Fare Breakup</strong></h5>
+                                                                <table class="table table-responsive">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <strong><h5>Base Fair: </h5></strong>
+                                                                                {{ numOfAdults }} Adult<span ng-show="numOfAdults > 1">s</span>  (1 X {{ Math.floor(flightItem.pricingInfoWSResponse.adultBaseFair/numOfAdults) }}
+                                                                                <span class="pull-right"><strong><span class="currency_symbol" data-currency_amount="flightItem.pricingInfoWSResponse.adultBaseFair"></span> {{ flightItem.pricingInfoWSResponse.adultBaseFair | number }}</strong></span>
+                                                                                <div ng-show="numOfChildren >= 1">
+                                                                                    {{ numOfChildren }} <span ng-show="numOfChildren > 1">Children</span><span ng-show="numOfChildren <= 1">Child</span> (1 X {{ Math.floor(flightItem.pricingInfoWSResponse.childrenBaseFair/numOfChildren) }})
+                                                                                    <span class="pull-right"><strong><span class="currency_symbol"></span> {{ flightItem.pricingInfoWSResponse.childrenBaseFair | number }}</strong></span>
+                                                                                </div>
+                                                                                <div ng-show="numOfInfants >= 1">
+                                                                                    {{ numOfInfants }} Infant<span ng-show="numOfInfants > 1">s</span> (1 X {{ Math.floor(flightItem.pricingInfoWSResponse.InfantBaseFair/numOfInfant) }})
+                                                                                    <span class="pull-right"><strong><span class="currency_symbol"></span> {{ flightItem.pricingInfoWSResponse.infantBaseFair }}</strong></span>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <strong><h5>Taxes: </h5></strong>
+                                                                                {{ numOfAdults }} Adult<span ng-show="numOfAdults > 1">s</span>  (1 X {{ Math.floor(flightItem.pricingInfoWSResponse.adultTaxFair/numOfAdults) }})
+                                                                                <span class="pull-right"><strong><span class="currency_symbol"></span> {{ flightItem.pricingInfoWSResponse.adultTaxFair }}</strong></span>
+                                                                                <div ng-show="numOfChildren >= 1">
+                                                                                    {{ numOfChildren }} <span ng-show="numOfChildren > 1">Children</span><span ng-show="numOfChildren <= 1">Child</span> (1 X {{ Math.floor(flightItem.pricingInfoWSResponse.childrenTaxFair/numOfChildren) }})
+                                                                                    <span class="pull-right"><strong><span class="currency_symbol"></span> {{ flightItem.pricingInfoWSResponse.childrenTaxFair | number }}</strong></span>
+                                                                                </div>
+                                                                                <div ng-show="numOfInfants >= 1">
+                                                                                    {{ numOfInfants }} <span ng-show="numOfInfants > 1">Infant</span><span ng-show="numOfInfants <= 1">s</span> (1 X {{ Math.floor(flightItem.pricingInfoWSResponse.InfantTaxFair/numOfInfants) }})
+                                                                                    <span class="pull-right"><strong><span class="currency_symbol"></span> {{ flightItem.pricingInfoWSResponse.infantTaxFair | number }}</strong></span>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="bg-white">
+                                                                                <span class="pull-right">Grand Total <h5><span class="{{ currency.code }}"></span> <span>{{ displayPrice(flightItem.pricingInfoWSResponse).totalFare | number }}</span></h5></span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <h5><strong>Fare Rules</strong></h5>
+                                                                Air info
+                                                            </div>
+                                                        </div>
+                                                        <div role="tabpanel" class="tab-pane" id="messages{{ flightItem.airlineCode }}">...</div>
+                                                        <div role="tabpanel" class="tab-pane" id="settings{{ flightItem.airlineCode }}">...</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                <!-- Flight Details Drop Down Menu. Give more information about a flight -->
+                                        </div>
+
+                                            <!-- Airlines Sub Flight Schedule -->
+                                        <div style="display: none;" class="{{ flightItem.airlineCode }}" ng-repeat="subFlight in flightResults.airlineFlights[flightItem.airlineCode]">
+                                            <div class=" search-result-text">
+                                                <div class="row">
+                                                    <div class="col-sm-10 col-md-10 col-xs-12">
+                                                        <div class="row space14">
+                                                            <div class="col-sm-2 col-md-2 col-xs-4 text-left">
+                                                                <ul class="list-inline text-center" style="font-size: 12.3px">
+                                                                    <li class="image"><img data-original="@play.Configuration.root().getString("amazon.aws.s3Url")images/airlines/{{ subFlight.airlineCode + '.jpg' | lowercase }}" ng-src="@play.Configuration.root().getString("amazon.aws.s3Url")images/airlines/{{ subFlight.airlineCode + '.jpg' | lowercase }}" alt="{{ subFlight.airlineCode }}" class="img img-thumbnail img-responsive image lazy-load" /></li>
+                                                                    <li>{{ subFlight.airline }}</li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-sm-1 col-md-1 col-xs-4">
+                                                                <ul class="flight-schedule">
+                                                                    <li ng-repeat="departure in subFlight.airItineraryWSResponse.originDestinationWSResponses" data-toggle="tooltip" data-placement="top" name="{{ departure.originAirport }}"> {{ departure.originAirportCode }}</li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-sm-1 col-md-1 col-xs-4">
+                                                                <ul class="flight-schedule">
+                                                                    <li ng-repeat="arrival in subFlight.airItineraryWSResponse.originDestinationWSResponses" data-toggle="tooltip" data-placement="top" name="{{ arrival.destinationAirport }}"> {{ arrival.destinationAirportCode }}</li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-sm-4 col-md-4 col-xs-12 pull-left" style="margin-right: -40px">
+                                                                <ul class="date-schedule">
+                                                                    <li ng-repeat="departure in subFlight.airItineraryWSResponse.originDestinationWSResponses"><i class="icon icon-calendar"></i> {{ departure.departureDateTime | date:"EEE d/MM/yy h:mm a" }}</li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-sm-3 col-md-3 col-xs-6" style="margin-right: -30px">
+                                                                <ul class="list-inline">
+                                                                    <li>
+                                                                        <ul class="time-schedule">
+                                                                            <li ng-repeat="departure in subFlight.airItineraryWSResponse.originDestinationWSResponses"><i class="icon icon-clock-o"></i> {{ departure.duration | lowercase }}</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>
+                                                                        <ul class="time-schedule">
+                                                                            <li ng-repeat="departure in subFlight.airItineraryWSResponse.originDestinationWSResponses"> {{departure.numberOfStops + ' stop' | lowercase}}<span ng-show="departure.numberOfStops > 1">s</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-sm-2 col-md-2 col-xs-6">
+                                                                {{ subFlight.cabin }}
+                                                                <a style="cursor: pointer" data-target="{{ $index + flightItem.airlineCode }}" ng-click="flightDetails($index + flightItem.airlineCode, $event)" class="text-primary"><strong style="font-size: 13px;">Flight Details</strong></a>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2 col-md-2 col-xs-12 text-center pull-right space12">
+                                                        <div class="price">
+                                                            <span class="{{ currency.code }}"></span> <span>{{ displayPrice(subFlight.pricingInfoWSResponse).totalFare | number }}</span>
+                                                        </div>
+                                                        <div class="day">@request().getQueryString("trip_type").replaceAll("_", " ").toUpperCase</div>
+                                                        <a ng-href="/flights/flight-passenger-itinerary?flight_itinerary={{ subFlight.cacheIndex }}&airline_commission_id=@for((key, uriValue) <- request().queryString()){&@key=@uriValue}" class="reserve hotel-suggest-modal">BOOK</a><br />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                <!-- Flight Details Drop Down Menu. Give more information about a flight -->
+                                            <div id="{{ $index + flightItem.airlineCode }}" style="display: none" class="pd10 search-result-wrapper">
+                                                <div class="responsive-tabs-container accordion-xs accordion-sm">
+                                                    <ul class="nav nav-tabs responsive-tabs">
+                                                        <li style="width: 15%" class="active flight-details"><a ng-href="#itinerarysub{{ subFlight.airlineCode }}" aria-controls="itinerarysub{{ subFlight.airlineCode }}" role="tab" data-toggle="tab">Itinerary</a></li>
+                                                        <li style="width: 15%" class="flight-details"><a ng-href="#priceInfosub{{ subFlight.airlineCode }}" aria-controls="priceInfosub{{ subFlight.airlineCode }}" role="tab" data-toggle="tab">Fare Details</a></li>
+                                                        <li style="width: 15%" class="flight-details"><a ng-href="#messagessub{{ subFlight.airlineCode }}" aria-controls="messagessub" role="tab" data-toggle="tab">Baggage</a></li>
+                                                        <li style="width: 15%" class="flight-details"><a ng-href="#settingssub{{ subFlight.airlineCode }}" aria-controls="settingssub" role="tab" data-toggle="tab">Amenities</a></li>
+                                                        <a class="pull-right text-muted" ng-click="flightDetails($index + flightItem.airlineCode, $event)" href="#" data-target="{{ $index + flightItem.airlineCode }}"><i class="fa fa-times" style="padding-right: 10px; padding-top: 5px;"></i></a>
+                                                    </ul>
+                                                    <div class="tab-content" style="padding: 10px; background: rgba(255, 90, 0, 0.08);">
+                                                        <div role="tabpanel" class="tab-pane active row" id="itinerarysub{{ subFlight.airlineCode }}">
+                                                            <div ng-repeat="item in subFlight.airItineraryWSResponse.originDestinationWSResponses">
+                                                                <div class="col-md-9"><i class="icon icon-departure"></i>{{ item.originAirport }} <span> <i class="icon icon-long-arrow-right"></i> </span> <i class="icon icon-arrival"></i> {{ item.destinationAirport }} </div>
+                                                                <div class="col-md-3 pull-right">Duration: {{ item.duration | lowercase }}</div>
+                                                                <div class="clearfix"></div>
+                                                                <div class="col-md-12">
+                                                                    <table class="table table-responsive" cellspacing="0" width="100%">
+                                                                        <tbody>
+                                                                            <tr ng-repeat="flightSegment in item.flightSegmentWSResponses">
+                                                                                <td>
+                                                                                    <img ng-src="@play.Configuration.root().getString("amazon.aws.s3Url")images/airlines/{{ flightSegment.marketingAirlineCode + '.jpg' | lowercase }}" class="img img-responsive img-thumbnail image lazy-load" height="10px;" style="height: 30px ;" />
+                                                                                    <div class="clearfix"></div>
+                                                                                    <small><strong>{{ flightSegment.marketingAirline }} ({{ flightSegment.marketingAirlineCode }})</strong></small>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <strong>
+                                                                                        {{ flightSegment.departureDateTime | date:"EEE d/MM/yy h:mm a" }}
+                                                                                    </strong><br />
+                                                                                    <small> {{ flightSegment.departureAirport }} ({{ flightSegment.departureAirportCode }})</small>
+                                                                                </td>
+                                                                                <td><i class="icon icon-long-arrow-right"></i></td>
+                                                                                <td>
+                                                                                    <strong>
+                                                                                        {{ flightSegment.arrivalDateTime | date:"EEE d/MM/yy h:mm a" }}
+                                                                                    </strong><br />
+                                                                                    <small>{{ flightSegment.arrivalAirport }} ({{ flightSegment.arrivalAirportCode }})</small>
+                                                                                </td>
+
+                                                                                <td class="text-center" width="12%">
+                                                                                    {{ flightSegment.duration | lowercase }}<br />
+                                                                                    <small>
+                                                                                        <span ng-show="flightSegment.stopQuantity <= 0">Non Stop</span>
+                                                                                        <span ng-show="flightSegment.stopQuantity >= 1">{{ flightSegment.stopQuantity + ' stop' }}<span ng-show="flightSegment.stopQuantity > 1">s</span></span>
+                                                                                    </small>
+                                                                                    <div class="clearfix"></div>
+                                                                                    <small class="text-primary">{{ flightSegment.resBookDesigCode + ' Class' }}</small>
+                                                                                    <div class="clearfix"></div>
+                                                                                    <small class="text-muted">{{ flightSegment.cabin }}</small>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div role="tabpanel" class="tab-pane row" id="priceInfosub{{ subFlight.airlineCode }}">
+                                                            <div class="col-md-4">
+                                                                <h5><strong>Fare Breakup</strong></h5>
+                                                                <table class="table table-responsive">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <strong><h5>Base Fair: </h5></strong>
+                                                                                {{ numOfAdults }} Adult<span ng-show="numOfAdults > 1">s</span>  (1 X {{ Math.floor(subFlight.pricingInfoWSResponse.adultBaseFair/numOfAdults) }}
+                                                                                <span class="pull-right"><strong><span class="currency_symbol" data-currency_amount="subFlight.pricingInfoWSResponse.adultBaseFair"></span> {{ subFlight.pricingInfoWSResponse.adultBaseFair | number }}</strong></span>
+                                                                                <div ng-show="numOfChildren >= 1">
+                                                                                    {{ numOfChildren }} <span ng-show="numOfChildren > 1">Children</span><span ng-show="numOfChildren <= 1">Child</span> (1 X {{ Math.floor(subFlight.pricingInfoWSResponse.childrenBaseFair/numOfChildren) }})
+                                                                                    <span class="pull-right"><strong><span class="currency_symbol"></span> {{ subFlight.pricingInfoWSResponse.childrenBaseFair | number }}</strong></span>
+                                                                                </div>
+                                                                                <div ng-show="numOfInfants >= 1">
+                                                                                    {{ numOfInfants }} Infant<span ng-show="numOfInfants > 1">s</span> (1 X {{ Math.floor(subFlight.pricingInfoWSResponse.InfantBaseFair/numOfInfant) }})
+                                                                                    <span class="pull-right"><strong><span class="currency_symbol"></span> {{ subFlight.pricingInfoWSResponse.infantBaseFair }}</strong></span>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <strong><h5>Taxes: </h5></strong>
+                                                                                {{ numOfAdults }} Adult<span ng-show="numOfAdults > 1">s</span>  (1 X {{ Math.floor(subFlight.pricingInfoWSResponse.adultTaxFair/numOfAdults) }})
+                                                                                <span class="pull-right"><strong><span class="currency_symbol"></span> {{ subFlight.pricingInfoWSResponse.adultTaxFair }}</strong></span>
+                                                                                <div ng-show="numOfChildren >= 1">
+                                                                                    {{ numOfChildren }} <span ng-show="numOfChildren > 1">Children</span><span ng-show="numOfChildren <= 1">Child</span> (1 X {{ Math.floor(subFlight.pricingInfoWSResponse.childrenTaxFair/numOfChildren) }})
+                                                                                    <span class="pull-right"><strong><span class="currency_symbol"></span> {{ subFlight.pricingInfoWSResponse.childrenTaxFair | number }}</strong></span>
+                                                                                </div>
+                                                                                <div ng-show="numOfInfants >= 1">
+                                                                                    {{ numOfInfants }} <span ng-show="numOfInfants > 1">Infant</span><span ng-show="numOfInfants <= 1">s</span> (1 X {{ Math.floor(subFlight.pricingInfoWSResponse.InfantTaxFair/numOfInfants) }})
+                                                                                    <span class="pull-right"><strong><span class="currency_symbol"></span> {{ subFlight.pricingInfoWSResponse.infantTaxFair | number }}</strong></span>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="bg-white">
+                                                                                <span class="pull-right">Grand Total <h5><span class="currency_symbol"></span> <span class="currency_amount">{{ subFlight.pricingInfoWSResponse.totalFare | number }}</span></h5></span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <h5><strong>Fare Rules</strong></h5>
+                                                                Air info
+                                                            </div>
+                                                        </div>
+                                                        <div role="tabpanel" class="tab-pane" id="messagessub{{ subFlight.airlineCode }}">...</div>
+                                                        <div role="tabpanel" class="tab-pane" id="settingssub{{ subFlight.airlineCode }}">...</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                <!-- Flight Details Drop Down Menu. Give more information about a flight -->
+                                        </div>
+                                            <!-- End of Airlines Sub Flight Schedule -->
+
+                                    </div>
+                                </div>
+                                    <!-- End Lowest Price Section -->
+                                    <!-- Shortest Section -->
+                                <div class="tab-pane" id="shortest">
+                                    <h2 class="heading2">Not Yet Available.</h2>
+                                </div>
+                                    <!-- End Shortest -->
+                                    <!-- Start FlexibleDate Section -->
+                                <div class="tab-pane" id="flexibleDate">
+                                    <h3 class="text-center"><strong>Flexible date is not available yet</strong></h3>
+                                </div>
+                                    <!-- End FlexibleDate Section -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

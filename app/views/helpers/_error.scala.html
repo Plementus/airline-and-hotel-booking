@@ -1,0 +1,23 @@
+@(form: Form[_])
+@if(form.hasErrors) {
+    <ul class="alert alert-danger">
+        <a class="close" data-dismiss="alert">x</a>
+        @if(form.errors.size > 0) {
+            @for( (key, value) <- form.errors) {
+                @for(err <- value) {
+                    @for(message <- err.messages()) {
+                        <li>@key @message</li>
+                    }
+                }
+            }
+        }
+    </ul>
+}
+@if(form.hasGlobalErrors) {
+    <ul class="alert alert-danger">
+    @for( error <- form.globalErrors) {
+        <li>@error.message</li>
+    }
+    </ul>
+}
+

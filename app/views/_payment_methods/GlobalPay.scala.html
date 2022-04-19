@@ -1,0 +1,33 @@
+@(transaction: PaymentHistories, firstName: String, lastName: String, email: String, phone: String, conf: play.Configuration)
+@import org.apache.commons.codec.digest.DigestUtils; import java.util.Date; var amt = transaction.amount; var transHash = DigestUtils.sha512Hex(transaction.trans_ref + amt.toString + conf.getString("gtpay.default.returnUrl") + conf.getString("gtpay.hashKey")); var desc = "Flight Booking for #TransRef: " + transaction.trans_ref
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <h2 class="text-success-dk text-center">
+                <strong>loading...please wait!</strong>
+            </h2>
+
+            <body onload="document.submit2globalpay_form.submit()">
+                <form name="submit2globalpay_form" action="@conf.getString("globalPay.default.url")" target="_self" method="post">
+                    <input type="hidden" id="names" name="names" value="@firstName @lastName">
+                    <input type="hidden" id="amount" name="amount" value="@amt">
+                    <input type="hidden" id="email_address" name="email_address" value="@email">
+                    <input type="hidden" id="phone_number" name="phone_number" value="@phone">
+                    <!-- Please change the currency as suited to your merchant-->
+                    @if(transaction.currency.equalsIgnoreCase("NGN")) {
+                        <input type="hidden" id="currency" name="currency" value="NGN"> <br/>
+                    } else {
+                        <input type="hidden" id="currency" name="currency" value="USD"> <br/>
+                    }
+                    <input type="hidden" id="merch_txnref" name="merch_txnref" value="@transaction.trans_ref">
+                    <input type="hidden" id="merchantid" name="merchantid" value="@conf.getString("globalPay.merchantId")">
+                    <input class="btn btn-primary" type="submit" id="cmdsubmit" name="cmdsubmit" value="Pay Now">
+                </form>
+            </body>
+            <?php endif; ?>
+            <div class="container" style="margin: 0 auto">
+                <img src="@routes.Assets.at("images/gateway.jpg")" height="60px"/>
+            </div>
+        </div>
+    </div>
+</div>

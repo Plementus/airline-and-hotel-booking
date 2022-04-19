@@ -1,0 +1,60 @@
+<form method="get" action="" data-validate="parsley" id="hotel_search">
+    <div class="tab-pane">
+        <div class="clearfix search-wrap">
+            <div class="input-append col-sm-4 col-xs-12 bdr border-btm">
+                <input class="input-box destination" name="city" data-section="1" autoselect="true" data-error-message="City, landmark or airport is required" data-required="true" autocomplete="off" aria-autocomplete="none" placeholder="City name, landmark or airports" />
+                <input name="iso_city_code" type="hidden" />
+                <input name="iso_city_id" type="hidden" />
+                <input name="iso_city_name" type="hidden" />
+                <input name="iso_country_name" type="hidden" />
+                <input name="iso_country_code" type="hidden" />
+                <i class="icon icon-map-marker"></i>
+            </div>
+            <div id="" class="input-append col-sm-1 col-xs-6 bdr border-btm">
+                <input class="input-box" readonly data-type="dateIso" placeholder="Check-in" data-required="true" name="check_in_date" data-error-message="Incorrect Date Specified" type="text">
+                <i class="icon icon-calendar ht_departure_date_icon"></i>
+            </div>
+            <div id="" class="input-append col-sm-1 col-xs-6 bdr border-btm">
+                <input class="input-box" readonly placeholder="Check-out" data-required="true" name="check_out_date" data-error-message="Incorrect Date Specified" type="text">
+                <i class="icon icon-calendar ht_arrival_date_icon"></i>
+            </div>
+            <div id="" class="input-append col-sm-1 col-xs-3 bdr border-btm">
+                <input class="input-box col-md-1 col-xs-1 col-sm-1" placeholder="1 Room" value="1 Room" name="rooms" data-required="true" data-require="true" data-error-message="Required" readonly style="width: 69%;">
+                <input class="input-box col-md-1 col-xs-1 col-sm-1" name="num_of_rooms" value="1" type="hidden" data-required="true" data-require="true" data-error-message="Required">
+                <button type="button" data-input="num_of_rooms" data-action="increment" data-label="rooms" class="btn btn-xs btn-default action-attr-count" tabindex="1" style="width: 25px; margin-top: 3px; border-radius: 0">+</button>
+                <button type="button" data-input="num_of_rooms" data-action="decrement" data-label="rooms" class="btn btn-xs btn-default action-attr-count" tabindex="1" style="width: 25px; border-radius: 0">-</button>
+            </div>
+            <div id="" class="input-append col-sm-2 col-xs-3 bdr border-btm">
+                <input class="input-box  col-md-1 col-xs-1 col-sm-1" placeholder="1 Adult/Room" value="1 Adult/Room" name="Adults" data-required="true" data-error-message="Required" readonly style="width: 81%;">
+                <input class="input-box  col-md-1 col-xs-1 col-sm-1" name="num_of_adults" value="1" data-required="true" data-error-message="Required" type="hidden">
+                <button type="button" data-input="num_of_adults" data-action="increment" data-label="Adults" class="btn btn-xs btn-default action-attr-count" tabindex="1" style="width: 25px; margin-top: 3px; border-radius: 0">+</button>
+                <button type="button" data-input="num_of_adults" data-action="decrement" data-label="Adults" class="btn btn-xs btn-default action-attr-count" tabindex="1" style="width: 25px; border-radius: 0">-</button>
+            </div>
+            <div id="" class="input-append col-sm-2 col-xs-3 bdr border-btm">
+                <input class="input-box col-md-1 col-xs-1 col-sm-1" placeholder="Children" value="No Child" name="Children" readonly style="width: 81%;" />
+                <input class="input-box col-md-1 col-xs-1 col-sm-1" value="0" type="hidden"  name="num_of_children" />
+                <button type="button" data-input="num_of_children" data-action="increment" data-label="Children" class="btn btn-xs btn-default action-attr-count" tabindex="1" style="width: 25px; margin-top: 3px; border-radius: 0">+</button>
+                <button type="button" data-input="num_of_children" data-action="decrement" data-label="Children" class="btn btn-xs btn-default action-attr-count" tabindex="1" style="width: 25px; border-radius: 0">-</button>
+            </div>
+            <input type="submit" class="col-sm-1 col-xs-12 border-btm-orange" value="Search" style="width: 94px;"/>
+            <div class="clearfix"></div>
+            <small><a href="#" class="add-more-option text-white pull-right">More search option <i class="icon icon-caret-down"></i></a></small>
+            <div class="more-options" style="display: none; margin-top: 5px">
+                <div id="" class="col-sm-2 col-xs-3 bdr border-btm">
+                    <select name="hotel-stars" class="input-append input-box form-control">
+                        <option value="">Any Stars</option>
+                        <option value="2">2 Stars &amp; Up</option>
+                        <option value="3">3 Stars &amp; Up</option>
+                        <option value="4">4 Stars &amp; Up</option>
+                        <option value="5">4 Stars &amp; Up</option>
+                    </select>
+                </div>
+                <div id="" class="col-sm-2 col-xs-3 bdr border-btm">
+                    <select name="price-range" class="input-append input-box form-control">
+                        <option>Any Price</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,98 @@
+@import controllers._
+@(flightBookings: List[FlightBookings])
+@layouts.admin("Flight Queue", scripts) {
+    <link rel="stylesheet" type="text/css" href="@routes.Assets.at("vendor/plugins/datatables/media/css/dataTables.bootstrap.css")">
+    <article class="module width_full">
+        <header><h3>Flight Queues</h3></header>
+        <div class="module_content">
+            @helpers._flash.render()
+            <table class="table table-bordered table-striped" id="flight_queue" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>Ticket Ref.</td>
+                        <td>PNR</td>
+                        <td>Airline</td>
+                        <td>Dept/Dest</td>
+                        <td>Contact</td>
+                        <td>Phone</td>
+                        <td>Email</td>
+                        <td>Amount</td>
+                        <td>Payment Method</td>
+                        <td>Payment Status</td>
+                        <td>Date</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                @for(booking <- flightBookings) {
+                    <tr>
+                        <td>@booking.id</td>
+                        <td><a data-placement="top" data-toggle="tooltip" name="Get Transaction Information" href="@controllers.console.routes.TransactionController.getTransRefDetails(booking.payment_history_id.trans_ref)" target="_blank">@booking.payment_history_id.trans_ref</a></td>
+                        <td>@booking.pnr_ref</td>
+                        <td name="@booking.airline_name">@booking.airline_code</td>
+                        <td>
+                            <ol class="list-unstyled" style="margin: -4px">
+                                @if(booking.originDestinationsList != null && booking.originDestinationsList.size() != 0) {
+                                    @for(departDest <- booking.originDestinationsList) {
+                                        <li><span name="@departDest.departure_airport_name">@departDest.departure_airport_code</span> <small>to</small> <span name="@departDest.arrival_airport_name">@departDest.arrival_airport_code</span></li>
+                                    }
+                                }
+                            </ol>
+                        </td>
+                        <td>@booking.contact_firstname @booking.contact_surname</td>
+                        <td>@booking.contact_phone</td>
+                        <td>@booking.contact_email</td>
+                        <td>@booking.payment_history_id.currency @core.Utilities.moneyFormat(booking.payment_history_id.amount)</td>
+                        <td>@booking.payment_history_id.payment_method_id.name </td>
+                        <td>@booking.payment_history_id.status</td>
+                        <td>@if(booking.created_at != null) { @booking.created_at.toLocaleString } else { N/A }</td>
+                        <td>
+                            <span><a href="@console.routes.FlightController.getViewItinerary(booking.id, "html")" class="btn btn-xs ajax btn-default"><i class="fa fa-search"></i></a></span>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </article>
+}
+@scripts = {
+        <!-- Datatables -->
+    <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datatables/media/js/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datatables/media/js/dataTables.bootstrap.js")"></script>
+    <script>
+            var oTable = $('#flight_queue').dataTable({
+                "aoColumnDefs": [
+                    {'bSortable': true, "sWidth": "1%", 'aTargets': [0]},
+                    {'bSortable': true, "sWidth": "5%", 'aTargets': [1]},
+                    {'bSortable': true, "sWidth": "5%", 'aTargets': [2]},
+                    {'bSortable': true, "sWidth": "10%", 'aTargets': [3]},
+                    {'bSortable': true, "sWidth": "8%", 'aTargets': [4]},
+                    {'bSortable': true, "sWidth": "10%", 'aTargets': [5]},
+                    {'bSortable': true, "sWidth": "7%", 'aTargets': [6]},
+                    {'bSortable': true, "sWidth": "10%", 'aTargets': [7]},
+                    {'bSortable': true, "sWidth": "10%", 'aTargets': [8]},
+                    {'bSortable': true, "sWidth": "10%", 'aTargets': [9]},
+                    {'bSortable': true, "sWidth": "25%", 'aTargets': [10]},
+                    {'bSortable': false, "sWidth": "25%", 'aTargets': [11]},
+                ],
+                "order": [[ 0, "desc" ]],
+                "oLanguage": {
+                    "oPaginate": {
+                        "sPrevious": "",
+                        "sNext": ""
+                    }
+                },
+                "bProcessing": true,
+                "iDisplayLength": 25,
+                "aLengthMenu": [
+                    [5, 10, 25, 50, -1],
+                    [5, 10, 25, 50, "All"]
+                ]
+            });
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+    </script>
+}

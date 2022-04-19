@@ -1,0 +1,6 @@
+GET     /roombook/search_test       @controllers.RoomBookController.searchTest
+GET     /roombook/rooms             @controllers.RoomBookController.hotelRooms(searchID: Int, hotelID: Int)
+GET     /roombook/booking           @controllers.RoomBookController.bookRooms(searchID: Int, hotelID: Int, roomID: Int, city: String)
+GET     /roombook/booking/details   @controllers.RoomBookController.bookingDetails(bookingRef: String)
+GET     /roombook/:searchID/:hotelID/:roomID      @controllers.RoomBookController.roomCancellationPolicy(searchID: Int, hotelID: Int, roomID: Int)
+GET     /roombook/cancel/:bookingRef       @controllers.RoomBookController.cancelBooking(bookingRef: String)

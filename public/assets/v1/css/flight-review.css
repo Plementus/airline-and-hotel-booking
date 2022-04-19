@@ -1,0 +1,3290 @@
+.membership_bottom, .review_grandtotal, .traveller_info_right {
+    border-bottom-right-radius: 3px
+}
+
+.membership_bottom, .review_grandtotal, .traveller_info_left {
+    border-bottom-left-radius: 3px
+}
+
+.benefits_section, .review_information {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px
+}
+
+.ancillary_txt, .meal_included_txt {
+    font-size: 10px;
+    text-transform: uppercase
+}
+
+.modal textarea, .overlay_cases textarea {
+    resize: none
+}
+
+html[dir=rtl] .itineary_arrow, html[dir=rtl] .progress {
+    transform: rotate(180deg)
+}
+
+.adult_icon, .amenities_icon, .ancillary_icon, .baggage_icon, .checkbox_state, .child_icon, .departure_icon, .error_icon_cont_part, .error_icon_part, .faqs_icon, .fare_icon, .fare_ruleicn, .fewleft_icon, .infant_icon, .itineary_arrow, .main_div_closeicon, .member_typeicon, .multicity_arrow_stops, .open_icon_mark, .partialDivClose, .passenger_icon, .remove_row_btn, .return_icon, .rupee_icon, .select_dropicn, .step_icon, .step_icon_select, .transit_visa, .trvlr_tiptop, .visa_icon {
+    background: url(../images/flight_listing_sprite.png) no-repeat;
+    font-size: 0
+}
+
+.spicejet_mobile_icon {
+    background: url(../images/logo_sprite-mobile.png) no-repeat;
+    font-size: 0
+}
+
+.multicity_case_icon {
+    background: url(../images/logo_sprite-new2.png) no-repeat;
+    font-size: 0
+}
+
+.fewleft_icon {
+    background-position: -60px -56px;
+    width: 23px;
+    height: 19px;
+    margin-right: 5px
+}
+
+.review_fare_details {
+    /*border: 1px solid #d4d4d4;*/
+    /*border-radius: 3px;*/
+    /*background: #fff;*/
+    /*padding-top: 5px*/
+}
+
+.review_detls_strp {
+    font-size: 12px;
+    color: #2f2f2f;
+    border-bottom: 1px solid #f1f1f1;
+    padding: 8px 0
+}
+
+.review_baselabel {
+    color: #a7a7a7
+}
+
+.review_detls_strp.total_base {
+    border-bottom-color: #d8d8d8
+}
+
+.roundtrip_discount {
+    font-size: 12px;
+    color: #5e9434;
+    font-weight: 700;
+    padding: 8px 0
+}
+
+.review_grandtotal {
+    font-size: 14px;
+    font-weight: 700;
+    background: #f8f8f8;
+    padding: 7px 0
+}
+
+.review_red {
+    color: #cb3904
+}
+
+.fare_revw_labl {
+    font-size: 14px;
+    color: #2f2f2f;
+    line-height: 14px;
+    margin-bottom: 4px
+}
+
+.fare_details_parent {
+    padding: 10px !important
+}
+
+.review_right .fare_revw_labl {
+    margin-top: 0
+}
+
+.review_steps {
+    border-bottom: 1px solid #faf9f9
+}
+
+.review_steps_info {
+    width: 45%;
+    border-bottom: 1px solid #cacaca;
+    margin: 0 auto 20px;
+    position: relative
+}
+
+.step_center, .step_left, .step_right {
+    position: absolute
+}
+
+.step_label {
+    font-size: 10px;
+    line-height: 10px;
+    font-weight: 700;
+    text-align: center;
+    color: #838383
+}
+
+.traveller_bottomleft {
+    margin-bottom: 16px !important
+}
+
+.underscore_padding {
+    padding-top: 8px !important
+}
+
+.step_left {
+    width: 80px;
+    left: -30px;
+    top: -16px
+}
+
+.step_center {
+    width: 66px;
+    left: 45%;
+    top: -16px
+}
+
+.step_right {
+    width: 65px;
+    right: -21px;
+    top: -16px
+}
+
+.active .step_label {
+    color: #2f2f2f
+}
+
+.active .step_icon {
+    background-position: -139px -237px;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto 5px;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 6px
+}
+
+.tobe_select .step_icon {
+    background-position: -143px -271px;
+    width: 24px;
+    height: 24px;
+    margin: 4px auto 7px;
+    font-size: 12px;
+    color: #b1b1b1;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 4px
+}
+
+.step_icon_select {
+    display: none
+}
+
+.edit_blueTxt {
+    color: #1e52a4
+}
+
+.city_revwname, .total_trvler {
+    font-size: 14px;
+    color: #2f2f2f
+}
+
+.selected .step_icon_select {
+    display: block;
+    background-position: -143px -301px;
+    width: 24px;
+    height: 24px;
+    margin: 4px auto 5px
+}
+
+.checkbox_state, .flight_details_link, .open_icon_mark, .remove_row_btn, .transit_visa {
+    display: inline-block
+}
+
+.review_borderbottom {
+    border-bottom: 1px solid #d8d8d8;
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+.traveller_info_section {
+    border: 1px solid #d4d4d4;
+    border-radius: 3px;
+    background: #fff
+}
+
+.traveller_info_left {
+    background: #fff;
+    padding: 15px 0;
+    border-top-left-radius: 3px
+}
+
+.traveller_info_right {
+    background: #f8f8f8;
+    padding: 15px 0 4px;
+    border-top-right-radius: 3px;
+    height: 131px
+}
+
+.city_revwinfo {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    margin-right: 10px
+}
+
+.city_revwname {
+    line-height: 16px
+}
+
+.traveller_info_left .itineary_arrow {
+    margin-top: 0
+}
+
+.info_left_top {
+    border-bottom: 1px solid #f5f5f5;
+    padding-bottom: 16px;
+    margin-bottom: 16px
+}
+
+.info_left_top.last {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0
+}
+
+.total_trvler {
+    line-height: 14px
+}
+
+.trvler_ttl_amnt {
+    font-size: 16px;
+    color: #cb3904
+}
+
+.flight_details_link {
+    font-size: 11px;
+    vertical-align: middle;
+    margin-right: 4px
+}
+
+.main-div {
+    background: #fff;
+    border-top: 1px solid #d4d4d4;
+    padding: 10px 0;
+    position: relative
+}
+
+.main-div .segmented_btn.first {
+    width: 35%;
+    margin: 0
+}
+
+.main-div .segmented_btn.last {
+    width: 65%;
+    margin: 0
+}
+
+.main_div_closeicon {
+    background-position: -48px -35px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 15px;
+    right: 15px
+}
+
+.open_icon_markwrapper {
+    padding: 4px 0 4px 7px;
+    cursor: pointer
+}
+
+.open_icon_mark {
+    background-position: -5px -336px;
+    width: 18px;
+    height: 4px
+}
+
+.open_icon_mark:active, .open_icon_mark:focus {
+    outline: 0
+}
+
+.fare_txt {
+    font-size: 11px
+}
+
+.fare_border {
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 5px
+}
+
+.fare_border_one, ul.other_list {
+    border-bottom: 1px solid #d8d8d8
+}
+
+.total_base {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 12px
+}
+
+.fare_border_one {
+    border-top: 1px solid #f2f2f2;
+    padding-top: 6px;
+    padding-bottom: 12px
+}
+
+.add_update_trvlr, .top_bordr {
+    border-top: 1px solid #f4f3f2
+}
+
+.grand_total {
+    font-size: 12px;
+    font-weight: 700;
+    background: #e8e7e5;
+    padding: 6px 10px
+}
+
+.rupee_icon {
+    background-position: -103px -5px;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 5px
+}
+
+.adult_label, .error_case_traveller {
+    margin-top: 10px
+}
+
+.rule_txt {
+    font-size: 10px;
+    color: #a7a7a7;
+    text-align: center;
+    line-height: 12px
+}
+
+.icon_part {
+    margin-right: 10px;
+    width: 18%
+}
+
+.fare_table {
+    width: 100%;
+    border-collapse: collapse
+}
+
+.fare_table td {
+    padding: 5px;
+    font-size: 11px;
+    border: 1px solid #d0d0d0
+}
+
+.adult_label, .itnry_cityname, .passenger_detail_left .input-lg {
+    font-size: 12px
+}
+
+.review_information {
+    background: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    -o-border-radius: 3px;
+    border-radius: 3px
+}
+
+.logoitnry_section {
+    margin-right: 8px
+}
+
+.transit_visa {
+    background-position: -108px -424px;
+    width: 11px;
+    height: 12px;
+    margin-right: 5px
+}
+
+.amenities_icon, .baggage_icon, .fare_icon {
+    width: 28px;
+    height: 28px
+}
+
+.review_information .stop_textinfo {
+    width: 535px
+}
+
+.fare_icon {
+    background-position: 0 -474px;
+    margin-right: 8px
+}
+
+.baggage_icon {
+    background-position: -36px -474px;
+    margin-right: 8px;
+    margin-bottom: 0
+}
+
+.visa_icon {
+    background-position: -70px -474px;
+    width: 28px;
+    height: 28px;
+    margin-right: 8px
+}
+
+.amenities_icon {
+    background-position: -107px -474px;
+    margin-right: 8px
+}
+
+ul.other_list {
+    padding-bottom: 8px
+}
+
+ul.other_list li {
+    float: left;
+    margin-right: 40px
+}
+
+ul.other_list span.other_name {
+    line-height: 28px
+}
+
+.other_list_section, .other_list_section_1 {
+    border-bottom: 1px solid #f2f2f2
+}
+
+.bttom_bordr, .passenger_wrapper {
+    border-bottom: 1px solid #d8d8d8
+}
+
+.passenger_details {
+    background: #fff;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    padding-top: 15px;
+    padding-bottom: 15px
+}
+
+.passenger_detail_left {
+    padding: 0 0 10px
+}
+
+.adult_label {
+    line-height: 14px;
+    float: left
+}
+
+.bttom_bordr {
+    padding-bottom: 15px
+}
+
+.top_bordr {
+    padding-top: 15px
+}
+
+.select_age {
+    position: relative
+}
+
+.select_dropicn {
+    background-position: -146px -331px;
+    width: 10px;
+    height: 5px;
+    position: absolute;
+    right: 12%;
+    top: 42%
+}
+
+.membership_section {
+    border: 1px solid #d4d4d4;
+    border-radius: 3px
+}
+
+.membership_top {
+    background: #f8f8f8;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 10px 0
+}
+
+.membership_bottom {
+    padding: 10px 0;
+    background: #fff
+}
+
+.member_name {
+    font-size: 14px;
+    color: #2f2f2f;
+    margin-top: 4px
+}
+
+.member_typeicon {
+    background-position: -33px -336px;
+    width: 30px;
+    height: 29px;
+    margin-right: 5px
+}
+
+.member_typename {
+    font-size: 11px;
+    color: #878787;
+    line-height: 11px;
+    margin-top: 10px
+}
+
+.point_balance {
+    font-size: 12px;
+    color: #2f2f2f
+}
+
+.point_number {
+    font-size: 16px;
+    line-height: 16px;
+    margin-right: 10px
+}
+
+.redeem_type {
+    color: #878787
+}
+
+.hello_info {
+    width: 40px
+}
+
+.mentioned_proof {
+    font-size: 12px;
+    color: #878787;
+    margin-top: 5px
+}
+
+.passenger_detail_right {
+    padding: 0 0 10px
+}
+
+.passngr_listing {
+    border: 1px solid #d4d4d4;
+    border-radius: 3px;
+    background: #fff;
+    padding: 5px 10px
+}
+
+.remove_row_btn {
+    background-position: -38px -301px;
+    width: 24px;
+    height: 24px;
+    margin-top: 7px
+}
+
+.passenger_name {
+    font-size: 12px;
+    line-height: 35px;
+    margin-right: 10px
+}
+
+.checkbox_state {
+    background-position: -67px -2px;
+    width: 25px;
+    height: 25px;
+    margin-right: 12px
+}
+
+.checkbox {
+    margin: 7px 0 0
+}
+
+.passenger_name .checkbox {
+    padding-left: 0
+}
+
+.active .checkbox_state {
+    background-position: -37px -2px
+}
+
+.checkbox input {
+    display: none
+}
+
+.passenger_icon {
+    background-position: -142px -341px;
+    width: 21px;
+    height: 19px
+}
+
+.error_icon_cont_part, .error_icon_part {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    background-position: -74px -348px
+}
+
+.passen_txt_info {
+    font-size: 12px;
+    margin-right: 10px;
+    line-height: 20px;
+    color: #878787
+}
+
+.passenger_wrapper {
+    padding-bottom: 16px
+}
+
+.add_update_trvlr {
+    padding-top: 16px
+}
+
+.add_update_trvlr .checkbox {
+    margin: 0;
+    padding: 0
+}
+
+.add_updte_txt {
+    font-size: 14px;
+    color: #2f2f2f;
+    line-height: 14px;
+    margin-top: 5px
+}
+
+.add_updte_txt_1 {
+    font-size: 12px;
+    color: #878787;
+    margin-left: 8px;
+    margin-top: 5px
+}
+
+.error_icon_part {
+    margin-left: 15px;
+    margin-top: 3px
+}
+
+.error_icon_txtinfo {
+    font-size: 12px;
+    color: #a84737;
+    margin-top: 3px
+}
+
+.fare_rulesection .fare_right_section {
+    background: #fff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 1px solid #d3d3d3;
+    position: absolute;
+    right: 15px;
+    z-index: 2
+}
+
+.fare_ruleicn {
+    background-position: -129px -365px;
+    width: 12px;
+    height: 7px;
+    margin-top: 5px
+}
+
+.fare_rules {
+    font-size: 12px;
+    color: #2f2f2f;
+    margin-right: 10px
+}
+
+a.farerule_tab {
+    width: 110px;
+    padding: 4px 10px;
+    margin-right: 15px;
+    margin-top: -3px;
+    color: #2f2f2f
+}
+
+a.farerule_tab.active {
+    background: #fff;
+    border: 1px solid #d5d5d5;
+    border-bottom-color: #fff;
+    position: relative;
+    z-index: 3;
+    margin-bottom: -1px;
+    padding: 3px 8px 4px
+}
+
+a.farerule_tab.active .fare_ruleicn {
+    background-position: -145px -365px;
+    width: 12px;
+    height: 7px;
+    margin-top: 5px
+}
+
+.privacy_section {
+    border: 1px solid #d4d4d4;
+    padding: 10px;
+    background: #fff;
+    border-radius: 3px;
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden
+}
+
+.rules_tabular td, .rules_tabular th {
+    padding: 6px 10px;
+    border: 1px solid #adadad
+}
+
+.privacy_txt {
+    font-size: 11px;
+    color: #2f2f2f;
+    line-height: 13px
+}
+
+.accordn_txt {
+    font-size: 11px;
+    color: #1e52a4;
+    font-weight: 700
+}
+
+.multicity_row_mobile {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: solid 1px #e6e6e6
+}
+
+.spicejet_mobile_icon {
+    background-position: -44px -80px;
+    width: 20px;
+    height: 15px;
+    display: inline-block;
+    margin-top: 5px
+}
+
+.multicity_case_icon {
+    background-position: -38px -85px;
+    width: 36px;
+    height: 26px;
+    display: inline-block
+}
+
+.multicity_arrow_stops {
+    background-position: -104px -405px;
+    width: 31px;
+    height: 7px;
+    display: inline-block;
+    margin-top: 5px
+}
+
+.ancillary_icon {
+    background-position: -59px -374px;
+    height: 22px;
+    width: 22px;
+    display: inline-block;
+    vertical-align: text-bottom
+}
+
+.has_flt_details .ancillary_icon, .more_flight_section .ancillary_icon {
+    margin-top: 4px
+}
+
+.ancillary_txt {
+    color: #838383
+}
+
+.meal_included_txt {
+    background: #5a9344;
+    color: #fff;
+    text-align: center;
+    padding: 2px 5px;
+    margin: 0 3px;
+    vertical-align: middle
+}
+
+.age, .dob_label, .montn, .year {
+    padding: 0
+}
+
+.meal_icon_square {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background: #f6eed5;
+    vertical-align: middle;
+    margin-right: 3px
+}
+
+.age, .montn {
+    margin-right: 10px
+}
+
+.passport_details_for_mobile {
+    display: none
+}
+
+.bottm_brder_popup {
+    border-bottom: 1px solid #d8d8d8;
+    padding-bottom: 8px
+}
+
+.top_brder_popup {
+    border-top: 1px solid #f2f2f2;
+    padding-top: 10px
+}
+
+.confirm_text {
+    font-size: 11px;
+    overflow: hidden
+}
+
+.checkbox_state_review {
+    margin-right: 10px;
+    margin-top: 3px
+}
+
+.rules_heading {
+    border-bottom: solid 1px #e5e5e5;
+    padding-bottom: 5px
+}
+
+.inner_rules_section {
+    max-height: 114px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 10px
+}
+
+.fareTip_textWrapper, .jcarousel, .progress, html[dir=rtl] .passenger_detail_right, html[dir=rtl] .review_adult_txt, html[dir=rtl] .section_box {
+    overflow: hidden
+}
+
+.rules_tabular th {
+    text-align: left;
+    font-weight: 400;
+    color: #878787;
+    background: #f8f8f8
+}
+
+.rules_tabular td {
+    background: #fff;
+    vertical-align: top
+}
+
+.rules_tabular th.text-center {
+    text-align: center
+}
+
+.info_presented_bottom {
+    border-top: solid 1px #adadad;
+    padding: 16px 0 0
+}
+
+.fare_col1 {
+    width: 20%
+}
+
+.fare_col2 {
+    width: 60%
+}
+
+.fare_col3 {
+    width: 20%
+}
+
+.amenties_info {
+    background: #fff
+}
+
+.bottm_pass_brder {
+    border-bottom: 1px solid #d8d8d8;
+    padding-bottom: 16px
+}
+
+.add_update_trvlr.pass_info {
+    color: #878787
+}
+
+@media screen and (min-width: 768px) {
+    .visa_dialog .modal-dialog {
+        width: 660px
+    }
+}
+
+@media (max-width: 480px) {
+    .visa_dialog .modal-body {
+        padding: 0 10px;
+        position: relative
+    }
+
+    .visa_dialog .rules_seprator {
+        padding-top: 10px
+    }
+
+    .select_type_mobile {
+        padding: 0 10px
+    }
+
+    .rules_tabular th.text_mobile_left {
+        text-align: left
+    }
+
+    .fare_col2 {
+        width: 60%
+    }
+
+    .fare_col3 {
+        width: 40%
+    }
+
+    .fr_heading_mobile {
+        border-bottom: solid 1px #adadad;
+        padding-bottom: 5px
+    }
+}
+
+@media (min-width: 992px)and (max-width: 1199px) {
+    .review_steps_info {
+        width: 50%
+    }
+}
+
+@media (max-width: 767px) {
+    .in_mobile {
+        display: none
+    }
+
+    .review_information .stop_textinfo {
+        width: 240px;
+        text-align: left
+    }
+
+    .review_information .stop_partinfo {
+        display: block
+    }
+
+    .stop_seprator {
+        display: none
+    }
+
+    .space_for_mobile {
+        height: 25px
+    }
+
+    .stop_textinfo {
+        margin: -20px auto 0
+    }
+
+    .for_confirmtn_gap {
+        padding: 0;
+        margin-top: 10px
+    }
+
+    .confirm_text {
+        line-height: 28px
+    }
+}
+
+@media (min-width: 590px)and (max-width: 767px) {
+    .itineary_info, .logo_part {
+        float: left
+    }
+
+    .error_icon_part, .select_age {
+        margin-left: 0
+    }
+
+    .main-div .segmented_btn.first {
+        width: 24%
+    }
+
+    .main-div .segmented_btn.last {
+        width: 40%
+    }
+
+    .traveller_info_left {
+        width: 66%
+    }
+
+    .traveller_info_right {
+        width: 34%
+    }
+
+    .city_time_info {
+        float: left;
+        width: 35%
+    }
+
+    .contact_details {
+        width: 100%
+    }
+
+    .traveller_sectnlinfo .btn-primary-red {
+        width: 48%
+    }
+
+    .traveller_sectnlinfo .btn-secondary {
+        width: 48%;
+        float: right
+    }
+
+    .mobile_code {
+        width: 20%
+    }
+
+    .passenger_detail_left p {
+        line-height: 10px;
+        margin-bottom: 0
+    }
+
+    .gender_option {
+        margin-bottom: 0;
+        display: inline-block;
+        padding: 0
+    }
+
+    .adult_label {
+        line-height: 10px;
+        font-size: 12px;
+        float: left
+    }
+
+    .bttom_bordr {
+        padding-bottom: 12px
+    }
+
+    .top_bordr {
+        padding-top: 6px
+    }
+
+    .select_age {
+        display: block;
+        margin-right: 0;
+        padding: 0;
+        margin-top: 10px
+    }
+
+    .select_dropicn {
+        right: 6%
+    }
+
+    .platinium_info {
+        width: 160px
+    }
+
+    .need_help {
+        width: 110px
+    }
+
+    .passenger_overlay .modal-dialog {
+        width: 400px
+    }
+
+    .passenger_detail_left {
+        padding-top: 0
+    }
+
+    .fare_rulesection .fare_right_section {
+        width: 70%
+    }
+}
+
+@media (min-width: 481px)and (max-width: 580px) {
+    .error_icon_part, .select_age {
+        margin-left: 0
+    }
+
+    .fare_left_section {
+        margin-bottom: 20px
+    }
+
+    .flight_details_strip .flight_dtl_sectors {
+        font-size: 12px;
+        line-height: 22px
+    }
+
+    .traveller_info_left {
+        padding: 10px 0
+    }
+
+    .trvler_ttl_amnt {
+        font-size: 15px
+    }
+
+    .mobile_code {
+        width: 20%
+    }
+
+    .btn-primary-red {
+        margin-bottom: 10px
+    }
+
+    .city_revwname {
+        font-size: 16px;
+        color: #2f2f2f;
+        line-height: 26px
+    }
+
+    .itineary_info {
+        margin-top: 5px
+    }
+
+    .bttom_bordr {
+        padding-bottom: 12px
+    }
+
+    .passenger_detail_left p {
+        line-height: 10px;
+        margin-bottom: 0
+    }
+
+    .gender_option {
+        margin-bottom: 0;
+        display: inline-block;
+        padding: 0
+    }
+
+    .adult_label {
+        line-height: 10px;
+        font-size: 12px;
+        float: left
+    }
+
+    .top_bordr {
+        padding-top: 6px
+    }
+
+    .select_age {
+        display: block;
+        margin-right: 0;
+        padding: 0;
+        margin-top: 10px
+    }
+
+    .select_dropicn {
+        right: 3%
+    }
+
+    .platinium_info {
+        width: 160px
+    }
+
+    .need_help {
+        width: 100px
+    }
+
+    .passenger_overlay .modal-dialog {
+        width: 350px
+    }
+
+    .passenger_detail_left {
+        padding-top: 0
+    }
+
+    .fare_rulesection .fare_right_section {
+        right: 0;
+        width: 70%
+    }
+
+    .traveller_info_mobile {
+        padding: 0
+    }
+
+    .price_info_mobile, .sector_infoLeft_mobile {
+        padding-top: 10px;
+        padding-bottom: 10px
+    }
+
+    .price_info_mobile {
+        background: #f8f8f8
+    }
+
+    .price_mobile_roundtrip {
+        height: 85px
+    }
+
+    .table_section {
+        width: 100%
+    }
+}
+
+@media (min-width: 320px)and (max-width: 480px) {
+    .error_icon_part, .select_age {
+        margin-left: 0
+    }
+
+    .review_time {
+        font-size: 14px
+    }
+
+    .review_city_name {
+        font-size: 11px
+    }
+
+    .review_itnry_cityname {
+        font-size: 14px
+    }
+
+    .review_refundable {
+        padding: 3px;
+        font-size: 9px
+    }
+
+    .itineary_duration {
+        padding-left: 0
+    }
+
+    .price_info {
+        font-size: 13px
+    }
+
+    .bottom_label, .time {
+        font-size: 12px
+    }
+
+    .fare_left_section {
+        margin-bottom: 20px
+    }
+
+    .itineary_departure.col-xs-3 {
+        padding-right: 0
+    }
+
+    .itineary_dateinfo {
+        font-size: 13px;
+        line-height: 13px
+    }
+
+    .refundable_txt {
+        font-size: 9px;
+        line-height: 11px;
+        padding: 3px 2px
+    }
+
+    .main-div .segmented_btn {
+        font-size: 11px
+    }
+
+    .open_icon_markwrapper {
+        padding: 4px 0;
+        cursor: pointer
+    }
+
+    .flight_details_strip .flight_dtl_sectors {
+        font-size: 12px;
+        line-height: 22px
+    }
+
+    .city_revwname {
+        font-size: 16px;
+        color: #2f2f2f;
+        line-height: 26px
+    }
+
+    .itineary_info {
+        margin-top: 5px
+    }
+
+    .traveller_info_left {
+        padding: 10px 0
+    }
+
+    .trvler_ttl_amnt {
+        font-size: 15px
+    }
+
+    .btn-primary-red {
+        margin-bottom: 10px
+    }
+
+    .passenger_detail_left p {
+        line-height: 10px;
+        margin-bottom: 0
+    }
+
+    .gender_option {
+        display: inline-block;
+        padding: 0;
+        margin-bottom: 10px !important
+    }
+
+    .adult_label {
+        line-height: 10px;
+        font-size: 12px;
+        float: none !important
+    }
+
+    .top_bordr {
+        padding-top: 6px
+    }
+
+    .select_age {
+        display: block;
+        margin-right: 0;
+        padding: 0
+    }
+
+    .select_dropicn {
+        right: 6%
+    }
+
+    .member_typename {
+        width: 50px;
+        margin-top: 5px;
+        line-height: 12px
+    }
+
+    .balance_wrap {
+        width: 200px
+    }
+
+    .redeem_type {
+        font-size: 11px
+    }
+
+    .passenger_detail_left {
+        padding-top: 0
+    }
+
+    .add_updte_txt {
+        font-size: 12px
+    }
+
+    .add_update_trvlr .checkbox_state {
+        margin-right: 5px
+    }
+
+    a.farerule_tab {
+        margin-right: 10px;
+        width: 98px
+    }
+
+    .fare_rules {
+        margin-right: 5px
+    }
+
+    .fare_rulesection .fare_right_section {
+        right: 0
+    }
+
+    .traveller_info_mobile {
+        padding: 0
+    }
+
+    .price_info_mobile, .sector_infoLeft_mobile {
+        padding-top: 10px;
+        padding-bottom: 10px
+    }
+
+    .price_info_mobile {
+        background: #f8f8f8
+    }
+
+    .price_mobile_roundtrip {
+        height: 85px
+    }
+
+    .table_section {
+        width: 100%
+    }
+
+    .review_steps_info {
+        width: 83%
+    }
+
+    .step_center {
+        left: 40%
+    }
+}
+
+.OR_seprator_review, .adult_icon, .captcha_refresh, .child_icon, .error_icon_1, .infant_icon, .remember_me_text {
+    display: inline-block
+}
+
+.OR_seprator_review, .benefits_tip, .benefits_tip_top, .captcha_refresh, .checkbox_state_review, .close_overlay span, .error_icon, .error_icon_1 {
+    background: url(../images/flight_listing_sprite.png) no-repeat;
+    font-size: 0
+}
+
+.have_discount_coupon {
+    font-size: 13px
+}
+
+.get_protected_section {
+    padding-left: 35px
+}
+
+.get_protected {
+    font-size: 14px
+}
+
+.checkbox_state_review {
+    background-position: -67px -2px;
+    width: 25px;
+    height: 25px;
+    display: inline-block
+}
+
+.checkbox_state_review.active {
+    background-position: -37px -2px
+}
+
+.contact_information, .contact_information_1 {
+    border-top: solid 1px #d8d8d8
+}
+
+.contact_information .contact_info_heading {
+    border-top: solid 1px #f2f2f2;
+    padding: 10px 0;
+    font-size: 14px
+}
+
+.login_benefits {
+    margin-top: 12px
+}
+
+.OR_seprator_review {
+    background-position: 0 -154px;
+    font-size: 14px;
+    width: 33px;
+    height: 33px;
+    margin-top: 8px
+}
+
+.ecopon_success .glyphicon-ok-sign {
+    position: absolute;
+    top: 8px;
+    color: #5E9434;
+    font-size: 18px;
+    right: 85px
+}
+
+.benefits_heading, .not_a_member {
+    font-size: 14px
+}
+
+.signout_changeLink {
+    padding-left: 0;
+    margin-top: 8px
+}
+
+.benefits_section {
+    background: rgba(0, 0, 0, .7);
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 4px;
+    z-index: 3
+}
+
+.benefits_section .benefits_tip {
+    background-position: 0 -191px;
+    width: 20px;
+    height: 9px;
+    position: absolute;
+    bottom: -10px;
+    left: 70%
+}
+
+.benefits_section .benefits_tip_top {
+    background-position: -20px -191px;
+    width: 20px;
+    height: 9px;
+    position: absolute;
+    top: -10px;
+    left: 20%
+}
+
+.register_now {
+    padding: 12px 15px;
+    border-left: solid 1px #595959
+}
+
+.register_now a.btn {
+    border: 1px solid #979797
+}
+
+.benefits_list {
+    padding-left: 15px
+}
+
+.benefits_list li {
+    margin-bottom: 5px;
+    font-size: 11px;
+    list-style-type: disc;
+    list-style-position: outside
+}
+
+.alert {
+    margin-bottom: 10px;
+    padding: 10px
+}
+
+.error_case {
+    background: #a84737;
+    border-color: #a84737;
+    font-size: 14px;
+    color: #fff
+}
+
+.error_case_1 {
+    background: #a84737;
+    border-color: #a84737;
+    font-size: 13px;
+    color: #fff
+}
+
+.success_msg_case, .success_msg_case_1 {
+    background: #5a9344;
+    border-color: #5a9344
+}
+
+.success_msg_case {
+    font-size: 14px;
+    color: #fff
+}
+
+.success_msg_case_1 {
+    font-size: 13px;
+    color: #fff
+}
+
+button.close {
+    color: #fff;
+    font-weight: 400;
+    opacity: 1
+}
+
+.error_field {
+    border: 1px solid #a84737
+}
+
+.error_icon {
+    background-position: 0 -89px;
+    width: 21px;
+    height: 21px;
+    margin: 0 10px 0 0
+}
+
+.error_icon_1 {
+    background-position: -28px -88px;
+    width: 24px;
+    height: 24px;
+    margin: 0 2px 0 0;
+    vertical-align: middle
+}
+
+.adult_icon, .child_icon, .infant_icon {
+    vertical-align: baseline
+}
+
+.close_icon {
+    background-position: -146px -101px;
+    width: 16px;
+    height: 15px;
+    position: absolute;
+    top: 32px;
+    right: 15px
+}
+
+.close_icon_one {
+    background-position: -146px -79px;
+    width: 16px;
+    height: 15px;
+    position: absolute;
+    top: 2px;
+    right: 30px
+}
+
+.captcha_refresh {
+    background-position: 0 -345px;
+    width: 23px;
+    height: 23px;
+    margin-top: 17px
+}
+
+.remember_me_text {
+    padding-left: 6px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #838383
+}
+
+.forgot_passLink {
+    font-size: 11px;
+    margin-top: 3px
+}
+
+.we_sorry_bottom {
+    border-top: solid 1px #f2f2f2;
+    padding-top: 25px;
+    margin-top: 25px
+}
+
+.custom_scrollbar {
+    margin-bottom: 10px
+}
+
+.custom_scrollbar .viewport {
+    width: 142px;
+    height: 170px;
+    overflow: hidden;
+    position: relative
+}
+
+.custom_scrollbar .overview {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%
+}
+
+.custom_scrollbar .scrollbar {
+    width: 10px;
+    position: relative;
+    float: right
+}
+
+.custom_scrollbar .track {
+    width: 1px;
+    position: relative;
+    background-color: #999
+}
+
+.custom_scrollbar .thumb {
+    width: 6px;
+    background-color: #999;
+    position: absolute;
+    top: 0;
+    left: -2px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -o-border-radius: 5px;
+    cursor: pointer
+}
+
+.pass_list_scroll .viewport {
+    width: 95%;
+    height: 250px
+}
+
+.pass_list_scroll .track {
+    background: 0 0
+}
+
+.pass_list_scroll .scrollbar {
+    width: 4px
+}
+
+#view_benefits_loginLink {
+    margin-top: 13px
+}
+
+.flt_dtl_link.verticalCenter {
+    margin-top: 57px
+}
+
+.verticalCenter_multicase {
+    margin-top: 15px
+}
+
+.review_adult_txt .rvw_black {
+    margin-right: 5px;
+    padding-right: 5px;
+    border-right: solid 1px #adadad
+}
+
+.review_adult_txt .rvw_black.last {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: 0
+}
+
+.review_adult_topsettings {
+    margin-top: -7px
+}
+
+.adult_icon {
+    background-position: 0 -508px;
+    width: 9px;
+    height: 21px;
+    margin-right: 4px
+}
+
+.child_icon {
+    background-position: -16px -513px;
+    width: 7px;
+    height: 16px;
+    margin-right: 4px
+}
+
+.infant_icon {
+    background-position: -29px -517px;
+    width: 16px;
+    height: 12px;
+    margin-right: 4px
+}
+
+.flt_icon, .hld_icon, .htl_icon, .passport_icon {
+    vertical-align: middle
+}
+
+.trvlrs_amt_head {
+    font-size: 14px;
+    color: #2f2f2f
+}
+
+.trvlr_fltdtls_tooltip .flt_info_row {
+    padding-right: 0 !important
+}
+
+.trvlr_fltdtls_tooltip .refundable_txt {
+    margin-right: 10px;
+    smargin-right: 10px
+}
+
+.trvlr_fltdtls_tooltip {
+    background: #fff;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    left: 0;
+    top: -15px
+}
+
+.trvlr_fltdtls_tooltip .review_information {
+    -o-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0
+}
+
+.trvlr_tiptop {
+    background-position: -142px -474px;
+    width: 21px;
+    height: 13px;
+    position: absolute;
+    top: -13px;
+    left: 20px
+}
+
+.trvlr_faredtls_tooltip {
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    top: -15px
+}
+
+.trvlr_tiptop_posRight {
+    position: absolute;
+    top: -13px;
+    left: auto;
+    right: 20px
+}
+
+.fare_details_link {
+    font-size: 11px
+}
+
+.visa_scrollbar {
+    margin-bottom: 10px
+}
+
+.append_bottom16_1 {
+    margin-bottom: 8px
+}
+
+@media (min-width: 768px)and (max-width: 991px) {
+    .logo_part {
+        padding-right: 0
+    }
+
+    .city_revwinfo {
+        font-size: 14px
+    }
+
+    .trvlr_fltdtls_tooltip .trvlr_tiptop {
+        left: 440px
+    }
+}
+
+@media (min-width: 1200px) {
+    .benefits_section {
+        position: absolute;
+        top: -192px
+    }
+
+    .dob_label {
+        width: 12%
+    }
+
+    .trvlr_fltdtls_tooltip {
+        width: 80%
+    }
+
+    .trvlr_fltdtls_tooltip .trvlr_tiptop {
+        left: 795px
+    }
+
+    .other_list_section_1 {
+        border-bottom: 0 solid #f2f2f2 !important
+    }
+
+    .append_bottom16_1 {
+        margin-bottom: 0 !important
+    }
+
+    .contact_information_1 {
+        border-top: solid 0 #d8d8d8
+    }
+}
+
+@media (min-width: 992px)and (max-width: 1199px) {
+    .benefits_section {
+        position: absolute;
+        top: -195px
+    }
+
+    .dob_label {
+        width: 14%
+    }
+
+    .trvlr_fltdtls_tooltip {
+        width: 80%
+    }
+
+    .trvlr_fltdtls_tooltip .trvlr_tiptop {
+        left: 647px
+    }
+
+    .other_list_section_1 {
+        border-bottom: 0 solid #f2f2f2 !important
+    }
+
+    .append_bottom16_1 {
+        margin-bottom: 0 !important
+    }
+
+    .contact_information_1 {
+        border-top: solid 0 #d8d8d8
+    }
+}
+
+@media (min-width: 768px)and (max-width: 991px) {
+    .benefits_section {
+        position: absolute;
+        top: -201px
+    }
+
+    .dob_label {
+        width: 12%
+    }
+}
+
+@media (max-width: 767px) {
+    .benefits_section .benefits_tip_top {
+        left: 80%
+    }
+
+    .review_steps_info {
+        width: 70%
+    }
+
+    .city_revwinfo {
+        font-size: 14px
+    }
+
+    .passenger_drop_info {
+        margin-top: -8px
+    }
+
+    .passenger_details {
+        padding-top: 10px
+    }
+
+    .passenger_detail_left .error_case_traveller {
+        margin-bottom: 10px
+    }
+
+    .meal_included_smallTbMobile {
+        margin-top: 5px
+    }
+
+    ul.other_list li {
+        margin-right: 15px
+    }
+
+    ul.other_list span.other_name {
+        font-size: 11px
+    }
+
+    .review_left {
+        padding: 0
+    }
+}
+
+@media (min-width: 320px)and (max-width: 480px) {
+    .airline_nameinfomb, .promo_txt {
+        font-size: 11px
+    }
+
+    .mobile_fullwidth {
+        width: 100%
+    }
+
+    .step_left {
+        left: -28px
+    }
+
+    .benefits_section {
+        width: 100%;
+        margin-left: 0
+    }
+
+    .benefits_left {
+        width: 80%
+    }
+
+    .promo_txt {
+        line-height: 22px
+    }
+
+    .gender_option {
+        display: inline-block;
+        margin-bottom: 0;
+        padding: 0
+    }
+
+    .passenger_detail_left p {
+        line-height: 10px;
+        margin-bottom: 0
+    }
+
+    .for_natnalty, .passport_details_for_mobile p {
+        margin-bottom: 10px !important
+    }
+
+    .dob_label {
+        width: 30%
+    }
+
+    .for_natnalty {
+        margin-top: 10px
+    }
+
+    .passport_details_for_large {
+        display: none
+    }
+
+    .passport_details_for_mobile p.last {
+        margin-bottom: 0 !important
+    }
+
+    .label_pass {
+        font-size: 12px;
+        line-height: 13px;
+        margin-top: 3px
+    }
+
+    .year input {
+        padding: 6px 8px
+    }
+
+    .passport_details_for_mobile {
+        display: block
+    }
+}
+
+@media (min-width: 481px)and (max-width: 767px) {
+    .first_name, .last_name {
+        float: left;
+        width: 50% !important
+    }
+
+    .first_name {
+        padding-left: 0;
+        margin: 10px 0
+    }
+
+    .last_name {
+        padding: 0 0 0 10px;
+        margin: 10px 0
+    }
+
+    .gender_option, .pass_portnumber {
+        padding-left: 0
+    }
+
+    .gender_option {
+        width: 35% !important;
+        margin-bottom: 10px;
+        float: left
+    }
+
+    .select_age {
+        width: 48% !important;
+        float: right;
+        margin-top: 0;
+        margin-bottom: 10px
+    }
+
+    .dob_label, .select_age.for_nationality {
+        float: left
+    }
+
+    .dob_label {
+        width: 18%;
+        margin-left: 16px
+    }
+
+    .age, .montn {
+        width: 10%
+    }
+
+    .error_icon_part {
+        margin-top: -3px
+    }
+
+    .button50per .btn {
+        width: 41.44% !important;
+        float: left
+    }
+
+    .button50per .visible-stb {
+        display: inline-block !important
+    }
+
+    .phone_number_row {
+        width: 48% !important
+    }
+
+    .add_updte_txt {
+        margin-top: -1px;
+        line-height: 1
+    }
+
+    .add_updte_txt_1 {
+        margin: 2px 0 0
+    }
+
+    .benefits_section .benefits_tip_top {
+        left: 80%
+    }
+
+    .for_passport .age, .for_passport .montn {
+        width: 25%
+    }
+
+    .for_passport .append_bottom3 {
+        margin-bottom: 6px
+    }
+}
+
+.flt_icon, .hld_icon, .htl_icon, .or_seprator_border, .passport_icon {
+    display: inline-block
+}
+
+@media (min-width: 481px)and (max-width: 589px) {
+    .mobile_fullwidth {
+        width: 100%
+    }
+}
+
+@media (max-width: 320px) {
+    .signout_changeLink {
+        margin-top: 0
+    }
+
+    .benefits_section .benefits_tip_top {
+        left: 50%
+    }
+}
+
+@media (max-width: 525px) {
+    .confirm_text {
+        line-height: normal
+    }
+}
+
+html[dir=rtl] .pull-left {
+    float: right !important
+}
+
+html[dir=rtl] .pull-right {
+    float: left !important
+}
+
+html[dir=rtl] .text-left {
+    text-align: right
+}
+
+html[dir=rtl] .itineary_duration, html[dir=rtl] .text-right {
+    text-align: left
+}
+
+html[dir=rtl] .stop_partinfo.first {
+    float: right
+}
+
+html[dir=rtl] .stop_partinfo.last {
+    float: left
+}
+
+html[dir=rtl] .extra_info, html[dir=rtl] .fare_details_parent, html[dir=rtl] .other_list_section {
+    float: none
+}
+
+html[dir=rtl] .change_intl_flticon, html[dir=rtl] .intl_time_flticon, html[dir=rtl] .transit_visa {
+    margin: 0 0 0 5px
+}
+
+html[dir=rtl] .itineary_duration {
+    padding-right: 0
+}
+
+html[dir=rtl] .departure_icon, html[dir=rtl] .return_icon {
+    margin: 6px 0 0 10px
+}
+
+html[dir=rtl] .amenities_icon, html[dir=rtl] .baggage_icon, html[dir=rtl] .fare_icon, html[dir=rtl] .visa_icon {
+    margin: 0 0 0 8px
+}
+
+html[dir=rtl] .error_icon {
+    margin: 0 0 0 10px
+}
+
+html[dir=rtl] .checkbox_state_review {
+    margin: 3px 0 0 10px
+}
+
+html[dir=rtl] .step_left {
+    right: -30px
+}
+
+html[dir=rtl] .step_right {
+    left: -21px;
+    right: auto
+}
+
+html[dir=rtl] .ecopon_success .glyphicon-ok-sign {
+    left: 85px;
+    right: auto
+}
+
+html[dir=rtl] .benefits_list {
+    padding-right: 15px;
+    padding-left: 0
+}
+
+html[dir=rtl] .error_icon_1 {
+    margin: 0 0 0 2px
+}
+
+html[dir=rtl] .marR5 {
+    margin: 0 0 0 5px
+}
+
+html[dir=rtl] .flt_dtl_link {
+    float: right
+}
+
+html[dir=rtl] .review_adult_txt span, html[dir=rtl] .trvler_ttl_amnt span {
+    float: right;
+    margin-left: 3px
+}
+
+html[dir=rtl] .trvler_ttl_amnt {
+    text-align: right
+}
+
+html[dir=rtl] .trvlr_fltdtls_tooltip {
+    left: auto;
+    right: 0
+}
+
+html[dir=rtl] .trvlr_fltdtls_tooltip .trvlr_tiptop {
+    left: auto;
+    right: 795px
+}
+
+html[dir=rtl] .traveller_info_section {
+    float: none
+}
+
+html[dir=rtl] .member_typeicon {
+    margin: 0 0 0 5px
+}
+
+html[dir=rtl] .trvlr_fltdtls_tooltip .flt_info_row {
+    padding-left: 0;
+    padding-right: 15px !important
+}
+
+html[dir=rtl] .trvlr_fltdtls_tooltip .refundable_txt {
+    margin-left: 10px;
+    margin-right: 0
+}
+
+html[dir=rtl] .traveller_info_right {
+    border-radius: 3px 0 0 3px
+}
+
+.intersitial, .revw_sectn {
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -webkit-border-radius: 3px
+}
+
+html[dir=rtl] .traveller_info_left {
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px
+}
+
+html[dir=rtl] .trvlr_tiptop_posRight {
+    left: 20px;
+    right: auto
+}
+
+html[dir=rtl] .review_fare_details.trvlr_faredtls_tooltip {
+    position: absolute;
+    left: 0;
+    right: auto
+}
+
+html[dir=rtl] .custom_scrollbar .scrollbar {
+    float: left
+}
+
+html[dir=rtl] .checkbox_state {
+    margin-left: 12px;
+    margin-right: 0
+}
+
+html[dir=rtl] .age, html[dir=rtl] .montn, html[dir=rtl] .year {
+    padding: 0
+}
+
+html[dir=rtl] .age, html[dir=rtl] .montn {
+    margin-left: 10px;
+    margin-right: 0
+}
+
+.flt_icon, .hld_icon, .htl_icon, .passport_icon {
+    margin-right: 6px
+}
+
+html[dir=rtl] .select_dropicn {
+    left: 12%;
+    right: auto
+}
+
+.close_overlay, .flt_icon, .hld_icon, .htl_icon, .or_seprator, .passport_icon {
+    background: url(../../../../images/responsive/myaccount_commonsprite.png) no-repeat;
+    font-size: 0
+}
+
+.modal-header .close_overlay, .overlay_cases .close_overlay {
+    background-position: -45px -116px;
+    width: 17px;
+    height: 17px;
+    font-size: 20px
+}
+
+.overlay_text {
+    font-size: 14px
+}
+
+.link_payback .modal-header {
+    border-bottom: 0
+}
+
+.city_name_row, .popup_heading_border {
+    margin-bottom: 10px;
+    border-bottom: solid 1px #e5e5e5
+}
+
+.modal_error_txt {
+    font-size: 14px;
+    color: #aa4636;
+    width: 89%
+}
+
+.modal_success_txt {
+    font-size: 14px;
+    color: #2a7801;
+    width: 89%
+}
+
+.light_grey {
+    color: #656565
+}
+
+.font_12 {
+    font-size: 12px
+}
+
+.or_seprator_border {
+    height: 180px;
+    border-left: solid 1px #cecece;
+    position: relative;
+    left: 40%
+}
+
+.or_seprator {
+    background-position: 0 -117px;
+    width: 32px;
+    height: 33px;
+    position: absolute;
+    left: -15px;
+    top: 40%
+}
+
+.form_captions {
+    line-height: 30px;
+    margin-bottom: 0;
+    font-weight: 400
+}
+
+.reset_lineHeight {
+    line-height: 1.2em
+}
+
+.mobile_no .input-group-addon {
+    background: #fff;
+    font-size: 12px
+}
+
+.change_photo_section {
+    border-right: solid 1px #e5e5e5
+}
+
+.flt_icon {
+    background-position: 0 0;
+    width: 29px;
+    height: 17px
+}
+
+.htl_icon {
+    background-position: -84px -116px;
+    width: 24px;
+    height: 16px
+}
+
+.hld_icon {
+    background-position: -121px -116px;
+    width: 24px;
+    height: 23px
+}
+
+.city_name_row {
+    padding-bottom: 10px;
+    font-size: 14px
+}
+
+.passport_icon {
+    background-position: -148px -116px;
+    width: 20px;
+    height: 24px
+}
+
+.to_top {
+    margin-top: 6px
+}
+
+.popup_heading_medium {
+    font-size: 16px
+}
+
+.popup_heading_border {
+    padding-bottom: 8px
+}
+
+.emergency_opts {
+    margin: 5px 0 0;
+    padding-left: 10px
+}
+
+.emergency_opts label {
+    margin-right: 5px
+}
+
+@media (max-width: 767px) {
+    .modal_error_txt, .modal_success_txt {
+        font-size: 13px;
+        width: 86%
+    }
+
+    .overlay_heading {
+        font-size: 14px
+    }
+
+    .mobile_horizontal {
+        margin: 25px 0
+    }
+
+    .or_seprator_border {
+        width: 100%;
+        height: 10px;
+        border-left: 0;
+        border-bottom: solid 1px #cecece;
+        left: 0
+    }
+
+    .or_seprator {
+        background-position: 0 -117px;
+        width: 32px;
+        height: 33px;
+        position: absolute;
+        left: 43%;
+        top: -5px
+    }
+}
+
+.modal-body.for_farerule {
+    padding-top: 0;
+    padding-bottom: 0
+}
+
+.destination_label {
+    font-size: 12px
+}
+
+.pss_lable {
+    width: 110px;
+    margin-right: 10px
+}
+
+@media (max-width: 767px) {
+    html[dir=rtl] .stop_partinfo.first, html[dir=rtl] .stop_partinfo.last {
+        float: none
+    }
+
+    html[dir=rtl] .review_information .stop_textinfo {
+        text-align: right
+    }
+}
+
+@media (max-width: 591px) {
+    html[dir=rtl] .col-xs-2.mobile_fullwidth, html[dir=rtl] .col-xs-5.mobile_fullwidth, html[dir=rtl] .col-xs-6.mobile_fullwidth {
+        width: 100%
+    }
+}
+
+.amenties_for_mobile {
+    display: none
+}
+
+@media (max-width: 600px) {
+    .info_icon, .info_wrapper {
+        display: block
+    }
+
+    .info_icon {
+        float: none !important;
+        margin: 0 auto
+    }
+
+    .amenties_for_larger {
+        display: none
+    }
+
+    .amenties_for_mobile {
+        display: block
+    }
+}
+
+@media (max-width: 525px) {
+    .confirm_text {
+        line-height: normal
+    }
+
+    .other_info {
+        display: none
+    }
+}
+
+.intersitial, .payment_options .make_block, .revw_sectn {
+    display: block
+}
+
+@media (max-width: 991px) {
+    html[dir=rtl] .review_left {
+        padding-left: 0;
+        padding-right: 0
+    }
+
+    .modal-content .passenger_overlay {
+        padding-left: 15px;
+        padding-right: 15px
+    }
+
+    .modal-content .passenger_overlay .pass_list_scroll .viewport {
+        width: 100%
+    }
+
+    .passenger_overlay .close_overlay span {
+        margin-top: -2px
+    }
+}
+
+.review_transitvisa_alert {
+    min-height: 24px !important
+}
+
+.review_transitvisa_knowmore {
+    color: #fff;
+    text-decoration: underline
+}
+
+.ap_dscnttxt.bttom_bordr {
+    padding-bottom: 8px
+}
+
+.ap_dscnttxt {
+    font-size: 16px;
+    line-height: 18px
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px
+}
+
+.mobile_mrgn {
+    margin-bottom: 10px
+}
+
+.inpu_rdio {
+    height: 16px;
+    margin-right: 10px !important;
+    margin-top: 0 !important;
+    width: 16px
+}
+
+.ap_dscnttxtone {
+    font-size: 15px;
+    line-height: 18px
+}
+
+input[type=checkbox], input[type=radio] {
+    line-height: normal;
+    margin: 4px 0 0
+}
+
+input[type=checkbox]:focus, input[type=radio]:focus, input[type=file]:focus {
+    outline-offset: -2px;
+    outline: #333 dotted thin
+}
+
+.prtl_detls {
+    width: 90%
+}
+
+.part_payment_tabNav .segmented_btn {
+    padding: 0 10px
+}
+
+@media (min-width: 590px)and (max-width: 767px) {
+    .make_payment_stb {
+        width: 50%
+    }
+
+    .saved_cardno {
+        font-size: 12px
+    }
+
+    .part_payment_tabNav .segmented_btn {
+        font-size: 11px;
+        padding: 0 5px
+    }
+
+    .important_list {
+        padding-left: 15px
+    }
+}
+
+.important_list li {
+    list-style: disc;
+    margin-left: 10px
+}
+
+.faqs_icon {
+    background-position: -84px -375px;
+    width: 16px;
+    height: 16px
+}
+
+.partialDivClose {
+    background-position: -48px -35px;
+    height: 20px;
+    margin-top: 8px;
+    width: 25px
+}
+
+.completed_icon, .completed_small_icon, .departure_icon, .itineary_arrow, .return_icon {
+    background: url(../images/flight_listing_sprite.png) no-repeat;
+    font-size: 0
+}
+
+.intersitial {
+    background: #e8e7e4;
+    border-radius: 3px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+.intrsl_txt_one {
+    font-size: 16px;
+    color: #2f2f2f;
+    line-height: 16px
+}
+
+.intrsl_txt_two {
+    font-size: 12px;
+    color: #8d8d8d;
+    line-height: 14px
+}
+
+.revw_sectn {
+    border: 1px solid #d4d4d4;
+    border-radius: 3px;
+    background: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+
+.revw_sectn.completed {
+    opacity: .7;
+    position: relative
+}
+
+.revw_sectn.comming {
+    opacity: .5
+}
+
+.completed_icon {
+    background-position: -105px -376px;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: -1.5%;
+    top: 34%
+}
+
+.border_seprator {
+    border-top: 1px solid #d3d1cc;
+    border-bottom: 1px solid #f3f3f1;
+    height: 2px
+}
+
+.departure_icon, .return_icon {
+    margin: 10px 5px 0 0;
+    height: 12px
+}
+
+.cash_back_info {
+    border: 1px solid #d3d3d0;
+    padding: 10px 15px;
+    cursor: pointer
+}
+
+.click_txt {
+    font-size: 11px;
+    color: #878787;
+    line-height: 11px
+}
+
+.save_icon_band {
+    margin-right: 15px
+}
+
+.departure_icon {
+    background-position: -71px -329px;
+    width: 24px
+}
+
+.return_icon {
+    background-position: -99px -329px;
+    width: 24px
+}
+
+.review_logoitnry_section {
+    margin: 5px 15px 0 0
+}
+
+.city_shorttxt {
+    font-size: 24px;
+    color: #2f2f2f;
+    line-height: 24px
+}
+
+.city_shorttxtone {
+    font-size: 12px;
+    color: #878787
+}
+
+.dashed_info {
+    padding-left: 0;
+    margin-top: 6px
+}
+
+.dashed_txt {
+    border-top: 1px solid #999;
+    width: 14px;
+    margin-top: 7px
+}
+
+.cal_date {
+    font-size: 12px;
+    padding: 0 6px
+}
+
+.itineary_arrow {
+    background-position: -74px -296px;
+    width: 15px;
+    height: 15px;
+    display: block
+}
+
+.checkin_details .itineary_arror {
+    margin-top: 0 !important
+}
+
+.itineary_arrow.itineary_arrow_interstitial {
+    margin: 0
+}
+
+.overlay_heading, .overlay_heading_normalCase {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px
+}
+
+.completed_small_icon {
+    background-position: -128px -376px;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    display: none;
+    left: -2%;
+    top: 34%
+}
+
+.border_seprator_intrstial {
+    border-top: 1px solid #d3d1cc
+}
+
+.close_overlay span {
+    background: url(../images/flight_listing_sprite.png) no-repeat;
+    font-size: 0
+}
+
+.pop_otr {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    background-color: #fff;
+    background-clip: padding-box;
+    text-align: left;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    white-space: normal;
+    display: none;
+    padding: 9px 14px
+}
+
+.fareTip_pricetxt {
+    font-size: 16px;
+    color: #cb3904
+}
+
+.overlay_cases_wrapper {
+    background: #000;
+    padding: 10px
+}
+
+.overlay_cases {
+    background: #e5e5e5;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 3px
+}
+
+.overlay_popup_white {
+    background: #fff
+}
+
+.overlay_heading {
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+.overlay_heading_normalCase {
+    text-transform: none
+}
+
+.check-inoutHeading, .traveller_heading, .uppercase {
+    text-transform: uppercase
+}
+
+.overlay_subhead {
+    font-size: 14px;
+    line-height: 14px
+}
+
+.overlay_cart_messages {
+    font-size: 14px
+}
+
+.overlay_small_heading, .verification_link_msg {
+    font-size: 11px;
+    font-weight: 400
+}
+
+.rules_seprator {
+    border-top: 1px solid #adadad;
+    padding-top: 15px
+}
+
+.modal-header .close_overlay span, .overlay_cases .close_overlay span {
+    background-position: -48px -35px;
+    width: 16px;
+    height: 15px;
+    margin-top: 3px;
+    font-size: 20px
+}
+
+.close_overlay {
+    padding: 3px 10px
+}
+
+@-webkit-keyframes progress-bar-stripes {
+    from {
+        background-position: 40px 0
+    }
+    to {
+        background-position: 0 0
+    }
+}
+
+@-moz-keyframes progress-bar-stripes {
+    from {
+        background-position: 40px 0
+    }
+    to {
+        background-position: 0 0
+    }
+}
+
+@-o-keyframes progress-bar-stripes {
+    from {
+        background-position: 0 0
+    }
+    to {
+        background-position: 40px 0
+    }
+}
+
+@keyframes progress-bar-stripes {
+    from {
+        background-position: 40px 0
+    }
+    to {
+        background-position: 0 0
+    }
+}
+
+.progress {
+    height: 20px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1)
+}
+
+.progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    background-color: #428bca;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+    -webkit-transition: width .6s ease;
+    transition: width .6s ease
+}
+
+.fareChangeText {
+    color: #fff !important
+}
+
+.progress-striped .progress-bar {
+    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(255, 255, 255, .15)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .15)), color-stop(.75, rgba(255, 255, 255, .15)), color-stop(.75, transparent), to(transparent));
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-size: 40px 40px
+}
+
+.progress.active .progress-bar {
+    -webkit-animation: progress-bar-stripes 2s linear infinite;
+    -moz-animation: progress-bar-stripes 2s linear infinite;
+    -ms-animation: progress-bar-stripes 2s linear infinite;
+    -o-animation: progress-bar-stripes 2s linear infinite;
+    animation: progress-bar-stripes 2s linear infinite
+}
+
+.progress-bar-success {
+    background-color: #5cb85c
+}
+
+.progress-striped .progress-bar-success {
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent)
+}
+
+.progress-striped .progress-bar-info, .progress-striped .progress-bar-success {
+    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(255, 255, 255, .15)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .15)), color-stop(.75, rgba(255, 255, 255, .15)), color-stop(.75, transparent), to(transparent))
+}
+
+.progress-bar-info {
+    background-color: #5bc0de
+}
+
+.progress-striped .progress-bar-info {
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent)
+}
+
+.progress-bar-warning {
+    background-color: #f0ad4e
+}
+
+.progress-striped .progress-bar-warning {
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent)
+}
+
+.progress-striped .progress-bar-danger, .progress-striped .progress-bar-warning {
+    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(255, 255, 255, .15)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .15)), color-stop(.75, rgba(255, 255, 255, .15)), color-stop(.75, transparent), to(transparent))
+}
+
+.progress-bar-danger {
+    background-color: #d9534f
+}
+
+.progress-striped .progress-bar-danger {
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent)
+}
+
+.traveller_details {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 5px
+}
+
+.traveller_details .cityName {
+    font-size: 18px
+}
+
+.star_category {
+    font-size: 11px
+}
+
+.check-inoutHeading {
+    font-size: 10px
+}
+
+.inOut_date {
+    font-size: 14px;
+    color: #838383
+}
+
+.inOut_date span {
+    font-size: 18px;
+    color: #2f2f2f
+}
+
+.travel_rooms_count {
+    color: #838383
+}
+
+.travel_rooms_count span {
+    font-size: 18px;
+    color: #2f2f2f
+}
+
+.travel_time {
+    color: #838383;
+    font-size: 11px
+}
+
+.travel_price {
+    font-size: 16px;
+    color: #cb3904
+}
+
+.traveller_details .arrow_greater {
+    background-position: -141px -3px;
+    height: 10px;
+    position: absolute;
+    right: 15px;
+    width: 6px;
+    top: 41%
+}
+
+.traveller_details .open_icon_markwrapper {
+    cursor: pointer;
+    padding: 12px 10px 12px 12px
+}
+
+.traveller_details .open_icon_mark {
+    background-position: -51px -40px;
+    height: 4px;
+    width: 18px
+}
+
+.revw_sectn .hotel_name {
+    font-size: 16px;
+    color: #2f2f2f;
+    line-height: 16px;
+    margin-right: 10px
+}
+
+.traveller_bottom {
+    padding-top: 10px;
+    border-top: solid 1px #ececec;
+    sdisplay: none
+}
+
+.traveller_heading {
+    color: #838383
+}
+
+.intersitial.for_sessioninfo {
+    background: #fff
+}
+
+.session_expire_txt {
+    font-size: 20px;
+    color: #ab463b;
+    font-weight: 700;
+    line-height: 20px
+}
+
+.date_info, .trip_jurney {
+    color: #656565
+}
+
+html[dir=rtl] .dashed_info {
+    padding-right: 0
+}
+
+html[dir=rtl] .intrsl_txt_two {
+    direction: ltr
+}
+
+html[dir=rtl] .return_icon {
+    margin: 10px 0 0 15px
+}
+
+@media (min-width: 320px)and (max-width: 599px) {
+    .review_logoitnry_section {
+        margin: 0 5px 0 0
+    }
+
+    .cal_date {
+        font-size: 11px
+    }
+
+    .dashed_info {
+        margin-top: 3px
+    }
+
+    .completed_icon {
+        display: none
+    }
+
+    .completed_small_icon {
+        display: block
+    }
+
+    .departure_icon {
+        margin: 3px 8px 0 0
+    }
+
+    .return_icon {
+        margin-top: 4px
+    }
+
+    .city_shorttxt {
+        font-size: 15px;
+        line-height: 16px
+    }
+}
+
+.jcarousel-control-next, .jcarousel-control-next.inactive, .jcarousel-control-prev, .jcarousel-control-prev.inactive, .select_mark {
+    background: url(../images/addonsNew.png) no-repeat;
+    font-size: 0
+}
+
+.jcarousel {
+    position: relative
+}
+
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.jcarousel li {
+    float: left
+}
+
+.jcarousel-wrapper {
+    position: relative;
+    min-height: 50px
+}
+
+.jcarousel li a {
+    padding: 4px 0
+}
+
+.jcarousel li a.active {
+    border-bottom: 4px solid #fdd000
+}
+
+.jcarousel-control-prev {
+    background-position: -68px -50px;
+    width: 14px;
+    height: 20px;
+    position: absolute;
+    left: 10px;
+    top: 12px
+}
+
+.jcarousel-control-next {
+    background-position: -91px -50px;
+    width: 14px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 12px
+}
+
+.jcarousel-control-prev.inactive {
+    background-position: -68px -50px;
+    width: 14px;
+    height: 20px;
+    opacity: .3
+}
+
+.jcarousel-control-next.inactive {
+    background-position: -91px -50px;
+    width: 14px;
+    height: 20px;
+    opacity: .3
+}
+
+.jcarousel .carousel_section {
+    width: 320px
+}
+
+.carousel_section_txt {
+    font-size: 13px
+}
+
+.flight_seat_carousel {
+    width: 98%
+}
+
+@media (max-width: 767px) {
+    .jcarousel .carousel_section {
+        width: 475px
+    }
+
+    .jcarousel-wrapper {
+        padding: 0 50px
+    }
+}
+
+@media (max-width: 349px) {
+    .jcarousel .carousel_section {
+        width: 212px;
+        text-align: center
+    }
+
+    .jcarousel-wrapper {
+        padding: 0 30px
+    }
+}
+
+@media (min-width: 460px)and (max-width: 580px) {
+    .jcarousel .carousel_section {
+        width: 428px
+    }
+
+    .jcarousel-wrapper {
+        padding: 0 30px
+    }
+}
+
+@media (min-width: 350px)and (max-width: 469px) {
+    .jcarousel .carousel_section {
+        width: 252px
+    }
+
+    .jcarousel-wrapper {
+        padding: 0 30px
+    }
+}
+
+.multicityicn {
+    background: url(../images/flight_listing_sprite2.png) no-repeat;
+    font-size: 0
+}
+
+.intersitial_for_mobile {
+    background: #fff
+}
+
+.mobile_intersitial {
+    background-color: #e8e7e4;
+    width: 90%;
+    margin: 0 auto 16px;
+    padding: 15px
+}
+
+.intersitial_for_mobile #content {
+    padding-top: 15px
+}
+
+.trip_jurney {
+    font-size: 13px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #d6d6d6;
+    margin-bottom: 8px
+}
+
+.city_namefr_int {
+    font-size: 17px;
+    margin-bottom: 4px
+}
+
+.multicityicn {
+    background-position: -114px -299px;
+    width: 14px;
+    height: 19px;
+    display: inline-block;
+    line-height: 21px;
+    margin: 0 8px
+}

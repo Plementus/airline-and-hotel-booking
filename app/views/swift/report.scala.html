@@ -1,0 +1,43 @@
+@layouts.swift("Flight Booking Reports") {
+    <div class="row mb10">
+        <div class="col-md-12">
+            <ul class="list-inline">
+                <li>
+                    <button class="btn btn-md btn-info form-control"><i class="fa fa-file-excel-o"></i> Export Excel</button>
+                </li>
+                <li>
+                    <button class="btn btn-md btn-danger form-control"><i class="fa fa-file-pdf-o"></i> Export PDF</button>
+                </li>
+                <li>
+                    <button class="btn btn-md btn-primary form-control"><i class="fa fa-search"></i> Display Result</button>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"></div><br />
+        <div class="col-md-12">
+            <div class="panel" id="spy5">
+                <div class="panel-heading">
+                    <span class="panel-name">Flight Bookings Report</span>
+                </div>
+                <div class="panel-body pn">
+                    <table class="table table-striped datatable">
+                        <thead>
+                            <tr>
+                                <th>PNR-Ref</th>
+                                <th>Contact Full Name</th>
+                                <th>Airline/Cabin/Trip</th>
+                                <th>Trip Destinations</th>
+                                <th>Price</th>
+                                <th>Profit</th>
+                                <th>No. of Passengers</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+}

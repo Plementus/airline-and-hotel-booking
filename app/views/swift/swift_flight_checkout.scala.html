@@ -1,0 +1,103 @@
+@import java.util
+@import core.gdsbookingengine.FlightSearchResponse
+@import core.PaymentCategories
+@import controllers.swift.ApplicationController
+@import controllers.swift
+@(form: DynamicForm, paymentMethods: util.List[PaymentMethods], flightInfo: FlightSearchResponse)
+@layouts.swift("Payment Confirmation", scripts) {
+}
+@scripts = {
+    <script>
+        $(function() {
+            var no_markup_price = $("input[name=invoice_price]").val();
+            var total = null;
+            $("input[name=markup_option]").on('change', function () {
+                var markup_option = $(this).val();
+                if (markup_option === 'on_fly_markup') {
+                    var onfly_value = window.prompt("Add Price to Flight Booking Invoice");
+                    if (onfly_value !== null && onfly_value !== 'undefined') {
+                        total = parseInt(onfly_value) + parseInt(no_markup_price);
+                        $("input[name=invoice_price]").val(total);
+                        $('.invoice_price').html("&#x20a6; " + total);
+                    }
+                } else if (markup_option === 'default_markup') {
+                    /**
+                     * Load the XHR to review the new markup
+                     */
+                    $.ajax({
+                        url: '@swift.FlightController.getMarkupPrice().toString',
+                        dataType: 'get',
+                        data: {
+                            trip_type: '@form.get("trip_type")',
+                            num_of_adult: '@form.get("num_of_adult")',
+                            num_of_children: '@form.get("num_of_children")',
+                            num_of_infant: '@form.get("num_of_infant")'
+                        },
+                        beforeSend: function() {
+                            $("input[name=markup_option]").addClass('disabled');
+                            $.growl.notice({
+                                    name: "Loading!!!",
+                                    message: "loading...default markup",
+                                    duration: 3000
+                                });
+                        },
+                        success: function(response) {
+                            console.log(response);
+                            if(response.amt < 1) {
+                                $.growl.error({
+                                    name: "No Markup!",
+                                    message: "No mark price was added to your profile.",
+                                    duration: 5000
+                                });
+                            } else {
+                                $.growl.notice({
+                                    name: "New Markup added.",
+                                    message: "&#x20a6; " + resp.toFixed() + " commission was calculated for this booking.",
+                                    duration: 8000
+                                });
+                                $("input[name=invoice_price]").val(no_markup_price + resp.amt);
+                                $('.invoice_price').html("&#x20a6; " + no_markup_price + resp.amt.toFixed(2));
+                            }
+                        },
+                        error: function() {
+                            $("input[name=invoice_price]").val(no_markup_price);
+                            $('.invoice_price').html("&#x20a6; " + total.toFixed(2));
+                        },
+                        complete: function () {
+                            $("input[name=markup_option]").removeClass('disabled');
+                        }
+                    });
+                } else {
+                    $("input[name=invoice_price]").val(no_markup_price);
+                    $('.invoice_price').html("&#x20a6; " + total.toFixed(2));
+                }
+            });
+        });
+    </script>
+    <script>
+        $(function() {
+            $("input[name=payment_category]").on('change', function() {
+                var $this = $(this);
+                if($this.val() === '@PaymentCategories.Pay_By_Cash.name()') {
+                   $('.@PaymentCategories.Pay_By_Cash.name()').attr('required', 'required');
+                   $('#@PaymentCategories.Pay_By_Cash.name()').show();
+                } else {
+                    $('.@PaymentCategories.Pay_By_Cash.name()').removeAttr('required');
+                    $('#@PaymentCategories.Pay_By_Cash.name()').hide();
+                }
+                if ($this.val() === '@PaymentCategories.Debit_Card.name()') {
+                    $('.@PaymentCategories.Debit_Card.name()').attr('required', 'required');
+                    $('#@PaymentCategories.Debit_Card.name()').show();
+                }else {
+                    $('.@PaymentCategories.Debit_Card.name()').removeAttr('required');
+                    $('#@PaymentCategories.Debit_Card.name()').hide();
+                }
+
+                @*if($this.val() === '@PaymentCategories.Debit_Card.name()') {*@
+                    @*alert("Not Available yet");*@
+                @*}*@
+
+             });
+        })
+    </script>
+}

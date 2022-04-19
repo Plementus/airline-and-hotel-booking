@@ -1,0 +1,30 @@
+@import controllers._
+@(incentives: List[AirlineIncentives])
+@layouts.admin("Airline Incentive") {
+    <div class="panel">
+        <header class="panel-heading">
+            <h2 class="panel-name">Manage Airline Incentives</h2>
+            <br /><a href="@controllers.console.routes.AirlineIncentiveController.getCreate()" class="btn btn-default"><i class="fa fa-plus"></i> Add Incentive from Airline</a><br />
+        </header>
+        <div class="panel-body">
+            @views.html._include._dtable.render("Airline Incentive", Array("ID", "Title", "Airline", "Value Type", "Value", "Status", "Auth. User", "Action"), tBody())
+        </div>
+    </div>
+}
+@tBody() = {
+    @for((incentive, index) <- incentives.zipWithIndex) {
+        <tr>
+            <td>@incentive.id</td>
+            <td>@incentive.airline_incentive_prop.title</td>
+            <td>@incentive.airline_incentive_prop.airline_id.name</td>
+            <td>@incentive.value_type.name().toLowerCase</td>
+            <td>@incentive.value</td>
+            <td>@incentive.status.name()</td>
+            <td>@incentive.auth_user_id.first_name @incentive.auth_user_id.last_name</td>
+            <td>
+                <span><a href="@console.routes.AirlineIncentiveController.getCreate(incentive.id)" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a></span>
+                <span><a href="@console.routes.AirlineIncentiveController.getDelete(incentive.id)" class="btn btn-xs btn-danger"><i class="fa fa-time"></i> Delete</a></span>
+            </td>
+        </tr>
+    }
+}

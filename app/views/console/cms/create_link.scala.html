@@ -1,0 +1,167 @@
+@import helper._
+@(form: Form[CmsLinks])
+@layouts.admin("Create/Edit Link", scripts) {
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-name">Create New Link</span>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-3">
+                @views.html.console.cms.__categories.render()
+            </div>
+            <div class="col-md-9">
+                @helpers._error(form)
+                @helper.form(action = controllers.console.cms.routes.ApplicationController.postCreateLink(), 'class -> "form") {
+                    @CSRF.formField
+                    @if(form.get() != null) {
+                        <input type="hidden" value="@form.get().id" name="id" />
+                    }
+                    <div><!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+                                Properties</a></li>
+                        </ul>
+
+                            <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active  col-md-7" id="home">
+                                @views.html.helpers._flash.render()
+                                <br /><br />
+                                <div class="form-group">
+                                    <label>Title</label><br />
+                                    <input type="text" name="@form("name").name()" value="@form("name").value()" class="form-control" data-required="true" required="true" />
+                                </div>
+                                <div class="form-group">
+                                @select(form("category_id.id"), options(CmsContentCategories.options(request().getQueryString("cat_id"))), '_label -> "Folder", 'class -> "form-control chosen-select")
+                                </div>
+                                <div class="form-group">
+                                    <label>Type:</label>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <label for="internalLinkType">Internal Link
+                                                <input name="link_type" type="radio" role="radio" aria-checked="true" tabindex="0" id="internalLinkType" value="INTERNAL" checked="checked" style="-webkit-user-select : none ;">
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label for="externalLinkType">External Link
+                                                <input name="link_type" type="radio" role="radio" aria-checked="false" tabindex="0" id="externalLinkType" value="EXTERNAL" style="-webkit-user-select : none ;">
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label for="bookingEngineLinkType">Booking Engine
+                                                <input name="link_type" type="radio" role="radio" aria-checked="false" tabindex="0" id="bookingEngineLinkType" value="BOOKING_ENGINE" style="-webkit-user-select : none ;">
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label for="codeLinkType">Code Link
+                                                <input name="link_type" type="radio" role="radio" aria-checked="false" tabindex="0" id="codeLinkType" value="CODE" style="-webkit-user-select : none ;">
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="form-group INTERNAL_DIV" style="display : block;">
+                                    <label>Select a Page</label>
+                                    <select class="form-control INTERNAL_DIV" name="@form("cms_page_id.id").name()">
+                                        <option></option>
+                                        @defining(CmsPages.find.all()) { page =>
+                                            @if(page.size() != 0) {
+                                                @for(item <- page) {
+                                                    <option @if(form("cms_page_id.id") != null && item != null && form("cms_page_id.id").valueOr(item.id.toString)) { selected="selected" } value="@item.id">@item.name</option>
+                                                }
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group EXTERNAL_DIV" style="display : none;">
+                                    <label>Specify External URL</label>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <select name="protocol"  class="form-control EXTERNAL_DIV">
+                                                <option value=""></option>
+                                                <option value="http://">http://</option>
+                                                <option value="https://">https://</option>
+                                                <option value="fpt://">ftp://</option>
+                                                <option value="mailto:">mailto:</option>
+                                                <option value="javascript:">javascript:</option>
+                                            </select>
+                                        </li>
+                                        <li>
+                                            <input class="form-control" name="link_value" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="form-group CODE_DIV" style="display : none ;">
+                                    <label>Enter <code>Code</code> </label>
+                                    <textarea rows="4" class="form-control CODE_DIV" name="code_value"></textarea>
+                                </div>
+                                <div class="form-group BOOKING_ENGINE_DIV" style="display : none;">
+                                    <label>Specify a Booking Engine</label>
+                                    <select class="BOOKING_ENGINE_DIV form-control" style="display: none" name="@form("cms_system_feature_id.id").name()">
+                                    @defining(CmsSystemFeatures.find.all()) { features =>
+                                        @*<option>Select a Booking Engine</option>*@
+                                        @for(feat <- features) {
+                                            <option @if(form("cms_system_feature_id.id").value() != null && form("cms_system_feature_id.id").name().equals(feat.id.toString)) { selected="selected" }  value="@feat.id">@feat.name</option>
+                                        }
+                                    }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Target</label>
+                                    <select name="target" class="form-control">
+                                        <option value="_self">Same Window</option>
+                                        <option value="_blank">New Window</option>
+                                        <option value="_parent">Parent Window</option>
+                                    </select>
+                                </div>
+                                @*<div class="form-group">*@
+                                @*@@helper.inputText(form("sort_order"), '_label -> "Sort Order", '_class -> "form-control", '_default -> "0")*@
+                                @*</div>*@
+                                <div class="form-group">
+                                    <label><input type="checkbox" name="@form("show_in_menu").name()" value="Yes" @if(form("show_in_menu").value() == "Yes") { checked="checked" }> Show in Top Menu ?</label> <br />
+                                </div>
+                                <div class="form-group">
+                                @helper.select(form("is_published"), Seq("Yes" -> "Yes", "No" -> "No"), 'class -> "form-control", '_label -> "Publish Link?")
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <button class="btn btn-default mg2 pull-right" onclick="javascript: history.back();" type="button">Go Back</button>
+                                    <button class="btn btn-danger mg2 pull-right" type="reset">Cancel</button>
+                                    <button class="btn btn-success mg2 pull-right" name="action" value="save" type="submit">Save</button>
+                                    <button class="btn btn-success mg2 pull-right" name="action" value="save_continue" type="submit">Save and Publish</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+         </div>
+    </div>
+}
+@scripts = {
+    <script>
+        $(function() {
+            $('input[name=link_type]').on('change', function() {
+                var selectedItem = $(this).val();
+                var int_div = $(".INTERNAL_DIV"), ext_div = $(".EXTERNAL_DIV"), cod_div = $(".CODE_DIV"), booking_engine_div = $(".BOOKING_ENGINE_DIV");
+                int_div.hide();
+                ext_div.hide();
+                cod_div.hide();
+                int_div.val('');
+                ext_div.val('');
+                cod_div.val('');
+                booking_engine_div.val('');
+                if(selectedItem == 'INTERNAL') {
+                    int_div.show();
+                } else if(selectedItem === 'EXTERNAL') {
+                    ext_div.show();
+                } else if(selectedItem === 'CODE') {
+                    cod_div.show();
+                } else if(selectedItem === 'BOOKING_ENGINE') {
+                    booking_engine_div.show();
+                }
+            });
+        });
+    </script>
+}

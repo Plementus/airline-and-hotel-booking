@@ -1,0 +1,41 @@
+@(flightBooking: FlightBookings, source: String)
+@content() = {
+    <div class="panel">
+        <div class="panel-body">
+            <h2>Booking Information</h2>
+            <h5><strong>Contact Details</strong></h5>
+            <strong>Full name: </strong> @flightBooking.contact_firstname @flightBooking.contact_surname<br />
+            <strong>Email: </strong> @flightBooking.contact_email<br />
+            <strong>Phone: </strong> @flightBooking.contact_phone<br />
+            <hr />
+            <h5><strong>Passenger Records</strong></h5>
+            <table class="table table-responsive table-striped">
+            @if(flightBooking.flightBookingPassengersList != null && flightBooking.flightBookingPassengersList.size() != 0) {
+                @for(passenger <- flightBooking.flightBookingPassengersList) {
+                    <tr>
+                        <td><strong>@passenger.app_form_field_id.form_field_id.label</strong></td>
+                        <td>@Html.apply(passenger.input_value)</td>
+                    </tr>
+                }
+            }
+            </table>
+            <hr />
+            <h5><strong>Departure/Destination Information</strong></h5>
+            <strong>Price from GDS: </strong> @flightBooking.gds_total_fair<br />
+            <strong>Trip Type: </strong> @flightBooking.trip_type.name()<br />
+            <strong>Cabin Class: </strong> @flightBooking.cabin_class.name()<br />
+            @for((deptDest, i) <- FlightBookingDestinations.find.where().eq("flight_booking_id", flightBooking).findList().zipWithIndex) {
+                <strong>Departure/Arrival:</strong> @deptDest.departure_airport_id.airport_name to @deptDest.arrival_airport_id.airport_name<br />
+                <strong>Departure/Arrival Date:</strong> @deptDest.departure_date to @deptDest.arrival_date<br />
+                <br />
+            }
+        </div>
+    </div>
+}
+@if(source != null && source.equalsIgnoreCase("ajax")) {
+    @layouts.admin("View Itinerary") {
+        @content()
+    }
+} else {
+    @content()
+}

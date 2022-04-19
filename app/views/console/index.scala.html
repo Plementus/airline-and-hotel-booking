@@ -1,0 +1,188 @@
+@import core.PaymentCategories
+@(paymentMethodList: java.util.List[PaymentMethods], notificationList: java.util.List[Notifications])
+@import java.util.Date; val date: String = new Date().toLocaleString;
+
+@layouts.admin("Console Dashboard", scripts) {
+    <link rel="stylesheet" type="text/css" href="@routes.Assets.at("vendor/plugins/daterange/daterangepicker.css")" />
+    @if(flash().get("admin_success") != null) {
+        <h4 class="alert_info">
+            Welcome!
+        </h4>
+    }
+    <div class="">
+        <div class="col-md-4 col-xs-4 row">
+            <form action="#">
+                <div class="form-group">
+                    @*<label class="control-label col-md-12">Specify Date</label>*@
+                    <div class="col-md-12 row">
+                        <div class="input-group bootstrap-timepicker">
+                            <input type="text" name="daterange" class="form-control timepicker-default">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><i class="fa fa-calendar-o"></i></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="clearfix"></div>
+        <h5><strong>Dashboard</strong></h5>
+        <div class="col-md-8 col-xs-8 state-overview panel panel-default">
+            <!--state overview start-->
+            <div class="col-lg-3 col-sm-6" style="border-right: 1px solid #f5f5f5;">
+                <h1 class="count">@Users.find.where().eq("role_code", Roles.find.where().eq("level", core.security.Auth.ROLE_LEVEL_CUSTOMER).findUnique()).findList().size()</h1>
+                <p>Customers</p>
+            </div>
+            <div class="col-lg-3 col-sm-6" style="border-right: 1px solid #f5f5f5;">
+                <h1 class="count2">0</h1>
+                <p>Sales</p>
+            </div>
+            <div class="col-lg-3 col-sm-6" style="border-right: 1px solid #f5f5f5;">
+                <h1 class=" count3"> 0</h1>
+                <p>New Order</p>
+            </div>
+            <div class="col-lg-3 col-sm-6" style="border-right: 1px solid #f5f5f5;">
+                <h1 class=" count4">0</h1>
+                <p>Total Profit</p>
+            </div>
+            <!--state overview end-->
+            <div class="clearfix"></div>
+            <hr />
+            <div class="col-md-4">
+                <h5 class="text-danger"><strong>Quick links.</strong></h5>
+                <ol>
+                    <li><a href="@controllers.console.routes.FlightController.getQueues">Flight Booking Queues</a></li>
+                    <li><a href="">Hotel Booking Queues</a></li>
+                    <li><a href="">Flight Commission &amp; Markup Pricing</a></li>
+                    <li><a href="">Flight Destination and Airline Blacklist</a></li>
+                    <li><a href="">Hotels Commission &amp; Markup Pricing</a></li>
+                    <li><a href="">Flights Report &amp; Analytics</a></li>
+                    <li><a href="">Manage Flight Products &amp; Services</a></li>
+                </ol>
+            </div>
+            <div class="col-md-4">
+                <h5 class="text-danger"><strong>User Managements</strong></h5>
+                <ol>
+                    <li><a href="">Create B2C Customer</a></li>
+                    <li><a href="">Create B2B/Swift Customer</a></li>
+                    <li><a href="">Manage B2B/Swift Customer</a></li>
+                    <li><a href="">Create Staff Account</a></li>
+                    <li><a href="">Manage Accounts</a></li>
+                    <li><a href="">Access Control & Privileges</a></li>
+                    <li><a href="">Audit Trails</a></li>
+                </ol>
+            </div>
+            <div class="col-md-4">
+                <h5 class="text-danger"><strong>Transactions Log</strong></h5>
+                <ol>
+                    <li><a href="">All Payment History</a></li>
+                    <li><a href="">Successful Payment History</a></li>
+                    <li><a href="">Confirm Payment Status</a></li>
+                    <li><a href="">Change Payment Status</a></li>
+                </ol>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-4">
+                <h5 class="text-danger"><strong>System Settings</strong></h5>
+                <ol>
+                    <li><a href="">Currencies &amp; Conversion Rate</a></li>
+                    <li><a href="">Countries, State and Cities</a></li>
+                    <li><a href="">Create/Manage Payment Method</a></li>
+                    <li><a href="">General Settings</a></li>
+                </ol>
+            </div>
+            <div class="col-md-4">
+                <h5 class="text-danger"><strong>Content Management</strong></h5>
+                <ol>
+                    <li><a href="@controllers.console.cms.routes.ContentCategoryController.getIndex">Create/Manage Categories</a></li>
+                    <li><a href="@controllers.console.cms.routes.ContainerController.getIndex">Create/Manage Container</a></li>
+                    <li><a href="@controllers.console.cms.routes.TemplateController.getIndex">Create/Manage Template</a></li>
+                    <li><a href="@controllers.console.cms.routes.PageController.getIndex">Create/Manage Pages</a></li>
+                    <li><a href="@controllers.console.routes.FileManagerController.getIndex">Media Manager</a></li>
+                </ol>
+            </div>
+            <div class="col-md-4">
+                <h5 class="text-danger"><strong>PNR Management</strong></h5>
+                <ol>
+                    <li><a href="#">Issue PNR Ticket</a></li>
+                    <li><a href="#">Void PNR Ticket</a></li>
+                    <li><a href="#">PNR Ticket Information</a></li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-md-4 col-xs-4">
+            <ul class="list-group">
+                @if(paymentMethodList.size() < 0) {
+                    <h5><strong>No result found.</strong></h5>
+                } else {
+                    <li class="list-group-item"><h5 class="text-primary"><strong>Flight Booking Payment Methods Summary.</strong></h5></li>
+                    @for(paymentMethods <- paymentMethodList) {
+                        <li class="list-group-item"><a href="">@paymentMethods.name Queues</a><span class="pull-right badge badge-danger">@paymentMethods.paymentHistoriesList.size()</span></li>
+                    }
+                }
+            </ul>
+            <hr />
+            <h5 class="text-primary"><strong><i class="fa fa-alert"></i> Notifications</strong></h5>
+            <ul>
+                @defining(notificationList) { notifications =>
+                  @if(notifications.size().<=(0)) {
+                      <h5>No New Notification</h5>
+                  } else {
+                      <ul>
+                          @for(notification <- notifications) {
+                              <li><a href="">@notification.notification_message</a></li>
+                          }
+                      </ul>
+                  }
+                }
+            </ul>
+            <hr />
+            <h5 class="text-primary"><strong><i class="fa fa-alert"></i> Flight Payment Category Queues</strong></h5>
+            <ul class="list-group">
+                @for(category <- PaymentCategories.values()) {
+                    <li class="list-group-item">@org.apache.commons.lang3.text.WordUtils.capitalize(category.name().replaceAllLiterally("_", " ")) Queues</li>
+                }
+            </ul>
+            <h5 class="text-primary"><strong><i class="fa fa-alert"></i> Flight Booking Status Queues</strong></h5>
+            <ul class="list-group">
+                @for(category <- PaymentStatus.values()) {
+                    <li class="list-group-item">@category.name().replaceAllLiterally("_", " ") Queues</li>
+                }
+            </ul>
+
+        </div>
+    </div>
+
+
+}
+
+@scripts = {
+        <!-- Include Date Range Picker -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+    <script>
+        function cb(start, end) {
+            $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        }
+        cb(moment().subtract(29, 'days'), moment());
+
+        $('input[name=daterange]').daterangepicker({
+            ranges: {
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            },
+            timePicker: true,
+            timePickerIncrement: 30,
+            maxDate: moment()
+        }).on('apply.daterangepicker', function(ev, picker) {
+            var from = picker.startDate.format('YYYY-MM-DD h:mm A');
+            var to = picker.endDate.format('YYYY-MM-DD hh:mm');
+            window.location.href = "?from=" + from + "&to=" + to;
+        });
+    </script>
+}

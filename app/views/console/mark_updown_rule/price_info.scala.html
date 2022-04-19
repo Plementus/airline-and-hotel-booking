@@ -1,0 +1,40 @@
+@(markupRules: FlightMarkUpDownRules)
+<div class="panel">
+    <div class="panel-body">
+        <h5>Flight Rule Price Info.</h5>
+        <table class="table table-responsive table-striped">
+            <thead>
+                @@if(markupRules.flight_mark_up_down_pricing_id.is_fare_type_markup == true) {
+                    <th>+/-</th>
+                    <th>Fare Option</th>
+                    <th>Value Type</th>
+                    <th>Value</th>
+                }
+                <th>Currencies?</th>
+                <th>Coupon</th>
+                <th>Display Fare</th>
+            </thead>
+            <tbody>
+            @@if(markupRules.flight_mark_up_down_pricing_id.is_fare_type_markup == true) {
+                <td>@@markupRules.flight_mark_up_down_pricing_id.ft_direction.name().replaceAll("_", " ").toLowerCase()</td>
+                <td>@@markupRules.flight_mark_up_down_pricing_id.ft_fare_option.name().replaceAll("_", " ").toLowerCase()</td>
+                <td>@@markupRules.flight_mark_up_down_pricing_id.ft_value_type.name().replaceAll("_", " ").toLowerCase()</td>
+                <td>@@markupRules.flight_mark_up_down_pricing_id.ft_value</td>
+            }
+                <td>
+                @@if(markupRules.flight_mark_up_down_pricing_id.currencies != null) {
+                    <small>
+                        @@for(currency <- markupRules.flight_mark_up_down_pricing_id.currencies.split("<<>>")) {
+                            <li>@@currency</li>
+                        }
+                    </small>
+                }else {
+                    N/A
+                }
+                </td>
+                <td>@@if(markupRules.flight_mark_up_down_pricing_id.coupon_id != null) { @@markupRules.flight_mark_up_down_pricing_id.coupon_id.code } else { N/A }</td>
+                <td>@@markupRules.flight_mark_up_down_pricing_id.display_gds_fare</td>
+            </tbody>
+        </table>
+    </div>
+</div>

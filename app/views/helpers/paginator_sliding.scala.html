@@ -1,0 +1,15 @@
+@import core.PaginationAbstract
+@(pagination: PaginationAbstract[_])
+<ul class="pagination pagination" id="pagination">
+    @if(pagination.size > 1) {
+        @if(pagination.hasPrevious) {
+            <li class="prev"><a href="#" class="xhr-load"><i class="icon"><img src="@routes.Assets.at("v1/images/left-arrow.png")" alt="" /></i></a></li>
+        }
+        @for(index: Int <- 0 to pagination.pagesInRange) {
+            <li class="page@if(pagination.isCurrentPage(index)) { active }"><a class="nprogress-load" href="@pagination.appendUrl(index)">@index</a></li>
+        }
+        @if(pagination.hasNext) {
+            <li class="next"><a href="#" class="xhr-load"><i class="icon"><img src="@routes.Assets.at("v1/images/right-arrow.png")" alt="" /></i></a></li>
+        }
+    }
+</ul>

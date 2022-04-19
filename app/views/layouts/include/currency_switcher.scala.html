@@ -1,0 +1,27 @@
+@import core.Cookies
+<li style="margin-top: -2px; border-radius: 5px;">
+    <div class="dropdown show_hide" ng-controller="switchCurrencyCtrl" style="line-height: 6px; padding: 7px; font-family: proxima_nova_rgregular; border: 1px solid; border-radius: 3px; text-transform: capitalize">
+            <button class="dropdown-toggle btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <img ng-src="@play.Configuration.root().getString("amazon.aws.s3Url")images/flag/{{ currencycountry + '.png' }}" alt="{{ currencycode }}" ng-cloak /> <b ng-cloak>{{ currencycode | uppercase }}</b>
+            <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" ng-init="currencies = @play.libs.Json.toJson(Currencies.getCurrencies())">
+                <input type="hidden" ng-model="u_currency" value="{{ currencycode }}" />
+                <small style="margin: 5px 0 0px 10px;">Change Currency</small>
+                <div class="divider"></div>
+                <li ng-repeat="currency in currencies" ng-cloak><a ng-click="changeCurrency(currency.code)" style="cursor: pointer;"><i><img ng-src="@play.Configuration.root().getString("amazon.aws.s3Url")images/flag/{{currency.country_id.name.replace(' ', '-')}}.png" alt="{{ currency.code }}" ng-cloak /></i> <b ng-cloak> {{ currency.name }}</b></a></li>
+            </ul>
+    </div>
+</li>
+<script>
+    $(function() {
+          $('.dropdown-toggle').on('click', function() {
+                var $this = $('.show_hide');
+                if($this.hasClass('open')) {
+                    $this.removeClass('open');
+                } else {
+                    $this.addClass('open');
+                }
+          });
+    });
+</script>

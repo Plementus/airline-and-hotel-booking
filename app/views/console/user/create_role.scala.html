@@ -1,0 +1,31 @@
+@import helper._
+@(userForm: Form[Roles])
+@import helper._, java.util.List, play.Play; val data = Seq();
+@layouts.admin("Create Role/Group", scripts) {
+      <article class="module width_full">
+            <header><h3>Create New Group</h3></header>
+            <div class="module_content">
+            @helper.form(action = controllers.console.routes.UserController.postCreateGroup, 'class -> "form", 'enctype -> "multipart/form-data") {
+                  @CSRF.formField
+                  @helpers._flash.render()
+                  @helpers._error.render(userForm)
+                  <div class="form-group">
+                  @helper.inputText(userForm("role_title"), '_label -> "Role Title", 'class -> "form-control", 'placeholder -> "Role Title")
+                  </div>
+                  <div class="form-group">
+                  @helper.inputText(userForm("level"), '_label -> "Level", 'type -> "number", 'placeholder -> "Level should be numeric value", 'class -> "form-control", 'placeholder -> "Level")
+                  </div>
+                  <div class="form-group">
+                        <button type="submit" name="submit" class="form-control btn btn-primary">Save</button>
+                  </div>
+            }
+            </div>
+      </article>
+}
+@scripts = {
+      <script>
+            $(function() {
+                  $('input[name=level]').attr('min', '1');
+            });
+      </script>
+}

@@ -1,0 +1,95 @@
+@(title: String, registerForm: play.data.Form[Users])
+@import helper._; var prefix = Seq("" -> "Select", "Mr" -> "Mr.", "Mrs" -> "Mrs.")
+@for(pos: Titles <- Titles.values()) {
+
+}
+@layouts.main(title, scripts) {
+
+    <div class="container">
+        <div class="form-section">
+            <form method="post" data-validate="parsley" action="@routes.AuthenticationController.postRegister()" enctype="application/x-www-form-urlencoded" id="register_form">
+                <input type="hidden" name="action_type" value="customer" />
+                @CSRF.formField
+                @helpers._flash.render()
+                @if(request.getQueryString("redirectUrl") != null) {
+                    @* Users Intending to redirect back to page *@
+                    <input type="hidden" name="redirectUrl" value="@request.getQueryString("redirectUrl")" />
+                }
+                <div class="row">
+                    <div class="col-sm-7 col-xs-12">
+                        <h2 class="heading">Register for an account</h2>
+                        <h3 class="sub-heading">
+                            Already have a @play.Configuration.root().getString("project.name").toLowerCase account? <a href="@routes.AuthenticationController.getLogin()">
+                            Sign in here</a>.</h3>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <aside class="alert alert-success alert-dismissible signup-success text-center hide" style="margin-bottom :10px ; padding:8px"></aside>
+                                <aside class="alert alert-danger alert-dismissible signup-error text-center hide" style="margin-bottom : 10px ; padding: 8px"></aside>
+                            </div>
+                            <div class="col-sm-3 col-md-3 col-xs-12">
+                                <div class="form-group">
+                                    <select data-required="true" name="prefix" id="name" class="form-control">
+                                        <option value="">Select</option>
+                                        <option value="Mr">Mr</option>
+                                        <option value="Miss">Miss</option>
+                                        <option value="Mrs">Mrs</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-md-4 col-xs-12">
+                                <div class="form-group">
+                                    <input type="text" data-error-message="First name required" data-required="true" name="@registerForm("first_name").name()" value="@registerForm("first_name").value()" placeholder="First Name" />
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-md-5 col-xs-12">
+                                <div class="form-group">
+                                    <input type="text" data-error-message="Last name required" data-required="true" name="@registerForm("last_name").name()" value="@registerForm("last_name").value()" placeholder="Last Name" />
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-sm-6 col-md-6 col-xs-12">
+                                <div class="form-group">
+                                    <input type="email" data-required="true" data-type="email" id="email" name="@registerForm("email").name()" value="@registerForm("first_name").value()" placeholder="Email address" />
+                                    <div class="email-val-ajax"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-xs-12">
+                                <div class="form-group">
+                                    <input type="text" data-required="true" data-minlength="6" data-type="number" name="@registerForm("phone").name()" value="@registerForm("phone").value()" placeholder="Phone number" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" data-required="true" data-minlength="6" id="password" name="@registerForm.field("password").name()" placeholder="Password  (Minimum six characters) " />
+                        </div>
+                        <div class="form-group">
+                            <input placeholder="Retype Password" data-equalto="#password" placeholder="Confirm Password" type="password" id="retype_password" name="retype_password" />
+                        </div>
+                        <div class="form-group">
+                            <label><input type="checkbox" data-required="true" id="term_condition" name="term_condition" value="yes">
+                                I agree to Travelfix terms &amp; Condition. <a href="#"> Terms and Conditions</a>.</label>
+                        </div>
+
+                        <div class="">
+                            <label><input type="checkbox" name="newsletter_subscription" value="yes">
+                                Keep me informed of special promotions and offers by @play.Configuration.root().getString("project.name")</label>
+                        </div>
+                        <div class="button-section">
+                            <button type="submit" id="submitRegister" class="btn">Create account</button>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-5 col-xs-12 text-center">
+                        <p><a id="facebookLogin" class="noxhr" style="cursor: pointer ;"><img src="@routes.Assets.at("v1/images/facebook.jpg")" alt="" /></a></p>
+                        @*<p><a href="#"><img src="@routes.Assets.at("v1/images/google-plus.jpg")" alt="" /></a></p>*@
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+}
+@scripts = {
+    @*<script src="@routes.Assets.at("my_js/jsAuthReg.js")" type="text/javascript"></script>*@
+}

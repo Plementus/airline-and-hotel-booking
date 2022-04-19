@@ -1,0 +1,84 @@
+@import java.util
+@import java.text.SimpleDateFormat
+@(dataBank: util.List[DataBank])
+@layouts.admin("File Upload", scripts) {
+  <link href="@routes.Assets.at("vendor/plugins/dropzone/downloads/css/dropzone.css")" rel="stylesheet"/>
+  <section class="panel">
+    <div class="panel-body">
+      <div class="col-md-12">
+      <header class="panel-heading">
+      Drag & Drop File Upload
+      </header>
+      @*<form action="@controllers.console.routes.FileManagerController.postAjaxUpload" class="dropzone" id="my-awesome-dropzone"></form>*@
+      <div class="clearfix"></div>
+      </div>
+      <div class="col-md-12">
+        <table class="table table-striped table-responsive datatable">
+          <thead>
+            <tr>
+              <td></td>
+              <td>Name</td>
+              <td>Type</td>
+              <td>Size</td>
+              <td>URL</td>
+              <td>Date</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+            @*if the size is not zero, else exists*@
+            @if(dataBank != null && dataBank.size()!=0){
+              @for(file <- dataBank){
+
+                System.out.println(dt1);
+                <tr>
+                  <td></td>
+                  <td>@file.file_name</td>
+                  <td>@file.file_extension</td>
+                  <td>@file.file_size</td>
+                  <td>
+                  <a href="@file.file_url" target="_blank"><p>Copy The Url</p></a>
+                  </td>
+                  <td>
+                   @* @SimpleDateFormat formatD.format(@file.created_at) = new SimpleDateFormat("yyyyy-mm-dd")*@
+                    @file.created_at
+
+                  </td>
+                  <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default dropdown-toggle btn-xs btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a style="cursor : pointer" data-value="@file.file_url" class="copy_to_clip">Copy URL</a></li>
+                          <li><a target="_blank" href="@file.file_url">Download</a></li>
+                          <li><a target="_blank" href="@file.file_url">Preview</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              }
+              }else {
+              <strong>No file exists</strong>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  <hr />
+}
+@scripts = {
+  <script src="@routes.Assets.at("vendor/plugins/fancybox/source/jquery.fancybox.js")"></script>
+  <script src="@routes.Assets.at("vendor/plugins/dropzone/downloads/dropzone.min.js")"></script>
+  <script src="@routes.Assets.at("admin/v1/js/modernizr.custom.js")"></script>
+  <script src="@routes.Assets.at("admin/v1/js/toucheffects.js")"></script>
+  <script type="text/javascript">
+          $(function() {
+            jQuery(".fancybox").fancybox();
+            $(".datatable").dataTable();
+          });
+  </script>
+}

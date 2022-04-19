@@ -1,0 +1,20 @@
+@import java.util
+@import helper._
+@import core.gdsbookingengine._
+@import controllers.swift.ApplicationController
+@import core.gdsbookingengine.FlightSearchResponse
+@(searchResult: java.util.List[PricedItineraryWSResponse], availableAirlines: util.Set[String], numberOfStops: util.Set[Integer])
+@layouts.swift("Flight Result", scripts, "tables-datatables-page onload-check sb-l-m") {
+
+}
+
+@scripts = {
+    <script src="@routes.Assets.at("my_js/jsAffiliateFlight.js")" type="text/javascript"></script>
+    <script>
+        $(function() {
+            $('.new_search_action').on('click', function() {
+                $('.new_search_div').toggle();
+            });
+        });
+    </script>
+}

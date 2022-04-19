@@ -1,0 +1,197 @@
+@import play.libs.Json
+@import helper._
+@import core.hotels.HotelDataPresentationInterface
+@import core.Pagination
+@(pagination: Pagination[HotelDataPresentationInterface])
+@layouts.main("Hotel Search Result", scripts) {
+    <style>
+    .img-thumbnail {
+    border: none ;
+    border-radius: 0 ;
+    padding: 0px ;
+    }
+    </style>
+    <div class="container spacer30">
+        <section class="search-bar flight-search">
+            <h2 class="heading2">
+                HOTEL Details
+            </h2>
+            @views.html._include._hotel_form.render()
+        </section>
+    </div>
+
+    <div class="medium-container">
+        <div class="row">
+            @*Filter flight search*@
+            <form method="get" id="filter_hotel" enctype="application/x-www-form-urlencoded" action="">
+                @CSRF.formField
+                <div class="col-sm-3 col-md-3 col-xs-12">
+                    <h4 class="heading3">Modify your Search</h4>
+                    <div class="search-small">
+                        <div class="vacinity">
+                            <span>Vicinity</span>
+                            <p>@request().getQueryString("city")</p>
+                        </div>
+                        <div class="table-content">
+                            <div class="pickup">
+                                <span>Pickup</span>
+                                <p>@request().getQueryString("check_in_date")</p>
+                            </div>
+
+                            <div class="dropoff">
+                                <span>Drop off</span>
+                                <p>@request().getQueryString("check_out_date")</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="submit" value="search" class="search-button btn" />
+                    <h4 class="heading3">Filter Results</h4>
+                    <div class="sidebar-listing">
+                        <h5>Hotel Class</h5>
+                        <ul>
+                            <li>New York</li>
+                            <li><input type="checkbox" id="star5" /><label for="star5">Five Star</label></li>
+                            <li><input type="checkbox" id="star4" /><label for="star4">Four Star</label></li>
+                            <li><input type="checkbox" id="star3" /><label for="star3">Three Star</label></li>
+                            <li><input type="checkbox" id="star2" /><label for="star2">Two Star</label></li>
+                            <li><input type="checkbox" id="star1" /><label for="star1">1 Star</label></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-listing">
+                        <h5>Price per Night</h5>
+                        <ul>
+                            <li class="price-range">
+                                <input type="text" id="price_range" value="" name="price_range" />
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-listing">
+                        <h5>Accommodation Type</h5>
+                        <ul>
+                            <li><input type="checkbox" id="Hotel" /><label for="Hotel">Hotel</label></li>
+                            <li><input type="checkbox" id="Apartment" /><label for="Apartment">Apartment</label></li>
+                            <li><input type="checkbox" id="Apart" /><label for="Apart">Apart-hotel</label></li>
+                            <li><input type="checkbox" id="Residence" /><label for="Residence">Residence</label></li>
+                            <li><input type="checkbox" id="Palace" /><label for="Palace">Palace (2)</label></li>
+                            <li><a href="#" class="yellow-dark">Show More</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-listing">
+                        <h5>Hotel Preferences</h5>
+                        <ul>
+                            <li><input type="checkbox" id="High" /><label for="High">High-speed Internet (163)</label></li>
+                            <li><input type="checkbox" id="AirC" /><label for="AirC">Air conditioning (122)</label></li>
+                            <li><input type="checkbox" id="Swimming" /><label for="Swimming">Swimming pool (4)</label></li>
+                            <li><input type="checkbox" id="Babysitting" /><label for="Babysitting">Babysitting service (64)</label></li>
+                            <li><input type="checkbox" id="Business" /><label for="Business">Business services (62)</label></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </form>
+            @*End of filter flight search*@
+            <div class="col-sm-9 col-md-9 col-xs-12">
+                <p class="text">@request().getQueryString("city") <span class="yellow">@request().getQueryString("check_in_date")
+                    to >@request().getQueryString("check_out_date")</span></p>
+                <div class="high-light">
+                    <strong>Save up to 15%*</strong>when you book your Flight and Hotel together. Shop Flight + Hotel <i class="icon icon-arrow-circle-right yellow-dark"></i>
+                </div>
+
+                <div class="search-result-wrapper">
+                    <ul class="nav nav-tabs responsive-tabs">
+                        <li style="width: 25%" class="active"><a href="#Price"> Price</a></li>
+                        <li style="width: 25%"><a href="#hotel">Hotel Class</a></li>
+                        <li style="width: 25%"><a href="#messages1">Hotel Name </a></li>
+                        <li style="width: 25%"><a href="#settings1">Best Deals</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="Price">
+                        @if(pagination.size() != 0) {
+                            @for(item <- pagination.getRecords) {
+                                <div class="search-result">
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-xs-12">
+                                            <div class="image lazy-load" data-original="@item.getImages.get(0).getUrl" style="background: url(@item.getImages.get(0).getUrl) no-repeat center top; background-size: cover; height: 170px; width: 100% ;"></div>
+                                        </div>
+                                        <div class="col-sm-9 col-md-9 col-xs-12">
+                                            <div class="row">
+                                                <div class="col-sm-8 col-md-8 col-xs-8">
+                                                    <h6>
+                                                        <a href="#">@item.getHotel.getName</a>
+                                                        <span class="rating">
+                                                        @if(item.getHotel.getRating != null) {
+                                                            @for(rating: Int <- 1 to Integer.parseInt(item.getHotel.getRating)) {
+                                                                <span class="icon icon-star active-star"></span>
+                                                            }
+                                                            @for(unrate: Int <- 0 to 5.-(Integer.parseInt(item.getHotel.getRating))) {
+                                                                @if(unrate != 0) {
+                                                                    <span class="icon icon-star inactive-star"></span>
+                                                                }
+                                                            }
+                                                        }
+                                                        </span>
+                                                    </h6>
+                                                    @if(item.getHotel.getDescription != null && !item.getHotel.getDescription.isEmpty) {
+                                                        <div style="height: 40px ; max-height: 40px ; overflow: hidden">
+                                                            <small style="" class="text-mBouted">@item.getHotel.getDescription</small>
+                                                        </div>
+                                                        <small><a href="" class="text-primary text-sm">more</a> </small>
+                                                    }
+                                                    <ul class="quality">
+                                                        <li>
+                                                            <small>@if(item.getHotel.getAddress1 != null) { @item.getHotel.getAddress1, } @item.getHotel.getCity</small>
+                                                        </li>
+                                                    </ul>
+                                                    <p>
+                                                    @*<span class="link-content"><a href="#" class="yellow-dark"><i class="icon icon-map-marker"> </i>View Map</a></span>*@
+                                                    @*<span class="link-content"> <a href="#" class="yellow-dark"><i class="icon icon-camera"> </i>Gallery</a></span>*@
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4 col-md-4 col-xs-4 text-right">
+                                                    <div class="price">@Html.apply(core.Utilities.moneyFormat(item.getLowestPrice.getCurrency, item.getLowestPrice.getValue.toString))</div>
+                                                    <small class="day">rate per Night</small>
+                                                    <div class="clearfix"></div>
+                                                    <form method="get" action="@routes.HotelController.getViewHotelDetail()">
+                                                        <input type="hidden" name="hotel_search_id" value="@item.getHotel.getSearchID" />
+                                                        <input type="hidden" name="hotel_id" value="@item.getHotel.getID" />
+                                                        @for((key, uriValue) <- request().queryString()) {
+                                                            <input name="@key" value="@uriValue" type="hidden" />
+                                                        }
+                                                        <button type="submit" class="reserve hotel-suggest-modal">BOOK</button> <br />
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        </div>
+                        <div class="tab-pane" id="hotel">
+                            Sort by Hotel
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    @pagination.links()
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@scripts = {
+    <script src="@routes.Assets.at("vendor/plugins/Bootstrap-Image-Gallery/js/bootstrap-image-gallery.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("vendor/plugins/lazyloader/jquery.lazyload.min.js")" type="text/javascript"></script>
+    <script>
+            $(function() {
+                $(".lazy-load").lazyload({
+                    effect : "fadeIn"
+                });
+            });
+    </script>
+}

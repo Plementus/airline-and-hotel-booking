@@ -1,0 +1,47 @@
+@(userList: List[B2bSubUsers])
+@layouts.swift("Users List") {
+    <div class="content">
+        <div class="tray tray-center va-t post animated-long" data-animate="[&quot;800&quot;,&quot;fadeIn&quot;]">
+            <h2 class="lh30 mt10">Agent Users Record</h2>
+            <div class="theme-primary">
+                <div id="p1" class="panel panel-default">
+                    <div class="panel-body bg-light">
+                        <table class="table table-striped datatable">
+                            <thead>
+                                <tr>
+                                    <th>Full Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Role</th>
+                                    <th>Last Login</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if(userList.size() != 0) {
+                                    @for(user <- userList) {
+                                        <tr>
+                                            <td>@user.user_id.prefix @user.user_id.first_name @user.user_id.last_name</td>
+                                            <td>@user.user_id.email</td>
+                                            <td>@user.user_id.phone</td>
+                                            <td>@user.user_id.role_code.role_title</td>
+                                            <td>@user.user_id.updated_at.toLocaleString</td>
+                                            <td>@user.user_id.status.name()</td>
+                                            <td><a href="@controllers.swift.routes.UserController.getCreateUser(user.id)" class="btn btn-primary btn-md">Edit</a></td>
+                                            @if(user.user_id.status.equals(Status.Active)) {
+                                                <td><a href="@controllers.swift.routes.UserController.getCreateUser(user.id)" class="btn btn-primary btn-md">Deactivate</a></td>
+                                            } else {
+                                                <td><a href="@controllers.swift.routes.UserController.getCreateUser(user.id)" class="btn btn-primary btn-md">Active</a></td>
+                                            }
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

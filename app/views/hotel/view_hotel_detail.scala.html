@@ -1,0 +1,341 @@
+@import core.hotels.HotelDataPresentationInterface
+@import core.hotels.HotelAvailableRoomsResponseInterface
+@import core.Utilities
+@(hotel: HotelDataPresentationInterface, hotelRooms: HotelAvailableRoomsResponseInterface)
+@layouts.main(hotel.getHotel.getName, scripts) {
+    <div class="container spacer30">
+        <div id="hotelDetailContainer">
+            <div class="modify_search" style="width:100% ; position: static ; z-index: 1151 ;">
+                <div id="" class="modify_top col-md-12 col-sm-12 hidden-xs visible-stb" style="border-radius: 3px ; border: 2px solid #f5f5f5 ;">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 has_fade has_right_border" style="opacity: 1 ;">
+                            <p id="modify_city_name" class="city_name"> @request().getQueryString("iso_city_name"),</p>
+                            <p class="country_name"> @request().getQueryString("iso_country_name")</p>
+                        </div>
+                        <div class="col-md-2 col-sm-2 has_fade" style="opacity: 1 ;">
+                            <p class="modify_captions">Check-In</p>
+                            <p class="check-dates">
+                                <span class="icon icon-calendar hidden-stb"></span>
+                                <span class="hidden-sm hidden-md hidden-stb">@request().getQueryString("check_in_date") &nbsp;</span>
+                            </p>
+                        </div>
+                        <div class="col-md-2 col-sm-2 has_fade specfic has_right_border" style="opacity: 1 ;">
+                            <p class="modify_captions">Check-Out</p>
+
+                            <p class="check-dates">
+                                <span class="icon icon-calendar hidden-stb"></span>
+                                <span class="hidden-sm hidden-md hidden-stb">@request().getQueryString("check_out_date") &nbsp;</span>
+                            </p>
+                        </div>
+                        <div class="col-md-1 col-sm-1 text-center has_fade hidden-stb" style="opacity: 1 ;">
+                            <p class="modify_captions">Nights</p>
+
+                            <p class="check-dates">
+                                @*<span class="date">@Math.subtractExact(Utilities.parseDateOnly(request().getQueryString("check_in_date")).get(Calendar.DAY_OF_YEAR), Utilities.parseDateOnly(request().getQueryString("check_out_date")).get(Calendar.DAY_OF_YEAR))</span>*@
+                            </p>
+                        </div>
+                        <div class="col-md-1 col-sm-1 text-center has_fade" style="opacity: 1 ;">
+                            <p class="modify_captions">Rooms</p>
+
+                            <p class="check-dates">
+                                <span class="date">@request().getQueryString("num_of_rooms") &nbsp;</span>
+                            </p>
+                        </div>
+                        <div class="col-md-1 col-sm-1 text-center has_fade" style="opacity: 1 ;">
+                            <p class="modify_captions">People</p>
+
+                            <p class="check-dates">
+                                <span class="date">@Math.addExact(Integer.parseInt(request().getQueryString("num_of_adults")), Integer.parseInt(request().getQueryString("num_of_children")))</span>
+                            </p>
+                        </div>
+                        <div class="col-md-2 col-sm-2 modify">
+                            <a class="pull-right modify_search_toggle" href="#">+ Modify <span class="hidden-stb hidden-sm">Search</span></a>
+                        </div>
+                    </div>
+                    <div style="border-top: 1px solid #ccc;border-left: 1px solid #ccc; padding: 0px 0px;">
+                        <div class="modify_result_hotel_engine" style="display: none;">
+                            @views.html._include._hotel_form.render()
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="">&nbsp;</div>
+            <div id="hotel_details_sticky" class="hotel_details_sticky section_box append_bottom2 shadow_genrator_1 hidden-xs show_vpicntb hotel_detail_original" style="top: 0px ;">
+                <div class="clearfix">
+                    <div class="col-md-10 col-sm-12 col-xs-12">
+                        <div class="hotel_details">
+                            <div class="row">
+                                <div class="col-md-5 col-sm-5 col-xs-5">
+                                    <p class="clearfix hote_nameinfo">
+                                        <a class="pull-left hotel_name" name="@hotel.getHotel.getName" href="#">@hotel.getHotel.getName</a>
+                                        <span name="" class="inlineB append_bottom5">
+                                        @if(hotel.getHotel.getRating != null) {
+                                            @for(rating: Int <- 1 to Integer.parseInt(hotel.getHotel.getRating)) {
+                                                <span class="icon icon-star active-star"></span>
+                                            }
+                                            @for(unrate: Int <- 0 to 5.-(Integer.parseInt(hotel.getHotel.getRating))) {
+                                                @if(unrate != 0) {
+                                                    <span class="icon icon-star inactive-star"></span>
+                                                }
+                                            }
+                                        }
+                                        </span>
+                                    </p>
+                                    <p class="clearfix city_info hidden-xs">
+                                        <span class="hotel_location pull-left">
+                                            <span>@hotel.getHotel.getAddress1</span>
+                                        </span>
+                                    </p>
+                                    <div class="clearfix">
+                                        <ul class="hotel_aminities pull-left">
+                                            <li>
+                                                <a onclick="scrollToElement($('#hotel_facilities'))" class="text-center" href="javascript:void(0);">
+                                                    <small class="light_gray">More</small>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 col-sm-2 col-xs-3 pull-right ng-scope">
+                                    <div>
+                                        <br />
+                                        <p class="actual_price text-right ng-binding">
+                                            <span>@Html.apply(core.Utilities.getCurrency(hotel.getLowestPrice.getCurrency))</span> @Html.apply(core.Utilities.moneyFormat(hotel.getLowestPrice.getValue))
+                                            <br />
+                                            <small class="day">rate per Night</small>
+                                        </p>
+                                    </div>
+                                    <p class="hotel_details_bottomspace text-right clearfix hidden-lg hidden-md">
+                                        <span class="tablet_special_rate"> &nbsp; </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div>
+                        <div class="col-md-2 hidden-sm hidden-stb hidden-xs">
+                            <a class="btn btn-block btn-primary-red append_bottom5" href="">Select Room</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="">&nbsp;</div>
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <div class="row append_bottom16 ">
+                        <div class="col-lg-7 col-md-7">
+                            <div id="hotel-image-slider" class="carousel slide" data-ride="carousel">
+                                    <!-- Indicators -->
+                                @if(hotel.getImages != null) {
+                                    <ol class="carousel-indicators">
+                                    @for(i: Int <- 1 to hotel.getImages.size()) {
+                                        <li data-target="#hotel-image-slider" data-slide-to="@i" @if(i == 1) {
+                                            class="active" }></li>
+                                    }
+                                    </ol>
+                                    <div class="carousel-inner" role="listbox">
+                                    @for((image, i) <- hotel.getImages.zipWithIndex) {
+                                        <div style="background: url( @hotel.getImages.get(i).getUrl); background-size: cover; height: 320px; width: 100% ;" class="item @if(i == 0) { active }"></div>
+                                    }
+                                    </div>
+                                }
+
+                                    <!-- Controls -->
+                                <a class="left carousel-control" href="#hotel-image-slider" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#hotel-image-slider" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-5" style="height: 320px; max-height: 320px;">
+                            <style>
+                                #hotel-location {
+                                    height: 100%;
+                                }
+                            </style>
+                            <div id="hotel-location" data-latitude="@hotel.getHotel.getLatitude" data-longitude="@hotel.getHotel.getLongitude"></div>
+                        </div>
+                    </div>
+                    <div class="hotel_overview_heading"><h2>Hotel OVERVIEW</h2></div>
+                    <div class="hotel_overview_text append_bottom16" id="hotelDescriptionSummary">
+                        <p align="justify">@org.apache.commons.lang3.StringUtils.abbreviate(hotel.getHotel.getDescription,200)
+                            <a class="hotelOverviewMore" href="javascript:void(0)" onclick="$('#hotelDescriptionSummary').css('display', 'none');$('#hotelDescription').css('display', 'block')">more</a>
+                        </p>
+                    </div>
+                    <div class="hotel_overview_text append_bottom16" style="display:none" id="hotelDescription">
+                        <p align="justify">@Html.apply(hotel.getHotel.getDescription)</p>
+                        <a onclick="$('#hotelDescriptionSummary').css('display', 'block');$('#hotelDescription').css('display', 'none')" href="javascript:void(0)">less</a>
+                    </div>
+                    <div class="overview_heading row append_bottom4 hidden-xs hidden-stb">
+                        <div class="col-sm-6 col-md-7"><h2 class="hotel_overview_heading">Select your room</h2></div>
+                    </div>
+                    <div id="select_rooms">
+                        @if(hotelRooms.getRoomGroupings != null && hotelRooms.getRoomGroupings.size() != 0) {
+                            @for(room <- hotelRooms.getRoomGroupings) {
+                                @if(room.getRoom1 != null && room.getRoom1.size() != 0) {
+                                    @for((room1, i) <- room.getRoom1.zipWithIndex) {
+                                        <div class="clearfix">
+                                            <div class="select_room_cases section_box make_relative append_bottom16 ng-scope">
+                                                <div class="row">
+                                                    <div class="select_room_list no_borderBottom_mobile clearfix last">
+                                                        <div class="col-md-5 col-sm-5 col-xs-6 add_right_border">
+                                                            <div class="overview_heading">
+                                                                <span class="">
+                                                                    <h2 class="ng-binding"> @room1.getName</h2>
+                                                                    @if(i.==(0)) {
+                                                                        <span>(Your existing room Category)</span>
+                                                                    }
+                                                                </span>
+                                                                <div class="show_room_details">
+                                                                    @*<div class="col-md-2 col-sm-2">*@
+                                                                        @*<p class="append_bottom5"><strong>ROOM FACILITIES</strong></p>*@
+                                                                    @*</div>*@
+                                                                    <div class="row">
+                                                                    @if(room1.getInclusions!= null && room1.getInclusions.size()!= 0) {
+                                                                        @for(roomFacilities <- room1.getInclusions) {
+                                                                            <div class="col-sm-4 col-xs-4">
+                                                                                <ul class="room_facilities_list">
+                                                                                    <li>@roomFacilities.getName</li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        }
+                                                                    }
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3 hidden-sm hidden-xs"></div>
+                                                        <div class="col-md-2 col-sm-3 col-xs-6 add_right_border text-right">
+                                                            <div>
+                                                                <p class="hidden-lg hidden-md clearfix append_bottom3"></p>
+                                                                <p class="price">
+                                                                    <span>
+                                                                        <span>@Html.apply(core.Utilities.getCurrency(room1.getPrice.getCurrency))</span>
+                                                                    </span>
+                                                                    @core.Utilities.moneyFormat(room1.getPrice.getValue)
+                                                                </p>
+                                                                <p class="scratch_price">
+                                                                    <span>
+                                                                        <span>@Html.apply(core.Utilities.getCurrency(room1.getPrice.getCurrency))</span>
+                                                                    </span>
+                                                                    @room1.getPrice.getValue
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2 hidden-sm hidden-xs text-center">
+                                                            <span>
+                                                            <span>
+                                                                <form method="get" action="@routes.HotelController.getBookRoom()">
+                                                                    <button type="submit" value="@room1.getId" name="room_id" class="reserve hotel-suggest-modal">BOOK NOW</button>
+                                                                    <p><a href="@routes.HotelController.getRoomCancellationPolicy(hotel.getHotel.getSearchID, hotel.getHotel.getID, room1.getId)" class="ajax">Fare Policy</a></p>
+                                                                    <input type="hidden" value="@room1.getBedType" name="bed_type" />
+                                                                    <input type="hidden" value="@room1.getCode" name="room_code" />
+                                                                    <input type="hidden" value="@room1.getName" name="room_name" />
+                                                                    <input type="hidden" value="@room1.getPayType" name="pay_type" />
+                                                                    <input type="hidden" value="@room1.getPrice.getValue" name="room_price" />
+                                                                    <input type="hidden" value="@room1.getPrice.getCurrency" name="room_currency" />
+                                                                    @if(room1.getInclusions != null){
+                                                                        <input type="hidden" name="num_of_inclusions" value="@room1.getInclusions.size()">
+                                                                        @for((inclusion, index) <- room1.getInclusions.zipWithIndex){
+                                                                            <input type="hidden" name="inclusion_name@index" value="@inclusion.getName" />
+                                                                            <input type="hidden" name="inclusion_price@index" value="@inclusion.getPrice.getValue" />
+                                                                            <input type="hidden" name="inclusion_price_type@index" value="@inclusion.getPriceType" />
+                                                                        }
+                                                                    }
+                                                                    <input type="hidden" value="@room1.isSmoking" name="is_smoking" />
+                                                                    @for((key, uriValue) <- request().queryString()) {
+                                                                        <input name="@key" value="@uriValue" type="hidden" />
+                                                                    }
+                                                                </form>
+                                                            </span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>&nbsp;</div>
+                                    }
+                                }
+                            }
+                        }
+
+                    </div>
+
+                    <div id="hotel_facilities">
+                        <div class="append_bottom16 hidden-xs">
+                            <div class="hotel_overview_heading"><h2>Hotel Facilities</h2></div>
+                            <div class="hotel_overview_text col-sm-12">
+                                <div class="row">
+                                    @if(hotel.getFacilities != null && hotel.getFacilities.size() != 0) {
+                                        @for(item <- hotel.getFacilities) {
+                                            <div class="col-sm-3 col-xs-4">
+                                                <ul class="room_facilities_list">
+                                                    <li>@item.getName</li>
+                                                </ul>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@scripts = {
+    <script>
+            var map;
+            var infowindow;
+
+            function initMap() {
+                var pyrmont = {lat: @hotel.getHotel.getLatitude, lng: @hotel.getHotel.getLongitude};
+
+                map = new google.maps.Map(document.getElementById('hotel-location'), {
+                    center: pyrmont,
+                    zoom: 15
+                });
+
+                infowindow = new google.maps.InfoWindow();
+                var service = new google.maps.places.PlacesService(map);
+                service.nearbySearch({
+                    location: pyrmont,
+                    radius: 500,
+                    type: ['hotel']
+                }, callback);
+            }
+
+            function callback(results, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    for (var i = 0; i < results.length; i++) {
+                        createMarker(results[i]);
+                    }
+                }
+            }
+
+            function createMarker(place) {
+                var placeLoc = place.geometry.location;
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: place.geometry.location
+                });
+
+                google.maps.event.addListener(marker, 'click', function() {
+                    infowindow.setContent(place.name);
+                    infowindow.open(map, this);
+                });
+            }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgm2YB2XxEz4bRM9w_XPzeQ4jGqtKgK8o&libraries=places&callback=initMap" async defer></script>
+}

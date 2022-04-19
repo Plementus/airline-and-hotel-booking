@@ -1,0 +1,43 @@
+@(title: String, loginForm: play.data.Form[core.Forms.Login])
+@import helper._
+@layouts.main(title, scripts) {
+    <div class="container">
+        <div class="form-section">
+            <div class="row">
+                <div class="col-sm-7 col-xs-12">
+                    <h2 class="heading">Login</h2>
+                    <h3 class="sub-heading">Create a @play.Configuration.root().getString("project.name") account? <a href="@routes.AuthenticationController.getRegister()">Sign up here</a>.</h3>
+                    @helper.form(CSRF(routes.AuthenticationController.postLogin()), 'enctype -> "application/x-www-form-urlencoded", 'method -> "POST", 'id -> "login_form") {
+                        <input type="hidden" name="u_cat" value="customer" />
+                        <div class="form-group">
+                            <aside class="alert alert-success alert-dismissible signin-success text-center hide" style="margin-bottom: 10px; padding: 8px;"></aside>
+                            <aside class="alert alert-danger alert-dismissible signin-error text-center hide" style="margin-bottom: 10px; padding: 8px;"></aside>
+                            @helpers._flash.render()
+                        </div>
+                        @if(request.getQueryString("redirectUrl") != null) {
+                            @* Users Intending to redirect back to page *@
+                            <input type="hidden" name="redirectUrl" value="@request.getQueryString("redirectUrl")" />
+                        }
+                        <div class="form-group">
+                            <input placeholder="Enter Email" id="email" type="text" name="@loginForm.field("email").name()" />
+                        </div>
+                        <div class="form-group">
+                            <input placeholder="Password" type="password" id="password" name="@loginForm.field("password").name()" />
+                        </div>
+                        <div class="button-section">
+                            <button type="submit" class="btn" id="submitLogin">Login</button> <a href="@routes.AuthenticationController.getForgetPassword()" class="nprogress-load">Forgot your Password?</a>
+                        </div>
+                    }
+                </div>
+                <div class="col-sm-5 col-xs-12 text-center">
+                    <p><a id="facebookLogin" class="noxhr" style="cursor: pointer;"><img src="@routes.Assets.at("v1/images/facebook.jpg")" alt="" /></a></p>
+                    @*<p><a href="#"><img src="@routes.Assets.at("v1/images/google-plus.jpg")" alt="" /></a></p>*@
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@scripts = {
+    @*<script src="@routes.Assets.at("my_js/jsAuthReg.js")" type="text/javascript"></script>*@
+}

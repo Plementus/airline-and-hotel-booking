@@ -1,0 +1,153 @@
+@(str_title: String)(user: Users)
+<div class="horizontal-menu navbar-collapse collapse ">
+    <ul class="nav navbar-nav">
+        <li class="dropdown">
+            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#">Home <b class=" fa fa-angle-down"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="@controllers.console.routes.ApplicationController.index()">Dashboard</a></li>
+                <li><a href="/">View Website</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#">Queues<b class=" fa fa-angle-down"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="@controllers.console.routes.ApplicationController.index()">Dashboard</a></li>
+                <li><a href="/">View Website</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#">Flights <b class=" fa fa-angle-down"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="@controllers.console.routes.FlightController.getQueues()">Booking Queues</a></li>
+                <li><a href="#">Invoices</a></li>
+                <li><a href="#">Credit Memos</a></li>
+                <li><a href="#">Transactions</a></li>
+                <li class="dropdown-submenu"><a href="#">Airline Incentives &amp; Markup/down </a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu"><a href="#">Airline Incentives</a>
+                            <ul class=dropdown-menu>
+                                <li><a href="@controllers.console.routes.AirlineIncentiveController.getCreate()">Create Airline Incentive</a></li>
+                                <li><a href="@controllers.console.routes.AirlineIncentiveController.getIndex">Manage Incentives</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu"><a href="#">Markup/down Rules</a>
+                            <ul class=dropdown-menu>
+                                <li><a href="@controllers.console.routes.FlightMarkUpDownRuleController.getCreate()">Create New Rule</a></li>
+                                <li><a href="@controllers.console.routes.FlightMarkUpDownRuleController.getIndex">Manage Rules</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu"><a href="#">Airline/Flight Markup/down</a>
+                            <ul class=dropdown-menu>
+                                <li><a href="@controllers.console.routes.AirlineFlightMarkDirectionController.getCreate()">Create Airline Markup/down</a></li>
+                                <li><a href="@controllers.console.routes.AirlineFlightMarkDirectionController.getIndex()">Manage Airline Markup/down</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#">
+                Users <b class=" fa fa-angle-down"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="@controllers.console.routes.UserController.getIndex()">Manage Customers</a></li>
+                <li><a href="@controllers.console.routes.UserController.getUserGroup()">Users Groups</a></li>
+                <li><a href="#">Access Control &amp; Privileges</a></li>
+                <li><a href="#">Audit Trails</a></li>
+                <li><a href="#">User Traffic &amp; Analytics</a></li>
+                <li><a href="#">Invitations</a></li>
+                <li><a href="#">Online Customers</a></li>
+                <li><a href="#">Gift Registry</a></li>
+                <li><a href="#">Reward Exchange Rates</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#">CMS <b class=" fa fa-angle-down"></b></a>
+            <ul class="dropdown-menu">
+                <li class="dropdown-submenu"><a href="#">Category </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="@controllers.console.cms.routes.ContentCategoryController.getCreate()">Create New Category</a></li>
+                        <li><a href="@controllers.console.cms.routes.ContentCategoryController.getIndex()">Manage Categories</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu"><a href="#">Links </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="@controllers.console.cms.routes.ApplicationController.getCreateLink()">Create Link</a></li>
+                        <li><a href="@controllers.console.cms.routes.ApplicationController.getLink()">Manage Links</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu"><a href="#">Containers </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="@controllers.console.cms.routes.ContainerController.getCreate()">Create New Container</a></li>
+                        <li><a href="@controllers.console.cms.routes.ContainerController.getIndex()">Manage Containers</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu"><a href="#">Templates </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="@controllers.console.cms.routes.TemplateController.getCreate()">Create New Template</a></li>
+                        <li><a href="@controllers.console.cms.routes.TemplateController.getIndex()">Manage Templates</a></li>
+                    </ul>
+                </li>
+                <li><a href="@controllers.console.cms.routes.ApplicationController.getApperance()">Header &amp; Footer</a></li>
+                <li class="dropdown-submenu"><a href="#">Pages </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="@controllers.console.cms.routes.PageController.getCreatePage()">Create New Page</a></li>
+                        <li><a href="@controllers.console.cms.routes.PageController.getIndex()">Manage Pages</a></li>
+                    </ul>
+                </li>
+                @*<li><a href="@controllers.console.cms.routes.ApplicationController.getWidget()">HTML Widgets</a></li>*@
+                <li><a href="@controllers.console.routes.FileManagerController.getIndex">Media Manager</a></li>
+                <li class="dropdown-submenu"><a href="#">Ads Manager</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="@controllers.console.cms.routes.ApplicationController.getCreateAd()">Create New Ad</a></li>
+                        <li><a href="@controllers.console.cms.routes.ApplicationController.getManageAds">Manage Ads</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu"><a href="#">Announcement </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="@controllers.console.cms.routes.ApplicationController.getCreateAnnouncement()">Create Announcement</a></li>
+                        <li><a href="@controllers.console.cms.routes.ApplicationController.getManageAnnouncement">Manage Announcements</a></li>
+                    </ul>
+                </li>
+                <li><a href="@controllers.console.cms.routes.ApplicationController.getTermsAndConditions">Terms &amp; Conditions</a></li>
+                <li class="dropdown-submenu"><a href="#">Form Builder </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="@controllers.console.cms.routes.ApplicationController.getCreateAnnouncement()">Create Form Template</a></li>
+                        <li><a href="@controllers.console.cms.routes.ApplicationController.getManageAnnouncement">Manage Form Template</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#">
+                Reports <b class=" fa fa-angle-down"></b></a>
+            <ul class="dropdown-menu">
+                @*<li><a href="blank.html">Blank Page</a></li>*@
+                @*<li><a href="boxed_page.html">Boxed Page</a></li>*@
+                @*<li><a href="profile.html">Profile</a></li>*@
+                @*<li><a href="invoice.html">Invoice</a></li>*@
+                @*<li><a href="search_result.html">Search Result</a></li>*@
+                @*<li><a href="404.html">404 Error Page</a></li>*@
+                @*<li><a href="500.html">500 Error Page</a></li>*@
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"> System Options <b class=" fa fa-angle-down"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="@controllers.console.routes.SystemController.getGeneralSettings()">General</a></li>
+                <li><a href="">Booking Engines</a></li>
+                <li><a href="">Languages</a></li>
+                <li><a href="">Backup</a></li>
+                <li><a href="">SMS</a></li>
+                <li><a href="">Invoice</a></li>
+                <li><a href="@controllers.console.routes.SystemController.getStatesCities()">States and Cities</a></li>
+                @*<li><a href="@controllers.console.routes.SystemController.getServiceCommission()">Manage GDS Profits</a></li>*@
+                @*<li><a href="@controllers.console.routes.SystemController.getPaymentCategories()">Payment Processing</a></li>*@
+                @*<li><a href="@controllers.console.routes.SystemController.getCurrencyConversion()">Currency/Conversion Rates</a></li>*@
+                @*<li><a href="@controllers.console.routes.SystemController.getAirline()">Manage Airlines</a></li>*@
+                @*<li><a href="@controllers.console.routes.SystemController.getAirports()">Manage Airports</a></li>*@
+            </ul>
+        </li>
+    </ul>
+
+</div>

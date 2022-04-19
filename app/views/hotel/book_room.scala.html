@@ -1,0 +1,368 @@
+@import core.hotels.HotelDataPresentationInterface
+@import scala.collection.immutable.HashMap
+@import core.PaymentCategories
+@import helper._
+@import core.security.Auth
+@(hotel: HotelDataPresentationInterface, hotelBookingField: java.util.List[AppFormField])
+@layouts.main("Book Hotel", scripts) {
+    <div class="container clearfix">
+        <div style="margin: 10px 0 ;"></div>
+        <div class="review_steps clearfix append_bottom15">
+            <div class="review_borderbottom">
+                <p class="review_steps_info">
+                    <span class="step_left active" id="pagination_1" href="#">
+                        <span class="block step_icon">1</span>
+                        <span id="pagination_1_tick" class="block step_icon_select" style="display: none ;"></span>
+                        <span class="block step_label">REVIEW</span>
+                    </span>
+                    <span class="step_center tobe_select selected" id="pagination_2">
+                        <span class="block step_icon">2</span>
+                        <span id="pagination_2_tick" class="block step_icon_select" style="display: none ;"></span>
+                        <span class="block step_label">TRAVELLERS</span>
+                    </span>
+                    <span class="step_right tobe_select" id="pagination_3">
+                        <span class="block step_icon">3</span>
+                        <span class="block step_icon_select"></span>
+                        <span class="block step_label">PAYMENTS</span>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <form data-validate="parsley" class="form" action="@controllers.routes.HotelController.postBookRoom()" method="post" enctype="application/x-www-form-urlencoded">
+            @CSRF.formField
+            @for((key, uriValue) <- request().queryString()) {
+                <input name="@key" value="@uriValue" type="hidden" />
+            }
+            <div style="margin: 20px 0 ;"></div>
+            <div id="review_booking_mod_section_id">
+                @*Start Head Formatting*@
+                <div class="clearfix review_top col-lg-12 col-md-12 col-sm-12 hidden-xs append_bottom15">
+                    <div class="review_details revw_sectn pull-left col-lg-8 col-md-8 col-sm-6 row col-xs-6" id="review_TopHotelSection">
+                        <div class="review_left pull-left col-lg-12 col-md-12 col-sm-12 row">
+                            <div class="col-lg-3 col-md-3 col-sm-6 row banner_section">
+                                <a href="javascript:void(0)"><img class="img-responsive height113" src="@hotel.getImages.get(0).getUrl"></a>
+                            </div>
+                            <div class="review_left pull-left col-lg-9 col-md-9 col-sm-7 revw_htlinfo">
+                                <p class="clearfix hotel_nameinfo append_bottom2"><a href="javascript:void(0)" class="pull-left hotel_name">@hotel.getHotel.getName</a>
+                                    <span name="@hotel.getHotel.getRating" class="pull-left">
+                                    @if(hotel.getHotel.getRating != null) {
+                                        @for(rating: Int <- 1 to Integer.parseInt(hotel.getHotel.getRating)) {
+                                            <span class="icon icon-star active-star"></span>
+                                        }
+                                        @for(unrate: Int <- 0 to 5.-(Integer.parseInt(hotel.getHotel.getRating))) {
+                                            @if(unrate != 0) {
+                                                <span class="icon icon-star inactive-star"></span>
+                                            }
+                                        }
+                                    }
+                                    </span>
+                                </p>
+                                <p class="addres_info append_bottom5 ng-binding">@hotel.getHotel.getAddress1</p>
+                                @*<div class="clearfix">*@
+                                @*<ul class="hotel_aminities pull-left">*@
+                                @*<li><span class="swimming_icon pull-left" name="Swimming Pool">swimming_icon</span></li>*@
+                                @*<li><span class="restaurant_icon pull-left" name="Restaurant">restaurant_icon</span></li>*@
+                                @*<li><span class="drink_icon pull-left" name="Bar">drink_icon</span></li>*@
+                                @*<li class="free_icnspce ng-hide"><img alt="wifi_icon" src="/makemytrip/images/free-wifi-new.gif?v=1.0" name="Free Wifi"></li>*@
+                                @*</ul>*@
+                                @*</div>*@
+                                <span class="hidden-sm hidden-stb hidden-xs">
+                                    <p class="vphMarginTop7style">
+                                        <span>
+                                            <span>Includes: </span>
+                                            @if(request().getQueryString("num_of_inclusions") != null) {
+                                                @for(i: Int <- 0 to Integer.parseInt(request().getQueryString("num_of_inclusions"))) {
+                                                    <span style="font-weight: bold ;">@request().getQueryString("inclusion_name" + i)</span>
+                                                    , &nbsp;&nbsp;
+                                                }
+                                            }
+                                        </span>
+                                    </p>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="review_right pull-right col-lg-4 col-md-5 col-sm-12 hidden-lg hidden-md vphMinHeight50">
+                            <p class="meal_txt"><strong class="ng-binding"><span><span><span style="font-weight: bold ;" class="">&nbsp;</span><span style="font-weight: bold ;" class="ng-hide">
+                                Includes Free</span><span style="font-weight: bold ;" class="ng-hide">
+                                Includes</span></span></span> Room Only</strong></p>
+                            <p style="margin-right:30px" class="dummy_txt clearfix ng-binding"> <span class="hidden-stb hidden-sm"></span></p>
+                        </div>
+                    </div>
+                    <div id="review_section_chkinOut">
+                        <div class="checkin_details revw_sectn pull-right col-lg-4 col-md-4 col-xs-6">
+                            <div class="has_lightborder_bottom row clearfix">
+                                <div class="check-inout-section col-xs-6">
+                                    <p class="check-inoutHeading light_gray">check-in</p>
+                                    <p class="check-travel-dates"><span class="glyphicon glyphicon-calendar"></span>
+                                        Fri, <span class="date">25 </span><span class="month_day">Mar'16</span>
+                                    </p>
+                                    <p class="time_mobile ng-binding"><span class="time_icon"></span> 2 PM
+                                    </p>
+                                </div>
+                                <div class="check-inout-section last col-xs-6">
+                                    <p class="check-inoutHeading light_gray">check-out</p>
+                                    <p class="check-travel-dates"><span class="glyphicon glyphicon-calendar"></span>
+                                        Sun, <span class="date">27 </span><span class="month_day">Mar'16</span>
+                                    </p>
+                                    <p class="time_mobile ng-binding"><span class="time_icon"></span> 11 AM
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*End head formatting*@
+                <p class="hidden-xs clearfix"><span class="pull-left review_heading col-sm-8"><span class="light_gray">Room Type: </span>@request().getQueryString("room_name")</span></p>
+
+                <div id="review_price_section">
+
+                    <div class="revw_sectn append_bottom16">
+                        <div class="hidden-lg hidden-md hidden-sm hidden-stb col-xs-12">
+                            <div class="row">
+                                <span class="col-xs-6 breakup_heading">guest</span>
+                                <span class="col-xs-6 breakup_value adult_child_count text-right ">
+                                    <span class="adult_icon">&nbsp;</span>@Math.addExact(Integer.parseInt(request().getQueryString("num_of_adults")), Integer.parseInt(request().getQueryString("num_of_children")))
+                                </span>
+                            </div>
+                        </div>
+                        <div class="clearfix append_bottom10 hidden-xs">
+                            <div class="col-sm-1 col-xs-1 text-center">
+                                <p class="traveller_heading append_bottom10">Room</p>
+                            </div>
+                            <div class="col-sm-3 col-xs-3 text-center">
+                                <p class="traveller_heading append_bottom5 text-center">Guest</p>
+                            </div>
+                            <div class="col-sm-2 col-xs-2 text-right">
+                                <p class="traveller_heading append_bottom5">Price/night</p>
+                            </div>
+                            <div class="col-sm-2 col-xs-2 text-right">
+                                <p class="traveller_heading append_bottom5">Extras</p>
+                            </div>
+                            <div class="col-sm-2 col-xs-2 text-center">
+                                <p class="traveller_heading append_bottom5">Night(s)</p>
+                            </div>
+                            <div class="col-sm-2 col-xs-2 text-right">
+                                <p class="traveller_heading append_bottom5">Total Price</p>
+                            </div>
+                        </div>
+                        <div class="clearfix append_bottom10 hidden-xs ">
+                            <div class="col-sm-1 col-xs-1 text-center">
+                                <p class="">@request().getHeader("num_of_rooms")</p>
+                            </div>
+                            <div class="col-sm-3 col-xs-3 text-center">
+                                <p class="clearfix adult_child_count ">
+                                    <span class="adult_icon">&nbsp;</span>@Math.addExact(Integer.parseInt(request().getQueryString("num_of_adults")), Integer.parseInt(request().getQueryString("num_of_children")))
+                                </p>
+                            </div>
+                            <div class="col-sm-2 col-xs-2 text-right">
+                                <p class="clearfix price_text ">
+                                    <span>@Html.apply(core.Utilities.getCurrency(hotel.getLowestPrice.getCurrency))</span>
+                                    @Html.apply(core.Utilities.moneyFormat(request().getQueryString("room_price")))
+                                </p>
+                            </div>
+                            <div class="col-sm-2 col-xs-2 text-right">
+                                <p class="clearfix price_text"> -</p>
+                                <div class="">
+                                    <p class="clearfix price_text ">
+                                        <span>@Html.apply(core.Utilities.getCurrency(hotel.getLowestPrice.getCurrency))</span>
+                                        0
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 col-xs-2 text-center">
+                                <p class="clearfix price_text ">1 <!-- NUMBER OF NIGHTS --></p>
+                            </div>
+                            <div class="col-sm-2 col-xs-2 text-right">
+                                <p class="clearfix price_text ">
+                                    <span>@Html.apply(core.Utilities.getCurrency(hotel.getLowestPrice.getCurrency))</span>
+                                    @Html.apply(core.Utilities.getCurrency(hotel.getTotalPrice.getValue.toString))
+                                </p>
+                            </div>
+                        </div>
+                        <div class="total_subtotal_section hidden-xs clearfix">
+                            <div class="clearfix append_bottom4">
+                                <div class="col-md-offset-8 col-sm-offset-7 col-xs-offset-6 col-md-2 col-sm-3 col-xs-3">
+                                    <p class="light_gray check-inoutHeading">taxes &amp; service fee</p>
+                                </div>
+                                <div class="col-md-2 col-sm-2 col-xs-3 text-right ">
+                                    <span>@Html.apply(core.Utilities.getCurrency(hotel.getLowestPrice.getCurrency))</span>
+                                    1,810
+                                </div>
+                            </div>
+                            <div class="clearfix discount_row ">
+                                <div class="col-md-offset-8 col-sm-offset-7 col-xs-offset-6 col-md-2 col-sm-3 col-xs-3">
+                                    <p class="light_gray check-inoutHeading">Coupon - discount</p>
+                                </div>
+                                <div class="col-md-2 col-sm-2 col-xs-3 text-right">
+                                    <p class="clearfix price_text ">
+                                        <span>@Html.apply(core.Utilities.getCurrency(hotel.getLowestPrice.getCurrency))</span>
+                                        0
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix append_bottom4 grand_total hidden-xs">
+                            <div class="col-md-4 col-sm-6 col-xs-6 discount_row ">&nbsp;</div>
+                            <div class="col-md-offset-4 col-sm-offset-1 col-md-2 col-sm-3 col-xs-3">
+                                <p class="grand_total_caption">Grand Total:</p>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-3 text-right" id="price_review">
+                                <p class="clearfix travel_price ">
+                                    <span>@Html.apply(core.Utilities.getCurrency(hotel.getLowestPrice.getCurrency))</span>
+                                    @Html.apply(core.Utilities.moneyFormat(request().getQueryString("room_price")))
+                                </p>
+                            </div>
+                        </div>
+                        <div class="clearfix append_bottom4 lighter_gray special_instruction hidden-xs">
+                            <ul class="special_instruction ">
+                                <li class="lighter_gray">
+                                    Additional taxes/fees to be paid directly to the hotel (subject to change basis local regulations)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin: 10px 0 ;"></div>
+            <div id="travellers_booking_section_id" style="display: none">
+                <div class="traveller_details section_box append_bottom20 clearfix">
+                    <div class="clearfix">
+                        <div class="col-sm-4 col-xs-4 hotel_detail_segment">
+                            <p class="cityName ng-binding">@hotel.getHotel.getName</p>
+                            <p class="star_category append_bottom5">
+                                <span name="@hotel.getHotel.getRating" class="pull-left">
+                                @if(hotel.getHotel.getRating != null) {
+                                    @for(rating: Int <- 1 to Integer.parseInt(hotel.getHotel.getRating)) {
+                                        <span class="icon icon-star active-star"></span>
+                                    }
+                                    @for(unrate: Int <- 0 to 5.-(Integer.parseInt(hotel.getHotel.getRating))) {
+                                        @if(unrate != 0) {
+                                            <span class="icon icon-star inactive-star"></span>
+                                        }
+                                    }
+                                }
+                                </span>
+                            </p>
+                            <p class="ellipsis light_gray hidden-xs">@hotel.getHotel.getAddress1</p>
+                        </div>
+                        <div class="col-sm-2 col-xs-2 hidden-xs">
+                            <p class="light_gray check-inoutHeading">check-in</p>
+                            <p class=" append_bottom5">
+                                Fri, <span class="date">25 </span><span class="month_day">Mar'16</span>
+                            </p>
+                            <p class="travel_time ng-binding">2 PM</p><span class="arrow_greater">&gt;</span>
+                        </div>
+                        <div class="col-sm-2 col-xs-2 hidden-xs">
+                            <p class="light_gray check-inoutHeading">check-out</p>
+                            <p class=" append_bottom5">
+                                Sun, <span class="date">27 </span><span class="month_day">Mar'16</span>
+                            </p>
+                            <p class="travel_time ng-binding">11 AM</p>
+                        </div>
+                        <div class="col-sm-2 col-xs-2 hidden-xs">
+                            <p class="travel_rooms_count append_bottom5"><span>1</span> Room(s)
+                            </p>
+                            <p class="travel_rooms_count append_bottom5"><span>1</span> Traveller(s)
+                            </p>
+                        </div>
+                        <div class="col-sm-2 col-xs-2 grand_total_smTablet text-right">
+                            <p class="light_gray check-inoutHeading hidden-xs">Grand total</p>
+                            <p class="clearfix travel_price ng-binding">
+                                <span>Rs.</span> 24,178
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin: 20px 0 ;"></div>
+                <div class="clearfix review_top col-lg-12 col-md-12 col-sm-12 row hidden-xs append_bottom15">
+                @if(hotelBookingField != null && hotelBookingField.size() != 0) {
+                    @for(field <- hotelBookingField) {
+                        <div class="form-group col-md-3 col-lg-3 col-xs-3">
+                            @field.form_field_id.getSelect_options.put("Select", "")
+                            @for(title <- Titles.values()) {
+                                @field.form_field_id.getSelect_options.put(title.name(), title.name())
+                            }
+                            @core.FormFieldHelper.renderFormField(field)
+                        </div>
+                    }
+                }
+                </div>
+                <div style="margin: 20px 0 ;"></div>
+            </div>
+            <div style="margin: 10px 0 ;"></div>
+            <div id="booking_payment_section_id" style="display: none;">
+                <p class="clearfix append_bottom8" id="paymentWidgetHeader">
+                    <span class="col-lg-8 col-md-8 col-sm-8 col-xs-8 convnce_width">
+                        <span class="block mode_txt">CHOOSE PAYMENT MODE</span>
+                        <span class="cdfUserMessageSection append_bottom10 RobotoLight light_gray" style="display:none ;"></span>
+                    </span>
+                    <a class="btn btn-md btn-secondary need_help col-lg-1 col-md-2 col-sm-2 col-xs-4 pull-right hidden-xs" id="needHelp" data-toggle="popover" href="javascript:void(0)" data-original-name="" name="">Need Help?</a>
+                </p>
+                <div class="search-result-wrapper">
+                    <div class="responsive-tabs-container accordion-xs accordion-sm">
+                        <ul class="nav nav-tabs responsive-tabs">
+                            @for((paymentCategory, index) <- PaymentCategories.values().zipWithIndex) {
+                                <li style="width: 15%" class="@if(index == 0) { active } flight-details"><a href="#@paymentCategory.name()" aria-controls="itinerary" role="tab" data-toggle="tab">@paymentCategory.name().replaceAllLiterally("_", " ")</a></li>
+                            }
+                        </ul>
+                        <div class="tab-content" style="padding: 10px;">
+                        @for((paymentCategory, index) <- PaymentCategories.values().zipWithIndex) {
+                            <div role="tabpanel" class="tab-pane @if(index == 0) { active } row" id="@paymentCategory.name()">
+                                @if(paymentCategory.equals(PaymentCategories.Pay_By_Cash)) {
+                                    @for(paymentMethod <- PaymentMethods.find.where().eq("payment_category", PaymentCategories.Pay_By_Cash).findList()){
+                                        <div class="col-md-12 col-xs-12 col-lg-12">
+                                            <label for="@paymentMethod.id.toString">
+                                                <input type="radio" required="required" name="payment_method_id" value="@paymentMethod.id.toString" />
+                                                <strong>@paymentMethod.name / @paymentMethod.bank_account_no / @paymentMethod.bank_account_name</strong>
+                                            </label>
+                                        </div>
+                                    }
+                                }
+                                @if(paymentCategory.equals(PaymentCategories.Debit_Card)) {
+                                    @for(paymentMethod <- PaymentMethods.find.where().eq("payment_category", PaymentCategories.Debit_Card).findList()) {
+                                        <div class="col-md-12 col-xs-12 col-lg-12">
+                                            <label for="@paymentMethod.id.toString">
+                                                <input type="radio" required="required" name="payment_method_id" value="@paymentMethod.id.toString" />
+                                                <img src="@routes.Assets.at("data_bank/" + paymentMethod.gateway_logo_id.file_name).toString" class="img" height="35px" style="height: 35px;" />
+                                                <strong>@paymentMethod.gateway_display_name</strong>
+                                            </label>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row continue_login append_bottom10">
+                @if(Auth.isAuthenticated()) {
+                    <p class="clearfix col-md-12"> You are booking with account <span class="text-primary">@Auth.user().first_name @Auth.user().last_name</span></p> <br />
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5 fullWidth">
+                        <a href="@routes.AuthenticationController.getLogout()?redirect=@request().uri()" class="btn btn-lg btn-block btn-secondary">
+                            Logout, Continue as Guest</a>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 fullWidth text-center make_relative">
+                        <span class="OR_seprator_review"><strong>OR</strong></span>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5 fullWidth append_bottom8">
+                        <button type="submit" class="btn btn-lg btn-block btn-primary-red continue-hotel-booking-step" data-step="1">Continue Booking</button>
+                    </div>
+
+                } else {
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5 fullWidth">
+                        <a href="#" class="btn btn-lg btn-block  btn-secondary login-action">Login &amp; Continue</a>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 fullWidth text-center make_relative">
+                        <span class="OR_seprator_review"><strong>OR</strong></span>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5 fullWidth append_bottom8">
+                        <button type="submit" class="btn btn-lg btn-block  btn-primary-red continue-hotel-booking-step" data-step="1" name="Continue as Guests">Continue as Guest</button>
+                    </div>
+                }
+            </div>
+            <div style="margin: 20px 0 ;"></div>
+        </form>
+    </div>
+}
+@scripts = {
+}

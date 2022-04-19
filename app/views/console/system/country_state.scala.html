@@ -1,0 +1,56 @@
+@(airports: java.util.List[Airports])
+@layouts.admin("Country States", scripts) {
+      <link rel="stylesheet" type="text/css" href="@routes.Assets.at("vendor/plugins/datatables/media/css/dataTables.bootstrap.css")">
+      <article class="module width_full">
+            <header><h3>Country, State and Cities</h3></header>
+            <div class="module_content">
+                  @helpers._flash.render()
+                  <table class="table table-striped table-bordered table-hover" id="datatable3" cellspacing="0" width="100%">
+                        <thead>
+                              <tr>
+                                    <th>Code</th>
+                                    <th>Name</th>
+                                    <th>City</th>
+                                    <th>Country</th>
+                                    <th>Country Code</th>
+                                    <th>Area Code</th>
+                                    <th>Action</th>
+                              </tr>
+                        </thead>
+                        <tbody>  </tbody>
+                  </table>
+            </div>
+      </article>
+}
+@scripts = {
+
+      <!-- Datatables -->
+      <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datatables/media/js/jquery.dataTables.min.js")"></script>
+      <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datatables/media/js/dataTables.bootstrap.js")"></script>
+      <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js")"></script>
+      <script>
+             $('#datatable3').dataTable({
+                "aoColumnDefs": [{
+                    'bSortable': true,
+                    'aTargets': [-1]
+                }],
+                "processing": true,
+                "ajax": '@request().uri().concat("?source=ajax")',
+                "oLanguage": {
+                    "oPaginate": {
+                        "sPrevious": "",
+                        "sNext": ""
+                    }
+                },
+                "iDisplayLength": 50,
+                "aLengthMenu": [
+                    [10, 25, 50, -1],
+                    [10, 25, 50, "All"]
+                ],
+                "sDom": 'T<"dt-panelmenu clearfix"lfr>t<"dt-panelfooter clearfix"ip>',
+                "oTableTools": {
+                    "sSwfPath": "@routes.Assets.at("vendor/plugins/datatables/extensions/TableTools/swf/copy_csv_xls_pdf.swf")"
+                }
+            });
+      </script>
+}

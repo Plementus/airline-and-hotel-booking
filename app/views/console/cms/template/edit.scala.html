@@ -1,0 +1,181 @@
+@import helper._
+@import core.cms.TemplatesManager
+@(form: Form[CmsTemplates])
+@layouts.admin("Edit Template", scripts) {
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-name">Edit Templates</span>
+        </div>
+        <div class="panel-body">
+        @helper.form(action = controllers.console.cms.routes.TemplateController.postCreate(), 'class -> "form", 'id -> "templateForm") {
+            @helpers._error(form)
+            <input hidden name="@form("id").name()" value="@form("id").value()" />
+            @CSRF.formField
+            <input type="hidden" name="num_body_rows" value="@form.get().getAttrValue("num_body_rows")">
+            <div><!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#design" aria-controls="design" role="tab" data-toggle="tab">Design Template</a></li>
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab">Properties</a></li>
+                    @*<li role="presentation"><a href="#preview" aria-controls="preview" role="tab" data-toggle="tab">Preview</a></li>*@
+                </ul>
+                <br />
+                    <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" id="design" class="tab-pane active">
+                        <div class="col-md-3 bg-muted">
+                            <div class="form-group">
+                            @select(form("category_id.id"), options(CmsContentCategories.options(form.get().getAttrValue("category_id.id"))), '_label -> "Theme Category", 'class -> "form-control chosen-select")
+                            </div>
+                            <div class="form-group">
+                            @helper.select(form("ui_theme"), options(TemplatesManager.themeOption()), 'class -> "form-control", 'required -> "required", '_label -> "Theme")
+                            </div>
+                            <div class="form-group">
+                            @helper.select(form("sidebar_perc_ratio"), options(TemplatesManager.sidebarOptions(form.get().getAttrValue("sidebar_perc_ratio"))), 'class -> "form-control", 'required -> "required", '_label -> "Side Bar")
+                            </div>
+                            <div class="form-group">
+                                <label>Header <input type="checkbox" name="@form("header").name()" value="Yes" @if(form.get().getAttrValue("header") != null && form.get().getAttrValue("header").equals("Yes")) { checked="checked" }> </label> <br />
+                                <label>Footer <input type="checkbox" name="@form("footer").name()" value="Yes" @if(form.get().getAttrValue("footer") != null && form.get().getAttrValue("footer").equals("Yes")) { checked="checked" }> </label> <br />
+                            </div>
+                            <div class="form-group">
+                                @helper.select(form("body_rows1"), options(TemplatesManager.bodyOption(form.get().getAttrValue("body_rows1"))), 'class -> "form-control body_rows", 'data_id -> "1", 'required -> "required", '_label -> "Body Rows")
+                                @for(i <- 2 to Integer.parseInt(form.get().getAttrValue("num_body_rows"))) {
+                                    @helper.select(form("body_rows"+i), options(TemplatesManager.bodyOption(form.get().getAttrValue("body_rows"+i))), 'class -> "form-control body_rows", 'data_id -> i, 'required -> "required", '_label -> Html.apply("<a class=\"text-danger delete-row\" data-row=\"".concat(i.toString+"\"").concat("><i class=\"fa fa-minus-circle\"></i></a> Body Rows ").concat(i.toString)))
+                                }
+                                <label><a href="#" class="btn btn-xs btn-link add-row"><i class="fa fa-plus"></i> Add Body Row</a></label>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn mg3" name="action" value="save" type="submit">Save</button>
+                                <button class="btn mg3" name="action" value="save_publish" type="submit">Save, Publish</button>
+                                <button class="btn btn-danger mg3" type="reset">Cancel</button>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="form-group">
+                                <label>Name</label><br />
+                                <input type="text" name="@form("name").name()" value="@form("name").value()" class="form-control" data-required="true" required="true" />
+                            </div>
+                            <div class="form-group">
+                            @defining(new TemplatesManager) { tmp =>
+                                <div id="body_content_prev">
+                                    <div id="header_dom" @if(form.get().getAttrValue("header") != null && form.get().getAttrValue("header").equals("No")) { style="display: none;" }>
+                                        <h1>Header</h1>
+                                    </div>
+                                    <div id="body_dom" class="row">
+                                        @defining(new TemplatesManager().parseTemplate(form.get())) { tmpM =>
+                                            <section id="body_html" @if(form.get().getAttrValue("sidebar_content_1") != null && !form.get().getAttrValue("sidebar_content_1").equals("0")) {  class="@tmp.getSidebarDivClass(form.get().getAttrValue("sidebar_perc_ratio")).apply(1)" } else { class="col-md-12" }>
+                                                <span class="col">
+                                                @for(i <- 1 to Integer.parseInt(form.get().getAttrValue("num_body_rows"))) {
+                                                    <input type="hidden" name="inner_col@i" value="@form.get().getAttrValue("inner_col"+i)" required="required" />
+                                                    @*<input type="hidden" name="body_rows@i" value="@form.get().getAttrValue("body_rows"+i)" />*@
+                                                }
+                                                </span>
+                                                @for(i <- 1 to Integer.parseInt(form.get().getAttrValue("num_body_rows"))) {
+                                                    <section class="1__col@i.toString.concat("__100")">
+                                                        @if(form.get().getAttrValue("inner_col"+i) != null) {
+                                                            @for(innerBodyIndex <- 1 to Integer.parseInt(form.get().getAttrValue("inner_col"+i))) {
+                                                                <div class="@tmpM.getBodyDivClass(form.get().getAttrValue("body_rows" + i), i)">
+                                                                    @defining(form.get().getAttrValue("body_rows" + i).split("__col")){ split =>
+                                                                        <a href="#" class="add-container" data-d_id="@innerBodyIndex" data-container="@innerBodyIndex.toString.concat("__col"+split.apply(1))"><i class="fa fa-edit"></i> Edit Container</a>
+                                                                        <input type="hidden" value="@form.get().getAttrValue(innerBodyIndex.toString.concat("__col"+split.apply(1)))" name="@innerBodyIndex.toString.concat("__col"+split.apply(1))" required="required" >
+                                                                        <input type="hidden" value="@form.get().getAttrValue(innerBodyIndex.toString.concat("__hasContainer"+split.apply(1)))" name="@innerBodyIndex.toString.concat("__hasContainer"+split.apply(1))" />
+                                                                        @defining(tmpM.getContainerValue(tmpM.getTemplateAttrValue(innerBodyIndex.toString + form.get().getAttrValue("body_rows" + i).substring(1, form.get().getAttrValue("body_rows" + i).length)))) { body =>
+                                                                            <span class="@innerBodyIndex.toString.concat("__col"+split.apply(1))">
+                                                                                <h4>@body.name</h4>
+                                                                                Lorem ipsum dolor sit amet, probo habeo delectus qui no, volumus perpetua vix ex,
+                                                                                errem tempor commodo pri in. Mei te scripta disputando. Dolorum placerat ne vis,
+                                                                                pro et aliquip corpora, porro audiam nec ex. Dicat accusam ius et. Ut dolorem fastidii nec.
+                                                                            </span>
+                                                                        }
+                                                                    }
+                                                                </div>
+                                                            }
+                                                        }
+                                                    </section>
+                                                }
+                                            </section>
+
+
+                                            <div id="sidebar_dom" @if(form.get().getAttrValue("sidebar_content_1") != null && !(form.get().getAttrValue("sidebar_content_1").equals("") || form.get().getAttrValue("sidebar_content_1").isEmpty)) {  class="@tmp.getSidebarDivClass(form.get().getAttrValue("sidebar_perc_ratio")).apply(0)" } else { style="display: none;" }>
+                                                <span class="sidebar_content_1">
+                                                    <input type="hidden" @if(form.get().getAttrValue("sidebar_content_1") != null && !(form.get().getAttrValue("sidebar_content_1").equals("") || form.get().getAttrValue("sidebar_content_1").isEmpty)) {  value="@form.get().getAttrValue("sidebar_content_1")" required="required" } name="sidebar_content_1" />
+                                                    <input type="hidden" @if(form.get().getAttrValue("sidebar_hasContainer_1") != null && !(form.get().getAttrValue("sidebar_hasContainer_1").equals("") || form.get().getAttrValue("sidebar_hasContainer_1").isEmpty)) {  value="@form.get().getAttrValue("sidebar_hasContainer_1")" required="required" } name="sidebar_hasContainer_1" />
+                                                    <a href="#" class="add-container" data-d_id="1" data-container="sidebar_content_1"><i class="fa fa-edit"></i> Edit Container</a>
+                                                    @if(tmpM.getContainerValue(tmpM.getTemplateAttrValue("sidebar_content_1")) != null) {
+                                                        @defining(tmpM.getContainerValue(tmpM.getTemplateAttrValue("sidebar_content_1"))) { body =>
+                                                            <h4>@if(body != null) { @Html.apply(body.html_code) }</h4>
+                                                            Lorem ipsum dolor sit amet, probo habeo delectus qui no, volumus perpetua vix ex,
+                                                            errem tempor commodo pri in. Mei te scripta disputando. Dolorum placerat ne vis,
+                                                            pro et aliquip corpora, porro audiam nec ex. Dicat accusam ius et. Ut dolorem fastidii nec.
+                                                        }
+                                                    } else {
+                                                        <h4>Body</h4>
+                                                    }
+                                                </span>
+                                            </div>
+
+                                        }
+                                    </div>
+                                    <div id="footer_dom" @if(form.get().getAttrValue("footer") != null && form.get().getAttrValue("footer").equals("No")) { style="display: none;" }>
+                                        <h1>Footer</h1>
+                                    </div>
+                                </div>
+                            }
+                            </div>
+                        </div>
+                        @views.html.helpers._flash.render()
+                        <div class="clearfix"></div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="properties">
+                    @helper.inputText(form("description"), '_default -> form.get().getAttrValue("description"), 'class -> "form-control", '_label -> "Description")
+                    </div>
+                    @*<div role="tabpanel" class="tab-pane" id="preview">*@
+                    @*Preview*@
+                    @*</div>*@
+                </div>
+            </div>
+        }
+        </div>
+    </div>
+    <div class="modal fade add-container-div" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-name" id="myModalLabel">Add Container</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-danger">
+                        You can only add containers that do not contain the main HTML tags.
+                    </p>
+                    @defining(CmsContainers.find.orderBy("id desc").findList()) { container =>
+                        @if(container.size() != 0) {
+                            <div class="form-group">
+                                <label>Select Container Item</label>
+                                <select id="select_container_id" required="required" class="form-control">
+                                @for(item <- container){
+                                    <option data-name="@item.name" value="@item.id">@item.name</option>
+                                }
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="in_container">
+                                    <input type="checkbox" value="checked" name="in_container"> Include Container DIV Within the Selected Item?
+                                </label>
+                            </div>
+                        } else {
+                            <h3>No container exists</h3>
+                        }
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="add-btn">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@scripts = {
+    <script src="@routes.Assets.at("vendor/plugins/jquery-validate/jquery.validate.min.js")"></script>
+    <script src="@routes.Assets.at("my_js/jsCmsConsole.js")"></script>
+}

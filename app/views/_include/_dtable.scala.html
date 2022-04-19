@@ -1,0 +1,46 @@
+@(title: String, tHead: Array[String], tBody: Html)
+<link rel="stylesheet" type="text/css" href="@routes.Assets.at("vendor/plugins/datatables/media/css/dataTables.bootstrap.css")">
+<article class="module width_full">
+    <header><h3>@title</h3></header>
+    <div class="module_content">
+        @helpers._flash.render()
+        <table class="table table-bordered table-striped" id="oTable" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    @for(head <- tHead) {
+                        <td>@head</td>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @tBody
+            </tbody>
+        </table>
+    </div>
+</article>
+<!-- Datatables -->
+<script type="text/javascript" src="@routes.Assets.at("v1/js/jquery-2.1.1.min.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datatables/media/js/jquery.dataTables.min.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datatables/media/js/dataTables.bootstrap.js")"></script>
+<script>
+        var oTable = $('#oTable').dataTable({
+            "aoColumnDefs": [
+                @for((head, index) <- tHead.zipWithIndex) {
+                    {'bSortable': true, 'aTargets': [@index]},
+                }
+            ],
+            "order": [[ 0, "desc" ]],
+            "oLanguage": {
+                "oPaginate": {
+                    "sPrevious": "",
+                    "sNext": ""
+                }
+            },
+            "bProcessing": true,
+            "iDisplayLength": 25,
+            "aLengthMenu": [
+                [5, 10, 25, 50, -1],
+                [5, 10, 25, 50, "All"]
+            ]
+        });
+</script>

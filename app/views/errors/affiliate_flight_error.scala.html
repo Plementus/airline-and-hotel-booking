@@ -1,0 +1,16 @@
+@(message: String)
+@layouts.swift(message, scripts, "error-page") {
+      <div class="center-block mt50 mw800 animated fadeIn">
+            <h1 class="error-name"> 500! </h1>
+            <h2 class="error-subtitle">@message</h2>
+      </div>
+      <div class="mid-section animated fadeIn">
+            <div class="mid-content clearfix">
+                  <input type="text" class="form-control" placeholder="Search" />
+                  <div class="pull-left">
+                      <img style="height: 50px" height="50px" class="img img-responsive mt20" src="@routes.Assets.at("data_bank/" + DataBank.find.byId(Long.parseLong(core.ControlPanel.getInstance().getMetaValue(core.ControlPanelMeta.cms_logo_data_bank_id))).file_name)" />
+                  </div>
+            </div>
+      </div>
+}
+@scripts = {}

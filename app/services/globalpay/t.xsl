@@ -1,0 +1,62 @@
+<resultset>
+    <record>
+        <txnref>5516016234129387</txnref>
+        <channel>interswitch</channel>
+        <amount>45517.00</amount>
+        <payment_date>1/16/2016 11:41:29 PM</payment_date>
+        <payment_status>pending</payment_status>
+        <field_values>
+            <field_values>
+                <field>
+                    <names>Jamiu Igbalajobi</names>
+                    <acct_desc>False</acct_desc>
+                    <acct_desc_order>0</acct_desc_order>
+                    <hidden>False</hidden>
+                    <defaultvalue/>
+                    <xpath_field>0</xpath_field>
+                </field>
+                <field>
+                    <amount>45517.0</amount>
+                    <acct_desc>False</acct_desc>
+                    <acct_desc_order>0</acct_desc_order>
+                    <hidden>False</hidden>
+                    <defaultvalue/>
+                    <xpath_field>0</xpath_field>
+                </field>
+                <field>
+                    <currency>NGN</currency>
+                    <acct_desc>False</acct_desc>
+                    <acct_desc_order>0</acct_desc_order>
+                    <hidden>False</hidden>
+                    <defaultvalue/>
+                    <xpath_field>0</xpath_field>
+                </field>
+                <field>
+                    <email_address>basicrealm@gmail.com</email_address>
+                    <acct_desc>False</acct_desc>
+                    <acct_desc_order>0</acct_desc_order>
+                    <hidden>False</hidden>
+                    <defaultvalue/>
+                    <xpath_field>0</xpath_field>
+                </field>
+                <field>
+                    <phone_number>12-711-9051</phone_number>
+                    <acct_desc>False</acct_desc>
+                    <acct_desc_order>0</acct_desc_order>
+                    <hidden>False</hidden>
+                    <defaultvalue/>
+                    <xpath_field>0</xpath_field>
+                </field>
+                <field>
+                    <merch_txnref>TFX_NG_0A1B1B3D1B5F0A2C0A9</merch_txnref>
+                    <acct_desc>True</acct_desc>
+                    <acct_desc_order>1</acct_desc_order>
+                    <hidden>False</hidden>
+                    <defaultvalue/>
+                    <xpath_field>0</xpath_field>
+                </field>
+            </field_values>
+        </field_values>
+        <payment_status_description>Incomplete Transaction</payment_status_description>
+    </record>
+</resultset>

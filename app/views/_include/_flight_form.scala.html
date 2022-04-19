@@ -1,0 +1,142 @@
+<link rel="stylesheet" href="@routes.Assets.at("v1/css/ion.rangeSlider.css")" >
+<link rel="stylesheet" href="@routes.Assets.at("v1/css/ion.rangeSlider.skinFlat.css")" >
+<form method="get" action="" data-validate="parsley" id="flight_search">
+    <input type="hidden" name="num_of_destination" @if(request().getQueryString("num_of_destination") != null) { value="@request().getQueryString("num_of_destination")" } else { value="1" }>
+    <input type="hidden" name="destination_locale" @if(request().getQueryString("destination_locale") != null) { value="@request().getQueryString("destination_locale")" } >
+    <ul class="list-inline">
+        @for(tripType <- TripType.values()) {
+            <li class="@if(request().getQueryString("trip_type") != null && request().getQueryString("trip_type").equals(tripType.name())) { current } else { @if(tripType.name().equals(TripType.RETURN.name()) && request().getQueryString("trip_type") == null) { current } }">
+                <label>
+                    <input type="radio" name="trip_type" value="@tripType.name()" @if(request().getQueryString("trip_type") != null && request().getQueryString("trip_type").equals(tripType.name())) { checked="checked" id="checked" } else { @if(tripType.name().equals(TripType.RETURN.name())) { checked="checked" id="checked" } } > @tripType.name().replaceAllLiterally("_", " ")
+                </label>
+            </li>
+        }
+    </ul>
+    <div class="tab-pane">
+        <div class="clearfix search-wrap">
+            <div class="input-append col-sm-3 col-xs-12 bdr border-btm">
+                <input class="input-box search_airport_from" name="departure_airport" @if(request().getQueryString("departure_airport") != null) { value="@request().getQueryString("departure_airport")" } data-section="1" autoselect="true" data-error-message="Departure airport is required" data-required="true" autocomplete="off" aria-autocomplete="none" placeholder="Departing Airport" >
+                <input type="hidden" name="departure_airport_code_1" @if(request().getQueryString("departure_airport_code_1") != null) { value="@request().getQueryString("departure_airport_code_1")" }>
+                <input type="hidden" name="departure_country_1" @if(request().getQueryString("departure_country_1") != null) { value="@request().getQueryString("departure_country_1")" }>
+                <i class="icon icon-departure"></i>
+            </div>
+            <div class="input-append col-sm-3 col-xs-12 bdr border-btm">
+                <input class="input-box search_airport_to" name="arrival_airport" @if(request().getQueryString("arrival_airport") != null) { value="@request().getQueryString("arrival_airport")" } data-section="1" autocomplete="off" autoselect="true" data-error-message="Arrival airport is required" data-required="true" aria-autocomplete="none" placeholder="Arrival Airport" >
+                <input type="hidden" name="arrival_airport_code_1" @if(request().getQueryString("arrival_airport_code_1") != null) { value="@request().getQueryString("arrival_airport_code_1")" }>
+                <input type="hidden" name="arrival_country_1" @if(request().getQueryString("arrival_country_1") != null) { value="@request().getQueryString("arrival_country_1")" }>
+                <i class="icon icon-arrival"></i>
+            </div>
+            <div id="div_dt_from" class="input-append @if(request().getQueryString("trip_type") != null && request().getQueryString("trip_type").equalsIgnoreCase(TripType.RETURN.name())){col-sm-2}else{col-sm-2} col-xs-6 bdr border-btm">
+                <input class="input-box departure_date" readonly data-type="dateIso" @if(request().getQueryString("departure_date_1") != null) { value="@request().getQueryString("departure_date_1")" }  placeholder="Departing" data-required="true" name="departure_date_1" data-error-message="Incorrect Date Specified" type="text">
+                <i class="icon icon-calendar departure_date_icon"></i>
+            </div>
+                <div id="div_dt_to" @if(request().getQueryString("trip_type") != null && request().getQueryString("trip_type").equals(TripType.ONE_WAY.name())) { style="display: none" } class="input-append col-sm-2 col-xs-6 bdr border-btm">
+                <input class="input-box arrival_date" readonly @if(request().getQueryString("arrival_date_1") != null) { value="@request().getQueryString("arrival_date_1")" } placeholder="Arriving" data-required="true" data-error-message="Incorrect Date Specified" name="arrival_date_1" type="text">
+                <i class="icon icon-calendar arrival_date_icon"></i>
+            </div>
+            <div class="input-append col-sm-1 col-xs-6 bdr ">
+                <input type="text" name="passengers" @if(request().getQueryString("passengers") != null) { value="@request().getQueryString("passengers")" } class="input-box passenger_onclick" style="cursor : pointer ;" value="1 Adult" readonly >
+                <i class="icon icon-user passenger_onclick"></i>
+            </div>
+            <div class="modal fade" id="passenger-modal" tabindex="-1" role="dialog" aria-labelledby="passengerModal">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content panel panel-primary">
+                        <div class="panel-heading">
+                            <span class="panel-name">Passenger Details</span>
+                            <div class="widget-menu pull-right">
+                                <a class="mr10 bg-primary dark p3 ph5" style="cursor : pointer" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div id="js-travellers" class="traveller-nudgers">
+                                <label for="js-adults" style="color : #555" class="text-gray">Adults</label>
+                                <button type="button" class="decrement adults" data-selector="#js-adults" tabindex="1">−</button>
+                                <input type="text" name="num_of_adult" @if(request().getQueryString("num_of_adult") != null) { value="@request().getQueryString("num_of_adult")" } id="js-adults" value="1" readonly >
+                                <button type="button" class="increment adults" data-selector="#js-adults" tabindex="1">+</button>
+                                <span>12+ years</span> <label for="js-children" style="color : #555" class="text-gray">Children</label>
+                                <button type="button" class="decrement children" data-selector="#js-children" tabindex="1">−</button>
+                                <input type="text" name="num_of_children" @if(request().getQueryString("num_of_children") != null) { value="@request().getQueryString("num_of_children")" } id="js-children" value="0" readonly >
+                                <button type="button" class="increment children" data-selector="#js-children" tabindex="1">+</button>
+                                <span>under 12</span> <label for="js-infants" style="color : #555" class="text-gray">Infants</label>
+                                <button type="button" class="decrement infants" data-selector="#js-infants" tabindex="1">−</button>
+                                <input type="text" name="num_of_infant" @if(request().getQueryString("num_of_infant") != null) { value="@request().getQueryString("num_of_infant")" } id="js-infants" value="0" readonly >
+                                <button type="button" class="increment infants" data-selector="#js-infants" tabindex="1">+</button>
+                                <span>under 2</span>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">Done</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 col-md-2 col-xs-6 ">
+                <select class="form-control" name="cabin_class">
+                    @*<option value="">Preferred Cabin Class</option>*@
+                    @for(cabinClass <- CabinPreference.values()) {
+                        <option @if(request().getQueryString("cabin_class") != null && request().getQueryString("cabin_class").equalsIgnoreCase(cabinClass.name())) { selected="selected" }  value="@cabinClass.name()">@cabinClass.name()</option>
+                    }
+                </select>
+            </div>
+            <input type="submit" class="col-sm-1 col-xs-12 border-btm-orange" value="Search" >
+            <div class="clearfix"></div>
+                <!-- Mutlicity search -->
+            <div class="multi_city_div" @if(request().getQueryString("trip_type") != null && request().getQueryString("trip_type").equals(TripType.MULTI_CITY.name())) { style="display: block;" } else { style="display : none;" }>
+                @for(i <- 2 to 4) {
+                    <div class="multi_section_@i" >
+                        <div class="input-append col-sm-3 col-xs-12 bdr border-btm">
+                            <input class="input-box search_airport_from" name="departure_airport_@i" @if(request().getQueryString("departure_airport_"+i) != null) { value="@request().getQueryString("departure_airport_"+i)" } data-section="@i" autoselect="true" data-error-message="Departure airport is required" autocomplete="off" aria-autocomplete="none" placeholder="Departing Airport" >
+                            <input type="hidden" name="departure_airport_code_@i" @if(request().getQueryString("departure_airport_code_"+i) != null) { value="@request().getQueryString("departure_airport_code_"+i)" }>
+                            <input type="hidden" name="departure_country_@i"  @if(request().getQueryString("departure_country_"+i) != null) { value="@request().getQueryString("departure_country_"+i)" }>
+                            <i class="icon icon-map-marker"></i>
+                        </div>
+                        <div class="input-append col-sm-3 col-xs-12 bdr border-btm">
+                            <input class="input-box search_airport_to" name="arrival_airport_@i" @if(request().getQueryString("arrival_airport_"+i) != null) { value="@request().getQueryString("arrival_airport_"+i)" } data-section="@i" @if(request().getQueryString("arrival_airport_"+i) != null) { value="@request().getQueryString("arrival_airport_"+i)" } autocomplete="off" autoselect="true" data-error-message="Arrival airport is required" aria-autocomplete="none" placeholder="Arrival Airport" >
+                            <input type="hidden" name="arrival_airport_code_@i" @if(request().getQueryString("arrival_airport_code_"+i) != null) { value="@request().getQueryString("arrival_airport_code_"+i)" } >
+                            <input type="hidden" name="arrival_country_@i" @if(request().getQueryString("arrival_country_"+i) != null) { value="@request().getQueryString("arrival_country_"+i)" }>
+                            <i class="icon icon-map-marker"></i>
+                        </div>
+                        <div id="div_dt_from" class="input-append col-sm-4 col-xs-6 bdr border-btm">
+                            <input class="input-box departure_date" readonly data-type="dateIso" placeholder="Leaving on" name="departure_date_@i" @if(request().getQueryString("departure_date_"+i) != null) { value="@request().getQueryString("departure_date_"+i)" } data-error-message="Incorrect Date Specified" type="text">
+                            <i class="icon icon-calendar departure_date_icon"></i>
+                        </div>
+                        <div class="col-sm-2 col-xs-2" style="background : none; margin-top: 8px; border: 0; padding-left: 10px;">
+                            <button type="button" class="btn btn-danger delete_multi" data-section="@i">X</button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                }
+            <div class="more_multi_city_div"></div>
+            <p></p>
+            <a class="add_more_multi_city" style="cursor: pointer; text-decoration: none; font-weight: bold; font-size: 15px; color: #FFF; border: 1px dotted #959595; padding: 5px; border-radius: 4px;"><i class="icon icon-map-marker"></i> Add more destination</a>
+            <p></p>
+            </div>
+            @*<div class="col-sm-2 col-xs-6 bdr mg2">
+                <select name="airline_code" class="form-control">
+                    <option value="">Preferred Airline</option>
+                    @for(airlines <- Airlines.find.all()) {
+                        <option value="@airlines.airline_code">@airlines.name</option>
+                    }
+                </select>
+            </div>*@
+            @*<ul class="col-sm-8 col-md-8 col-xs-6 list-inline mg2">
+                <li class="flexible_date">
+                    <label style="margin-right: 0px; clear: both; float: right;">
+                       <input style="clear: both; height: auto; margin: 9px;" @if(request().getQueryString("flexible_date") != null && request().getQueryString("flexible_date").equalsIgnoreCase("1")) { checked="checked" } name="flexible_date" value="1" type="checkbox">  +/- 3 days
+                   </label>
+                </li>
+
+                <li>
+                    <label style="margin-right: 0px; clear: both; float: right; padding-top: 10px;">
+                        <input style="clear: both; height: auto; margin: 9px;" @if(request().getQueryString("direct_flight") != null && request().getQueryString("direct_flight").equalsIgnoreCase("1")) { checked="checked" } id="optDaily" name="direct_flight" value="1" type="checkbox"> Direct flights only
+                    </label>
+                </li>
+                <li>
+                    <label style="margin-right: 0px; clear: both; float: right;">
+                        <input style="clear: both; height: auto; margin: 9px;" @if(request().getQueryString("flexible_ticket") != null && request().getQueryString("flexible_ticket").equalsIgnoreCase("1")) { checked="checked" } name="flexible_ticket" value="1" type="checkbox"> Flexible ticket
+                    </label>
+                </li>
+            </ul>*@
+        </div>
+    </div>
+</form>

@@ -1,0 +1,92 @@
+@(title: String, scripts: Html = Html(""), bodyClass: String = "")(content: Html)
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>@title - TravelFix Affiliate</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.ico")">
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("admin/v1/css/bootstrap.css")" />
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("v1/css/animate.css")" />
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("v1/css/font-awesome.css")" />
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("v1/css/flat-form.css")" />
+
+        <meta http-equiv="cache-control" content="max-age=0">
+        <meta http-equiv="cache-control" content="no-cache">
+        <meta http-equiv="cache-control" content="no-store">
+        <meta http-equiv="cache-control" content="must-revalidate">
+        <meta http-equiv="X-Content-Type-Options" content="nosniff">
+        <meta http-equiv="Strict-Transport-Security: max-age=31536000" content="includeSubDomains">
+        <meta http-equiv="X-Frame-Options" content="DENY">
+        <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+        <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
+        <meta http-equiv="pragma" content="no-cache">
+
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.at("vendor/plugins/datatables/media/css/dataTables.bootstrap.css")">
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.at("affiliate/js/utility/highlight/styles/googlecode.css")">
+
+        <link rel="stylesheet" href="@routes.Assets.at("v1/css/nprogress.css")" media="all" />
+
+            <!-- Font CSS (Via CDN) -->
+        <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700'>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+
+            <!-- Theme CSS -->
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.at("affiliate/skin/default_skin/css/theme.css")">
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.at("affiliate/admin-tools/admin-plugins/admin-panels/adminpanels.css")">
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.at("affiliate/admin-tools/admin-forms/css/admin-forms.css")">
+
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("v1/css/jquery.growl.css")" />
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("vendor/plugins/chosen/chosen.css")" />
+        <link rel="stylesheet" media="all" href="@routes.Assets.at("vendor/plugins/parsley/parsley.css")" />
+        <link rel="stylesheet" media="all" href="@routes.Assets.at("vendor/plugins/datepicker2/datepicker.min.css")" />
+            <!-- Favicon -->
+        <link rel="shortcut icon" href="@routes.Assets.at("images/favicon.ico")">
+            <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="@routes.Assets.at("v1/js/jquery-2.1.1.min.js")"></script>
+    </head>
+    <style>
+    body {
+    /*background : #f6bb42 ;*/
+    }
+    </style>
+    <body class="external-page sb-l-c sb-r-c @bodyClass">
+        <div id="main" class="animated fadeIn">
+                <!-- Start: Content -->
+            <section id="content_wrapper">
+                <div id="canvas-wrapper">
+                    <canvas id="demo-canvas"></canvas>
+                </div>
+                <section id="content">
+                @content
+                </section>
+            </section>
+        </div>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAgm2YB2XxEz4bRM9w_XPzeQ4jGqtKgK8o&sensor=false&v=3&libraries=geometry"></script>
+        <script type="text/javascript" src="@routes.Assets.at("v1/js/bootstrap.min.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("v1/js/jquery.growl.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("v1/js/jquery.cookie.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("v1/js/nprogress.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/chosen/chosen.jquery.min.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/daterange/moment.min.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datepicker2/datepicker.min.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datepicker2/i18n/datepicker.en.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/parsley/parsley.min.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("vendor/jquery/jquery_ui/jquery-ui.min.js")"></script>
+
+        <script type="text/javascript" src="@routes.Assets.at("affiliate/js/utility/utility.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("affiliate/js/main.js")"></script>
+        <script type="text/javascript">
+              jQuery(document).ready(function() {
+                  "use strict";
+                  Core.init({ sbm: "sb-l-c" });
+              });
+            </script>
+        <script src="@routes.Assets.at("v1/js/main.js")"></script>
+        @scripts
+        @layouts.include.misc_bottom.render()
+    </body>
+</html>

@@ -1,0 +1,57 @@
+@import helper._
+@(form: Form[FlightMarkUpDownRules])
+@layouts.admin("Create Flight Mark Up/Down Rule") {
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-name"> Create Flight Mark Up/Down Rule</span>
+        </div>
+        <div class="panel-body row">
+            @helper.form(action = controllers.console.routes.FlightMarkUpDownRuleController.postCreate(), 'enctype -> "application/x-www-form-urlencoded") {
+                @CSRF.formField
+                @helpers._error(form)
+                @helpers._flash.render()
+                <div class="col-md-3">
+                    @inputText(form("title"), '_label -> "Title",  'class -> "form-control", 'placeholder -> "Specify a title")
+                </div>
+                <div class="col-md-3">
+                    @select(form("ticket_policy"), options(TicketPolicy.options()), '_label -> "Ticket Policy", '_default -> form("ticket_policy").valueOr("--- Select ---"),  'class -> "form-control", 'placeholder -> "Ticket Policy")
+                </div>
+                <div class="col-md-3">
+                    @select(form("sales_category"), options(SalesCategory.options()), '_label -> "Sales Category", '_default -> form("sales_category").valueOr("--- Select ---"),  'class -> "form-control", 'placeholder -> "Sales Category")
+                </div>
+                <div class="col-md-3">
+                    @select(form("ticket_locale"), options(TicketLocale.options()), '_label -> "Ticket Locale", '_default -> form("ticket_locale").valueOr("--- Select ---"),  'class -> "form-control")
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-4">
+                    @select(form("formCabinClasses"), options(CabinPreference.options()), '_label -> "Cabin Preference <select one or more options>", '_default -> form("formCabinClasses").value,  'class -> "form-control chosen-select", 'multiple -> "multiple")
+                </div>
+                <div class="col-md-4">
+                    @select(form("formTripTypes"), options(TripType.options()), '_label -> "Trip Type <select one or more options>", '_default -> form("formTripTypes").value,  'class -> "form-control chosen-select", 'multiple -> "multiple")
+                </div>
+                <div class="col-md-4">
+                    @select(form("u_auth_type"), options("GUEST" -> "Guest", "LOGGED_IN" -> "Logged In", "BOTH" -> "Both"), '_label -> "User Auth. Type <select one or more options>", '_default -> form("u_auth_type").valueOr("--- Select ---"),  'class -> "form-control")
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-4">
+                    @select(form("formDepartureAirports"), options(Airports.options()), '_label -> "Departure Airports - optional", '_default -> form("formDepartureAirports").value,  'class -> "form-control chosen-select", 'multiple -> "multiple")
+                </div>
+                <div class="col-md-4">
+                    @select(form("formArrivalAirports"), options(Airports.options()), '_label -> "Arrival Airports - optional", '_default -> form("formArrivalAirports").value,  'class -> "form-control chosen-select", 'multiple -> "multiple")
+                </div>
+                <div class="col-md-2">
+                @inputRadioGroup(form("hotel_incl"), options("1" -> "Yes", "0" -> "No"), '_label -> "Apply with Only Hotels Combo?")
+                </div>
+                <div class="col-md-2">
+                @inputRadioGroup(form("incl_connecting_airline"), options("1" -> "Yes", "0" -> "No"), '_label -> "Include Connecting Airlines?")
+                </div>
+                <div class="clearfix"></div>
+                <hr />
+                <div class="col-md-12">
+                    <a href="@controllers.console.routes.FlightMarkUpDownRuleController.getIndex" class="btn btn-danger btn-md">Cancel</a>
+                    <button type="submit" class="btn btn-primary btn-md">Create Rule</button>
+                </div>
+               }
+            </div>
+        </div>
+}

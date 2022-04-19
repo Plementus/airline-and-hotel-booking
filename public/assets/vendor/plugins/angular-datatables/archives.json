@@ -1,0 +1,546 @@
+[
+    {
+        "airItinerary": {
+            "originDestinationOptions": {
+                "originDestinationOption": [
+                    {
+                        "flightSegment": [
+                            {
+                                "departureAirport": {
+                                    "value": "Lagos-Murtala Muhammed Intl, Nigeria",
+                                    "locationCode": "LOS",
+                                    "codeContext": "IATA"
+                                },
+                                "arrivalAirport": {
+                                    "value": "Addis Ababa-Bole Intl, Ethiopia",
+                                    "locationCode": "ADD",
+                                    "codeContext": "IATA"
+                                },
+                                "operatingAirline": {
+                                    "value": "Ethiopian Airlines",
+                                    "companyShortName": null,
+                                    "travelSector": null,
+                                    "code": "ET",
+                                    "codeContext": null,
+                                    "flightNumber": null
+                                },
+                                "equipment": [
+                                    {
+                                        "value": "BOEING 777-300/300ER JET",
+                                        "airEquipType": "77W",
+                                        "changeofGauge": false
+                                    }
+                                ],
+                                "marketingAirline": {
+                                    "value": "Ethiopian Airlines",
+                                    "companyShortName": null,
+                                    "travelSector": null,
+                                    "code": "ET",
+                                    "codeContext": null
+                                },
+                                "marriageGrp": null,
+                                "departureDateTime": "2016-04-20T13:39:00",
+                                "arrivalDateTime": "2016-04-20T20:44:00",
+                                "stopQuantity": 0,
+                                "rph": "1",
+                                "infoSource": "7",
+                                "flightNumber": "900",
+                                "resBookDesigCode": "O",
+                                "actionCode": null,
+                                "numberInParty": 1,
+                                "eticketEligibility": "ELIGIBLE",
+                                "tpaextensions": {
+                                    "content": [
+                                        {
+                                            "name": "{http://traveltalk.com/wsLowFarePlus}CabinType",
+                                            "declaredType": "services.amadeus.lowfareplus.CabinType",
+                                            "scope": "services.amadeus.lowfareplus.TPAExtensionsRS",
+                                            "value": {
+                                                "cabin": "ECONOMY"
+                                            },
+                                            "nil": false,
+                                            "globalScope": false,
+                                            "typeSubstituted": false
+                                        },
+                                        {
+                                            "name": "{http://traveltalk.com/wsLowFarePlus}JourneyTotalDuration",
+                                            "declaredType": "java.lang.String",
+                                            "scope": "services.amadeus.lowfareplus.TPAExtensionsRS",
+                                            "value": "11:26",
+                                            "nil": false,
+                                            "globalScope": false,
+                                            "typeSubstituted": false
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "departureAirport": {
+                                    "value": "Addis Ababa-Bole Intl, Ethiopia",
+                                    "locationCode": "ADD",
+                                    "codeContext": "IATA"
+                                },
+                                "arrivalAirport": {
+                                    "value": "Dubai-Dubai Intl, United Arab Emirates",
+                                    "locationCode": "DXB",
+                                    "codeContext": "IATA"
+                                },
+                                "operatingAirline": {
+                                    "value": "Ethiopian Airlines",
+                                    "companyShortName": null,
+                                    "travelSector": null,
+                                    "code": "ET",
+                                    "codeContext": null,
+                                    "flightNumber": null
+                                },
+                                "equipment": [
+                                    {
+                                        "value": "BOEING 737-800 JET",
+                                        "airEquipType": "738",
+                                        "changeofGauge": false
+                                    }
+                                ],
+                                "marketingAirline": {
+                                    "value": "Ethiopian Airlines",
+                                    "companyShortName": null,
+                                    "travelSector": null,
+                                    "code": "ET",
+                                    "codeContext": null
+                                },
+                                "marriageGrp": null,
+                                "departureDateTime": "2016-04-20T23:00:00",
+                                "arrivalDateTime": "2016-04-21T04:05:00",
+                                "stopQuantity": 0,
+                                "rph": "1",
+                                "infoSource": "6",
+                                "flightNumber": "612",
+                                "resBookDesigCode": "O",
+                                "actionCode": null,
+                                "numberInParty": 1,
+                                "eticketEligibility": "ELIGIBLE",
+                                "tpaextensions": {
+                                    "content": [
+                                        {
+                                            "name": "{http://traveltalk.com/wsLowFarePlus}CabinType",
+                                            "declaredType": "services.amadeus.lowfareplus.CabinType",
+                                            "scope": "services.amadeus.lowfareplus.TPAExtensionsRS",
+                                            "value": {
+                                                "cabin": "ECONOMY"
+                                            },
+                                            "nil": false,
+                                            "globalScope": false,
+                                            "typeSubstituted": false
+                                        },
+                                        {
+                                            "name": "{http://traveltalk.com/wsLowFarePlus}JourneyTotalDuration",
+                                            "declaredType": "java.lang.String",
+                                            "scope": "services.amadeus.lowfareplus.TPAExtensionsRS",
+                                            "value": "11:26",
+                                            "nil": false,
+                                            "globalScope": false,
+                                            "typeSubstituted": false
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "sectorSequence": "1"
+                    },
+                    {
+                        "flightSegment": [
+                            {
+                                "departureAirport": {
+                                    "value": "Dubai-Dubai Intl, United Arab Emirates",
+                                    "locationCode": "DXB",
+                                    "codeContext": "IATA"
+                                },
+                                "arrivalAirport": {
+                                    "value": "Addis Ababa-Bole Intl, Ethiopia",
+                                    "locationCode": "ADD",
+                                    "codeContext": "IATA"
+                                },
+                                "operatingAirline": {
+                                    "value": "Ethiopian Airlines",
+                                    "companyShortName": null,
+                                    "travelSector": null,
+                                    "code": "ET",
+                                    "codeContext": null,
+                                    "flightNumber": null
+                                },
+                                "equipment": [
+                                    {
+                                        "value": "BOEING 777-200LR JET",
+                                        "airEquipType": "77L",
+                                        "changeofGauge": false
+                                    }
+                                ],
+                                "marketingAirline": {
+                                    "value": "Ethiopian Airlines",
+                                    "companyShortName": null,
+                                    "travelSector": null,
+                                    "code": "ET",
+                                    "codeContext": null
+                                },
+                                "marriageGrp": null,
+                                "departureDateTime": "2016-04-29T17:20:00",
+                                "arrivalDateTime": "2016-04-29T20:45:00",
+                                "stopQuantity": 0,
+                                "rph": "1",
+                                "infoSource": "7",
+                                "flightNumber": "603",
+                                "resBookDesigCode": "O",
+                                "actionCode": null,
+                                "numberInParty": 1,
+                                "eticketEligibility": "ELIGIBLE",
+                                "tpaextensions": {
+                                    "content": [
+                                        {
+                                            "name": "{http://traveltalk.com/wsLowFarePlus}CabinType",
+                                            "declaredType": "services.amadeus.lowfareplus.CabinType",
+                                            "scope": "services.amadeus.lowfareplus.TPAExtensionsRS",
+                                            "value": {
+                                                "cabin": "ECONOMY"
+                                            },
+                                            "nil": false,
+                                            "globalScope": false,
+                                            "typeSubstituted": false
+                                        },
+                                        {
+                                            "name": "{http://traveltalk.com/wsLowFarePlus}JourneyTotalDuration",
+                                            "declaredType": "java.lang.String",
+                                            "scope": "services.amadeus.lowfareplus.TPAExtensionsRS",
+                                            "value": "22:04",
+                                            "nil": false,
+                                            "globalScope": false,
+                                            "typeSubstituted": false
+                                        },
+                                        {
+                                            "name": "{http://traveltalk.com/wsLowFarePlus}FlightContext",
+                                            "declaredType": "java.lang.String",
+                                            "scope": "services.amadeus.lowfareplus.TPAExtensionsRS",
+                                            "value": "LA",
+                                            "nil": false,
+                                            "globalScope": false,
+                                            "typeSubstituted": false
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "departureAirport": {
+                                    "value": "Addis Ababa-Bole Intl, Ethiopia",
+                                    "locationCode": "ADD",
+                                    "codeContext": "IATA"
+                                },
+                                "arrivalAirport": {
+                                    "value": "Lagos-Murtala Muhammed Intl, Nigeria",
+                                    "locationCode": "LOS",
+                                    "codeContext": "IATA"
+                                },
+                                "operatingAirline": {
+                                    "value": "Ethiopian Airlines",
+                                    "companyShortName": null,
+                                    "travelSector": null,
+                                    "code": "ET",
+                                    "codeContext": null,
+                                    "flightNumber": null
+                                },
+                                "equipment": [
+                                    {
+                                        "value": "BOEING 777-300/300ER JET",
+                                        "airEquipType": "77W",
+                                        "changeofGauge": false
+                                    }
+                                ],
+                                "marketingAirline": {
+                                    "value": "Ethiopian Airlines",
+                                    "companyShortName": null,
+                                    "travelSector": null,
+                                    "code": "ET",
+                                    "codeContext": null
+                                },
+                                "marriageGrp": null,
+                                "departureDateTime": "2016-04-30T08:59:00",
+                                "arrivalDateTime": "2016-04-30T12:24:00",
+                                "stopQuantity": 0,
+                                "rph": "1",
+                                "infoSource": "7",
+                                "flightNumber": "901",
+                                "resBookDesigCode": "O",
+                                "actionCode": null,
+                                "numberInParty": 1,
+                                "eticketEligibility": "ELIGIBLE",
+                                "tpaextensions": {
+                                    "content": [
+                                        {
+                                            "name": "{http://traveltalk.com/wsLowFarePlus}CabinType",
+                                            "declaredType": "services.amadeus.lowfareplus.CabinType",
+                                            "scope": "services.amadeus.lowfareplus.TPAExtensionsRS",
+                                            "value": {
+                                                "cabin": "ECONOMY"
+                                            },
+                                            "nil": false,
+                                            "globalScope": false,
+                                            "typeSubstituted": false
+                                        },
+                                        {
+                                            "name": "{http://traveltalk.com/wsLowFarePlus}JourneyTotalDuration",
+                                            "declaredType": "java.lang.String",
+                                            "scope": "services.amadeus.lowfareplus.TPAExtensionsRS",
+                                            "value": "22:04",
+                                            "nil": false,
+                                            "globalScope": false,
+                                            "typeSubstituted": false
+                                        },
+                                        {
+                                            "name": "{http://traveltalk.com/wsLowFarePlus}FlightContext",
+                                            "declaredType": "java.lang.String",
+                                            "scope": "services.amadeus.lowfareplus.TPAExtensionsRS",
+                                            "value": "LA",
+                                            "nil": false,
+                                            "globalScope": false,
+                                            "typeSubstituted": false
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "sectorSequence": "2"
+                    }
+                ]
+            },
+            "directionInd": "CIRCLE"
+        },
+        "airItineraryPricingInfo": {
+            "itinTotalFare": {
+                "baseFare": {
+                    "amount": 4460000.0,
+                    "currencyCode": "NGN",
+                    "decimalPlaces": 2
+                },
+                "equivFare": null,
+                "taxes": {
+                    "tax": [
+                        {
+                            "value": "",
+                            "taxCode": "TotalTax",
+                            "amount": 8554100.0,
+                            "currencyCode": "NGN",
+                            "decimalPlaces": 2
+                        }
+                    ]
+                },
+                "fees": null,
+                "totalFare": {
+                    "amount": 1.30141E7,
+                    "currencyCode": "NGN",
+                    "decimalPlaces": 2
+                },
+                "negotiatedFare": false,
+                "negotiatedFareCode": null
+            },
+            "fareInfos": {
+                "fareInfo": [
+                    {
+                        "departureDate": "2016-04-20T13:39:00",
+                        "fareReference": "OPR3MNG",
+                        "ruleInfo": {
+                            "resTicketingRules": null,
+                            "lengthOfStayRules": null,
+                            "chargesRules": null
+                        },
+                        "filingAirline": {
+                            "value": "",
+                            "companyShortName": null,
+                            "travelSector": null,
+                            "code": "ET",
+                            "codeContext": null
+                        },
+                        "marketingAirline": [],
+                        "departureAirport": {
+                            "value": "",
+                            "locationCode": "LOS",
+                            "codeContext": "IATA"
+                        },
+                        "arrivalAirport": {
+                            "value": "",
+                            "locationCode": "ADD",
+                            "codeContext": "IATA"
+                        },
+                        "negotiatedFare": false,
+                        "negotiatedFareCode": null,
+                        "breakPoint": "N",
+                        "passengerType": "ADT"
+                    },
+                    {
+                        "departureDate": "2016-04-20T23:00:00",
+                        "fareReference": "OPR3MNG",
+                        "ruleInfo": {
+                            "resTicketingRules": null,
+                            "lengthOfStayRules": null,
+                            "chargesRules": null
+                        },
+                        "filingAirline": {
+                            "value": "",
+                            "companyShortName": null,
+                            "travelSector": null,
+                            "code": "ET",
+                            "codeContext": null
+                        },
+                        "marketingAirline": [],
+                        "departureAirport": {
+                            "value": "",
+                            "locationCode": "ADD",
+                            "codeContext": "IATA"
+                        },
+                        "arrivalAirport": {
+                            "value": "",
+                            "locationCode": "DXB",
+                            "codeContext": "IATA"
+                        },
+                        "negotiatedFare": false,
+                        "negotiatedFareCode": null,
+                        "breakPoint": "Y",
+                        "passengerType": "ADT"
+                    },
+                    {
+                        "departureDate": "2016-04-29T17:20:00",
+                        "fareReference": "OPR3MNG",
+                        "ruleInfo": {
+                            "resTicketingRules": null,
+                            "lengthOfStayRules": null,
+                            "chargesRules": null
+                        },
+                        "filingAirline": {
+                            "value": "",
+                            "companyShortName": null,
+                            "travelSector": null,
+                            "code": "ET",
+                            "codeContext": null
+                        },
+                        "marketingAirline": [],
+                        "departureAirport": {
+                            "value": "",
+                            "locationCode": "DXB",
+                            "codeContext": "IATA"
+                        },
+                        "arrivalAirport": {
+                            "value": "",
+                            "locationCode": "ADD",
+                            "codeContext": "IATA"
+                        },
+                        "negotiatedFare": false,
+                        "negotiatedFareCode": null,
+                        "breakPoint": "N",
+                        "passengerType": "ADT"
+                    },
+                    {
+                        "departureDate": "2016-04-30T08:59:00",
+                        "fareReference": "OPR3MNG",
+                        "ruleInfo": {
+                            "resTicketingRules": null,
+                            "lengthOfStayRules": null,
+                            "chargesRules": null
+                        },
+                        "filingAirline": {
+                            "value": "",
+                            "companyShortName": null,
+                            "travelSector": null,
+                            "code": "ET",
+                            "codeContext": null
+                        },
+                        "marketingAirline": [],
+                        "departureAirport": {
+                            "value": "",
+                            "locationCode": "ADD",
+                            "codeContext": "IATA"
+                        },
+                        "arrivalAirport": {
+                            "value": "",
+                            "locationCode": "LOS",
+                            "codeContext": "IATA"
+                        },
+                        "negotiatedFare": false,
+                        "negotiatedFareCode": null,
+                        "breakPoint": "Y",
+                        "passengerType": "ADT"
+                    }
+                ]
+            },
+            "pricingSource": "PUBLISHED",
+            "validatingAirlineCode": "ET",
+            "ptcfareBreakdowns": {
+                "ptcfareBreakdown": [
+                    {
+                        "passengerTypeQuantity": {
+                            "age": null,
+                            "code": "ADT",
+                            "codeContext": null,
+                            "uri": null,
+                            "quantity": 1,
+                            "changeable": true
+                        },
+                        "fareBasisCodes": {
+                            "fareBasisCode": [
+                                "OPR3MNG",
+                                "OPR3MNG",
+                                "OPR3MNG",
+                                "OPR3MNG"
+                            ]
+                        },
+                        "passengerFare": {
+                            "baseFare": {
+                                "amount": 4460000.0,
+                                "currencyCode": null,
+                                "decimalPlaces": null
+                            },
+                            "equivFare": null,
+                            "taxes": {
+                                "tax": [
+                                    {
+                                        "value": "",
+                                        "taxCode": "TotalTax",
+                                        "amount": 8554100.0,
+                                        "currencyCode": null,
+                                        "decimalPlaces": null
+                                    }
+                                ]
+                            },
+                            "fees": null,
+                            "totalFare": {
+                                "amount": 1.30141E7,
+                                "currencyCode": null,
+                                "decimalPlaces": null
+                            },
+                            "negotiatedFare": false,
+                            "negotiatedFareCode": null
+                        },
+                        "pricingSource": "PUBLISHED",
+                        "tpaextensions": {
+                            "content": [
+                                {
+                                    "name": "{http://traveltalk.com/wsLowFarePlus}PricedCode",
+                                    "declaredType": "java.lang.String",
+                                    "scope": "services.amadeus.lowfareplus.TPAExtensionsRS",
+                                    "value": "ADT",
+                                    "nil": false,
+                                    "globalScope": false,
+                                    "typeSubstituted": false
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "notes": [],
+        "ticketingInfo": {
+            "ticketAdvisory": [],
+            "ticketTimeLimit": "2016-04-20T23:59:00",
+            "ticketType": null,
+            "eticketNumber": null
+        },
+        "sequenceNumber": 1,
+        "provider": null
+    }
+    ]

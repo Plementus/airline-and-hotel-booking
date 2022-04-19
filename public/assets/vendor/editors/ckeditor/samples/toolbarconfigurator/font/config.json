@@ -1,0 +1,1775 @@
+[
+  {
+    "airItineraryWSResponse": {
+      "originDestinationWSResponses": [
+        {
+          "flightSegmentWSResponses": [
+            {
+              "departureAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+              "arrivalAirport": "Doha-Doha Intl, Qatar",
+              "departureAirportCode": "LOS",
+              "arrivalAirportCode": "DOH",
+              "departureDateTime": "2016-04-06T15:05:00",
+              "arrivalDateTime": "2016-04-06T23:55:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@52242835",
+              "flightNumber": "1408",
+              "resBookDesigCode": "M",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "1",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            },
+            {
+              "departureAirport": "Doha-Doha Intl, Qatar",
+              "arrivalAirport": "Dubai-Dubai Intl, United Arab Emirates",
+              "departureAirportCode": "DOH",
+              "arrivalAirportCode": "DXB",
+              "departureDateTime": "2016-04-07T02:00:00",
+              "arrivalDateTime": "2016-04-07T04:10:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@2a455d43",
+              "flightNumber": "1004",
+              "resBookDesigCode": "M",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "1",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            }
+          ],
+          "originAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+          "destinationAirport": "Dubai-Dubai Intl, United Arab Emirates",
+          "originAirportCode": "LOS",
+          "destinationAirportCode": "DXB",
+          "arrivalDateTime": "2016-04-07T04:10:00",
+          "departureDateTime": "2016-04-06T15:05:00",
+          "duration": 0,
+          "marketingAirline": "Qatar Airways",
+          "marketingAirlineCode": "QR",
+          "cabin": null,
+          "numberOfStops": 1
+        },
+        {
+          "flightSegmentWSResponses": [
+            {
+              "departureAirport": "Dubai-Al Maktoum Intl, United Arab Emirates",
+              "arrivalAirport": "Doha-Doha Intl, Qatar",
+              "departureAirportCode": "DWC",
+              "arrivalAirportCode": "DOH",
+              "departureDateTime": "2016-04-09T05:40:00",
+              "arrivalDateTime": "2016-04-09T05:45:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@8f9dcbb",
+              "flightNumber": "1033",
+              "resBookDesigCode": "N",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            },
+            {
+              "departureAirport": "Doha-Doha Intl, Qatar",
+              "arrivalAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+              "departureAirportCode": "DOH",
+              "arrivalAirportCode": "LOS",
+              "departureDateTime": "2016-04-09T07:30:00",
+              "arrivalDateTime": "2016-04-09T13:15:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@2f9b436d",
+              "flightNumber": "1407",
+              "resBookDesigCode": "N",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            }
+          ],
+          "originAirport": "Dubai-Al Maktoum Intl, United Arab Emirates",
+          "destinationAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+          "originAirportCode": "DWC",
+          "destinationAirportCode": "LOS",
+          "arrivalDateTime": "2016-04-09T13:15:00",
+          "departureDateTime": "2016-04-09T05:40:00",
+          "duration": 0,
+          "marketingAirline": "Qatar Airways",
+          "marketingAirlineCode": "QR",
+          "cabin": null,
+          "numberOfStops": 1
+        }
+      ],
+      "directionIndicator": "Circle"
+    },
+    "pricingInfoWSResponse": {
+      "baseFare": 103600,
+      "tax": 92891,
+      "totalFare": 196491,
+      "currencyCode": "NGN",
+      "decimalPlaces": 2,
+      "pricingSource": "Published",
+      "adultBaseFair": 103600,
+      "childrenBaseFair": 0,
+      "infantBaseFair": 0,
+      "adultTaxFair": 92891,
+      "childrenTaxFair": 0,
+      "infantTaxFair": 0,
+      "adultTotal": 196491,
+      "childrenTotal": 0,
+      "infantTotal": 0
+    },
+    "ticketingInfoWSResponse": {
+      "ticketTimeLimit": {
+        "hour": 15,
+        "minute": 5,
+        "second": 0,
+        "nano": 0,
+        "dayOfYear": 96,
+        "dayOfWeek": "TUESDAY",
+        "dayOfMonth": 5,
+        "year": 2016,
+        "month": "APRIL",
+        "monthValue": 4,
+        "chronology": {
+          "id": "ISO",
+          "calendarType": "iso8601"
+        }
+      },
+      "ticketType": "eTicket"
+    },
+    "airline": "Qatar Airways",
+    "airlineCode": "QR",
+    "cabin": null,
+    "index": 64,
+    "ticketingInfo": {
+      "ticketAdvisory": [],
+      "ticketTimeLimit": "2016-04-06T23:59:00",
+      "ticketType": null,
+      "eticketNumber": null
+    },
+    "objectSerializer": null,
+    "gds": "Amadeus"
+  },
+  {
+    "airItineraryWSResponse": {
+      "originDestinationWSResponses": [
+        {
+          "flightSegmentWSResponses": [
+            {
+              "departureAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+              "arrivalAirport": "Doha-Doha Intl, Qatar",
+              "departureAirportCode": "LOS",
+              "arrivalAirportCode": "DOH",
+              "departureDateTime": "2016-04-06T15:05:00",
+              "arrivalDateTime": "2016-04-06T23:55:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@52534453",
+              "flightNumber": "1408",
+              "resBookDesigCode": "K",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "1",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            },
+            {
+              "departureAirport": "Doha-Doha Intl, Qatar",
+              "arrivalAirport": "Dubai-Al Maktoum Intl, United Arab Emirates",
+              "departureAirportCode": "DOH",
+              "arrivalAirportCode": "DWC",
+              "departureDateTime": "2016-04-07T02:30:00",
+              "arrivalDateTime": "2016-04-07T04:40:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@4a350558",
+              "flightNumber": "1032",
+              "resBookDesigCode": "K",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "1",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            }
+          ],
+          "originAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+          "destinationAirport": "Dubai-Al Maktoum Intl, United Arab Emirates",
+          "originAirportCode": "LOS",
+          "destinationAirportCode": "DWC",
+          "arrivalDateTime": "2016-04-07T04:40:00",
+          "departureDateTime": "2016-04-06T15:05:00",
+          "duration": 0,
+          "marketingAirline": "Qatar Airways",
+          "marketingAirlineCode": "QR",
+          "cabin": null,
+          "numberOfStops": 1
+        },
+        {
+          "flightSegmentWSResponses": [
+            {
+              "departureAirport": "Dubai-Al Maktoum Intl, United Arab Emirates",
+              "arrivalAirport": "Doha-Doha Intl, Qatar",
+              "departureAirportCode": "DWC",
+              "arrivalAirportCode": "DOH",
+              "departureDateTime": "2016-04-09T05:40:00",
+              "arrivalDateTime": "2016-04-09T05:45:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@6a3cbf94",
+              "flightNumber": "1033",
+              "resBookDesigCode": "N",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            },
+            {
+              "departureAirport": "Doha-Doha Intl, Qatar",
+              "arrivalAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+              "departureAirportCode": "DOH",
+              "arrivalAirportCode": "LOS",
+              "departureDateTime": "2016-04-09T07:30:00",
+              "arrivalDateTime": "2016-04-09T13:15:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@4476cdd0",
+              "flightNumber": "1407",
+              "resBookDesigCode": "N",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            }
+          ],
+          "originAirport": "Dubai-Al Maktoum Intl, United Arab Emirates",
+          "destinationAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+          "originAirportCode": "DWC",
+          "destinationAirportCode": "LOS",
+          "arrivalDateTime": "2016-04-09T13:15:00",
+          "departureDateTime": "2016-04-09T05:40:00",
+          "duration": 0,
+          "marketingAirline": "Qatar Airways",
+          "marketingAirlineCode": "QR",
+          "cabin": null,
+          "numberOfStops": 1
+        }
+      ],
+      "directionIndicator": "Circle"
+    },
+    "pricingInfoWSResponse": {
+      "baseFare": 108000,
+      "tax": 93111,
+      "totalFare": 201111,
+      "currencyCode": "NGN",
+      "decimalPlaces": 2,
+      "pricingSource": "Published",
+      "adultBaseFair": 108000,
+      "childrenBaseFair": 0,
+      "infantBaseFair": 0,
+      "adultTaxFair": 93111,
+      "childrenTaxFair": 0,
+      "infantTaxFair": 0,
+      "adultTotal": 201111,
+      "childrenTotal": 0,
+      "infantTotal": 0
+    },
+    "ticketingInfoWSResponse": {
+      "ticketTimeLimit": {
+        "hour": 15,
+        "minute": 5,
+        "second": 0,
+        "nano": 0,
+        "dayOfYear": 96,
+        "dayOfWeek": "TUESDAY",
+        "dayOfMonth": 5,
+        "year": 2016,
+        "month": "APRIL",
+        "monthValue": 4,
+        "chronology": {
+          "id": "ISO",
+          "calendarType": "iso8601"
+        }
+      },
+      "ticketType": "eTicket"
+    },
+    "airline": "Qatar Airways",
+    "airlineCode": "QR",
+    "cabin": null,
+    "index": 69,
+    "ticketingInfo": {
+      "ticketAdvisory": [],
+      "ticketTimeLimit": "2016-04-06T23:59:00",
+      "ticketType": null,
+      "eticketNumber": null
+    },
+    "objectSerializer": null,
+    "gds": "Amadeus"
+  },
+  {
+    "airItineraryWSResponse": {
+      "originDestinationWSResponses": [
+        {
+          "flightSegmentWSResponses": [
+            {
+              "departureAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+              "arrivalAirport": "Doha-Doha Intl, Qatar",
+              "departureAirportCode": "LOS",
+              "arrivalAirportCode": "DOH",
+              "departureDateTime": "2016-04-06T15:05:00",
+              "arrivalDateTime": "2016-04-06T23:55:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@ccf68d1",
+              "flightNumber": "1408",
+              "resBookDesigCode": "M",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "1",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            },
+            {
+              "departureAirport": "Doha-Doha Intl, Qatar",
+              "arrivalAirport": "Dubai-Dubai Intl, United Arab Emirates",
+              "departureAirportCode": "DOH",
+              "arrivalAirportCode": "DXB",
+              "departureDateTime": "2016-04-07T02:00:00",
+              "arrivalDateTime": "2016-04-07T04:10:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@6eb2a3d5",
+              "flightNumber": "1004",
+              "resBookDesigCode": "M",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "1",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            }
+          ],
+          "originAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+          "destinationAirport": "Dubai-Dubai Intl, United Arab Emirates",
+          "originAirportCode": "LOS",
+          "destinationAirportCode": "DXB",
+          "arrivalDateTime": "2016-04-07T04:10:00",
+          "departureDateTime": "2016-04-06T15:05:00",
+          "duration": 0,
+          "marketingAirline": "Qatar Airways",
+          "marketingAirlineCode": "QR",
+          "cabin": null,
+          "numberOfStops": 1
+        },
+        {
+          "flightSegmentWSResponses": [
+            {
+              "departureAirport": "Dubai-Dubai Intl, United Arab Emirates",
+              "arrivalAirport": "Doha-Doha Intl, Qatar",
+              "departureAirportCode": "DXB",
+              "arrivalAirportCode": "DOH",
+              "departureDateTime": "2016-04-09T06:30:00",
+              "arrivalDateTime": "2016-04-09T06:40:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@61fd6188",
+              "flightNumber": "1021",
+              "resBookDesigCode": "N",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            },
+            {
+              "departureAirport": "Doha-Doha Intl, Qatar",
+              "arrivalAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+              "departureAirportCode": "DOH",
+              "arrivalAirportCode": "LOS",
+              "departureDateTime": "2016-04-09T07:30:00",
+              "arrivalDateTime": "2016-04-09T13:15:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@1317382a",
+              "flightNumber": "1407",
+              "resBookDesigCode": "N",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            }
+          ],
+          "originAirport": "Dubai-Dubai Intl, United Arab Emirates",
+          "destinationAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+          "originAirportCode": "DXB",
+          "destinationAirportCode": "LOS",
+          "arrivalDateTime": "2016-04-09T13:15:00",
+          "departureDateTime": "2016-04-09T06:30:00",
+          "duration": 0,
+          "marketingAirline": "Qatar Airways",
+          "marketingAirlineCode": "QR",
+          "cabin": null,
+          "numberOfStops": 1
+        }
+      ],
+      "directionIndicator": "Circle"
+    },
+    "pricingInfoWSResponse": {
+      "baseFare": 109600,
+      "tax": 93191,
+      "totalFare": 202791,
+      "currencyCode": "NGN",
+      "decimalPlaces": 2,
+      "pricingSource": "Published",
+      "adultBaseFair": 109600,
+      "childrenBaseFair": 0,
+      "infantBaseFair": 0,
+      "adultTaxFair": 93191,
+      "childrenTaxFair": 0,
+      "infantTaxFair": 0,
+      "adultTotal": 202791,
+      "childrenTotal": 0,
+      "infantTotal": 0
+    },
+    "ticketingInfoWSResponse": {
+      "ticketTimeLimit": {
+        "hour": 15,
+        "minute": 5,
+        "second": 0,
+        "nano": 0,
+        "dayOfYear": 96,
+        "dayOfWeek": "TUESDAY",
+        "dayOfMonth": 5,
+        "year": 2016,
+        "month": "APRIL",
+        "monthValue": 4,
+        "chronology": {
+          "id": "ISO",
+          "calendarType": "iso8601"
+        }
+      },
+      "ticketType": "eTicket"
+    },
+    "airline": "Qatar Airways",
+    "airlineCode": "QR",
+    "cabin": null,
+    "index": 70,
+    "ticketingInfo": {
+      "ticketAdvisory": [],
+      "ticketTimeLimit": "2016-04-06T23:59:00",
+      "ticketType": null,
+      "eticketNumber": null
+    },
+    "objectSerializer": null,
+    "gds": "Amadeus"
+  },
+  {
+    "airItineraryWSResponse": {
+      "originDestinationWSResponses": [
+        {
+          "flightSegmentWSResponses": [
+            {
+              "departureAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+              "arrivalAirport": "Doha-Doha Intl, Qatar",
+              "departureAirportCode": "LOS",
+              "arrivalAirportCode": "DOH",
+              "departureDateTime": "2016-04-06T15:05:00",
+              "arrivalDateTime": "2016-04-06T23:55:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@64694379",
+              "flightNumber": "1408",
+              "resBookDesigCode": "M",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "1",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            },
+            {
+              "departureAirport": "Doha-Doha Intl, Qatar",
+              "arrivalAirport": "Dubai-Dubai Intl, United Arab Emirates",
+              "departureAirportCode": "DOH",
+              "arrivalAirportCode": "DXB",
+              "departureDateTime": "2016-04-07T02:00:00",
+              "arrivalDateTime": "2016-04-07T04:10:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@1fbee82a",
+              "flightNumber": "1004",
+              "resBookDesigCode": "M",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "1",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            }
+          ],
+          "originAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+          "destinationAirport": "Dubai-Dubai Intl, United Arab Emirates",
+          "originAirportCode": "LOS",
+          "destinationAirportCode": "DXB",
+          "arrivalDateTime": "2016-04-07T04:10:00",
+          "departureDateTime": "2016-04-06T15:05:00",
+          "duration": 0,
+          "marketingAirline": "Qatar Airways",
+          "marketingAirlineCode": "QR",
+          "cabin": null,
+          "numberOfStops": 1
+        },
+        {
+          "flightSegmentWSResponses": [
+            {
+              "departureAirport": "Dubai-Dubai Intl, United Arab Emirates",
+              "arrivalAirport": "Doha-Doha Intl, Qatar",
+              "departureAirportCode": "DXB",
+              "arrivalAirportCode": "DOH",
+              "departureDateTime": "2016-04-09T05:30:00",
+              "arrivalDateTime": "2016-04-09T05:40:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@15c53b74",
+              "flightNumber": "1003",
+              "resBookDesigCode": "N",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            },
+            {
+              "departureAirport": "Doha-Doha Intl, Qatar",
+              "arrivalAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+              "departureAirportCode": "DOH",
+              "arrivalAirportCode": "LOS",
+              "departureDateTime": "2016-04-09T07:30:00",
+              "arrivalDateTime": "2016-04-09T13:15:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@3f39978e",
+              "flightNumber": "1407",
+              "resBookDesigCode": "N",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            }
+          ],
+          "originAirport": "Dubai-Dubai Intl, United Arab Emirates",
+          "destinationAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+          "originAirportCode": "DXB",
+          "destinationAirportCode": "LOS",
+          "arrivalDateTime": "2016-04-09T13:15:00",
+          "departureDateTime": "2016-04-09T05:30:00",
+          "duration": 0,
+          "marketingAirline": "Qatar Airways",
+          "marketingAirlineCode": "QR",
+          "cabin": null,
+          "numberOfStops": 1
+        }
+      ],
+      "directionIndicator": "Circle"
+    },
+    "pricingInfoWSResponse": {
+      "baseFare": 109600,
+      "tax": 93191,
+      "totalFare": 202791,
+      "currencyCode": "NGN",
+      "decimalPlaces": 2,
+      "pricingSource": "Published",
+      "adultBaseFair": 109600,
+      "childrenBaseFair": 0,
+      "infantBaseFair": 0,
+      "adultTaxFair": 93191,
+      "childrenTaxFair": 0,
+      "infantTaxFair": 0,
+      "adultTotal": 202791,
+      "childrenTotal": 0,
+      "infantTotal": 0
+    },
+    "ticketingInfoWSResponse": {
+      "ticketTimeLimit": {
+        "hour": 15,
+        "minute": 5,
+        "second": 0,
+        "nano": 0,
+        "dayOfYear": 96,
+        "dayOfWeek": "TUESDAY",
+        "dayOfMonth": 5,
+        "year": 2016,
+        "month": "APRIL",
+        "monthValue": 4,
+        "chronology": {
+          "id": "ISO",
+          "calendarType": "iso8601"
+        }
+      },
+      "ticketType": "eTicket"
+    },
+    "airline": "Qatar Airways",
+    "airlineCode": "QR",
+    "cabin": null,
+    "index": 71,
+    "ticketingInfo": {
+      "ticketAdvisory": [],
+      "ticketTimeLimit": "2016-04-06T23:59:00",
+      "ticketType": null,
+      "eticketNumber": null
+    },
+    "objectSerializer": null,
+    "gds": "Amadeus"
+  },
+  {
+    "airItineraryWSResponse": {
+      "originDestinationWSResponses": [
+        {
+          "flightSegmentWSResponses": [
+            {
+              "departureAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+              "arrivalAirport": "Doha-Doha Intl, Qatar",
+              "departureAirportCode": "LOS",
+              "arrivalAirportCode": "DOH",
+              "departureDateTime": "2016-04-06T15:05:00",
+              "arrivalDateTime": "2016-04-06T23:55:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@1165799b",
+              "flightNumber": "1408",
+              "resBookDesigCode": "M",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "1",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            },
+            {
+              "departureAirport": "Doha-Doha Intl, Qatar",
+              "arrivalAirport": "Dubai-Dubai Intl, United Arab Emirates",
+              "departureAirportCode": "DOH",
+              "arrivalAirportCode": "DXB",
+              "departureDateTime": "2016-04-07T02:00:00",
+              "arrivalDateTime": "2016-04-07T04:10:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@79722c25",
+              "flightNumber": "1004",
+              "resBookDesigCode": "M",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "1",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            }
+          ],
+          "originAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+          "destinationAirport": "Dubai-Dubai Intl, United Arab Emirates",
+          "originAirportCode": "LOS",
+          "destinationAirportCode": "DXB",
+          "arrivalDateTime": "2016-04-07T04:10:00",
+          "departureDateTime": "2016-04-06T15:05:00",
+          "duration": 0,
+          "marketingAirline": "Qatar Airways",
+          "marketingAirlineCode": "QR",
+          "cabin": null,
+          "numberOfStops": 1
+        },
+        {
+          "flightSegmentWSResponses": [
+            {
+              "departureAirport": "Dubai-Dubai Intl, United Arab Emirates",
+              "arrivalAirport": "Doha-Doha Intl, Qatar",
+              "departureAirportCode": "DXB",
+              "arrivalAirportCode": "DOH",
+              "departureDateTime": "2016-04-09T00:30:00",
+              "arrivalDateTime": "2016-04-09T00:40:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@45d0a6e4",
+              "flightNumber": "1015",
+              "resBookDesigCode": "N",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            },
+            {
+              "departureAirport": "Doha-Doha Intl, Qatar",
+              "arrivalAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+              "departureAirportCode": "DOH",
+              "arrivalAirportCode": "LOS",
+              "departureDateTime": "2016-04-09T07:30:00",
+              "arrivalDateTime": "2016-04-09T13:15:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@3626dc37",
+              "flightNumber": "1407",
+              "resBookDesigCode": "N",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            }
+          ],
+          "originAirport": "Dubai-Dubai Intl, United Arab Emirates",
+          "destinationAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+          "originAirportCode": "DXB",
+          "destinationAirportCode": "LOS",
+          "arrivalDateTime": "2016-04-09T13:15:00",
+          "departureDateTime": "2016-04-09T00:30:00",
+          "duration": 0,
+          "marketingAirline": "Qatar Airways",
+          "marketingAirlineCode": "QR",
+          "cabin": null,
+          "numberOfStops": 1
+        }
+      ],
+      "directionIndicator": "Circle"
+    },
+    "pricingInfoWSResponse": {
+      "baseFare": 109600,
+      "tax": 93191,
+      "totalFare": 202791,
+      "currencyCode": "NGN",
+      "decimalPlaces": 2,
+      "pricingSource": "Published",
+      "adultBaseFair": 109600,
+      "childrenBaseFair": 0,
+      "infantBaseFair": 0,
+      "adultTaxFair": 93191,
+      "childrenTaxFair": 0,
+      "infantTaxFair": 0,
+      "adultTotal": 202791,
+      "childrenTotal": 0,
+      "infantTotal": 0
+    },
+    "ticketingInfoWSResponse": {
+      "ticketTimeLimit": {
+        "hour": 15,
+        "minute": 5,
+        "second": 0,
+        "nano": 0,
+        "dayOfYear": 96,
+        "dayOfWeek": "TUESDAY",
+        "dayOfMonth": 5,
+        "year": 2016,
+        "month": "APRIL",
+        "monthValue": 4,
+        "chronology": {
+          "id": "ISO",
+          "calendarType": "iso8601"
+        }
+      },
+      "ticketType": "eTicket"
+    },
+    "airline": "Qatar Airways",
+    "airlineCode": "QR",
+    "cabin": null,
+    "index": 72,
+    "ticketingInfo": {
+      "ticketAdvisory": [],
+      "ticketTimeLimit": "2016-04-06T23:59:00",
+      "ticketType": null,
+      "eticketNumber": null
+    },
+    "objectSerializer": null,
+    "gds": "Amadeus"
+  },
+  {
+    "airItineraryWSResponse": {
+      "originDestinationWSResponses": [
+        {
+          "flightSegmentWSResponses": [
+            {
+              "departureAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+              "arrivalAirport": "Doha-Doha Intl, Qatar",
+              "departureAirportCode": "LOS",
+              "arrivalAirportCode": "DOH",
+              "departureDateTime": "2016-04-06T15:05:00",
+              "arrivalDateTime": "2016-04-06T23:55:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@63766c4b",
+              "flightNumber": "1408",
+              "resBookDesigCode": "K",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "1",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            },
+            {
+              "departureAirport": "Doha-Doha Intl, Qatar",
+              "arrivalAirport": "Dubai-Al Maktoum Intl, United Arab Emirates",
+              "departureAirportCode": "DOH",
+              "arrivalAirportCode": "DWC",
+              "departureDateTime": "2016-04-07T02:30:00",
+              "arrivalDateTime": "2016-04-07T04:40:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@971f740",
+              "flightNumber": "1032",
+              "resBookDesigCode": "K",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "1",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            }
+          ],
+          "originAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+          "destinationAirport": "Dubai-Al Maktoum Intl, United Arab Emirates",
+          "originAirportCode": "LOS",
+          "destinationAirportCode": "DWC",
+          "arrivalDateTime": "2016-04-07T04:40:00",
+          "departureDateTime": "2016-04-06T15:05:00",
+          "duration": 0,
+          "marketingAirline": "Qatar Airways",
+          "marketingAirlineCode": "QR",
+          "cabin": null,
+          "numberOfStops": 1
+        },
+        {
+          "flightSegmentWSResponses": [
+            {
+              "departureAirport": "Dubai-Dubai Intl, United Arab Emirates",
+              "arrivalAirport": "Doha-Doha Intl, Qatar",
+              "departureAirportCode": "DXB",
+              "arrivalAirportCode": "DOH",
+              "departureDateTime": "2016-04-09T06:30:00",
+              "arrivalDateTime": "2016-04-09T06:40:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@5058aa66",
+              "flightNumber": "1021",
+              "resBookDesigCode": "N",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            },
+            {
+              "departureAirport": "Doha-Doha Intl, Qatar",
+              "arrivalAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+              "departureAirportCode": "DOH",
+              "arrivalAirportCode": "LOS",
+              "departureDateTime": "2016-04-09T07:30:00",
+              "arrivalDateTime": "2016-04-09T13:15:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@1c10bb9d",
+              "flightNumber": "1407",
+              "resBookDesigCode": "N",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            }
+          ],
+          "originAirport": "Dubai-Dubai Intl, United Arab Emirates",
+          "destinationAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+          "originAirportCode": "DXB",
+          "destinationAirportCode": "LOS",
+          "arrivalDateTime": "2016-04-09T13:15:00",
+          "departureDateTime": "2016-04-09T06:30:00",
+          "duration": 0,
+          "marketingAirline": "Qatar Airways",
+          "marketingAirlineCode": "QR",
+          "cabin": null,
+          "numberOfStops": 1
+        }
+      ],
+      "directionIndicator": "Circle"
+    },
+    "pricingInfoWSResponse": {
+      "baseFare": 114200,
+      "tax": 93421,
+      "totalFare": 207621,
+      "currencyCode": "NGN",
+      "decimalPlaces": 2,
+      "pricingSource": "Published",
+      "adultBaseFair": 114200,
+      "childrenBaseFair": 0,
+      "infantBaseFair": 0,
+      "adultTaxFair": 93421,
+      "childrenTaxFair": 0,
+      "infantTaxFair": 0,
+      "adultTotal": 207621,
+      "childrenTotal": 0,
+      "infantTotal": 0
+    },
+    "ticketingInfoWSResponse": {
+      "ticketTimeLimit": {
+        "hour": 15,
+        "minute": 5,
+        "second": 0,
+        "nano": 0,
+        "dayOfYear": 96,
+        "dayOfWeek": "TUESDAY",
+        "dayOfMonth": 5,
+        "year": 2016,
+        "month": "APRIL",
+        "monthValue": 4,
+        "chronology": {
+          "id": "ISO",
+          "calendarType": "iso8601"
+        }
+      },
+      "ticketType": "eTicket"
+    },
+    "airline": "Qatar Airways",
+    "airlineCode": "QR",
+    "cabin": null,
+    "index": 79,
+    "ticketingInfo": {
+      "ticketAdvisory": [],
+      "ticketTimeLimit": "2016-04-06T23:59:00",
+      "ticketType": null,
+      "eticketNumber": null
+    },
+    "objectSerializer": null,
+    "gds": "Amadeus"
+  },
+  {
+    "airItineraryWSResponse": {
+      "originDestinationWSResponses": [
+        {
+          "flightSegmentWSResponses": [
+            {
+              "departureAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+              "arrivalAirport": "Doha-Doha Intl, Qatar",
+              "departureAirportCode": "LOS",
+              "arrivalAirportCode": "DOH",
+              "departureDateTime": "2016-04-06T15:05:00",
+              "arrivalDateTime": "2016-04-06T23:55:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@4cd48860",
+              "flightNumber": "1408",
+              "resBookDesigCode": "K",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "1",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            },
+            {
+              "departureAirport": "Doha-Doha Intl, Qatar",
+              "arrivalAirport": "Dubai-Al Maktoum Intl, United Arab Emirates",
+              "departureAirportCode": "DOH",
+              "arrivalAirportCode": "DWC",
+              "departureDateTime": "2016-04-07T02:30:00",
+              "arrivalDateTime": "2016-04-07T04:40:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@4a99bd4d",
+              "flightNumber": "1032",
+              "resBookDesigCode": "K",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "1",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            }
+          ],
+          "originAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+          "destinationAirport": "Dubai-Al Maktoum Intl, United Arab Emirates",
+          "originAirportCode": "LOS",
+          "destinationAirportCode": "DWC",
+          "arrivalDateTime": "2016-04-07T04:40:00",
+          "departureDateTime": "2016-04-06T15:05:00",
+          "duration": 0,
+          "marketingAirline": "Qatar Airways",
+          "marketingAirlineCode": "QR",
+          "cabin": null,
+          "numberOfStops": 1
+        },
+        {
+          "flightSegmentWSResponses": [
+            {
+              "departureAirport": "Dubai-Dubai Intl, United Arab Emirates",
+              "arrivalAirport": "Doha-Doha Intl, Qatar",
+              "departureAirportCode": "DXB",
+              "arrivalAirportCode": "DOH",
+              "departureDateTime": "2016-04-09T05:30:00",
+              "arrivalDateTime": "2016-04-09T05:40:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@5f0735e2",
+              "flightNumber": "1003",
+              "resBookDesigCode": "N",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            },
+            {
+              "departureAirport": "Doha-Doha Intl, Qatar",
+              "arrivalAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+              "departureAirportCode": "DOH",
+              "arrivalAirportCode": "LOS",
+              "departureDateTime": "2016-04-09T07:30:00",
+              "arrivalDateTime": "2016-04-09T13:15:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@46d2a1cc",
+              "flightNumber": "1407",
+              "resBookDesigCode": "N",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            }
+          ],
+          "originAirport": "Dubai-Dubai Intl, United Arab Emirates",
+          "destinationAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+          "originAirportCode": "DXB",
+          "destinationAirportCode": "LOS",
+          "arrivalDateTime": "2016-04-09T13:15:00",
+          "departureDateTime": "2016-04-09T05:30:00",
+          "duration": 0,
+          "marketingAirline": "Qatar Airways",
+          "marketingAirlineCode": "QR",
+          "cabin": null,
+          "numberOfStops": 1
+        }
+      ],
+      "directionIndicator": "Circle"
+    },
+    "pricingInfoWSResponse": {
+      "baseFare": 114200,
+      "tax": 93421,
+      "totalFare": 207621,
+      "currencyCode": "NGN",
+      "decimalPlaces": 2,
+      "pricingSource": "Published",
+      "adultBaseFair": 114200,
+      "childrenBaseFair": 0,
+      "infantBaseFair": 0,
+      "adultTaxFair": 93421,
+      "childrenTaxFair": 0,
+      "infantTaxFair": 0,
+      "adultTotal": 207621,
+      "childrenTotal": 0,
+      "infantTotal": 0
+    },
+    "ticketingInfoWSResponse": {
+      "ticketTimeLimit": {
+        "hour": 15,
+        "minute": 5,
+        "second": 0,
+        "nano": 0,
+        "dayOfYear": 96,
+        "dayOfWeek": "TUESDAY",
+        "dayOfMonth": 5,
+        "year": 2016,
+        "month": "APRIL",
+        "monthValue": 4,
+        "chronology": {
+          "id": "ISO",
+          "calendarType": "iso8601"
+        }
+      },
+      "ticketType": "eTicket"
+    },
+    "airline": "Qatar Airways",
+    "airlineCode": "QR",
+    "cabin": null,
+    "index": 80,
+    "ticketingInfo": {
+      "ticketAdvisory": [],
+      "ticketTimeLimit": "2016-04-06T23:59:00",
+      "ticketType": null,
+      "eticketNumber": null
+    },
+    "objectSerializer": null,
+    "gds": "Amadeus"
+  },
+  {
+    "airItineraryWSResponse": {
+      "originDestinationWSResponses": [
+        {
+          "flightSegmentWSResponses": [
+            {
+              "departureAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+              "arrivalAirport": "Doha-Doha Intl, Qatar",
+              "departureAirportCode": "LOS",
+              "arrivalAirportCode": "DOH",
+              "departureDateTime": "2016-04-06T15:05:00",
+              "arrivalDateTime": "2016-04-06T23:55:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@2eadb6fe",
+              "flightNumber": "1408",
+              "resBookDesigCode": "K",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "1",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            },
+            {
+              "departureAirport": "Doha-Doha Intl, Qatar",
+              "arrivalAirport": "Dubai-Al Maktoum Intl, United Arab Emirates",
+              "departureAirportCode": "DOH",
+              "arrivalAirportCode": "DWC",
+              "departureDateTime": "2016-04-07T02:30:00",
+              "arrivalDateTime": "2016-04-07T04:40:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@29d905b3",
+              "flightNumber": "1032",
+              "resBookDesigCode": "K",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "1",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            }
+          ],
+          "originAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+          "destinationAirport": "Dubai-Al Maktoum Intl, United Arab Emirates",
+          "originAirportCode": "LOS",
+          "destinationAirportCode": "DWC",
+          "arrivalDateTime": "2016-04-07T04:40:00",
+          "departureDateTime": "2016-04-06T15:05:00",
+          "duration": 0,
+          "marketingAirline": "Qatar Airways",
+          "marketingAirlineCode": "QR",
+          "cabin": null,
+          "numberOfStops": 1
+        },
+        {
+          "flightSegmentWSResponses": [
+            {
+              "departureAirport": "Dubai-Dubai Intl, United Arab Emirates",
+              "arrivalAirport": "Doha-Doha Intl, Qatar",
+              "departureAirportCode": "DXB",
+              "arrivalAirportCode": "DOH",
+              "departureDateTime": "2016-04-09T00:30:00",
+              "arrivalDateTime": "2016-04-09T00:40:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@4f179d4f",
+              "flightNumber": "1015",
+              "resBookDesigCode": "N",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            },
+            {
+              "departureAirport": "Doha-Doha Intl, Qatar",
+              "arrivalAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+              "departureAirportCode": "DOH",
+              "arrivalAirportCode": "LOS",
+              "departureDateTime": "2016-04-09T07:30:00",
+              "arrivalDateTime": "2016-04-09T13:15:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@1c1899a0",
+              "flightNumber": "1407",
+              "resBookDesigCode": "N",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            }
+          ],
+          "originAirport": "Dubai-Dubai Intl, United Arab Emirates",
+          "destinationAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+          "originAirportCode": "DXB",
+          "destinationAirportCode": "LOS",
+          "arrivalDateTime": "2016-04-09T13:15:00",
+          "departureDateTime": "2016-04-09T00:30:00",
+          "duration": 0,
+          "marketingAirline": "Qatar Airways",
+          "marketingAirlineCode": "QR",
+          "cabin": null,
+          "numberOfStops": 1
+        }
+      ],
+      "directionIndicator": "Circle"
+    },
+    "pricingInfoWSResponse": {
+      "baseFare": 114200,
+      "tax": 93421,
+      "totalFare": 207621,
+      "currencyCode": "NGN",
+      "decimalPlaces": 2,
+      "pricingSource": "Published",
+      "adultBaseFair": 114200,
+      "childrenBaseFair": 0,
+      "infantBaseFair": 0,
+      "adultTaxFair": 93421,
+      "childrenTaxFair": 0,
+      "infantTaxFair": 0,
+      "adultTotal": 207621,
+      "childrenTotal": 0,
+      "infantTotal": 0
+    },
+    "ticketingInfoWSResponse": {
+      "ticketTimeLimit": {
+        "hour": 15,
+        "minute": 5,
+        "second": 0,
+        "nano": 0,
+        "dayOfYear": 96,
+        "dayOfWeek": "TUESDAY",
+        "dayOfMonth": 5,
+        "year": 2016,
+        "month": "APRIL",
+        "monthValue": 4,
+        "chronology": {
+          "id": "ISO",
+          "calendarType": "iso8601"
+        }
+      },
+      "ticketType": "eTicket"
+    },
+    "airline": "Qatar Airways",
+    "airlineCode": "QR",
+    "cabin": null,
+    "index": 81,
+    "ticketingInfo": {
+      "ticketAdvisory": [],
+      "ticketTimeLimit": "2016-04-06T23:59:00",
+      "ticketType": null,
+      "eticketNumber": null
+    },
+    "objectSerializer": null,
+    "gds": "Amadeus"
+  },
+  {
+    "airItineraryWSResponse": {
+      "originDestinationWSResponses": [
+        {
+          "flightSegmentWSResponses": [
+            {
+              "departureAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+              "arrivalAirport": "Doha-Doha Intl, Qatar",
+              "departureAirportCode": "LOS",
+              "arrivalAirportCode": "DOH",
+              "departureDateTime": "2016-04-06T15:05:00",
+              "arrivalDateTime": "2016-04-06T23:55:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@489a24dc",
+              "flightNumber": "1408",
+              "resBookDesigCode": "H",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            },
+            {
+              "departureAirport": "Doha-Doha Intl, Qatar",
+              "arrivalAirport": "Dubai-Dubai Intl, United Arab Emirates",
+              "departureAirportCode": "DOH",
+              "arrivalAirportCode": "DXB",
+              "departureDateTime": "2016-04-07T01:00:00",
+              "arrivalDateTime": "2016-04-07T03:10:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@36e01f29",
+              "flightNumber": "1002",
+              "resBookDesigCode": "H",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            }
+          ],
+          "originAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+          "destinationAirport": "Dubai-Dubai Intl, United Arab Emirates",
+          "originAirportCode": "LOS",
+          "destinationAirportCode": "DXB",
+          "arrivalDateTime": "2016-04-07T03:10:00",
+          "departureDateTime": "2016-04-06T15:05:00",
+          "duration": 0,
+          "marketingAirline": "Qatar Airways",
+          "marketingAirlineCode": "QR",
+          "cabin": null,
+          "numberOfStops": 1
+        },
+        {
+          "flightSegmentWSResponses": [
+            {
+              "departureAirport": "Dubai-Al Maktoum Intl, United Arab Emirates",
+              "arrivalAirport": "Doha-Doha Intl, Qatar",
+              "departureAirportCode": "DWC",
+              "arrivalAirportCode": "DOH",
+              "departureDateTime": "2016-04-09T05:40:00",
+              "arrivalDateTime": "2016-04-09T05:45:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@76cc6850",
+              "flightNumber": "1033",
+              "resBookDesigCode": "N",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            },
+            {
+              "departureAirport": "Doha-Doha Intl, Qatar",
+              "arrivalAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+              "departureAirportCode": "DOH",
+              "arrivalAirportCode": "LOS",
+              "departureDateTime": "2016-04-09T07:30:00",
+              "arrivalDateTime": "2016-04-09T13:15:00",
+              "duration": 0,
+              "marketingAirline": "Qatar Airways",
+              "marketingAirlineCode": "QR",
+              "cabin": "javax.xml.bind.JAXBElement@468004ab",
+              "flightNumber": "1407",
+              "resBookDesigCode": "N",
+              "numberInParty": 1,
+              "stopQuantity": 0,
+              "infoSource": "9",
+              "operatingAirline": {
+                "value": "Qatar Airways",
+                "companyShortName": null,
+                "travelSector": null,
+                "code": "QR",
+                "codeContext": null,
+                "flightNumber": null
+              },
+              "rph": "1",
+              "marriageGrp": null,
+              "eticketEligibility": "Eligible"
+            }
+          ],
+          "originAirport": "Dubai-Al Maktoum Intl, United Arab Emirates",
+          "destinationAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+          "originAirportCode": "DWC",
+          "destinationAirportCode": "LOS",
+          "arrivalDateTime": "2016-04-09T13:15:00",
+          "departureDateTime": "2016-04-09T05:40:00",
+          "duration": 0,
+          "marketingAirline": "Qatar Airways",
+          "marketingAirlineCode": "QR",
+          "cabin": null,
+          "numberOfStops": 1
+        }
+      ],
+      "directionIndicator": "Circle"
+    },
+    "pricingInfoWSResponse": {
+      "baseFare": 127000,
+      "tax": 94061,
+      "totalFare": 221061,
+      "currencyCode": "NGN",
+      "decimalPlaces": 2,
+      "pricingSource": "Published",
+      "adultBaseFair": 127000,
+      "childrenBaseFair": 0,
+      "infantBaseFair": 0,
+      "adultTaxFair": 94061,
+      "childrenTaxFair": 0,
+      "infantTaxFair": 0,
+      "adultTotal": 221061,
+      "childrenTotal": 0,
+      "infantTotal": 0
+    },
+    "ticketingInfoWSResponse": {
+      "ticketTimeLimit": {
+        "hour": 15,
+        "minute": 5,
+        "second": 0,
+        "nano": 0,
+        "dayOfYear": 96,
+        "dayOfWeek": "TUESDAY",
+        "dayOfMonth": 5,
+        "year": 2016,
+        "month": "APRIL",
+        "monthValue": 4,
+        "chronology": {
+          "id": "ISO",
+          "calendarType": "iso8601"
+        }
+      },
+      "ticketType": "eTicket"
+    },
+    "airline": "Qatar Airways",
+    "airlineCode": "QR",
+    "cabin": null,
+    "index": 88,
+    "ticketingInfo": {
+      "ticketAdvisory": [],
+      "ticketTimeLimit": "2016-04-06T23:59:00",
+      "ticketType": null,
+      "eticketNumber": null
+    },
+    "objectSerializer": null,
+    "gds": "Amadeus"
+  }
+]

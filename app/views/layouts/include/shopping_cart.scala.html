@@ -1,0 +1,48 @@
+@defining(core.ShoppingCart.getInstance(request()).getCartItem) { search =>
+<li>
+    @if(search.size() != 0 || (request().getQueryString("display_cart") != null && request().getQueryString("display_cart").equalsIgnoreCase("yes"))) {
+        <div class="dropdown show_hide">
+            <button class="dropdown-toggle btn text-muted" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><b><i class="icon icon-shopping-cart"></i> Cart </b>
+                <span class="caret"></span>
+                @if(search != null && search.size() != 0) {
+                    <span class="badge ">@search.size()</span>
+                }
+            </button>
+            <ul class="dropdown-menu" style="min-width: 290px ; margin-top: 5px;">
+                <small style="margin: 5px 0 0px 10px ;">Shopping Cart</small>
+                <div class="divider"></div>
+                @if(search != null && search.size() != 0) {
+                    @for(item <- search) {
+                        <li>
+                            <a href="@item.itemUri">
+                                <i><img style="height: 22px" src="@routes.Assets.at("images/airplane.png")" /></i>
+                                @for(attr <- item.cartAttrs) {
+                                    @if(attr.attribute.equals(CartAttr.Attr.itinerary.name())) {
+                                        @defining(Json.parse(attr.value)) { itinerary =>
+                                            <small>
+                                                @itinerary.get("airItineraryWSResponse").get("originDestinationWSResponses").get(0).get("originAirportCode").textValue().concat(" to " + itinerary.get("airItineraryWSResponse").get("originDestinationWSResponses").get(0).get("destinationAirportCode").textValue())
+                                            <i style="text-transform: lowercase">for</i>
+                                            </small>
+                                            <small>
+                                            @itinerary.get("pricingInfoWSResponse").get("currencyCode").textValue() @core.Utilities.moneyFormat(itinerary.get("pricingInfoWSResponse").get("totalFare").doubleValue().toString)
+                                            </small>
+                                        }
+                                    }
+                                }
+                                <small><b class="text-primary">Book Now</b></small>
+                            </a>
+                        </li>
+                    }
+                } else {
+                    <li>
+                        <a href="/flight">
+                            <small>No item in your shopping cart <b style="font-style: italic; text-transform : lowercase" class="text-primary">Start shopping</b></small>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+</li>
+}
+@import play.libs.Json

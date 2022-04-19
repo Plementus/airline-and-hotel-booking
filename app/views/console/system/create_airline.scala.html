@@ -1,0 +1,27 @@
+@import helper._
+@(form: Form[Airlines])
+@layouts.admin("Create New Airline", scripts) {
+      <article class="module width_full">
+            <header><h3>Create New Airline</h3></header>
+            <div class="module_content">
+                  @helpers._error(form)
+                  @helper.form(action = controllers.console.routes.SystemController.postCreateAirline(), 'enctype -> "multipart/form-data") {
+                        @CSRF.formField
+                        @if(form.get() != null) {
+                              <input type="hidden" value="@form.get().id" name="id" />
+                        }
+                        @helper.inputText(form("name"), 'class -> "form-control", '_label -> "Airline Name")
+                        @helper.inputText(form("airline_code"), 'class -> "form-control", '_label -> "Airline Code")
+                        <label>Upload Logo</label>
+                        <input type="file" name="logo" class="form-control" accept="image/*" />
+                        <br /> <br />
+                        <button type="submit" name="submit" class="btn form-control btn-primary">Submit</button>
+                  }
+            </div>
+      </article>
+}
+@scripts = {
+      <script>
+
+      </script>
+}

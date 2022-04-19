@@ -1,0 +1,47 @@
+@import helper._
+@(userForm: Form[Users])
+@import helper._, java.util.List, play.Play; val data = Seq();
+@layouts.admin("Create/Edit " + play.Configuration.root().getString("project.name") + " User", scripts) {
+      <article class="module width_full">
+            <header><h3>Create New User</h3></header>
+            <div class="module_content">
+            @helper.form(action = controllers.console.routes.UserController.postCreate, 'class -> "form", 'enctype -> "multipart/form-data") {
+                  @CSRF.formField
+                  @helpers._flash.render()
+                  @helpers._error.render(userForm)
+                  <div class="form-group">
+                  @helper.inputText(userForm("first_name"), '_label -> "First Name", 'class -> "form-control", 'placeholder -> "Enter customer first name")
+                  </div>
+                  <div class="form-group">
+                  @helper.inputText(userForm("last_name"), '_label -> "Last Name", 'class -> "form-control", 'placeholder -> "Enter customer last name")
+                  </div>
+                  <div class="form-group">
+                        <select name="role" class="form-control" required="required">
+                              <option>Select User Role</option>
+                              @for(role: Roles <- Roles.find.where().eq("level", 1).findList()) {
+                                    <option @if(role.role_code.equals(userForm("role_code").value())) { selected="selected" } value="@role.role_code">@role.role_title</option>
+                              }
+                        </select>
+                  </div>
+                  <div class="form-group">
+                  @helper.inputText(userForm("email"), '_label -> "Email Address", 'class -> "form-control", '_type -> "email")
+                  </div>
+                  <div class="form-group">
+                  @helper.inputText(userForm("phone"), '_label -> "Phone Number", 'class -> "form-control", 'placeholder -> "Phone Number")
+                  </div>
+                  <div class="form-group">
+                  @helper.inputPassword(userForm("password"), '_label -> "Password", 'class -> "form-control", 'placeholder -> "Enter Password")
+                  </div>
+                  <div class="form-group">
+                  @helper.inputPassword(userForm("retype_password"), '_label -> "Retype Password", 'class -> "form-control", 'placeholder -> "Retype Password")
+                  </div>
+                  <div class="form-group">
+                        <button type="submit" name="submit" class="form-control btn btn-primary">Save</button>
+                  </div>
+            }
+            </div>
+      </article>
+}
+@scripts = {
+
+}

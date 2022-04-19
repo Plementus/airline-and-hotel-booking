@@ -1,0 +1,107 @@
+@import helper._
+@(form: Form[CmsPages])
+@layouts.admin("Create Page", script) {
+    <h2>Create New Page</h2>
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-name">Create New Page</span>
+        </div>
+        <div class="panel-body">
+        @helper.form(action = controllers.console.cms.routes.PageController.postCreatePage()) {
+            <input type="hidden" name="type" value="static" />
+            <div class="col-md-12">
+                <button class="btn btn-default mg2 pull-right" onclick="javascript: history.back();" type="button">
+                    Go Back</button>
+                <button class="btn btn-danger mg2 pull-right" type="reset">Reset</button>
+                <button class="btn btn-success mg2 pull-right" name="action" value="save" type="submit">Save</button>
+                <button class="btn btn-success mg2 pull-right" name="action" value="save_continue" type="submit">
+                    Save and Continue Edit</button>
+            </div>
+            <div class="clearfix"></div>
+            @CSRF.formField
+            @if(form.get() != null) {
+                <input type="hidden" value="@form.get().id" name="id" />
+            }
+            <ul class="nav nav-tabs nav-stacked col-md-2">
+                <li class="active"><a href="#pgInformation" data-toggle="tab">Page Information</a></li>
+                <li><a href="#urlLinking" data-toggle="tab">Meta Data</a></li>
+                <li><a href="#meta" data-toggle="tab">Inline CSS and Javascript</a></li>
+            </ul>
+            <div class="col-md-10 pull-right">
+                <div class="tab-content tasi-tab">
+                    <div class="tab-pane row active" id="pgInformation">
+                        @views.html.helpers._flash.render()
+                        <div class="form-group">
+                        @helper.inputText(form("name"), 'class -> "form-control", 'required -> "required", '_label -> "Page Name")
+                        </div>
+                        <div class="from-group">
+                        @select(form("cms_template_id.id"), options(CmsTemplates.options()), '_label -> "Select Template", 'class -> "form-control", 'required -> "required")
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-8">
+                                <label>Host (Hold Ctrl. to Select Multiple Domain)</label>
+                                <select name="host_domain[]" class="form-control" multiple="multiple" required="required">
+                                @for(host <- core.ControlPanel.getDomainHosts.values()) {
+                                    <option selected="selected" value="@host">@host</option>
+                                }
+                                </select>
+                                <p class="text-muted">Required</p>
+                            </div>
+                            <div class="col-md-4">
+                            @helper.inputText(form("slug_url"), 'required -> "required", 'class -> "form-control", '_label -> "URL (Relative to Host/Domain)", 'placeholder -> "/")
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        @helper.select(form("version_control"), Seq("No" -> "No", "Yes" -> "Yes"), 'class -> "form-control", '_label -> "Under Version Control?")
+                        </div>
+                        <div class="form-group">
+                        @helper.select(form("is_publish"), Seq("Yes" -> "Yes", "No" -> "No"), 'class -> "form-control", '_label -> "Publish Page?")
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="urlLinking">
+                        <div class="form-group">
+                        @helper.textarea(form("meta_keywords"), 'class -> "form-control", 'rows -> "4", '_label -> "Meta Keywords")
+                        </div>
+                        <div class="form-group">
+                        @helper.textarea(form("meta_description"), 'class -> "form-control", 'rows -> "10", '_label -> "Description")
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="meta">
+                        <div class="form-group">
+                        @helper.textarea(form("inline_css"), 'class -> "form-control code-editor", 'rows -> "10", '_label -> "CSS")
+                        </div>
+                        <div class="form-group">
+                        @helper.textarea(form("inline_js"), 'class -> "form-control code-editor", 'rows -> "10", '_label -> "Javascript/JQuery")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        </div>
+    </div>
+}
+@script = {
+    <script>
+        $(function() {
+            $("#cms_template_id_id").on('change', function() {
+                var val = $(this).val();
+                $.ajax({
+                    url: '/console/cms/template/item',
+                    dataType: 'JSON',
+                    type: 'GET',
+                    data:  {
+                        id: val
+                    },
+                    success: function(resp) {
+                        console.log(resp);
+                        if(resp != null) {
+                            $('input[name=slug_url]').attr('value', "/" + jQuery.trim(resp.name.toString().toLowerCase()));
+                        } else {
+                            $('input[name=slug_url]').attr('value', '');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+}

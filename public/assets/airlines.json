@@ -1,0 +1,5396 @@
+{
+  "0V": {
+    "code": "0V",
+    "name": "Vietnam Air Service",
+    "bigLogo": "0V.gif",
+    "smallLogo": "sm0V.gif"
+  },
+  "1E": {
+    "code": "1E",
+    "name": "Travelsky Technology",
+    "bigLogo": "1E.gif",
+    "smallLogo": "sm1E.gif"
+  },
+  "1F": {
+    "code": "1F",
+    "name": "Infini",
+    "bigLogo": "1F.gif",
+    "smallLogo": "sm1F.gif"
+  },
+  "1I": {
+    "code": "1I",
+    "name": "Tampa Airways",
+    "bigLogo": "1I.gif",
+    "smallLogo": "sm1I.gif"
+  },
+  "1J": {
+    "code": "1J",
+    "name": "Axess Intl",
+    "bigLogo": "1J.gif",
+    "smallLogo": "sm1J.gif"
+  },
+  "1K": {
+    "code": "1K",
+    "name": "Southern Cross",
+    "bigLogo": "1K.gif",
+    "smallLogo": "sm1K.gif"
+  },
+  "1L": {
+    "code": "1L",
+    "name": "West Air Express",
+    "bigLogo": "1L.gif",
+    "smallLogo": "sm1L.gif"
+  },
+  "2A": {
+    "code": "2A",
+    "name": "Deutsche Bahn",
+    "bigLogo": "2A.gif",
+    "smallLogo": "sm2A.gif"
+  },
+  "2B": {
+    "code": "2B",
+    "name": "Ata",
+    "bigLogo": "2B.gif",
+    "smallLogo": "sm2B.gif"
+  },
+  "2C": {
+    "code": "2C",
+    "name": "SNCF",
+    "bigLogo": "2C.gif",
+    "smallLogo": "sm2C.gif"
+  },
+  "2D": {
+    "code": "2D",
+    "name": "Aero Vip S.a.",
+    "bigLogo": "2D.gif",
+    "smallLogo": "sm2D.gif"
+  },
+  "2E": {
+    "code": "2E",
+    "name": "Smokey Bay Air",
+    "bigLogo": "2E.gif",
+    "smallLogo": "sm2E.gif"
+  },
+  "2F": {
+    "code": "2F",
+    "name": "Frontier Flying",
+    "bigLogo": "2F.gif",
+    "smallLogo": "sm2F.gif"
+  },
+  "2H": {
+    "code": "2H",
+    "name": "Lebanese Helicopter Sal",
+    "bigLogo": "2H.gif",
+    "smallLogo": "sm2H.gif"
+  },
+  "2J": {
+    "code": "2J",
+    "name": "Air Burkina",
+    "bigLogo": "2J.gif",
+    "smallLogo": "sm2J.gif"
+  },
+  "2K": {
+    "code": "2K",
+    "name": "Aerolineas Galapagos",
+    "bigLogo": "2K.gif",
+    "smallLogo": "sm2K.gif"
+  },
+  "2L": {
+    "code": "2L",
+    "name": "Laer S.e.",
+    "bigLogo": "2L.gif",
+    "smallLogo": "sm2L.gif"
+  },
+  "2M": {
+    "code": "2M",
+    "name": "Moldavian Airlines",
+    "bigLogo": "2M.gif",
+    "smallLogo": "sm2M.gif"
+  },
+  "2N": {
+    "code": "2N",
+    "name": "NextJet",
+    "bigLogo": "2N.gif",
+    "smallLogo": "sm2N.gif"
+  },
+  "2P": {
+    "code": "2P",
+    "name": "Air Philippines",
+    "bigLogo": "2P.gif",
+    "smallLogo": "sm2P.gif"
+  },
+  "2R": {
+    "code": "2R",
+    "name": "Via Rail Canada",
+    "bigLogo": "2R.gif",
+    "smallLogo": "sm2R.gif"
+  },
+  "2S": {
+    "code": "2S",
+    "name": "Island Express",
+    "bigLogo": "2S.gif",
+    "smallLogo": "sm2S.gif"
+  },
+  "2T": {
+    "code": "2T",
+    "name": "Haiti Ambassador",
+    "bigLogo": "2T.gif",
+    "smallLogo": "sm2T.gif"
+  },
+  "2U": {
+    "code": "2U",
+    "name": "Air Caraibes",
+    "bigLogo": "2U.gif",
+    "smallLogo": "sm2U.gif"
+  },
+  "2W": {
+    "code": "2W",
+    "name": "Welcome Air",
+    "bigLogo": "2W.gif",
+    "smallLogo": "sm2W.gif"
+  },
+  "2X": {
+    "code": "2X",
+    "name": "Airway Express",
+    "bigLogo": "2X.gif",
+    "smallLogo": "sm2X.gif"
+  },
+  "2Z": {
+    "code": "2Z",
+    "name": "Chang-an Airlines",
+    "bigLogo": "2Z.gif",
+    "smallLogo": "sm2Z.gif"
+  },
+  "3A": {
+    "code": "3A",
+    "name": "Mafira Air Charter",
+    "bigLogo": "3A.gif",
+    "smallLogo": "sm3A.gif"
+  },
+  "3B": {
+    "code": "3B",
+    "name": "Avior",
+    "bigLogo": "3B.gif",
+    "smallLogo": "sm3B.gif"
+  },
+  "3C": {
+    "code": "3C",
+    "name": "Corporate Airlines",
+    "bigLogo": "3C.gif",
+    "smallLogo": "sm3C.gif"
+  },
+  "3D": {
+    "code": "3D",
+    "name": "Denim Air",
+    "bigLogo": "3D.gif",
+    "smallLogo": "sm3D.gif"
+  },
+  "3E": {
+    "code": "3E",
+    "name": "East Asia Airlines",
+    "bigLogo": "3E.gif",
+    "smallLogo": "sm3E.gif"
+  },
+  "3F": {
+    "code": "3F",
+    "name": "Pacific Airways",
+    "bigLogo": "3F.gif",
+    "smallLogo": "sm3F.gif"
+  },
+  "3G": {
+    "code": "3G",
+    "name": "Atlant-soyuz Airlines",
+    "bigLogo": "3G.gif",
+    "smallLogo": "sm3G.gif"
+  },
+  "3H": {
+    "code": "3H",
+    "name": "Air Inuit",
+    "bigLogo": "3H.gif",
+    "smallLogo": "sm3H.gif"
+  },
+  "3J": {
+    "code": "3J",
+    "name": "Zip Air",
+    "bigLogo": "3J.gif",
+    "smallLogo": "sm3J.gif"
+  },
+  "3K": {
+    "code": "3K",
+    "name": "Jetstar Asia",
+    "bigLogo": "3K.gif",
+    "smallLogo": "sm3K.gif"
+  },
+  "3L": {
+    "code": "3L",
+    "name": "Intersky Luftfahrt",
+    "bigLogo": "3L.gif",
+    "smallLogo": "sm3L.gif"
+  },
+  "3M": {
+    "code": "3M",
+    "name": "Gulfstream Intl",
+    "bigLogo": "3M.gif",
+    "smallLogo": "sm3M.gif"
+  },
+  "3N": {
+    "code": "3N",
+    "name": "Air Urga",
+    "bigLogo": "3N.gif",
+    "smallLogo": "sm3N.gif"
+  },
+  "3O": {
+    "code": "3O",
+    "name": "Corporate Aircraft",
+    "bigLogo": "3O.gif",
+    "smallLogo": "sm3O.gif"
+  },
+  "3P": {
+    "code": "3P",
+    "name": "Inter Tropical Aviation",
+    "bigLogo": "3P.gif",
+    "smallLogo": "sm3P.gif"
+  },
+  "3Q": {
+    "code": "3Q",
+    "name": "China Yunnan ",
+    "bigLogo": "3Q.gif",
+    "smallLogo": "sm3Q.gif"
+  },
+  "3R": {
+    "code": "3R",
+    "name": "Avia Air N.v.",
+    "bigLogo": "3R.gif",
+    "smallLogo": "sm3R.gif"
+  },
+  "3S": {
+    "code": "3S",
+    "name": "Air Guyane S.p.",
+    "bigLogo": "3S.gif",
+    "smallLogo": "sm3S.gif"
+  },
+  "3T": {
+    "code": "3T",
+    "name": "Turan Air Airline",
+    "bigLogo": "3T.gif",
+    "smallLogo": "sm3T.gif"
+  },
+  "3U": {
+    "code": "3U",
+    "name": "Sichuan Airlines ",
+    "bigLogo": "3U.gif",
+    "smallLogo": "sm3U.gif"
+  },
+  "3V": {
+    "code": "3V",
+    "name": "Viking Airways",
+    "bigLogo": "3V.gif",
+    "smallLogo": "sm3V.gif"
+  },
+  "3W": {
+    "code": "3W",
+    "name": "Euromanx",
+    "bigLogo": "3W.gif",
+    "smallLogo": "sm3W.gif"
+  },
+  "3Y": {
+    "code": "3Y",
+    "name": "Wapiti Aviation",
+    "bigLogo": "3Y.gif",
+    "smallLogo": "sm3Y.gif"
+  },
+  "3Z": {
+    "code": "3Z",
+    "name": "Necon Air",
+    "bigLogo": "3Z.gif",
+    "smallLogo": "sm3Z.gif"
+  },
+  "4A": {
+    "code": "4A",
+    "name": "F. S. Air Service",
+    "bigLogo": "4A.gif",
+    "smallLogo": "sm4A.gif"
+  },
+  "4B": {
+    "code": "4B",
+    "name": "Olson Air Service",
+    "bigLogo": "4B.gif",
+    "smallLogo": "sm4B.gif"
+  },
+  "4C": {
+    "code": "4C",
+    "name": "Aires",
+    "bigLogo": "4C.gif",
+    "smallLogo": "sm4C.gif"
+  },
+  "4D": {
+    "code": "4D",
+    "name": "Air Sinai",
+    "bigLogo": "4D.gif",
+    "smallLogo": "sm4D.gif"
+  },
+  "4E": {
+    "code": "4E",
+    "name": "Tanana Air Services",
+    "bigLogo": "4E.gif",
+    "smallLogo": "sm4E.gif"
+  },
+  "4F": {
+    "code": "4F",
+    "name": "Air-city",
+    "bigLogo": "4F.gif",
+    "smallLogo": "sm4F.gif"
+  },
+  "4G": {
+    "code": "4G",
+    "name": "Gazpromavia Aviation",
+    "bigLogo": "4G.gif",
+    "smallLogo": "sm4G.gif"
+  },
+  "4H": {
+    "code": "4H",
+    "name": "Fly SLinhas Aereas",
+    "bigLogo": "4H.gif",
+    "smallLogo": "sm4H.gif"
+  },
+  "4J": {
+    "code": "4J",
+    "name": "Nationwide Airlines",
+    "bigLogo": "4J.gif",
+    "smallLogo": "sm4J.gif"
+  },
+  "4K": {
+    "code": "4K",
+    "name": "Kenn Borek Air Ltd",
+    "bigLogo": "4K.gif",
+    "smallLogo": "sm4K.gif"
+  },
+  "4M": {
+    "code": "4M",
+    "name": "Lan Dominicana",
+    "bigLogo": "4M.gif",
+    "smallLogo": "sm4M.gif"
+  },
+  "4N": {
+    "code": "4N",
+    "name": "Air North",
+    "bigLogo": "4N.gif",
+    "smallLogo": "sm4N.gif"
+  },
+  "4P": {
+    "code": "4P",
+    "name": "Business Aviation",
+    "bigLogo": "4P.gif",
+    "smallLogo": "sm4P.gif"
+  },
+  "4Q": {
+    "code": "4Q",
+    "name": "Safi Airways",
+    "bigLogo": "4Q.gif",
+    "smallLogo": "sm4Q.gif"
+  },
+  "4R": {
+    "code": "4R",
+    "name": "Hi Hamburg Intl",
+    "bigLogo": "4R.gif",
+    "smallLogo": "sm4R.gif"
+  },
+  "4S": {
+    "code": "4S",
+    "name": "Sol Air",
+    "bigLogo": "4S.gif",
+    "smallLogo": "sm4S.gif"
+  },
+  "4T": {
+    "code": "4T",
+    "name": "Gawne Aviation",
+    "bigLogo": "4T.gif",
+    "smallLogo": "sm4T.gif"
+  },
+  "4U": {
+    "code": "4U",
+    "name": "German Wings",
+    "bigLogo": "4U.gif",
+    "smallLogo": "sm4U.gif"
+  },
+  "4V": {
+    "code": "4V",
+    "name": "Birdy Airlines",
+    "bigLogo": "4V.gif",
+    "smallLogo": "sm4V.gif"
+  },
+  "4W": {
+    "code": "4W",
+    "name": "Warbelows Air Ventures",
+    "bigLogo": "4W.gif",
+    "smallLogo": "sm4W.gif"
+  },
+  "4Y": {
+    "code": "4Y",
+    "name": "Yute Air Alaska",
+    "bigLogo": "4Y.gif",
+    "smallLogo": "sm4Y.gif"
+  },
+  "4Z": {
+    "code": "4Z",
+    "name": "Sa Airlink",
+    "bigLogo": "4Z.gif",
+    "smallLogo": "sm4Z.gif"
+  },
+  "5A": {
+    "code": "5A",
+    "name": "Alpine Air",
+    "bigLogo": "5A.gif",
+    "smallLogo": "sm5A.gif"
+  },
+  "5B": {
+    "code": "5B",
+    "name": "Trans Intl Express",
+    "bigLogo": "5B.gif",
+    "smallLogo": "sm5B.gif"
+  },
+  "5C": {
+    "code": "5C",
+    "name": "Florida Air",
+    "bigLogo": "5C.gif",
+    "smallLogo": "sm5C.gif"
+  },
+  "5D": {
+    "code": "5D",
+    "name": "AeroMexico Connect",
+    "bigLogo": "5D.gif",
+    "smallLogo": "sm5D.gif"
+  },
+  "5E": {
+    "code": "5E",
+    "name": "B.A.S.E. Airlines",
+    "bigLogo": "5E.gif",
+    "smallLogo": "sm5E.gif"
+  },
+  "5G": {
+    "code": "5G",
+    "name": "Skyservice Airlines",
+    "bigLogo": "5G.gif",
+    "smallLogo": "sm5G.gif"
+  },
+  "5H": {
+    "code": "5H",
+    "name": "Star Air",
+    "bigLogo": "5H.gif",
+    "smallLogo": "sm5H.gif"
+  },
+  "5J": {
+    "code": "5J",
+    "name": "Cebu Pacific Air",
+    "bigLogo": "5J.gif",
+    "smallLogo": "sm5J.gif"
+  },
+  "5K": {
+    "code": "5K",
+    "name": "Odessa Airlines",
+    "bigLogo": "5K.gif",
+    "smallLogo": "sm5K.gif"
+  },
+  "5L": {
+    "code": "5L",
+    "name": "Aerosur",
+    "bigLogo": "5L.gif",
+    "smallLogo": "sm5L.gif"
+  },
+  "5N": {
+    "code": "5N",
+    "name": "Arkhangelsk Airlines",
+    "bigLogo": "5N.gif",
+    "smallLogo": "sm5N.gif"
+  },
+  "5P": {
+    "code": "5P",
+    "name": "Penta",
+    "bigLogo": "5P.gif",
+    "smallLogo": "sm5P.gif"
+  },
+  "5R": {
+    "code": "5R",
+    "name": "Irs Aero",
+    "bigLogo": "5R.gif",
+    "smallLogo": "sm5R.gif"
+  },
+  "5S": {
+    "code": "5S",
+    "name": "Servicios Aereos",
+    "bigLogo": "5S.gif",
+    "smallLogo": "sm5S.gif"
+  },
+  "5T": {
+    "code": "5T",
+    "name": "Canadian North",
+    "bigLogo": "5T.gif",
+    "smallLogo": "sm5T.gif"
+  },
+  "5U": {
+    "code": "5U",
+    "name": "LADE",
+    "bigLogo": "5U.gif",
+    "smallLogo": "sm5U.gif"
+  },
+  "5V": {
+    "code": "5V",
+    "name": "Lviv Airlines",
+    "bigLogo": "5V.gif",
+    "smallLogo": "sm5V.gif"
+  },
+  "5W": {
+    "code": "5W",
+    "name": "Astraeus Ltd",
+    "bigLogo": "5W.gif",
+    "smallLogo": "sm5W.gif"
+  },
+  "5X": {
+    "code": "5X",
+    "name": "UPS",
+    "bigLogo": "5X.gif",
+    "smallLogo": "sm5X.gif"
+  },
+  "5Z": {
+    "code": "5Z",
+    "name": "Gonini Air",
+    "bigLogo": "5Z.gif",
+    "smallLogo": "sm5Z.gif"
+  },
+  "6A": {
+    "code": "6A",
+    "name": "Aviacsa",
+    "bigLogo": "6A.gif",
+    "smallLogo": "sm6A.gif"
+  },
+  "6B": {
+    "code": "6B",
+    "name": "Britannia Airways",
+    "bigLogo": "6B.gif",
+    "smallLogo": "sm6B.gif"
+  },
+  "6C": {
+    "code": "6C",
+    "name": "Cape Smythe Air",
+    "bigLogo": "6C.gif",
+    "smallLogo": "sm6C.gif"
+  },
+  "6D": {
+    "code": "6D",
+    "name": "Pelita Air",
+    "bigLogo": "6D.gif",
+    "smallLogo": "sm6D.gif"
+  },
+  "6E": {
+    "code": "6E",
+    "name": "IndiGo",
+    "bigLogo": "6E.gif",
+    "smallLogo": "sm6E.gif"
+  },
+  "6G": {
+    "code": "6G",
+    "name": "Air Wales",
+    "bigLogo": "6G.gif",
+    "smallLogo": "sm6G.gif"
+  },
+  "6H": {
+    "code": "6H",
+    "name": "Israir Airlines",
+    "bigLogo": "6H.gif",
+    "smallLogo": "sm6H.gif"
+  },
+  "6K": {
+    "code": "6K",
+    "name": "Asian Spirit ",
+    "bigLogo": "6K.gif",
+    "smallLogo": "sm6K.gif"
+  },
+  "6L": {
+    "code": "6L",
+    "name": "Aklak Air",
+    "bigLogo": "6L.gif",
+    "smallLogo": "sm6L.gif"
+  },
+  "6M": {
+    "code": "6M",
+    "name": "Majestic Air Pl",
+    "bigLogo": "6M.gif",
+    "smallLogo": "sm6M.gif"
+  },
+  "6N": {
+    "code": "6N",
+    "name": "Trans Travel Airlines",
+    "bigLogo": "6N.gif",
+    "smallLogo": "sm6N.gif"
+  },
+  "6P": {
+    "code": "6P",
+    "name": "Clubair Sixgo Spa",
+    "bigLogo": "6P.gif",
+    "smallLogo": "sm6P.gif"
+  },
+  "6R": {
+    "code": "6R",
+    "name": "Georgian Airlines",
+    "bigLogo": "6R.gif",
+    "smallLogo": "sm6R.gif"
+  },
+  "6S": {
+    "code": "6S",
+    "name": "Kato Airlines",
+    "bigLogo": "6S.gif",
+    "smallLogo": "sm6S.gif"
+  },
+  "6T": {
+    "code": "6T",
+    "name": "Aasasasd",
+    "bigLogo": "6T.gif",
+    "smallLogo": "sm6T.gif"
+  },
+  "6U": {
+    "code": "6U",
+    "name": "Air Ukraine",
+    "bigLogo": "6U.gif",
+    "smallLogo": "sm6U.gif"
+  },
+  "6V": {
+    "code": "6V",
+    "name": "Lignes Aeriennes",
+    "bigLogo": "6V.gif",
+    "smallLogo": "sm6V.gif"
+  },
+  "6W": {
+    "code": "6W",
+    "name": "Saratov Airlines",
+    "bigLogo": "6W.gif",
+    "smallLogo": "sm6W.gif"
+  },
+  "6Y": {
+    "code": "6Y",
+    "name": "Latcharter Airlines",
+    "bigLogo": "6Y.gif",
+    "smallLogo": "sm6Y.gif"
+  },
+  "6Z": {
+    "code": "6Z",
+    "name": "Ukrainian Cargo Airways",
+    "bigLogo": "6Z.gif",
+    "smallLogo": "sm6Z.gif"
+  },
+  "7A": {
+    "code": "7A",
+    "name": "Afric Air Charter Sa",
+    "bigLogo": "7A.gif",
+    "smallLogo": "sm7A.gif"
+  },
+  "7B": {
+    "code": "7B",
+    "name": "Krasair",
+    "bigLogo": "7B.gif",
+    "smallLogo": "sm7B.gif"
+  },
+  "7C": {
+    "code": "7C",
+    "name": "Columbia Pacific",
+    "bigLogo": "7C.gif",
+    "smallLogo": "sm7C.gif"
+  },
+  "7D": {
+    "code": "7D",
+    "name": "Donbass",
+    "bigLogo": "7D.gif",
+    "smallLogo": "sm7D.gif"
+  },
+  "7E": {
+    "code": "7E",
+    "name": "Aeroline Gmbh",
+    "bigLogo": "7E.gif",
+    "smallLogo": "sm7E.gif"
+  },
+  "7F": {
+    "code": "7F",
+    "name": "First Air",
+    "bigLogo": "7F.gif",
+    "smallLogo": "sm7F.gif"
+  },
+  "7G": {
+    "code": "7G",
+    "name": "Bellair Inc",
+    "bigLogo": "7G.gif",
+    "smallLogo": "sm7G.gif"
+  },
+  "7H": {
+    "code": "7H",
+    "name": "Era Alaska",
+    "bigLogo": "7H.gif",
+    "smallLogo": "sm7H.gif"
+  },
+  "7I": {
+    "code": "7I",
+    "name": "Insel Air",
+    "bigLogo": "7I.gif",
+    "smallLogo": "sm7I.gif"
+  },
+  "7J": {
+    "code": "7J",
+    "name": "Skagway Air Service",
+    "bigLogo": "7J.gif",
+    "smallLogo": "sm7J.gif"
+  },
+  "7K": {
+    "code": "7K",
+    "name": "Kogalymavia Airlines",
+    "bigLogo": "7K.gif",
+    "smallLogo": "sm7K.gif"
+  },
+  "7L": {
+    "code": "7L",
+    "name": "Aero Caribbean",
+    "bigLogo": "7L.gif",
+    "smallLogo": "sm7L.gif"
+  },
+  "7M": {
+    "code": "7M",
+    "name": "Fischer Air",
+    "bigLogo": "7M.gif",
+    "smallLogo": "sm7M.gif"
+  },
+  "7N": {
+    "code": "7N",
+    "name": "Inland Aviation",
+    "bigLogo": "7N.gif",
+    "smallLogo": "sm7N.gif"
+  },
+  "7P": {
+    "code": "7P",
+    "name": "Pt Metro Batavia",
+    "bigLogo": "7P.gif",
+    "smallLogo": "sm7P.gif"
+  },
+  "7R": {
+    "code": "7R",
+    "name": "Red Sea Air",
+    "bigLogo": "7R.gif",
+    "smallLogo": "sm7R.gif"
+  },
+  "7S": {
+    "code": "7S",
+    "name": "Arctic Trans Svcs",
+    "bigLogo": "7S.gif",
+    "smallLogo": "sm7S.gif"
+  },
+  "7T": {
+    "code": "7T",
+    "name": "Air Glaciers",
+    "bigLogo": "7T.gif",
+    "smallLogo": "sm7T.gif"
+  },
+  "7U": {
+    "code": "7U",
+    "name": "Aviaenegro",
+    "bigLogo": "7U.gif",
+    "smallLogo": "sm7U.gif"
+  },
+  "7V": {
+    "code": "7V",
+    "name": "Pelican Air",
+    "bigLogo": "7V.gif",
+    "smallLogo": "sm7V.gif"
+  },
+  "7W": {
+    "code": "7W",
+    "name": "Aviation Assistance",
+    "bigLogo": "7W.gif",
+    "smallLogo": "sm7W.gif"
+  },
+  "7Y": {
+    "code": "7Y",
+    "name": "Air Industria Spa",
+    "bigLogo": "7Y.gif",
+    "smallLogo": "sm7Y.gif"
+  },
+  "7Z": {
+    "code": "7Z",
+    "name": "Laker Airways Bahamas",
+    "bigLogo": "7Z.gif",
+    "smallLogo": "sm7Z.gif"
+  },
+  "8A": {
+    "code": "8A",
+    "name": "Arctic Air A.s.",
+    "bigLogo": "8A.gif",
+    "smallLogo": "sm8A.gif"
+  },
+  "8B": {
+    "code": "8B",
+    "name": "Caribbean Star Airlines",
+    "bigLogo": "8B.gif",
+    "smallLogo": "sm8B.gif"
+  },
+  "8C": {
+    "code": "8C",
+    "name": "Shanxi Airlines",
+    "bigLogo": "8C.gif",
+    "smallLogo": "sm8C.gif"
+  },
+  "8D": {
+    "code": "8D",
+    "name": "Awood Air",
+    "bigLogo": "8D.gif",
+    "smallLogo": "sm8D.gif"
+  },
+  "8E": {
+    "code": "8E",
+    "name": "Bering Air",
+    "bigLogo": "8E.gif",
+    "smallLogo": "sm8E.gif"
+  },
+  "8F": {
+    "code": "8F",
+    "name": "Fischer Air",
+    "bigLogo": "8F.gif",
+    "smallLogo": "sm8F.gif"
+  },
+  "8G": {
+    "code": "8G",
+    "name": "Angel Airlines",
+    "bigLogo": "8G.gif",
+    "smallLogo": "sm8G.gif"
+  },
+  "8H": {
+    "code": "8H",
+    "name": "Helifrance",
+    "bigLogo": "8H.gif",
+    "smallLogo": "sm8H.gif"
+  },
+  "8K": {
+    "code": "8K",
+    "name": "Angel Airlines Sa",
+    "bigLogo": "8K.gif",
+    "smallLogo": "sm8K.gif"
+  },
+  "8L": {
+    "code": "8L",
+    "name": "Redhill Aviation",
+    "bigLogo": "8L.gif",
+    "smallLogo": "sm8L.gif"
+  },
+  "8M": {
+    "code": "8M",
+    "name": "Myanmar Airways",
+    "bigLogo": "8M.gif",
+    "smallLogo": "sm8M.gif"
+  },
+  "8N": {
+    "code": "8N",
+    "name": "Nordkalottflyg Ab",
+    "bigLogo": "8N.gif",
+    "smallLogo": "sm8N.gif"
+  },
+  "8P": {
+    "code": "8P",
+    "name": "Pacific Coastal",
+    "bigLogo": "8P.gif",
+    "smallLogo": "sm8P.gif"
+  },
+  "8R": {
+    "code": "8R",
+    "name": "Trip Air",
+    "bigLogo": "8R.gif",
+    "smallLogo": "sm8R.gif"
+  },
+  "8T": {
+    "code": "8T",
+    "name": "Air Tindi",
+    "bigLogo": "8T.gif",
+    "smallLogo": "sm8T.gif"
+  },
+  "8U": {
+    "code": "8U",
+    "name": "Afriqiyah Airways",
+    "bigLogo": "8U.gif",
+    "smallLogo": "sm8U.gif"
+  },
+  "8V": {
+    "code": "8V",
+    "name": "Wright Air",
+    "bigLogo": "8V.gif",
+    "smallLogo": "sm8V.gif"
+  },
+  "8W": {
+    "code": "8W",
+    "name": "Air Team",
+    "bigLogo": "8W.gif",
+    "smallLogo": "sm8W.gif"
+  },
+  "8Y": {
+    "code": "8Y",
+    "name": "Air Burundi",
+    "bigLogo": "8Y.gif",
+    "smallLogo": "sm8Y.gif"
+  },
+  "9A": {
+    "code": "9A",
+    "name": "Visa Airways",
+    "bigLogo": "9A.gif",
+    "smallLogo": "sm9A.gif"
+  },
+  "9B": {
+    "code": "9B",
+    "name": "Intourtrans",
+    "bigLogo": "9B.gif",
+    "smallLogo": "sm9B.gif"
+  },
+  "9C": {
+    "code": "9C",
+    "name": "Haiti Caribbean Air",
+    "bigLogo": "9C.gif",
+    "smallLogo": "sm9C.gif"
+  },
+  "9D": {
+    "code": "9D",
+    "name": "Toumai Air",
+    "bigLogo": "9D.gif",
+    "smallLogo": "sm9D.gif"
+  },
+  "9E": {
+    "code": "9E",
+    "name": "Northwest Airlink",
+    "bigLogo": "9E.gif",
+    "smallLogo": "sm9E.gif"
+  },
+  "9F": {
+    "code": "9F",
+    "name": "Skycraft Air Transport",
+    "bigLogo": "9F.gif",
+    "smallLogo": "sm9F.gif"
+  },
+  "9H": {
+    "code": "9H",
+    "name": "Ecoair",
+    "bigLogo": "9H.gif",
+    "smallLogo": "sm9H.gif"
+  },
+  "9I": {
+    "code": "9I",
+    "name": "Thai Sky Airlines ",
+    "bigLogo": "9I.gif",
+    "smallLogo": "sm9I.gif"
+  },
+  "9J": {
+    "code": "9J",
+    "name": "Pacific Island",
+    "bigLogo": "9J.gif",
+    "smallLogo": "sm9J.gif"
+  },
+  "9K": {
+    "code": "9K",
+    "name": "Cape Air",
+    "bigLogo": "9K.gif",
+    "smallLogo": "sm9K.gif"
+  },
+  "9L": {
+    "code": "9L",
+    "name": "Colgan Air",
+    "bigLogo": "9L.gif",
+    "smallLogo": "sm9L.gif"
+  },
+  "9M": {
+    "code": "9M",
+    "name": "Central Mountain Air",
+    "bigLogo": "9M.gif",
+    "smallLogo": "sm9M.gif"
+  },
+  "9N": {
+    "code": "9N",
+    "name": "Satena",
+    "bigLogo": "9N.gif",
+    "smallLogo": "sm9N.gif"
+  },
+  "9P": {
+    "code": "9P",
+    "name": "Panair S.p.a.",
+    "bigLogo": "9P.gif",
+    "smallLogo": "sm9P.gif"
+  },
+  "9R": {
+    "code": "9R",
+    "name": "Phuket Airlines",
+    "bigLogo": "9R.gif",
+    "smallLogo": "sm9R.gif"
+  },
+  "9S": {
+    "code": "9S",
+    "name": "Swazi Express",
+    "bigLogo": "9S.gif",
+    "smallLogo": "sm9S.gif"
+  },
+  "9T": {
+    "code": "9T",
+    "name": "Transwest Air",
+    "bigLogo": "9T.gif",
+    "smallLogo": "sm9T.gif"
+  },
+  "9U": {
+    "code": "9U",
+    "name": "Air Moldova",
+    "bigLogo": "9U.gif",
+    "smallLogo": "sm9U.gif"
+  },
+  "9V": {
+    "code": "9V",
+    "name": "Atlantis Airlines",
+    "bigLogo": "9V.gif",
+    "smallLogo": "sm9V.gif"
+  },
+  "9W": {
+    "code": "9W",
+    "name": "Jet Airways",
+    "bigLogo": "9W.gif",
+    "smallLogo": "sm9W.gif"
+  },
+  "9X": {
+    "code": "9X",
+    "name": "Air Columbia",
+    "bigLogo": "9X.gif",
+    "smallLogo": "sm9X.gif"
+  },
+  "9Y": {
+    "code": "9Y",
+    "name": "Air Kazakstan",
+    "bigLogo": "9Y.gif",
+    "smallLogo": "sm9Y.gif"
+  },
+  "A3": {
+    "code": "A3",
+    "name": "Aegean Airlines",
+    "bigLogo": "A3.gif",
+    "smallLogo": "smA3.gif"
+  },
+  "A5": {
+    "code": "A5",
+    "name": "Airlinair",
+    "bigLogo": "A5.gif",
+    "smallLogo": "smA5.gif"
+  },
+  "A6": {
+    "code": "A6",
+    "name": "Air Alps Aviation",
+    "bigLogo": "A6.gif",
+    "smallLogo": "smA6.gif"
+  },
+  "A9": {
+    "code": "A9",
+    "name": "Georgian Airways",
+    "bigLogo": "A9.gif",
+    "smallLogo": "smA9.gif"
+  },
+  "AA": {
+    "code": "AA",
+    "name": "American Airlines",
+    "bigLogo": "AA.gif",
+    "smallLogo": "smAA.gif"
+  },
+  "AB": {
+    "code": "AB",
+    "name": "Air Berlin",
+    "bigLogo": "AB.gif",
+    "smallLogo": "smAB.gif"
+  },
+  "AC": {
+    "code": "AC",
+    "name": "Air Canada",
+    "bigLogo": "AC.gif",
+    "smallLogo": "smAC.gif"
+  },
+  "AD": {
+    "code": "AD",
+    "name": "Air Paradise",
+    "bigLogo": "AD.gif",
+    "smallLogo": "smAD.gif"
+  },
+  "AE": {
+    "code": "AE",
+    "name": "Mandarin Airlines",
+    "bigLogo": "AE.gif",
+    "smallLogo": "smAE.gif"
+  },
+  "AF": {
+    "code": "AF",
+    "name": "Air France",
+    "bigLogo": "AF.gif",
+    "smallLogo": "smAF.gif"
+  },
+  "AG": {
+    "code": "AG",
+    "name": "Provincial Airlines",
+    "bigLogo": "AG.gif",
+    "smallLogo": "smAG.gif"
+  },
+  "AH": {
+    "code": "AH",
+    "name": "Air Algerie",
+    "bigLogo": "AH.gif",
+    "smallLogo": "smAH.gif"
+  },
+  "AI": {
+    "code": "AI",
+    "name": "Air India",
+    "bigLogo": "AI.gif",
+    "smallLogo": "smAI.gif"
+  },
+  "AJ": {
+    "code": "AJ",
+    "name": "Aero Contractors",
+    "bigLogo": "AJ.gif",
+    "smallLogo": "smAJ.gif"
+  },
+  "AK": {
+    "code": "AK",
+    "name": "Air Asia",
+    "bigLogo": "AK.gif",
+    "smallLogo": "smAK.gif"
+  },
+  "AL": {
+    "code": "AL",
+    "name": "Midwest Connect",
+    "bigLogo": "AL.gif",
+    "smallLogo": "smAL.gif"
+  },
+  "AM": {
+    "code": "AM",
+    "name": "Aeromexico",
+    "bigLogo": "AM.gif",
+    "smallLogo": "smAM.gif"
+  },
+  "AN": {
+    "code": "AN",
+    "name": "Ansett Australia",
+    "bigLogo": "AN.gif",
+    "smallLogo": "smAN.gif"
+  },
+  "AO": {
+    "code": "AO",
+    "name": "Australian Airlines",
+    "bigLogo": "AO.gif",
+    "smallLogo": "smAO.gif"
+  },
+  "AP": {
+    "code": "AP",
+    "name": "Air One",
+    "bigLogo": "AP.gif",
+    "smallLogo": "smAP.gif"
+  },
+  "AQ": {
+    "code": "AQ",
+    "name": "Aloha Airlines",
+    "bigLogo": "AQ.gif",
+    "smallLogo": "smAQ.gif"
+  },
+  "AR": {
+    "code": "AR",
+    "name": "Aerolineas Argentinas",
+    "bigLogo": "AR.gif",
+    "smallLogo": "smAR.gif"
+  },
+  "AS": {
+    "code": "AS",
+    "name": "Alaska Airlines",
+    "bigLogo": "AS.gif",
+    "smallLogo": "smAS.gif"
+  },
+  "AT": {
+    "code": "AT",
+    "name": "Royal Air Maroc",
+    "bigLogo": "AT.gif",
+    "smallLogo": "smAT.gif"
+  },
+  "AU": {
+    "code": "AU",
+    "name": "Austral Lineas Aereas",
+    "bigLogo": "AU.gif",
+    "smallLogo": "smAU.gif"
+  },
+  "AV": {
+    "code": "AV",
+    "name": "Avianca",
+    "bigLogo": "AV.gif",
+    "smallLogo": "smAV.gif"
+  },
+  "AW": {
+    "code": "AW",
+    "name": "Dirgantara Air",
+    "bigLogo": "AW.gif",
+    "smallLogo": "smAW.gif"
+  },
+  "AY": {
+    "code": "AY",
+    "name": "Finnair",
+    "bigLogo": "AY.gif",
+    "smallLogo": "smAY.gif"
+  },
+  "AZ": {
+    "code": "AZ",
+    "name": "Alitalia",
+    "bigLogo": "AZ.gif",
+    "smallLogo": "smAZ.gif"
+  },
+  "B2": {
+    "code": "B2",
+    "name": "Belavia",
+    "bigLogo": "B2.gif",
+    "smallLogo": "smB2.gif"
+  },
+  "B5": {
+    "code": "B5",
+    "name": "East African Safari Express",
+    "bigLogo": "B5.gif",
+    "smallLogo": "smB5.gif"
+  },
+  "B6": {
+    "code": "B6",
+    "name": "Jetblue Airways",
+    "bigLogo": "B6.gif",
+    "smallLogo": "smB6.gif"
+  },
+  "B7": {
+    "code": "B7",
+    "name": "Uni Airways",
+    "bigLogo": "B7.gif",
+    "smallLogo": "smB7.gif"
+  },
+  "B8": {
+    "code": "B8",
+    "name": "Eritrean Airlines",
+    "bigLogo": "B8.gif",
+    "smallLogo": "smB8.gif"
+  },
+  "BA": {
+    "code": "BA",
+    "name": "British Airways",
+    "bigLogo": "BA.gif",
+    "smallLogo": "smBA.gif"
+  },
+  "BB": {
+    "code": "BB",
+    "name": "Seaborne Airlines",
+    "bigLogo": "BB.gif",
+    "smallLogo": "smBB.gif"
+  },
+  "BC": {
+    "code": "BC",
+    "name": "Skymark Airlines",
+    "bigLogo": "BC.gif",
+    "smallLogo": "smBC.gif"
+  },
+  "BD": {
+    "code": "BD",
+    "name": "BMI British Midland",
+    "bigLogo": "BD.gif",
+    "smallLogo": "smBD.gif"
+  },
+  "BE": {
+    "code": "BE",
+    "name": "Flybe",
+    "bigLogo": "BE.gif",
+    "smallLogo": "smBE.gif"
+  },
+  "BF": {
+    "code": "BF",
+    "name": "Aero Service",
+    "bigLogo": "BF.gif",
+    "smallLogo": "smBF.gif"
+  },
+  "BG": {
+    "code": "BG",
+    "name": "Biman Bangladesh",
+    "bigLogo": "BG.gif",
+    "smallLogo": "smBG.gif"
+  },
+  "BH": {
+    "code": "BH",
+    "name": "Hawkair Aviation",
+    "bigLogo": "BH.gif",
+    "smallLogo": "smBH.gif"
+  },
+  "BI": {
+    "code": "BI",
+    "name": "Royal Brunei Airlines",
+    "bigLogo": "BI.gif",
+    "smallLogo": "smBI.gif"
+  },
+  "BJ": {
+    "code": "BJ",
+    "name": "Nouvelair Tunisie",
+    "bigLogo": "BJ.gif",
+    "smallLogo": "smBJ.gif"
+  },
+  "BK": {
+    "code": "BK",
+    "name": "Potomac Air",
+    "bigLogo": "BK.gif",
+    "smallLogo": "smBK.gif"
+  },
+  "BL": {
+    "code": "BL",
+    "name": "Pacific Airlines",
+    "bigLogo": "BL.gif",
+    "smallLogo": "smBL.gif"
+  },
+  "BM": {
+    "code": "BM",
+    "name": "Aero Trasporti Italiani",
+    "bigLogo": "BM.gif",
+    "smallLogo": "smBM.gif"
+  },
+  "BN": {
+    "code": "BN",
+    "name": "Bahrain Air",
+    "bigLogo": "BN.gif",
+    "smallLogo": "smBN.gif"
+  },
+  "BO": {
+    "code": "BO",
+    "name": "Bouraq Indonesia Air",
+    "bigLogo": "BO.gif",
+    "smallLogo": "smBO.gif"
+  },
+  "BP": {
+    "code": "BP",
+    "name": "Air Botswana",
+    "bigLogo": "BP.gif",
+    "smallLogo": "smBP.gif"
+  },
+  "BQ": {
+    "code": "BQ",
+    "name": "Aeromar C. Por. A",
+    "bigLogo": "BQ.gif",
+    "smallLogo": "smBQ.gif"
+  },
+  "BR": {
+    "code": "BR",
+    "name": "Eva Airways",
+    "bigLogo": "BR.gif",
+    "smallLogo": "smBR.gif"
+  },
+  "BS": {
+    "code": "BS",
+    "name": "British Intl",
+    "bigLogo": "BS.gif",
+    "smallLogo": "smBS.gif"
+  },
+  "BT": {
+    "code": "BT",
+    "name": "Air Baltic",
+    "bigLogo": "BT.gif",
+    "smallLogo": "smBT.gif"
+  },
+  "BU": {
+    "code": "BU",
+    "name": "Braathens Asa",
+    "bigLogo": "BU.gif",
+    "smallLogo": "smBU.gif"
+  },
+  "BV": {
+    "code": "BV",
+    "name": "Blue Panorama Airlines",
+    "bigLogo": "BV.gif",
+    "smallLogo": "smBV.gif"
+  },
+  "BW": {
+    "code": "BW",
+    "name": "Caribbean Airlines ",
+    "bigLogo": "BW.gif",
+    "smallLogo": "smBW.gif"
+  },
+  "BX": {
+    "code": "BX",
+    "name": "Coast Air K.s.",
+    "bigLogo": "BX.gif",
+    "smallLogo": "smBX.gif"
+  },
+  "BY": {
+    "code": "BY",
+    "name": "Britania Airways",
+    "bigLogo": "BY.gif",
+    "smallLogo": "smBY.gif"
+  },
+  "BZ": {
+    "code": "BZ",
+    "name": "Keystone Air",
+    "bigLogo": "BZ.gif",
+    "smallLogo": "smBZ.gif"
+  },
+  "C3": {
+    "code": "C3",
+    "name": "Contact Air",
+    "bigLogo": "C3.gif",
+    "smallLogo": "smC3.gif"
+  },
+  "C6": {
+    "code": "C6",
+    "name": "Canjet Airlines ",
+    "bigLogo": "C6.gif",
+    "smallLogo": "smC6.gif"
+  },
+  "CA": {
+    "code": "CA",
+    "name": "Air China",
+    "bigLogo": "CA.gif",
+    "smallLogo": "smCA.gif"
+  },
+  "CB": {
+    "code": "CB",
+    "name": "Scotairways",
+    "bigLogo": "CB.gif",
+    "smallLogo": "smCB.gif"
+  },
+  "CC": {
+    "code": "CC",
+    "name": "Macair Airlines",
+    "bigLogo": "CC.gif",
+    "smallLogo": "smCC.gif"
+  },
+  "CD": {
+    "code": "CD",
+    "name": "Alliance Air",
+    "bigLogo": "CD.gif",
+    "smallLogo": "smCD.gif"
+  },
+  "CE": {
+    "code": "CE",
+    "name": "Nationwide Air",
+    "bigLogo": "CE.gif",
+    "smallLogo": "smCE.gif"
+  },
+  "CF": {
+    "code": "CF",
+    "name": "City Airline",
+    "bigLogo": "CF.gif",
+    "smallLogo": "smCF.gif"
+  },
+  "CG": {
+    "code": "CG",
+    "name": "Airlines PNG",
+    "bigLogo": "CG.gif",
+    "smallLogo": "smCG.gif"
+  },
+  "CH": {
+    "code": "CH",
+    "name": "Bemidji Airlines",
+    "bigLogo": "CH.gif",
+    "smallLogo": "smCH.gif"
+  },
+  "CI": {
+    "code": "CI",
+    "name": "China Airlines",
+    "bigLogo": "CI.gif",
+    "smallLogo": "smCI.gif"
+  },
+  "CJ": {
+    "code": "CJ",
+    "name": "BA Cityflyer",
+    "bigLogo": "CJ.gif",
+    "smallLogo": "smCJ.gif"
+  },
+  "CK": {
+    "code": "CK",
+    "name": "Andesmar Lineas",
+    "bigLogo": "CK.gif",
+    "smallLogo": "smCK.gif"
+  },
+  "CL": {
+    "code": "CL",
+    "name": "Lufth Cityline",
+    "bigLogo": "CL.gif",
+    "smallLogo": "smCL.gif"
+  },
+  "CM": {
+    "code": "CM",
+    "name": "Copa Airlines",
+    "bigLogo": "CM.gif",
+    "smallLogo": "smCM.gif"
+  },
+  "CN": {
+    "code": "CN",
+    "name": "Islands Nationair",
+    "bigLogo": "CN.gif",
+    "smallLogo": "smCN.gif"
+  },
+  "CO": {
+    "code": "CO",
+    "name": "Continental Airlines",
+    "bigLogo": "CO.gif",
+    "smallLogo": "smCO.gif"
+  },
+  "CP": {
+    "code": "CP",
+    "name": "Canadian Airlines Intl",
+    "bigLogo": "CP.gif",
+    "smallLogo": "smCP.gif"
+  },
+  "CQ": {
+    "code": "CQ",
+    "name": "Sunshine Express Air ",
+    "bigLogo": "CQ.gif",
+    "smallLogo": "smCQ.gif"
+  },
+  "CT": {
+    "code": "CT",
+    "name": "Cave",
+    "bigLogo": "CT.gif",
+    "smallLogo": "smCT.gif"
+  },
+  "CU": {
+    "code": "CU",
+    "name": "Cubana Airlines ",
+    "bigLogo": "CU.gif",
+    "smallLogo": "smCU.gif"
+  },
+  "CV": {
+    "code": "CV",
+    "name": "Air Chathams",
+    "bigLogo": "CV.gif",
+    "smallLogo": "smCV.gif"
+  },
+  "CW": {
+    "code": "CW",
+    "name": "Air Marshall Island",
+    "bigLogo": "CW.gif",
+    "smallLogo": "smCW.gif"
+  },
+  "CX": {
+    "code": "CX",
+    "name": "Cathay Pacific",
+    "bigLogo": "CX.gif",
+    "smallLogo": "smCX.gif"
+  },
+  "CY": {
+    "code": "CY",
+    "name": "Cyprus Airways",
+    "bigLogo": "CY.gif",
+    "smallLogo": "smCY.gif"
+  },
+  "CZ": {
+    "code": "CZ",
+    "name": "China Southern",
+    "bigLogo": "CZ.gif",
+    "smallLogo": "smCZ.gif"
+  },
+  "D6": {
+    "code": "D6",
+    "name": "Interair SA",
+    "bigLogo": "D6.gif",
+    "smallLogo": "smD6.gif"
+  },
+  "D7": {
+    "code": "D7",
+    "name": "Air Asia X",
+    "bigLogo": "D7.gif",
+    "smallLogo": "smAK.gif"
+  },
+  "D9": {
+    "code": "D9",
+    "name": "Aeroflot - Don",
+    "bigLogo": "D9.gif",
+    "smallLogo": "smD9.gif"
+  },
+  "DA": {
+    "code": "DA",
+    "name": "Air Georgia",
+    "bigLogo": "DA.gif",
+    "smallLogo": "smDA.gif"
+  },
+  "DB": {
+    "code": "DB",
+    "name": "Brit Air",
+    "bigLogo": "DB.gif",
+    "smallLogo": "smDB.gif"
+  },
+  "DC": {
+    "code": "DC",
+    "name": "Golden Air Flyg",
+    "bigLogo": "DC.gif",
+    "smallLogo": "smDC.gif"
+  },
+  "DD": {
+    "code": "DD",
+    "name": "Atlantic Coast Jet",
+    "bigLogo": "DD.gif",
+    "smallLogo": "smDD.gif"
+  },
+  "DE": {
+    "code": "DE",
+    "name": "Condor",
+    "bigLogo": "DE.gif",
+    "smallLogo": "smDE.gif"
+  },
+  "DF": {
+    "code": "DF",
+    "name": "Aerolineas De Baleares",
+    "bigLogo": "DF.gif",
+    "smallLogo": "smDF.gif"
+  },
+  "DG": {
+    "code": "DG",
+    "name": "tigerair Philippines",
+    "bigLogo": "DG.gif",
+    "smallLogo": "smTR.gif"
+  },
+  "DH": {
+    "code": "DH",
+    "name": "Atlantic Coast",
+    "bigLogo": "DH.gif",
+    "smallLogo": "smDH.gif"
+  },
+  "DI": {
+    "code": "DI",
+    "name": "Deutsche Ba",
+    "bigLogo": "DI.gif",
+    "smallLogo": "smDI.gif"
+  },
+  "DJ": {
+    "code": "DJ",
+    "name": "Virgin Blue",
+    "bigLogo": "DJ.gif",
+    "smallLogo": "smDJ.gif"
+  },
+  "DK": {
+    "code": "DK",
+    "name": "Eastland Air",
+    "bigLogo": "DK.gif",
+    "smallLogo": "smDK.gif"
+  },
+  "DL": {
+    "code": "DL",
+    "name": "Delta Airlines",
+    "bigLogo": "DL.gif",
+    "smallLogo": "smDL.gif"
+  },
+  "DM": {
+    "code": "DM",
+    "name": "Maersk Air",
+    "bigLogo": "DM.gif",
+    "smallLogo": "smDM.gif"
+  },
+  "DN": {
+    "code": "DN",
+    "name": "Senegal Airlines",
+    "bigLogo": "DN.gif",
+    "smallLogo": "smDN.gif"
+  },
+  "DO": {
+    "code": "DO",
+    "name": "Air Vallee",
+    "bigLogo": "DO.gif",
+    "smallLogo": "smDO.gif"
+  },
+  "DP": {
+    "code": "DP",
+    "name": "Air 2000",
+    "bigLogo": "DP.gif",
+    "smallLogo": "smDP.gif"
+  },
+  "DQ": {
+    "code": "DQ",
+    "name": "Coastal Air Transport",
+    "bigLogo": "DQ.gif",
+    "smallLogo": "smDQ.gif"
+  },
+  "DR": {
+    "code": "DR",
+    "name": "Air Link Pty. Ltd",
+    "bigLogo": "DR.gif",
+    "smallLogo": "smDR.gif"
+  },
+  "DS": {
+    "code": "DS",
+    "name": "Easyjet Switzerland",
+    "bigLogo": "DS.gif",
+    "smallLogo": "smDS.gif"
+  },
+  "DT": {
+    "code": "DT",
+    "name": "Taag Angola Airlines",
+    "bigLogo": "DT.gif",
+    "smallLogo": "smDT.gif"
+  },
+  "DU": {
+    "code": "DU",
+    "name": "Hemus Air",
+    "bigLogo": "DU.gif",
+    "smallLogo": "smDU.gif"
+  },
+  "DV": {
+    "code": "DV",
+    "name": "Pll Scat Aircompany",
+    "bigLogo": "DV.gif",
+    "smallLogo": "smDV.gif"
+  },
+  "DW": {
+    "code": "DW",
+    "name": "Aero-charter",
+    "bigLogo": "DW.gif",
+    "smallLogo": "smDW.gif"
+  },
+  "DX": {
+    "code": "DX",
+    "name": "Danish Air Transport",
+    "bigLogo": "DX.gif",
+    "smallLogo": "smDX.gif"
+  },
+  "DY": {
+    "code": "DY",
+    "name": "Norwegian Air",
+    "bigLogo": "DY.gif",
+    "smallLogo": "smDY.gif"
+  },
+  "DZ": {
+    "code": "DZ",
+    "name": "Transcaraibes Air",
+    "bigLogo": "DZ.gif",
+    "smallLogo": "smDZ.gif"
+  },
+  "EA": {
+    "code": "EA",
+    "name": "European Air Express",
+    "bigLogo": "EA.gif",
+    "smallLogo": "smEA.gif"
+  },
+  "EC": {
+    "code": "EC",
+    "name": "OpenSkies",
+    "bigLogo": "EC.gif",
+    "smallLogo": "smEC.gif"
+  },
+  "ED": {
+    "code": "ED",
+    "name": "Ccair",
+    "bigLogo": "ED.gif",
+    "smallLogo": "smED.gif"
+  },
+  "EE": {
+    "code": "EE",
+    "name": "Aero Airlines",
+    "bigLogo": "EE.gif",
+    "smallLogo": "smEE.gif"
+  },
+  "EF": {
+    "code": "EF",
+    "name": "Far Eastern Air Trans",
+    "bigLogo": "EF.gif",
+    "smallLogo": "smEF.gif"
+  },
+  "EG": {
+    "code": "EG",
+    "name": "Japan Asia Airways",
+    "bigLogo": "EG.gif",
+    "smallLogo": "smEG.gif"
+  },
+  "EH": {
+    "code": "EH",
+    "name": "All Nippon Network",
+    "bigLogo": "EH.gif",
+    "smallLogo": "smEH.gif"
+  },
+  "EI": {
+    "code": "EI",
+    "name": "Aer Lingus",
+    "bigLogo": "EI.gif",
+    "smallLogo": "smEI.gif"
+  },
+  "EJ": {
+    "code": "EJ",
+    "name": "New England Airlines",
+    "bigLogo": "EJ.gif",
+    "smallLogo": "smEJ.gif"
+  },
+  "EK": {
+    "code": "EK",
+    "name": "Emirates",
+    "bigLogo": "EK.gif",
+    "smallLogo": "smEK.gif"
+  },
+  "EL": {
+    "code": "EL",
+    "name": "Air Nippon Co.",
+    "bigLogo": "EL.gif",
+    "smallLogo": "smEL.gif"
+  },
+  "EM": {
+    "code": "EM",
+    "name": "Aero Benin Sa",
+    "bigLogo": "EM.gif",
+    "smallLogo": "smEM.gif"
+  },
+  "EN": {
+    "code": "EN",
+    "name": "Air Dolomiti",
+    "bigLogo": "EN.gif",
+    "smallLogo": "smEN.gif"
+  },
+  "EO": {
+    "code": "EO",
+    "name": "Hewa Bora Airways",
+    "bigLogo": "EO.gif",
+    "smallLogo": "smEO.gif"
+  },
+  "EP": {
+    "code": "EP",
+    "name": "Iran Asseman Airlines",
+    "bigLogo": "EP.gif",
+    "smallLogo": "smEP.gif"
+  },
+  "EQ": {
+    "code": "EQ",
+    "name": "Tame",
+    "bigLogo": "EQ.gif",
+    "smallLogo": "smEQ.gif"
+  },
+  "ET": {
+    "code": "ET",
+    "name": "Ethiopian Airlines",
+    "bigLogo": "ET.gif",
+    "smallLogo": "smET.gif"
+  },
+  "EU": {
+    "code": "EU",
+    "name": "Ecuatoriana",
+    "bigLogo": "EU.gif",
+    "smallLogo": "smEU.gif"
+  },
+  "EV": {
+    "code": "EV",
+    "name": "Atlantic Southeast",
+    "bigLogo": "EV.gif",
+    "smallLogo": "smEV.gif"
+  },
+  "EW": {
+    "code": "EW",
+    "name": "Eurowings",
+    "bigLogo": "EW.gif",
+    "smallLogo": "smEW.gif"
+  },
+  "EX": {
+    "code": "EX",
+    "name": "Air Santo Domingo",
+    "bigLogo": "EX.gif",
+    "smallLogo": "smEX.gif"
+  },
+  "EY": {
+    "code": "EY",
+    "name": "Etihad Airways ",
+    "bigLogo": "EY.gif",
+    "smallLogo": "smEY.gif"
+  },
+  "EZ": {
+    "code": "EZ",
+    "name": "Sun Air Of Scandinavia",
+    "bigLogo": "EZ.gif",
+    "smallLogo": "smEZ.gif"
+  },
+  "F7": {
+    "code": "F7",
+    "name": "flybaboo",
+    "bigLogo": "F7.gif",
+    "smallLogo": "smF7.gif"
+  },
+  "F9": {
+    "code": "F9",
+    "name": "Frontier Airlines",
+    "bigLogo": "F9.gif",
+    "smallLogo": "smF9.gif"
+  },
+  "FA": {
+    "code": "FA",
+    "name": "Airlink Airways",
+    "bigLogo": "FA.gif",
+    "smallLogo": "smFA.gif"
+  },
+  "FB": {
+    "code": "FB",
+    "name": "Bulgaria Air",
+    "bigLogo": "FB.gif",
+    "smallLogo": "smFB.gif"
+  },
+  "FC": {
+    "code": "FC",
+    "name": "Berliner Spezial Flug",
+    "bigLogo": "FC.gif",
+    "smallLogo": "smFC.gif"
+  },
+  "FD": {
+    "code": "FD",
+    "name": "Thai Air Asia ",
+    "bigLogo": "FD.gif",
+    "smallLogo": "smFD.gif"
+  },
+  "FE": {
+    "code": "FE",
+    "name": "Royal Khmer Airlines",
+    "bigLogo": "FE.gif",
+    "smallLogo": "smFE.gif"
+  },
+  "FF": {
+    "code": "FF",
+    "name": "Tower Air",
+    "bigLogo": "FF.gif",
+    "smallLogo": "smFF.gif"
+  },
+  "FG": {
+    "code": "FG",
+    "name": "Ariana Afghan Airlines",
+    "bigLogo": "FG.gif",
+    "smallLogo": "smFG.gif"
+  },
+  "FH": {
+    "code": "FH",
+    "name": "Futura Intl Airways",
+    "bigLogo": "FH.gif",
+    "smallLogo": "smFH.gif"
+  },
+  "FI": {
+    "code": "FI",
+    "name": "Icelandair",
+    "bigLogo": "FI.gif",
+    "smallLogo": "smFI.gif"
+  },
+  "FJ": {
+    "code": "FJ",
+    "name": "Air Pacific Ltd",
+    "bigLogo": "FJ.gif",
+    "smallLogo": "smFJ.gif"
+  },
+  "FK": {
+    "code": "FK",
+    "name": "Keewatin Air",
+    "bigLogo": "FK.gif",
+    "smallLogo": "smFK.gif"
+  },
+  "FL": {
+    "code": "FL",
+    "name": "Airtran Airways",
+    "bigLogo": "FL.gif",
+    "smallLogo": "smFL.gif"
+  },
+  "FM": {
+    "code": "FM",
+    "name": "Shanghai Airlines ",
+    "bigLogo": "FM.gif",
+    "smallLogo": "smFM.gif"
+  },
+  "FN": {
+    "code": "FN",
+    "name": "Regional Air Lines",
+    "bigLogo": "FN.gif",
+    "smallLogo": "smFN.gif"
+  },
+  "FO": {
+    "code": "FO",
+    "name": "Expedition Airways",
+    "bigLogo": "FO.gif",
+    "smallLogo": "smFO.gif"
+  },
+  "FP": {
+    "code": "FP",
+    "name": "Freedom Air",
+    "bigLogo": "FP.gif",
+    "smallLogo": "smFP.gif"
+  },
+  "FQ": {
+    "code": "FQ",
+    "name": "Brindabella Airlines",
+    "bigLogo": "FQ.gif",
+    "smallLogo": "smFQ.gif"
+  },
+  "FR": {
+    "code": "FR",
+    "name": "Ryan Air",
+    "bigLogo": "FR.gif",
+    "smallLogo": "smFR.gif"
+  },
+  "FS": {
+    "code": "FS",
+    "name": "Missionary Aviation",
+    "bigLogo": "FS.gif",
+    "smallLogo": "smFS.gif"
+  },
+  "FT": {
+    "code": "FT",
+    "name": "Siem Reap Airways",
+    "bigLogo": "FT.gif",
+    "smallLogo": "smFT.gif"
+  },
+  "FU": {
+    "code": "FU",
+    "name": "Air Littoral",
+    "bigLogo": "FU.gif",
+    "smallLogo": "smFU.gif"
+  },
+  "FV": {
+    "code": "FV",
+    "name": "Pulkovo Aviation",
+    "bigLogo": "FV.gif",
+    "smallLogo": "smFV.gif"
+  },
+  "FW": {
+    "code": "FW",
+    "name": "Fair Incorporated",
+    "bigLogo": "FW.gif",
+    "smallLogo": "smFW.gif"
+  },
+  "FX": {
+    "code": "FX",
+    "name": "Fedex Airlines ",
+    "bigLogo": "FX.gif",
+    "smallLogo": "smFX.gif"
+  },
+  "FY": {
+    "code": "FY",
+    "name": "Firefly",
+    "bigLogo": "FY.gif",
+    "smallLogo": "smFY.gif"
+  },
+  "FZ": {
+    "code": "FZ",
+    "name": "flydubai",
+    "bigLogo": "FZ.gif",
+    "smallLogo": "smFZ.gif"
+  },
+  "G3": {
+    "code": "G3",
+    "name": "Gol Air",
+    "bigLogo": "G3.gif",
+    "smallLogo": "smG3.gif"
+  },
+  "G6": {
+    "code": "G6",
+    "name": "Angkor Airways ",
+    "bigLogo": "G6.gif",
+    "smallLogo": "smG6.gif"
+  },
+  "G8": {
+    "code": "G8",
+    "name": "Go Air",
+    "bigLogo": "G8.gif",
+    "smallLogo": "smG8.gif"
+  },
+  "G9": {
+    "code": "G9",
+    "name": "Air Arabia",
+    "bigLogo": "G9.gif",
+    "smallLogo": "smG9.gif"
+  },
+  "GA": {
+    "code": "GA",
+    "name": "Garuda Indonesia",
+    "bigLogo": "GA.gif",
+    "smallLogo": "smGA.gif"
+  },
+  "GB": {
+    "code": "GB",
+    "name": "Great Barrier Airlines",
+    "bigLogo": "GB.gif",
+    "smallLogo": "smGB.gif"
+  },
+  "GC": {
+    "code": "GC",
+    "name": "Gambia Intl Airlines",
+    "bigLogo": "GC.gif",
+    "smallLogo": "smGC.gif"
+  },
+  "GD": {
+    "code": "GD",
+    "name": "Air Alpha Greenland",
+    "bigLogo": "GD.gif",
+    "smallLogo": "smGD.gif"
+  },
+  "GE": {
+    "code": "GE",
+    "name": "Transasia Airways",
+    "bigLogo": "GE.gif",
+    "smallLogo": "smGE.gif"
+  },
+  "GF": {
+    "code": "GF",
+    "name": "Gulf Air",
+    "bigLogo": "GF.gif",
+    "smallLogo": "smGF.gif"
+  },
+  "GG": {
+    "code": "GG",
+    "name": "Air Guyane",
+    "bigLogo": "GG.gif",
+    "smallLogo": "smGG.gif"
+  },
+  "GH": {
+    "code": "GH",
+    "name": "Ghana Airways",
+    "bigLogo": "GH.gif",
+    "smallLogo": "smGH.gif"
+  },
+  "GI": {
+    "code": "GI",
+    "name": "Itek Air",
+    "bigLogo": "GI.gif",
+    "smallLogo": "smGI.gif"
+  },
+  "GJ": {
+    "code": "GJ",
+    "name": "Eurofly",
+    "bigLogo": "GJ.gif",
+    "smallLogo": "smGJ.gif"
+  },
+  "GL": {
+    "code": "GL",
+    "name": "Air Greenland",
+    "bigLogo": "GL.gif",
+    "smallLogo": "smGL.gif"
+  },
+  "GM": {
+    "code": "GM",
+    "name": "Air Slovakia Bwj",
+    "bigLogo": "GM.gif",
+    "smallLogo": "smGM.gif"
+  },
+  "GN": {
+    "code": "GN",
+    "name": "Air Gabon",
+    "bigLogo": "GN.gif",
+    "smallLogo": "smGN.gif"
+  },
+  "GO": {
+    "code": "GO",
+    "name": "Go Fly Ltd",
+    "bigLogo": "GO.gif",
+    "smallLogo": "smGO.gif"
+  },
+  "GP": {
+    "code": "GP",
+    "name": "Palau Trans Pacific",
+    "bigLogo": "GP.gif",
+    "smallLogo": "smGP.gif"
+  },
+  "GQ": {
+    "code": "GQ",
+    "name": "Big Sky Airlines",
+    "bigLogo": "GQ.gif",
+    "smallLogo": "smGQ.gif"
+  },
+  "GR": {
+    "code": "GR",
+    "name": "Aurigny Air Services",
+    "bigLogo": "GR.gif",
+    "smallLogo": "smGR.gif"
+  },
+  "GS": {
+    "code": "GS",
+    "name": "Grant Aviation",
+    "bigLogo": "GS.gif",
+    "smallLogo": "smGS.gif"
+  },
+  "GT": {
+    "code": "GT",
+    "name": "GB Airways",
+    "bigLogo": "GT.gif",
+    "smallLogo": "smGT.gif"
+  },
+  "GU": {
+    "code": "GU",
+    "name": "Aviateca",
+    "bigLogo": "GU.gif",
+    "smallLogo": "smGU.gif"
+  },
+  "GV": {
+    "code": "GV",
+    "name": "Riga Airlines",
+    "bigLogo": "GV.gif",
+    "smallLogo": "smGV.gif"
+  },
+  "GW": {
+    "code": "GW",
+    "name": "Air Lines Of Kuban",
+    "bigLogo": "GW.gif",
+    "smallLogo": "smGW.gif"
+  },
+  "GX": {
+    "code": "GX",
+    "name": "Pacificair",
+    "bigLogo": "GX.gif",
+    "smallLogo": "smGX.gif"
+  },
+  "GY": {
+    "code": "GY",
+    "name": "Guyana Airways",
+    "bigLogo": "GY.gif",
+    "smallLogo": "smGY.gif"
+  },
+  "GZ": {
+    "code": "GZ",
+    "name": "Air Rarotonga",
+    "bigLogo": "GZ.gif",
+    "smallLogo": "smGZ.gif"
+  },
+  "H1": {
+    "code": "H1",
+    "name": "Hahn Air",
+    "bigLogo": "H1.gif",
+    "smallLogo": "smH1.gif"
+  },
+  "H2": {
+    "code": "H2",
+    "name": "Sky Airline",
+    "bigLogo": "H2.gif",
+    "smallLogo": "smH2.gif"
+  },
+  "HA": {
+    "code": "HA",
+    "name": "Hawaiian Airlines",
+    "bigLogo": "HA.gif",
+    "smallLogo": "smHA.gif"
+  },
+  "HB": {
+    "code": "HB",
+    "name": "Homer Air",
+    "bigLogo": "HB.gif",
+    "smallLogo": "smHB.gif"
+  },
+  "HC": {
+    "code": "HC",
+    "name": "Lip Air Ltd",
+    "bigLogo": "HC.gif",
+    "smallLogo": "smHC.gif"
+  },
+  "HD": {
+    "code": "HD",
+    "name": "Hokkaido Intl",
+    "bigLogo": "HD.gif",
+    "smallLogo": "smHD.gif"
+  },
+  "HE": {
+    "code": "HE",
+    "name": "L G W Airlines",
+    "bigLogo": "HE.gif",
+    "smallLogo": "smHE.gif"
+  },
+  "HF": {
+    "code": "HF",
+    "name": "Hapag Lloyd",
+    "bigLogo": "HF.gif",
+    "smallLogo": "smHF.gif"
+  },
+  "HG": {
+    "code": "HG",
+    "name": "Haiti Intl Airlines",
+    "bigLogo": "HG.gif",
+    "smallLogo": "smHG.gif"
+  },
+  "HH": {
+    "code": "HH",
+    "name": "Islandflug",
+    "bigLogo": "HH.gif",
+    "smallLogo": "smHH.gif"
+  },
+  "HI": {
+    "code": "HI",
+    "name": "Papillon Airways",
+    "bigLogo": "HI.gif",
+    "smallLogo": "smHI.gif"
+  },
+  "HJ": {
+    "code": "HJ",
+    "name": "Hellenic Star Airways",
+    "bigLogo": "HJ.gif",
+    "smallLogo": "smHJ.gif"
+  },
+  "HK": {
+    "code": "HK",
+    "name": "Yangon Airways",
+    "bigLogo": "HK.gif",
+    "smallLogo": "smHK.gif"
+  },
+  "HM": {
+    "code": "HM",
+    "name": "Air Seychelles",
+    "bigLogo": "HM.gif",
+    "smallLogo": "smHM.gif"
+  },
+  "HN": {
+    "code": "HN",
+    "name": "Proteus Helicopteres",
+    "bigLogo": "HN.gif",
+    "smallLogo": "smHN.gif"
+  },
+  "HO": {
+    "code": "HO",
+    "name": "Antinea Airlines",
+    "bigLogo": "HO.gif",
+    "smallLogo": "smHO.gif"
+  },
+  "HP": {
+    "code": "HP",
+    "name": "America West Airlines",
+    "bigLogo": "HP.gif",
+    "smallLogo": "smHP.gif"
+  },
+  "HQ": {
+    "code": "HQ",
+    "name": "Harmony Airways ",
+    "bigLogo": "HQ.gif",
+    "smallLogo": "smHQ.gif"
+  },
+  "HR": {
+    "code": "HR",
+    "name": "Hahn Air",
+    "bigLogo": "HR.gif",
+    "smallLogo": "smHR.gif"
+  },
+  "HS": {
+    "code": "HS",
+    "name": "Svenska Direktflyg Ab",
+    "bigLogo": "HS.gif",
+    "smallLogo": "smHS.gif"
+  },
+  "HT": {
+    "code": "HT",
+    "name": "Royal Airways",
+    "bigLogo": "HT.gif",
+    "smallLogo": "smHT.gif"
+  },
+  "HU": {
+    "code": "HU",
+    "name": "Hainan Airlines",
+    "bigLogo": "HU.gif",
+    "smallLogo": "smHU.gif"
+  },
+  "HV": {
+    "code": "HV",
+    "name": "Transavia Airlines",
+    "bigLogo": "HV.gif",
+    "smallLogo": "smHV.gif"
+  },
+  "HW": {
+    "code": "HW",
+    "name": "North-wright Airways",
+    "bigLogo": "HW.gif",
+    "smallLogo": "smHW.gif"
+  },
+  "HX": {
+    "code": "HX",
+    "name": "Hong Kong Airlines ",
+    "bigLogo": "HX.gif",
+    "smallLogo": "smHX.gif"
+  },
+  "HY": {
+    "code": "HY",
+    "name": "Uzbekistan Airway",
+    "bigLogo": "HY.gif",
+    "smallLogo": "smHY.gif"
+  },
+  "HZ": {
+    "code": "HZ",
+    "name": "Sakhalinskie Aviatrassy",
+    "bigLogo": "HZ.gif",
+    "smallLogo": "smHZ.gif"
+  },
+  "I2": {
+    "code": "I2",
+    "name": "Iberia Express",
+    "bigLogo": "I2.gif",
+    "smallLogo": "smI2.gif"
+  },
+  "I5": {
+    "code": "I5",
+    "name": "Air Mali",
+    "bigLogo": "I5.gif",
+    "smallLogo": "smI5.gif"
+  },
+  "I9": {
+    "code": "I9",
+    "name": "Air Italy",
+    "bigLogo": "I9.gif",
+    "smallLogo": "smI9.gif"
+  },
+  "IA": {
+    "code": "IA",
+    "name": "Iraqi Airways",
+    "bigLogo": "IA.gif",
+    "smallLogo": "smIA.gif"
+  },
+  "IB": {
+    "code": "IB",
+    "name": "Iberia",
+    "bigLogo": "IB.gif",
+    "smallLogo": "smIB.gif"
+  },
+  "IC": {
+    "code": "IC",
+    "name": "Indian Airlines",
+    "bigLogo": "IC.gif",
+    "smallLogo": "smIC.gif"
+  },
+  "ID": {
+    "code": "ID",
+    "name": "Interlink Airlines",
+    "bigLogo": "ID.gif",
+    "smallLogo": "smID.gif"
+  },
+  "IE": {
+    "code": "IE",
+    "name": "Solomon Airlines",
+    "bigLogo": "IE.gif",
+    "smallLogo": "smIE.gif"
+  },
+  "IF": {
+    "code": "IF",
+    "name": "Islas Airways",
+    "bigLogo": "IF.gif",
+    "smallLogo": "smIF.gif"
+  },
+  "IG": {
+    "code": "IG",
+    "name": "Meridiana",
+    "bigLogo": "IG.gif",
+    "smallLogo": "smIG.gif"
+  },
+  "IH": {
+    "code": "IH",
+    "name": "Falcon Aviation",
+    "bigLogo": "IH.gif",
+    "smallLogo": "smIH.gif"
+  },
+  "II": {
+    "code": "II",
+    "name": "Business Air",
+    "bigLogo": "II.gif",
+    "smallLogo": "smII.gif"
+  },
+  "IK": {
+    "code": "IK",
+    "name": "Imair Airline",
+    "bigLogo": "IK.gif",
+    "smallLogo": "smIK.gif"
+  },
+  "IL": {
+    "code": "IL",
+    "name": "Air Asia",
+    "bigLogo": "IL.gif",
+    "smallLogo": "smIL.gif"
+  },
+  "IM": {
+    "code": "IM",
+    "name": "Intensive Air",
+    "bigLogo": "IM.gif",
+    "smallLogo": "smIM.gif"
+  },
+  "IN": {
+    "code": "IN",
+    "name": "Mat-macedonian Airlines",
+    "bigLogo": "IN.gif",
+    "smallLogo": "smIN.gif"
+  },
+  "IO": {
+    "code": "IO",
+    "name": "Indonesian  Airlines",
+    "bigLogo": "IO.gif",
+    "smallLogo": "smIO.gif"
+  },
+  "IP": {
+    "code": "IP",
+    "name": "Atyrau Aue Joly",
+    "bigLogo": "IP.gif",
+    "smallLogo": "smIP.gif"
+  },
+  "IQ": {
+    "code": "IQ",
+    "name": "Augsburg Airways",
+    "bigLogo": "IQ.gif",
+    "smallLogo": "smIQ.gif"
+  },
+  "IR": {
+    "code": "IR",
+    "name": "Iran Air ",
+    "bigLogo": "IR.gif",
+    "smallLogo": "smIR.gif"
+  },
+  "IS": {
+    "code": "IS",
+    "name": "Island Airlines",
+    "bigLogo": "IS.gif",
+    "smallLogo": "smIS.gif"
+  },
+  "IT": {
+    "code": "IT",
+    "name": "Tigerair Taiwan ",
+    "bigLogo": "IT.gif",
+    "smallLogo": "smIT.gif"
+  },
+  "IU": {
+    "code": "IU",
+    "name": "Hevi Lift PNG",
+    "bigLogo": "IU.gif",
+    "smallLogo": "smIU.gif"
+  },
+  "IV": {
+    "code": "IV",
+    "name": "Delsey Airlines",
+    "bigLogo": "IV.gif",
+    "smallLogo": "smIV.gif"
+  },
+  "IW": {
+    "code": "IW",
+    "name": "Air Lib",
+    "bigLogo": "IW.gif",
+    "smallLogo": "smIW.gif"
+  },
+  "IX": {
+    "code": "IX",
+    "name": "Air India Express",
+    "bigLogo": "IX.gif",
+    "smallLogo": "smIX.gif"
+  },
+  "IY": {
+    "code": "IY",
+    "name": "Yemenia Yemen Airways",
+    "bigLogo": "IY.gif",
+    "smallLogo": "smIY.gif"
+  },
+  "IZ": {
+    "code": "IZ",
+    "name": "Arkia Israel Airlines",
+    "bigLogo": "IZ.gif",
+    "smallLogo": "smIZ.gif"
+  },
+  "J0": {
+    "code": "J0",
+    "name": "Jet Link Express",
+    "bigLogo": "J0.gif",
+    "smallLogo": "smJ0.gif"
+  },
+  "J2": {
+    "code": "J2",
+    "name": "Azerbaijan Hava Yollary",
+    "bigLogo": "J2.guf",
+    "smallLogo": "smJ2.gif"
+  },
+  "J8": {
+    "code": "J8",
+    "name": "Berjaya Air",
+    "bigLogo": "J8.gif",
+    "smallLogo": "smJ8.gif"
+  },
+  "J9": {
+    "code": "J9",
+    "name": "Jazeera Airways",
+    "bigLogo": "J9.gif",
+    "smallLogo": "smJ9.gif"
+  },
+  "JA": {
+    "code": "JA",
+    "name": "Air Bosna",
+    "bigLogo": "JA.gif",
+    "smallLogo": "smJA.gif"
+  },
+  "JB": {
+    "code": "JB",
+    "name": "Helijet International",
+    "bigLogo": "JB.gif",
+    "smallLogo": "smJB.gif"
+  },
+  "JC": {
+    "code": "JC",
+    "name": "Jal Express",
+    "bigLogo": "JC.gif",
+    "smallLogo": "smJC.gif"
+  },
+  "JD": {
+    "code": "JD",
+    "name": "Japan Air System",
+    "bigLogo": "JD.gif",
+    "smallLogo": "smJD.gif"
+  },
+  "JE": {
+    "code": "JE",
+    "name": "Manx Airlines",
+    "bigLogo": "JE.gif",
+    "smallLogo": "smJE.gif"
+  },
+  "JF": {
+    "code": "JF",
+    "name": "LAB Flying Service",
+    "bigLogo": "JF.gif",
+    "smallLogo": "smJF.gif"
+  },
+  "JG": {
+    "code": "JG",
+    "name": "Air Greece-aerodromisis",
+    "bigLogo": "JG.gif",
+    "smallLogo": "smJG.gif"
+  },
+  "JH": {
+    "code": "JH",
+    "name": "Nordeste Linhas Aereas ",
+    "bigLogo": "JH.gif",
+    "smallLogo": "smJH.gif"
+  },
+  "JI": {
+    "code": "JI",
+    "name": "Midway Airlines",
+    "bigLogo": "JI.gif",
+    "smallLogo": "smJI.gif"
+  },
+  "JJ": {
+    "code": "JJ",
+    "name": "Tam Linhas Aereas",
+    "bigLogo": "JJ.gif",
+    "smallLogo": "smJJ.gif"
+  },
+  "JK": {
+    "code": "JK",
+    "name": "Spanair",
+    "bigLogo": "JK.gif",
+    "smallLogo": "smJK.gif"
+  },
+  "JL": {
+    "code": "JL",
+    "name": "Japan Airlines",
+    "bigLogo": "JL.gif",
+    "smallLogo": "smJL.gif"
+  },
+  "JM": {
+    "code": "JM",
+    "name": "Air Jamaica Ltd",
+    "bigLogo": "JM.gif",
+    "smallLogo": "smJM.gif"
+  },
+  "JN": {
+    "code": "JN",
+    "name": "Excel Airways",
+    "bigLogo": "JN.gif",
+    "smallLogo": "smJN.gif"
+  },
+  "JO": {
+    "code": "JO",
+    "name": "Jalways",
+    "bigLogo": "JO.gif",
+    "smallLogo": "smJO.gif"
+  },
+  "JP": {
+    "code": "JP",
+    "name": "Adria Airways",
+    "bigLogo": "JP.gif",
+    "smallLogo": "smJP.gif"
+  },
+  "JQ": {
+    "code": "JQ",
+    "name": "Jetstar Airways",
+    "bigLogo": "JQ.gif",
+    "smallLogo": "smJQ.gif"
+  },
+  "JR": {
+    "code": "JR",
+    "name": "Aero California",
+    "bigLogo": "JR.gif",
+    "smallLogo": "smJR.gif"
+  },
+  "JS": {
+    "code": "JS",
+    "name": "Air Koryo",
+    "bigLogo": "JS.gif",
+    "smallLogo": "smJS.gif"
+  },
+  "JT": {
+    "code": "JT",
+    "name": "Lion Airlines",
+    "bigLogo": "JT.gif",
+    "smallLogo": "smJT.gif"
+  },
+  "JU": {
+    "code": "JU",
+    "name": "Yugoslav Airlines",
+    "bigLogo": "JU.gif",
+    "smallLogo": "smJU.gif"
+  },
+  "JV": {
+    "code": "JV",
+    "name": "Bearskin Airlines",
+    "bigLogo": "JV.gif",
+    "smallLogo": "smJV.gif"
+  },
+  "JW": {
+    "code": "JW",
+    "name": "Skippers Aviation",
+    "bigLogo": "JW.gif",
+    "smallLogo": "smJW.gif"
+  },
+  "JX": {
+    "code": "JX",
+    "name": "Nice Helicopters",
+    "bigLogo": "JX.gif",
+    "smallLogo": "smJX.gif"
+  },
+  "JY": {
+    "code": "JY",
+    "name": "Interisland Airways",
+    "bigLogo": "JY.gif",
+    "smallLogo": "smJY.gif"
+  },
+  "JZ": {
+    "code": "JZ",
+    "name": "Skyways Ab",
+    "bigLogo": "JZ.gif",
+    "smallLogo": "smJZ.gif"
+  },
+  "K2": {
+    "code": "K2",
+    "name": "EuroLot",
+    "bigLogo": "K2.gif",
+    "smallLogo": "smK2.gif"
+  },
+  "K6": {
+    "code": "K6",
+    "name": "Cambodia Angkor Air",
+    "bigLogo": "K6.gif",
+    "smallLogo": "smK6.gif"
+  },
+  "KA": {
+    "code": "KA",
+    "name": "Dragon Air",
+    "bigLogo": "KA.gif",
+    "smallLogo": "smKA.gif"
+  },
+  "KB": {
+    "code": "KB",
+    "name": "Druk Air",
+    "bigLogo": "KB.gif",
+    "smallLogo": "smKB.gif"
+  },
+  "KC": {
+    "code": "KC",
+    "name": "Air Astana",
+    "bigLogo": "KC.gif",
+    "smallLogo": "smKC.gif"
+  },
+  "KD": {
+    "code": "KD",
+    "name": "Kendell Airlines",
+    "bigLogo": "KD.gif",
+    "smallLogo": "smKD.gif"
+  },
+  "KE": {
+    "code": "KE",
+    "name": "Korean Air",
+    "bigLogo": "KE.gif",
+    "smallLogo": "smKE.gif"
+  },
+  "KF": {
+    "code": "KF",
+    "name": "Oy Air Botnia Ab",
+    "bigLogo": "KF.gif",
+    "smallLogo": "smKF.gif"
+  },
+  "KG": {
+    "code": "KG",
+    "name": "King Island Airln",
+    "bigLogo": "KG.gif",
+    "smallLogo": "smKG.gif"
+  },
+  "KH": {
+    "code": "KH",
+    "name": "Helishuttle",
+    "bigLogo": "KH.gif",
+    "smallLogo": "smKH.gif"
+  },
+  "KI": {
+    "code": "KI",
+    "name": "Adam Skyconnection Air",
+    "bigLogo": "KI.gif",
+    "smallLogo": "smKI.gif"
+  },
+  "KJ": {
+    "code": "KJ",
+    "name": "British Mediterranean",
+    "bigLogo": "KJ.gif",
+    "smallLogo": "smKJ.gif"
+  },
+  "KK": {
+    "code": "KK",
+    "name": "Atlasjet",
+    "bigLogo": "KK.gif",
+    "smallLogo": "smKK.gif"
+  },
+  "KL": {
+    "code": "KL",
+    "name": "KLM Royal Dutch",
+    "bigLogo": "KL.gif",
+    "smallLogo": "smKL.gif"
+  },
+  "KM": {
+    "code": "KM",
+    "name": "Air Malta",
+    "bigLogo": "KM.gif",
+    "smallLogo": "smKM.gif"
+  },
+  "KN": {
+    "code": "KN",
+    "name": "Maroomba Airlines",
+    "bigLogo": "KN.gif",
+    "smallLogo": "smKN.gif"
+  },
+  "KO": {
+    "code": "KO",
+    "name": "Alaska Central Express",
+    "bigLogo": "KO.gif",
+    "smallLogo": "smKO.gif"
+  },
+  "KP": {
+    "code": "KP",
+    "name": "Kiwi Intl Air",
+    "bigLogo": "KP.gif",
+    "smallLogo": "smKP.gif"
+  },
+  "KQ": {
+    "code": "KQ",
+    "name": "Kenya Airways",
+    "bigLogo": "KQ.gif",
+    "smallLogo": "smKQ.gif"
+  },
+  "KR": {
+    "code": "KR",
+    "name": "Mda Airlines",
+    "bigLogo": "KR.gif",
+    "smallLogo": "smKR.gif"
+  },
+  "KS": {
+    "code": "KS",
+    "name": "Penair",
+    "bigLogo": "KS.gif",
+    "smallLogo": "smKS.gif"
+  },
+  "KT": {
+    "code": "KT",
+    "name": "Kyrgyz Air",
+    "bigLogo": "KT.gif",
+    "smallLogo": "smKT.gif"
+  },
+  "KU": {
+    "code": "KU",
+    "name": "Kuwait Airways",
+    "bigLogo": "KU.gif",
+    "smallLogo": "smKU.gif"
+  },
+  "KV": {
+    "code": "KV",
+    "name": "Kavminvodyavia",
+    "bigLogo": "KV.gif",
+    "smallLogo": "smKV.gif"
+  },
+  "KW": {
+    "code": "KW",
+    "name": "Kas Air Company",
+    "bigLogo": "KW.gif",
+    "smallLogo": "smKW.gif"
+  },
+  "KX": {
+    "code": "KX",
+    "name": "Cayman Airways",
+    "bigLogo": "KX.gif",
+    "smallLogo": "smKX.gif"
+  },
+  "KY": {
+    "code": "KY",
+    "name": "Air Sao Tome",
+    "bigLogo": "KY.gif",
+    "smallLogo": "smKY.gif"
+  },
+  "KZ": {
+    "code": "KZ",
+    "name": "Nippon Cargo Airlines",
+    "bigLogo": "KZ.gif",
+    "smallLogo": "smKZ.gif"
+  },
+  "L6": {
+    "code": "L6",
+    "name": "Tbilaviamsheni",
+    "bigLogo": "L6.gif",
+    "smallLogo": "smL6.gif"
+  },
+  "LA": {
+    "code": "LA",
+    "name": "Lan Airlines S.a.",
+    "bigLogo": "LA.gif",
+    "smallLogo": "smLA.gif"
+  },
+  "LB": {
+    "code": "LB",
+    "name": "Lloyd Aereo Boliviano",
+    "bigLogo": "LB.gif",
+    "smallLogo": "smLB.gif"
+  },
+  "LC": {
+    "code": "LC",
+    "name": "Legend Airlines",
+    "bigLogo": "LC.gif",
+    "smallLogo": "smLC.gif"
+  },
+  "LD": {
+    "code": "LD",
+    "name": "LT Aereotuy",
+    "bigLogo": "LD.gif",
+    "smallLogo": "smLD.gif"
+  },
+  "LE": {
+    "code": "LE",
+    "name": "Helgoland Airlines",
+    "bigLogo": "LE.gif",
+    "smallLogo": "smLE.gif"
+  },
+  "LF": {
+    "code": "LF",
+    "name": "Nordic East Airlink",
+    "bigLogo": "LF.gif",
+    "smallLogo": "smLF.gif"
+  },
+  "LG": {
+    "code": "LG",
+    "name": "Luxair",
+    "bigLogo": "LG.gif",
+    "smallLogo": "smLG.gif"
+  },
+  "LH": {
+    "code": "LH",
+    "name": "Lufthansa",
+    "bigLogo": "LH.gif",
+    "smallLogo": "smLH.gif"
+  },
+  "LI": {
+    "code": "LI",
+    "name": "Liat",
+    "bigLogo": "LI.gif",
+    "smallLogo": "smLI.gif"
+  },
+  "LJ": {
+    "code": "LJ",
+    "name": "Jin Air",
+    "bigLogo": "LJ.gif",
+    "smallLogo": "smLJ.gif"
+  },
+  "LK": {
+    "code": "LK",
+    "name": "Air Luxor S.A.",
+    "bigLogo": "LK.gif",
+    "smallLogo": "smLK.gif"
+  },
+  "LL": {
+    "code": "LL",
+    "name": "Lineas Aereas Allegro",
+    "bigLogo": "LL.gif",
+    "smallLogo": "smLL.gif"
+  },
+  "LM": {
+    "code": "LM",
+    "name": "Air Alm",
+    "bigLogo": "LM.gif",
+    "smallLogo": "smLM.gif"
+  },
+  "LN": {
+    "code": "LN",
+    "name": "Libyan Arab Airlines",
+    "bigLogo": "LN.gif",
+    "smallLogo": "smLN.gif"
+  },
+  "LO": {
+    "code": "LO",
+    "name": "Lot Polish Airlines",
+    "bigLogo": "LO.gif",
+    "smallLogo": "smLO.gif"
+  },
+  "LP": {
+    "code": "LP",
+    "name": "Lan Peru S.A.",
+    "bigLogo": "LP.gif",
+    "smallLogo": "smLP.gif"
+  },
+  "LQ": {
+    "code": "LQ",
+    "name": "Lebanese Air Transport",
+    "bigLogo": "LQ.gif",
+    "smallLogo": "smLQ.gif"
+  },
+  "LR": {
+    "code": "LR",
+    "name": "Lacsa",
+    "bigLogo": "LR.gif",
+    "smallLogo": "smLR.gif"
+  },
+  "LS": {
+    "code": "LS",
+    "name": "Jet2",
+    "bigLogo": "LS.gif",
+    "smallLogo": "smLS.gif"
+  },
+  "LT": {
+    "code": "LT",
+    "name": "Ltu Intnl Airways",
+    "bigLogo": "LT.gif",
+    "smallLogo": "smLT.gif"
+  },
+  "LU": {
+    "code": "LU",
+    "name": "Lan Express",
+    "bigLogo": "LU.gif",
+    "smallLogo": "smLU.gif"
+  },
+  "LV": {
+    "code": "LV",
+    "name": "Albanian Airlines",
+    "bigLogo": "LV.gif",
+    "smallLogo": "smLV.gif"
+  },
+  "LW": {
+    "code": "LW",
+    "name": "Pacific Wings",
+    "bigLogo": "LW.gif",
+    "smallLogo": "smLW.gif"
+  },
+  "LX": {
+    "code": "LX",
+    "name": "Swiss",
+    "bigLogo": "LX.gif",
+    "smallLogo": "smLX.gif"
+  },
+  "LY": {
+    "code": "LY",
+    "name": "El Al Israel Airlines",
+    "bigLogo": "LY.gif",
+    "smallLogo": "smLY.gif"
+  },
+  "LZ": {
+    "code": "LZ",
+    "name": "Balkan Bulgarian Air",
+    "bigLogo": "LZ.gif",
+    "smallLogo": "smLZ.gif"
+  },
+  "M3": {
+    "code": "M3",
+    "name": "North Flying As",
+    "bigLogo": "M3.gif",
+    "smallLogo": "smM3.gif"
+  },
+  "M7": {
+    "code": "M7",
+    "name": "Marsland Aviation",
+    "bigLogo": "M7.gif",
+    "smallLogo": "smM7.gif"
+  },
+  "M8": {
+    "code": "M8",
+    "name": "Mekong Airlines",
+    "bigLogo": "M8.gif",
+    "smallLogo": "smM8.gif"
+  },
+  "M9": {
+    "code": "M9",
+    "name": "Motor-Sich",
+    "bigLogo": "M9.gif",
+    "smallLogo": "smM9.gif"
+  },
+  "MA": {
+    "code": "MA",
+    "name": "Malev Hungarian",
+    "bigLogo": "MA.gif",
+    "smallLogo": "smMA.gif"
+  },
+  "MB": {
+    "code": "MB",
+    "name": "Western Airlines Aust",
+    "bigLogo": "MB.gif",
+    "smallLogo": "smMB.gif"
+  },
+  "MC": {
+    "code": "MC",
+    "name": "Air Mobility Command",
+    "bigLogo": "MC.gif",
+    "smallLogo": "smMC.gif"
+  },
+  "MD": {
+    "code": "MD",
+    "name": "Air Madagascar ",
+    "bigLogo": "MD.gif",
+    "smallLogo": "smMD.gif"
+  },
+  "ME": {
+    "code": "ME",
+    "name": "Middle East Airlines",
+    "bigLogo": "ME.gif",
+    "smallLogo": "smME.gif"
+  },
+  "MF": {
+    "code": "MF",
+    "name": "Xiamen Airlines",
+    "bigLogo": "MF.gif",
+    "smallLogo": "smMF.gif"
+  },
+  "MG": {
+    "code": "MG",
+    "name": "Champion Air",
+    "bigLogo": "MG.gif",
+    "smallLogo": "smMG.gif"
+  },
+  "MH": {
+    "code": "MH",
+    "name": "Malaysia Airlines",
+    "bigLogo": "MH.gif",
+    "smallLogo": "smMH.gif"
+  },
+  "MI": {
+    "code": "MI",
+    "name": "Silkair",
+    "bigLogo": "MI.gif",
+    "smallLogo": "smMI.gif"
+  },
+  "MJ": {
+    "code": "MJ",
+    "name": "Mihin Lanka",
+    "bigLogo": "MJ.gif",
+    "smallLogo": "smMJ.gif"
+  },
+  "MK": {
+    "code": "MK",
+    "name": "Air Mauritius",
+    "bigLogo": "MK.gif",
+    "smallLogo": "smMK.gif"
+  },
+  "ML": {
+    "code": "ML",
+    "name": "Aero Costa Rica",
+    "bigLogo": "ML.gif",
+    "smallLogo": "smML.gif"
+  },
+  "MM": {
+    "code": "MM",
+    "name": "Sam",
+    "bigLogo": "MM.gif",
+    "smallLogo": "smMM.gif"
+  },
+  "MN": {
+    "code": "MN",
+    "name": "Kulula Air",
+    "bigLogo": "MN.gif",
+    "smallLogo": "smMN.gif"
+  },
+  "MO": {
+    "code": "MO",
+    "name": "Calm Air",
+    "bigLogo": "MO.gif",
+    "smallLogo": "smMO.gif"
+  },
+  "MP": {
+    "code": "MP",
+    "name": "Martinair Holland",
+    "bigLogo": "MP.gif",
+    "smallLogo": "smMP.gif"
+  },
+  "MQ": {
+    "code": "MQ",
+    "name": "American Eagle",
+    "bigLogo": "MQ.gif",
+    "smallLogo": "smMQ.gif"
+  },
+  "MR": {
+    "code": "MR",
+    "name": "Air Mauritanie",
+    "bigLogo": "MR.gif",
+    "smallLogo": "smMR.gif"
+  },
+  "MS": {
+    "code": "MS",
+    "name": "EgyptAir",
+    "bigLogo": "MS.gif",
+    "smallLogo": "smMS.gif"
+  },
+  "MT": {
+    "code": "MT",
+    "name": "Multiple Airlines",
+    "bigLogo": "MTRT.gif",
+    "smallLogo": "MTRT.gif"
+  },
+  "MU": {
+    "code": "MU",
+    "name": "China Eastern",
+    "bigLogo": "MU.gif",
+    "smallLogo": "smMU.gif"
+  },
+  "MV": {
+    "code": "MV",
+    "name": "Armenian Intl Airways",
+    "bigLogo": "MV.gif",
+    "smallLogo": "smMV.gif"
+  },
+  "MW": {
+    "code": "MW",
+    "name": "Maya Island Air",
+    "bigLogo": "MW.gif",
+    "smallLogo": "smMW.gif"
+  },
+  "MX": {
+    "code": "MX",
+    "name": "Mexicana De Aviacion",
+    "bigLogo": "MX.gif",
+    "smallLogo": "smMX.gif"
+  },
+  "MY": {
+    "code": "MY",
+    "name": "Euroscot Express",
+    "bigLogo": "MY.gif",
+    "smallLogo": "smMY.gif"
+  },
+  "MZ": {
+    "code": "MZ",
+    "name": "Merpati Nusantara",
+    "bigLogo": "MZ.gif",
+    "smallLogo": "smMZ.gif"
+  },
+  "N6": {
+    "code": "N6",
+    "name": "Nuevo Continente",
+    "bigLogo": "N6.gif",
+    "smallLogo": "smN6.gif"
+  },
+  "NA": {
+    "code": "NA",
+    "name": "North American Airlines",
+    "bigLogo": "NA.gif",
+    "smallLogo": "smNA.gif"
+  },
+  "NB": {
+    "code": "NB",
+    "name": "Sterling Europoean ",
+    "bigLogo": "NB.gif",
+    "smallLogo": "smNB.gif"
+  },
+  "NC": {
+    "code": "NC",
+    "name": "National Jet Systems",
+    "bigLogo": "NC.gif",
+    "smallLogo": "smNC.gif"
+  },
+  "ND": {
+    "code": "ND",
+    "name": "Airlink Pty Ltd",
+    "bigLogo": "ND.gif",
+    "smallLogo": "smND.gif"
+  },
+  "NE": {
+    "code": "NE",
+    "name": "Skyeurope Airlines",
+    "bigLogo": "NE.gif",
+    "smallLogo": "smNE.gif"
+  },
+  "NF": {
+    "code": "NF",
+    "name": "Air Vanuatu",
+    "bigLogo": "NF.gif",
+    "smallLogo": "smNF.gif"
+  },
+  "NG": {
+    "code": "NG",
+    "name": "Lauda Air",
+    "bigLogo": "NG.gif",
+    "smallLogo": "smNG.gif"
+  },
+  "NH": {
+    "code": "NH",
+    "name": "All Nippon Airways",
+    "bigLogo": "NH.gif",
+    "smallLogo": "smNH.gif"
+  },
+  "NI": {
+    "code": "NI",
+    "name": "Portugalia",
+    "bigLogo": "NI.gif",
+    "smallLogo": "smNI.gif"
+  },
+  "NJ": {
+    "code": "NJ",
+    "name": "Vanguard Airlines",
+    "bigLogo": "NJ.gif",
+    "smallLogo": "smNJ.gif"
+  },
+  "NK": {
+    "code": "NK",
+    "name": "Spirit Airlines",
+    "bigLogo": "NK.gif",
+    "smallLogo": "smNK.gif"
+  },
+  "NL": {
+    "code": "NL",
+    "name": "Shaheen Air Intl",
+    "bigLogo": "NL.gif",
+    "smallLogo": "smNL.gif"
+  },
+  "NM": {
+    "code": "NM",
+    "name": "Mount Cook Airlines",
+    "bigLogo": "NM.gif",
+    "smallLogo": "smNM.gif"
+  },
+  "NN": {
+    "code": "NN",
+    "name": "Air Italy Spa",
+    "bigLogo": "NN.gif",
+    "smallLogo": "smNN.gif"
+  },
+  "NO": {
+    "code": "NO",
+    "name": "Aus Air",
+    "bigLogo": "NO.gif",
+    "smallLogo": "smNO.gif"
+  },
+  "NP": {
+    "code": "NP",
+    "name": "Skytrans",
+    "bigLogo": "NP.gif",
+    "smallLogo": "smNP.gif"
+  },
+  "NQ": {
+    "code": "NQ",
+    "name": "Air Japan",
+    "bigLogo": "NQ.gif",
+    "smallLogo": "smNQ.gif"
+  },
+  "NR": {
+    "code": "NR",
+    "name": "Russ Jsc Air Transport",
+    "bigLogo": "NR.gif",
+    "smallLogo": "smNR.gif"
+  },
+  "NS": {
+    "code": "NS",
+    "name": "Silk Route Airways",
+    "bigLogo": "NS.gif",
+    "smallLogo": "smNS.gif"
+  },
+  "NT": {
+    "code": "NT",
+    "name": "Binter Canarias",
+    "bigLogo": "NT.gif",
+    "smallLogo": "smNT.gif"
+  },
+  "NU": {
+    "code": "NU",
+    "name": "Japan Transocean",
+    "bigLogo": "NU.gif",
+    "smallLogo": "smNU.gif"
+  },
+  "NV": {
+    "code": "NV",
+    "name": "Nakanihon Airlines",
+    "bigLogo": "NV.gif",
+    "smallLogo": "smNV.gif"
+  },
+  "NW": {
+    "code": "NW",
+    "name": "Northwest Airlines",
+    "bigLogo": "NW.gif",
+    "smallLogo": "smNW.gif"
+  },
+  "NX": {
+    "code": "NX",
+    "name": "Air Macau",
+    "bigLogo": "NX.gif",
+    "smallLogo": "smNX.gif"
+  },
+  "NY": {
+    "code": "NY",
+    "name": "Air Iceland",
+    "bigLogo": "NY.gif",
+    "smallLogo": "smNY.gif"
+  },
+  "NZ": {
+    "code": "NZ",
+    "name": "Air New Zealand",
+    "bigLogo": "NZ.gif",
+    "smallLogo": "smNZ.gif"
+  },
+  "O8": {
+    "code": "O8",
+    "name": "Oasis Hong Kong",
+    "bigLogo": "O8.gif",
+    "smallLogo": "smO8.gif"
+  },
+  "OA": {
+    "code": "OA",
+    "name": "Olympic Airways",
+    "bigLogo": "OA.gif",
+    "smallLogo": "smOA.gif"
+  },
+  "OB": {
+    "code": "OB",
+    "name": "Astrakhan Airlines",
+    "bigLogo": "OB.gif",
+    "smallLogo": "smOB.gif"
+  },
+  "OC": {
+    "code": "OC",
+    "name": "Omni",
+    "bigLogo": "OC.gif",
+    "smallLogo": "smOC.gif"
+  },
+  "OD": {
+    "code": "OD",
+    "name": "Malindo",
+    "bigLogo": "OD.gif",
+    "smallLogo": "smOD.gif"
+  },
+  "OE": {
+    "code": "OE",
+    "name": "Westair Commuter",
+    "bigLogo": "OE.gif",
+    "smallLogo": "smOE.gif"
+  },
+  "OF": {
+    "code": "OF",
+    "name": "Trav Aer De Madagascar",
+    "bigLogo": "OF.gif",
+    "smallLogo": "smOF.gif"
+  },
+  "OG": {
+    "code": "OG",
+    "name": "Air Guadeloupe",
+    "bigLogo": "OG.gif",
+    "smallLogo": "smOG.gif"
+  },
+  "OH": {
+    "code": "OH",
+    "name": "Comair Inc",
+    "bigLogo": "OH.gif",
+    "smallLogo": "smOH.gif"
+  },
+  "OI": {
+    "code": "OI",
+    "name": "Prestige Airways",
+    "bigLogo": "OI.gif",
+    "smallLogo": "smOI.gif"
+  },
+  "OJ": {
+    "code": "OJ",
+    "name": "Overland Airways",
+    "bigLogo": "OJ.gif",
+    "smallLogo": "smOJ.gif"
+  },
+  "OK": {
+    "code": "OK",
+    "name": "Czech Airlines",
+    "bigLogo": "OK.gif",
+    "smallLogo": "smOK.gif"
+  },
+  "OL": {
+    "code": "OL",
+    "name": "OLT Express",
+    "bigLogo": "OL.gif",
+    "smallLogo": "smOL.gif"
+  },
+  "OM": {
+    "code": "OM",
+    "name": "Miat Mongolian",
+    "bigLogo": "OM.gif",
+    "smallLogo": "smOM.gif"
+  },
+  "ON": {
+    "code": "ON",
+    "name": "Air Nauru",
+    "bigLogo": "ON.gif",
+    "smallLogo": "smON.gif"
+  },
+  "OO": {
+    "code": "OO",
+    "name": "Skywest Airlines",
+    "bigLogo": "OO.gif",
+    "smallLogo": "smOO.gif"
+  },
+  "OP": {
+    "code": "OP",
+    "name": "Chalks Ocean Airways",
+    "bigLogo": "OP.gif",
+    "smallLogo": "smOP.gif"
+  },
+  "OQ": {
+    "code": "OQ",
+    "name": "Sunrise Airlines",
+    "bigLogo": "OQ.gif",
+    "smallLogo": "smOQ.gif"
+  },
+  "OR": {
+    "code": "OR",
+    "name": "Crimea Air",
+    "bigLogo": "OR.gif",
+    "smallLogo": "smOR.gif"
+  },
+  "OS": {
+    "code": "OS",
+    "name": "Austrian Airlines",
+    "bigLogo": "OS.gif",
+    "smallLogo": "smOS.gif"
+  },
+  "OT": {
+    "code": "OT",
+    "name": "Aeropelican Air",
+    "bigLogo": "OT.gif",
+    "smallLogo": "smOT.gif"
+  },
+  "OU": {
+    "code": "OU",
+    "name": "Croatia Airlines",
+    "bigLogo": "OU.gif",
+    "smallLogo": "smOU.gif"
+  },
+  "OV": {
+    "code": "OV",
+    "name": "Estonian Air",
+    "bigLogo": "OV.gif",
+    "smallLogo": "smOV.gif"
+  },
+  "OW": {
+    "code": "OW",
+    "name": "American Eagle",
+    "bigLogo": "OW.gif",
+    "smallLogo": "smOW.gif"
+  },
+  "OX": {
+    "code": "OX",
+    "name": "Orient Thai Airlines",
+    "bigLogo": "OX.gif",
+    "smallLogo": "smOX.gif"
+  },
+  "OY": {
+    "code": "OY",
+    "name": "Omni Air",
+    "bigLogo": "OY.gif",
+    "smallLogo": "smOY.gif"
+  },
+  "OZ": {
+    "code": "OZ",
+    "name": "Asiana Airlines",
+    "bigLogo": "OZ.gif",
+    "smallLogo": "smOZ.gif"
+  },
+  "P5": {
+    "code": "P5",
+    "name": "Copa Airlines Columbia",
+    "bigLogo": "P5.gif",
+    "smallLogo": "smP5.gif"
+  },
+  "PA": {
+    "code": "PA",
+    "name": "Florida Coastal Air",
+    "bigLogo": "PA.gif",
+    "smallLogo": "smPA.gif"
+  },
+  "PB": {
+    "code": "PB",
+    "name": "Provincial Airlines",
+    "bigLogo": "PB.gif",
+    "smallLogo": "smPB.gif"
+  },
+  "PC": {
+    "code": "PC",
+    "name": "Pegasus Airlines",
+    "bigLogo": "PC.gif",
+    "smallLogo": "smPC.gif"
+  },
+  "PD": {
+    "code": "PD",
+    "name": "Pluto Airlines",
+    "bigLogo": "PD.gif",
+    "smallLogo": "smPD.gif"
+  },
+  "PE": {
+    "code": "PE",
+    "name": "Air Europe",
+    "bigLogo": "PE.gif",
+    "smallLogo": "smPE.gif"
+  },
+  "PF": {
+    "code": "PF",
+    "name": "Palestinian Airlines",
+    "bigLogo": "PF.gif",
+    "smallLogo": "smPF.gif"
+  },
+  "PG": {
+    "code": "PG",
+    "name": "Bangkok Airways",
+    "bigLogo": "PG.gif",
+    "smallLogo": "smPG.gif"
+  },
+  "PH": {
+    "code": "PH",
+    "name": "Polynesian Airlines",
+    "bigLogo": "PH.gif",
+    "smallLogo": "smPH.gif"
+  },
+  "PI": {
+    "code": "PI",
+    "name": "Sun Air Limited",
+    "bigLogo": "PI.gif",
+    "smallLogo": "smPI.gif"
+  },
+  "PJ": {
+    "code": "PJ",
+    "name": "Air St. Pierre",
+    "bigLogo": "PJ.gif",
+    "smallLogo": "smPJ.gif"
+  },
+  "PK": {
+    "code": "PK",
+    "name": "Pakistan Intl Airlines",
+    "bigLogo": "PK.gif",
+    "smallLogo": "smPK.gif"
+  },
+  "PL": {
+    "code": "PL",
+    "name": "Aeroperu",
+    "bigLogo": "PL.gif",
+    "smallLogo": "smPL.gif"
+  },
+  "PM": {
+    "code": "PM",
+    "name": "Tropic Air",
+    "bigLogo": "PM.gif",
+    "smallLogo": "smPM.gif"
+  },
+  "PN": {
+    "code": "PN",
+    "name": "Pan American Airways",
+    "bigLogo": "PN.gif",
+    "smallLogo": "smPN.gif"
+  },
+  "PO": {
+    "code": "PO",
+    "name": "Aeropelican Air",
+    "bigLogo": "PO.gif",
+    "smallLogo": "smPO.gif"
+  },
+  "PP": {
+    "code": "PP",
+    "name": "Jet Aviation Business",
+    "bigLogo": "PP.gif",
+    "smallLogo": "smPP.gif"
+  },
+  "PQ": {
+    "code": "PQ",
+    "name": "Air Asia Philippines",
+    "bigLogo": "PQ.gif",
+    "smallLogo": "smPQ.gif"
+  },
+  "PR": {
+    "code": "PR",
+    "name": "Philippine Airlines",
+    "bigLogo": "PR.gif",
+    "smallLogo": "smPR.gif"
+  },
+  "PS": {
+    "code": "PS",
+    "name": "Ukraine Intl Airl",
+    "bigLogo": "PS.gif",
+    "smallLogo": "smPS.gif"
+  },
+  "PT": {
+    "code": "PT",
+    "name": "West Air Sweden",
+    "bigLogo": "PT.gif",
+    "smallLogo": "smPT.gif"
+  },
+  "PU": {
+    "code": "PU",
+    "name": "Pluna",
+    "bigLogo": "PU.gif",
+    "smallLogo": "smPU.gif"
+  },
+  "PV": {
+    "code": "PV",
+    "name": "Saint Barth Commuter",
+    "bigLogo": "PV.gif",
+    "smallLogo": "smPV.gif"
+  },
+  "PW": {
+    "code": "PW",
+    "name": "Precision Air",
+    "bigLogo": "PW.gif",
+    "smallLogo": "smPW.gif"
+  },
+  "PX": {
+    "code": "PX",
+    "name": "Air Niugini",
+    "bigLogo": "PX.gif",
+    "smallLogo": "smPX.gif"
+  },
+  "PY": {
+    "code": "PY",
+    "name": "Surinam Airways",
+    "bigLogo": "PY.gif",
+    "smallLogo": "smPY.gif"
+  },
+  "PZ": {
+    "code": "PZ",
+    "name": "Tam Mercosur",
+    "bigLogo": "PZ.gif",
+    "smallLogo": "smPZ.gif"
+  },
+  "Q5": {
+    "code": "Q5",
+    "name": "Forty Mile Air",
+    "bigLogo": "Q5.gif",
+    "smallLogo": "smQ5.gif"
+  },
+  "QA": {
+    "code": "QA",
+    "name": "Aerocaribe",
+    "bigLogo": "QA.gif",
+    "smallLogo": "smQA.gif"
+  },
+  "QB": {
+    "code": "QB",
+    "name": "Air Alma",
+    "bigLogo": "QB.gif",
+    "smallLogo": "smQB.gif"
+  },
+  "QC": {
+    "code": "QC",
+    "name": "Camair-Co",
+    "bigLogo": "QC.gif",
+    "smallLogo": "smQC.gif"
+  },
+  "QD": {
+    "code": "QD",
+    "name": "Air Class Lineas",
+    "bigLogo": "QD.gif",
+    "smallLogo": "smQD.gif"
+  },
+  "QE": {
+    "code": "QE",
+    "name": "Crossair Europe",
+    "bigLogo": "QE.gif",
+    "smallLogo": "smQE.gif"
+  },
+  "QF": {
+    "code": "QF",
+    "name": "Qantas Airways",
+    "bigLogo": "QF.gif",
+    "smallLogo": "smQF.gif"
+  },
+  "QG": {
+    "code": "QG",
+    "name": "Dynamic Air",
+    "bigLogo": "QG.gif",
+    "smallLogo": "smQG.gif"
+  },
+  "QH": {
+    "code": "QH",
+    "name": "Altyn Air Airlines",
+    "bigLogo": "QH.gif",
+    "smallLogo": "smQH.gif"
+  },
+  "QI": {
+    "code": "QI",
+    "name": "Cimber Air",
+    "bigLogo": "QI.gif",
+    "smallLogo": "smQI.gif"
+  },
+  "QJ": {
+    "code": "QJ",
+    "name": "Air Company Latpass",
+    "bigLogo": "QJ.gif",
+    "smallLogo": "smQJ.gif"
+  },
+  "QK": {
+    "code": "QK",
+    "name": "Air Canada Jazz",
+    "bigLogo": "QK.gif",
+    "smallLogo": "smQK.gif"
+  },
+  "QL": {
+    "code": "QL",
+    "name": "Air Gulf Falcon",
+    "bigLogo": "QL.gif",
+    "smallLogo": "smQL.gif"
+  },
+  "QM": {
+    "code": "QM",
+    "name": "Air Malawi",
+    "bigLogo": "QM.gif",
+    "smallLogo": "smQM.gif"
+  },
+  "QN": {
+    "code": "QN",
+    "name": "Royal Aviation",
+    "bigLogo": "QN.gif",
+    "smallLogo": "smQN.gif"
+  },
+  "QO": {
+    "code": "QO",
+    "name": "Origin Pacific Airways",
+    "bigLogo": "QO.gif",
+    "smallLogo": "smQO.gif"
+  },
+  "QP": {
+    "code": "QP",
+    "name": "Regional Air",
+    "bigLogo": "QP.gif",
+    "smallLogo": "smQP.gif"
+  },
+  "QQ": {
+    "code": "QQ",
+    "name": "Alliance Airlines",
+    "bigLogo": "QQ.gif",
+    "smallLogo": "smQQ.gif"
+  },
+  "QR": {
+    "code": "QR",
+    "name": "Qatar Airways",
+    "bigLogo": "QR.gif",
+    "smallLogo": "smQR.gif"
+  },
+  "QS": {
+    "code": "QS",
+    "name": "Travel Service Airlines",
+    "bigLogo": "QS.gif",
+    "smallLogo": "smQS.gif"
+  },
+  "QT": {
+    "code": "QT",
+    "name": "Regional Air Pty",
+    "bigLogo": "QT.gif",
+    "smallLogo": "smQT.gif"
+  },
+  "QU": {
+    "code": "QU",
+    "name": "East African Airlines",
+    "bigLogo": "QU.gif",
+    "smallLogo": "smQU.gif"
+  },
+  "QV": {
+    "code": "QV",
+    "name": "Lao Aviation",
+    "bigLogo": "QV.gif",
+    "smallLogo": "smQV.gif"
+  },
+  "QW": {
+    "code": "QW",
+    "name": "Turks-caicos Arwy",
+    "bigLogo": "QW.gif",
+    "smallLogo": "smQW.gif"
+  },
+  "QX": {
+    "code": "QX",
+    "name": "Horizon Air",
+    "bigLogo": "QX.gif",
+    "smallLogo": "smQX.gif"
+  },
+  "QY": {
+    "code": "QY",
+    "name": "Aero Virgin Islands",
+    "bigLogo": "QY.gif",
+    "smallLogo": "smQY.gif"
+  },
+  "QZ": {
+    "code": "QZ",
+    "name": "Awair International",
+    "bigLogo": "QZ.gif",
+    "smallLogo": "smQZ.gif"
+  },
+  "R2": {
+    "code": "R2",
+    "name": "OrenAir",
+    "bigLogo": "R2.gif",
+    "smallLogo": "smR2.gif"
+  },
+  "R3": {
+    "code": "R3",
+    "name": "Rakutia",
+    "bigLogo": "R3.gif",
+    "smallLogo": "smR3.gif"
+  },
+  "R6": {
+    "code": "R6",
+    "name": "Dot LT",
+    "bigLogo": "R6.gif",
+    "smallLogo": "smR6.gif"
+  },
+  "RA": {
+    "code": "RA",
+    "name": "Royal Nepal Airlines",
+    "bigLogo": "RA.gif",
+    "smallLogo": "smRA.gif"
+  },
+  "RB": {
+    "code": "RB",
+    "name": "Syrian Arab Airlines",
+    "bigLogo": "RB.gif",
+    "smallLogo": "smRB.gif"
+  },
+  "RC": {
+    "code": "RC",
+    "name": "Atlantic Airways",
+    "bigLogo": "RC.gif",
+    "smallLogo": "smRC.gif"
+  },
+  "RD": {
+    "code": "RD",
+    "name": "Ryan Intl Airlines",
+    "bigLogo": "RD.gif",
+    "smallLogo": "smRD.gif"
+  },
+  "RE": {
+    "code": "RE",
+    "name": "Aer Arann",
+    "bigLogo": "RE.gif",
+    "smallLogo": "smRE.gif"
+  },
+  "RF": {
+    "code": "RF",
+    "name": "Ord Air Charter",
+    "bigLogo": "RF.gif",
+    "smallLogo": "smRF.gif"
+  },
+  "RG": {
+    "code": "RG",
+    "name": "Varig Airlines",
+    "bigLogo": "RG.gif",
+    "smallLogo": "smRG.gif"
+  },
+  "RH": {
+    "code": "RH",
+    "name": "Regionnair",
+    "bigLogo": "RH.gif",
+    "smallLogo": "smRH.gif"
+  },
+  "RI": {
+    "code": "RI",
+    "name": "P.T.Mandala Airlines",
+    "bigLogo": "RI.gif",
+    "smallLogo": "smRI.gif"
+  },
+  "RJ": {
+    "code": "RJ",
+    "name": "Royal Jordanian",
+    "bigLogo": "RJ.gif",
+    "smallLogo": "smRJ.gif"
+  },
+  "RK": {
+    "code": "RK",
+    "name": "Royal Khmer Airlines ",
+    "bigLogo": "RK.gif",
+    "smallLogo": "smRK.gif"
+  },
+  "RL": {
+    "code": "RL",
+    "name": "Royal Phnom Penh Air",
+    "bigLogo": "RL.gif",
+    "smallLogo": "smRL.gif"
+  },
+  "RM": {
+    "code": "RM",
+    "name": "Air Moldova",
+    "bigLogo": "RM.gif",
+    "smallLogo": "smRM.gif"
+  },
+  "RN": {
+    "code": "RN",
+    "name": "Paradise Air",
+    "bigLogo": "RN.gif",
+    "smallLogo": "smRN.gif"
+  },
+  "RO": {
+    "code": "RO",
+    "name": "Tarom Romanian Air",
+    "bigLogo": "RO.gif",
+    "smallLogo": "smRO.gif"
+  },
+  "RP": {
+    "code": "RP",
+    "name": "Chautauqua Airlines",
+    "bigLogo": "RP.gif",
+    "smallLogo": "smRP.gif"
+  },
+  "RQ": {
+    "code": "RQ",
+    "name": "Kam Air",
+    "bigLogo": "RQ.gif",
+    "smallLogo": "smRQ.gif"
+  },
+  "RR": {
+    "code": "RR",
+    "name": "Royal Airforce",
+    "bigLogo": "RR.gif",
+    "smallLogo": "smRR.gif"
+  },
+  "RS": {
+    "code": "RS",
+    "name": "Aerofreight Airlines",
+    "bigLogo": "RS.gif",
+    "smallLogo": "smRS.gif"
+  },
+  "RT": {
+    "code": "RT",
+    "name": "RAK Airways",
+    "bigLogo": "RT.gif",
+    "smallLogo": "smRT.gif"
+  },
+  "RU": {
+    "code": "RU",
+    "name": "Tci Skyking",
+    "bigLogo": "RU.gif",
+    "smallLogo": "smRU.gif"
+  },
+  "RV": {
+    "code": "RV",
+    "name": "Redair Limited",
+    "bigLogo": "RV.gif",
+    "smallLogo": "smRV.gif"
+  },
+  "RW": {
+    "code": "RW",
+    "name": "Ras Fluggesellschaft",
+    "bigLogo": "RW.gif",
+    "smallLogo": "smRW.gif"
+  },
+  "RX": {
+    "code": "RX",
+    "name": "Aviaexpress",
+    "bigLogo": "RX.gif",
+    "smallLogo": "smRX.gif"
+  },
+  "RY": {
+    "code": "RY",
+    "name": "European Executive Exp",
+    "bigLogo": "RY.gif",
+    "smallLogo": "smRY.gif"
+  },
+  "RZ": {
+    "code": "RZ",
+    "name": "Sansa",
+    "bigLogo": "RZ.gif",
+    "smallLogo": "smRZ.gif"
+  },
+  "S2": {
+    "code": "S2",
+    "name": "JetKonnect",
+    "bigLogo": "S2.gif",
+    "smallLogo": "smS2.gif"
+  },
+  "S3": {
+    "code": "S3",
+    "name": "SBA Airlines",
+    "bigLogo": "S3.gif",
+    "smallLogo": "smS3.gif"
+  },
+  "S4": {
+    "code": "S4",
+    "name": "SATA Intl",
+    "bigLogo": "S4.gif",
+    "smallLogo": "smS4.gif"
+  },
+  "S7": {
+    "code": "S7",
+    "name": "Siberia Airlines",
+    "bigLogo": "S7.gif",
+    "smallLogo": "smS7.gif"
+  },
+  "SA": {
+    "code": "SA",
+    "name": "South African Airways",
+    "bigLogo": "SA.gif",
+    "smallLogo": "smSA.gif"
+  },
+  "SB": {
+    "code": "SB",
+    "name": "Air Caledonie",
+    "bigLogo": "SB.gif",
+    "smallLogo": "smSB.gif"
+  },
+  "SC": {
+    "code": "SC",
+    "name": "Shandong Airlines",
+    "bigLogo": "SC.gif",
+    "smallLogo": "smSC.gif"
+  },
+  "SD": {
+    "code": "SD",
+    "name": "Sudan Airways",
+    "bigLogo": "SD.gif",
+    "smallLogo": "smSD.gif"
+  },
+  "SE": {
+    "code": "SE",
+    "name": "Samoa Aviation",
+    "bigLogo": "SE.gif",
+    "smallLogo": "smSE.gif"
+  },
+  "SF": {
+    "code": "SF",
+    "name": "Tassili Airlines",
+    "bigLogo": "SF.gif",
+    "smallLogo": "smSF.gif"
+  },
+  "SG": {
+    "code": "SG",
+    "name": "SpiceJet",
+    "bigLogo": "SG.gif",
+    "smallLogo": "smSG.gif"
+  },
+  "SH": {
+    "code": "SH",
+    "name": "Air Toulouse",
+    "bigLogo": "SH.gif",
+    "smallLogo": "smSH.gif"
+  },
+  "SI": {
+    "code": "SI",
+    "name": "Skynet Airlines",
+    "bigLogo": "SI.gif",
+    "smallLogo": "smSI.gif"
+  },
+  "SJ": {
+    "code": "SJ",
+    "name": "Aviandina SAC",
+    "bigLogo": "SJ.gif",
+    "smallLogo": "smSJ.gif"
+  },
+  "SK": {
+    "code": "SK",
+    "name": "Scandinavian Airlines",
+    "bigLogo": "SK.gif",
+    "smallLogo": "smSK.gif"
+  },
+  "SL": {
+    "code": "SL",
+    "name": "Rio Sul Servicos ",
+    "bigLogo": "SL.gif",
+    "smallLogo": "smSL.gif"
+  },
+  "SM": {
+    "code": "SM",
+    "name": "Swedline Express",
+    "bigLogo": "SM.gif",
+    "smallLogo": "smSM.gif"
+  },
+  "SN": {
+    "code": "SN",
+    "name": "Brussels Airlines",
+    "bigLogo": "SN.gif",
+    "smallLogo": "smSN.gif"
+  },
+  "SO": {
+    "code": "SO",
+    "name": "Superior Aviation",
+    "bigLogo": "SO.gif",
+    "smallLogo": "smSO.gif"
+  },
+  "SP": {
+    "code": "SP",
+    "name": "Sata",
+    "bigLogo": "SP.gif",
+    "smallLogo": "smSP.gif"
+  },
+  "SQ": {
+    "code": "SQ",
+    "name": "Singapore Airlines",
+    "bigLogo": "SQ.gif",
+    "smallLogo": "smSQ.gif"
+  },
+  "SR": {
+    "code": "SR",
+    "name": "Swiss Air",
+    "bigLogo": "SR.gif",
+    "smallLogo": "smSR.gif"
+  },
+  "SS": {
+    "code": "SS",
+    "name": "Corse Air Intl",
+    "bigLogo": "SS.gif",
+    "smallLogo": "smSS.gif"
+  },
+  "ST": {
+    "code": "ST",
+    "name": "Germania Fluggesell",
+    "bigLogo": "ST.gif",
+    "smallLogo": "smST.gif"
+  },
+  "SU": {
+    "code": "SU",
+    "name": "Aeroflot",
+    "bigLogo": "SU.gif",
+    "smallLogo": "smSU.gif"
+  },
+  "SV": {
+    "code": "SV",
+    "name": "Saudia",
+    "bigLogo": "SV.gif",
+    "smallLogo": "smSV.gif"
+  },
+  "SW": {
+    "code": "SW",
+    "name": "Air Namibia",
+    "bigLogo": "SW.gif",
+    "smallLogo": "smSW.gif"
+  },
+  "SX": {
+    "code": "SX",
+    "name": "Aeroejecutivo",
+    "bigLogo": "SX.gif",
+    "smallLogo": "smSX.gif"
+  },
+  "SY": {
+    "code": "SY",
+    "name": "Sun Country Airlines",
+    "bigLogo": "SY.gif",
+    "smallLogo": "smSY.gif"
+  },
+  "SZ": {
+    "code": "SZ",
+    "name": "Air Nepal Intl",
+    "bigLogo": "SZ.gif",
+    "smallLogo": "smSZ.gif"
+  },
+  "T3": {
+    "code": "T3",
+    "name": "Eastern Airways",
+    "bigLogo": "T3.gif",
+    "smallLogo": "smT3.gif"
+  },
+  "T4": {
+    "code": "T4",
+    "name": "Trip Linhas Aereas",
+    "bigLogo": "T4.gif",
+    "smallLogo": "smT4.gif"
+  },
+  "T7": {
+    "code": "T7",
+    "name": "Twin Jet",
+    "bigLogo": "T7.gif",
+    "smallLogo": "smT7.gif"
+  },
+  "T9": {
+    "code": "T9",
+    "name": "Transmeridian Airlines",
+    "bigLogo": "T9.gif",
+    "smallLogo": "smT9.gif"
+  },
+  "TA": {
+    "code": "TA",
+    "name": "Taca Intl Airlines",
+    "bigLogo": "TA.gif",
+    "smallLogo": "smTA.gif"
+  },
+  "TB": {
+    "code": "TB",
+    "name": "Shuttle",
+    "bigLogo": "TB.gif",
+    "smallLogo": "smTB.gif"
+  },
+  "TC": {
+    "code": "TC",
+    "name": "Air Tanzania",
+    "bigLogo": "TC.gif",
+    "smallLogo": "smTC.gif"
+  },
+  "TD": {
+    "code": "TD",
+    "name": "Atlantis European",
+    "bigLogo": "TD.gif",
+    "smallLogo": "smTD.gif"
+  },
+  "TE": {
+    "code": "TE",
+    "name": "Lithuanian Airlines",
+    "bigLogo": "TE.gif",
+    "smallLogo": "smTE.gif"
+  },
+  "TF": {
+    "code": "TF",
+    "name": "Malmo Aviation",
+    "bigLogo": "TF.gif",
+    "smallLogo": "smTF.gif"
+  },
+  "TG": {
+    "code": "TG",
+    "name": "Thai Airways",
+    "bigLogo": "TG.gif",
+    "smallLogo": "smTG.gif"
+  },
+  "TH": {
+    "code": "TH",
+    "name": "British Air Citiexpress",
+    "bigLogo": "TH.gif",
+    "smallLogo": "smTH.gif"
+  },
+  "TI": {
+    "code": "TI",
+    "name": "Angkor Airlines",
+    "bigLogo": "TI.gif",
+    "smallLogo": "smTI.gif"
+  },
+  "TJ": {
+    "code": "TJ",
+    "name": "Tans",
+    "bigLogo": "TJ.gif",
+    "smallLogo": "smTJ.gif"
+  },
+  "TK": {
+    "code": "TK",
+    "name": "Turkish Airlines",
+    "bigLogo": "TK.gif",
+    "smallLogo": "smTK.gif"
+  },
+  "TL": {
+    "code": "TL",
+    "name": "Airnorth Regional",
+    "bigLogo": "TL.gif",
+    "smallLogo": "smTL.gif"
+  },
+  "TM": {
+    "code": "TM",
+    "name": "Lam Linhas Aereas",
+    "bigLogo": "TM.gif",
+    "smallLogo": "smTM.gif"
+  },
+  "TN": {
+    "code": "TN",
+    "name": "Air Tahiti Nui",
+    "bigLogo": "TN.gif",
+    "smallLogo": "smTN.gif"
+  },
+  "TO": {
+    "code": "TO",
+    "name": "President Airlines",
+    "bigLogo": "TO.gif",
+    "smallLogo": "smTO.gif"
+  },
+  "TP": {
+    "code": "TP",
+    "name": "Tap Air Portugal",
+    "bigLogo": "TP.gif",
+    "smallLogo": "smTP.gif"
+  },
+  "TQ": {
+    "code": "TQ",
+    "name": "Tandem Aero",
+    "bigLogo": "TQ.gif",
+    "smallLogo": "smTQ.gif"
+  },
+  "TR": {
+    "code": "TR",
+    "name": "tigerair",
+    "bigLogo": "TR.gif",
+    "smallLogo": "smTR.gif"
+  },
+  "TS": {
+    "code": "TS",
+    "name": "Air Transat",
+    "bigLogo": "TS.gif",
+    "smallLogo": "smTS.gif"
+  },
+  "TT": {
+    "code": "TT",
+    "name": "tigerair Australia",
+    "bigLogo": "TT.gif",
+    "smallLogo": "smTT.gif"
+  },
+  "TU": {
+    "code": "TU",
+    "name": "Tunis Air",
+    "bigLogo": "TU.gif",
+    "smallLogo": "smTU.gif"
+  },
+  "TV": {
+    "code": "TV",
+    "name": "Virgin Express",
+    "bigLogo": "TV.gif",
+    "smallLogo": "smTV.gif"
+  },
+  "TW": {
+    "code": "TW",
+    "name": "Twaairlines",
+    "bigLogo": "TW.gif",
+    "smallLogo": "smTW.gif"
+  },
+  "TX": {
+    "code": "TX",
+    "name": "Air Caraibes",
+    "bigLogo": "TX.gif",
+    "smallLogo": "smTX.gif"
+  },
+  "TY": {
+    "code": "TY",
+    "name": "Air Caledonie",
+    "bigLogo": "TY.gif",
+    "smallLogo": "smTY.gif"
+  },
+  "TZ": {
+    "code": "TZ",
+    "name": "Scoot",
+    "bigLogo": "TZ.gif",
+    "smallLogo": "smTZ.gif"
+  },
+  "U2": {
+    "code": "U2",
+    "name": "easyJet",
+    "bigLogo": "U2.gif",
+    "smallLogo": "smU2.gif"
+  },
+  "U4": {
+    "code": "U4",
+    "name": "PMT Air",
+    "bigLogo": "U4.gif",
+    "smallLogo": "smU4.gif"
+  },
+  "U6": {
+    "code": "U6",
+    "name": "Ural Airlines",
+    "bigLogo": "U6.gif",
+    "smallLogo": "smU6.gif"
+  },
+  "U7": {
+    "code": "U7",
+    "name": "Air Uganda",
+    "bigLogo": "U7.gif",
+    "smallLogo": "smU7.gif"
+  },
+  "U8": {
+    "code": "U8",
+    "name": "Armavia",
+    "bigLogo": "U8.gif",
+    "smallLogo": "smU8.gif"
+  },
+  "U9": {
+    "code": "U9",
+    "name": "Tatarstan Airlines",
+    "bigLogo": "U9.gif",
+    "smallLogo": "smU9.gif"
+  },
+  "UA": {
+    "code": "UA",
+    "name": "United Airlines",
+    "bigLogo": "UA.gif",
+    "smallLogo": "smUA.gif"
+  },
+  "UB": {
+    "code": "UB",
+    "name": "Myanma Airways",
+    "bigLogo": "UB.gif",
+    "smallLogo": "smUB.gif"
+  },
+  "UC": {
+    "code": "UC",
+    "name": "Ladeco Airlines",
+    "bigLogo": "UC.gif",
+    "smallLogo": "smUC.gif"
+  },
+  "UD": {
+    "code": "UD",
+    "name": "Hex Air",
+    "bigLogo": "UD.gif",
+    "smallLogo": "smUD.gif"
+  },
+  "UE": {
+    "code": "UE",
+    "name": "Transeuropean Airlines",
+    "bigLogo": "UE.gif",
+    "smallLogo": "smUE.gif"
+  },
+  "UF": {
+    "code": "UF",
+    "name": "UM Air",
+    "bigLogo": "UF.gif",
+    "smallLogo": "smUF.gif"
+  },
+  "UG": {
+    "code": "UG",
+    "name": "Tuninter",
+    "bigLogo": "UG.gif",
+    "smallLogo": "smUG.gif"
+  },
+  "UH": {
+    "code": "UH",
+    "name": "Eurasia Aircompany",
+    "bigLogo": "UH.gif",
+    "smallLogo": "smUH.gif"
+  },
+  "UI": {
+    "code": "UI",
+    "name": "Eurocypria Airlines",
+    "bigLogo": "UI.gif",
+    "smallLogo": "smUI.gif"
+  },
+  "UJ": {
+    "code": "UJ",
+    "name": "Montair Aviation",
+    "bigLogo": "UJ.gif",
+    "smallLogo": "smUJ.gif"
+  },
+  "UK": {
+    "code": "UK",
+    "name": "KLM UK",
+    "bigLogo": "UK.gif",
+    "smallLogo": "smUK.gif"
+  },
+  "UL": {
+    "code": "UL",
+    "name": "Srilankan Airlines",
+    "bigLogo": "UL.gif",
+    "smallLogo": "smUL.gif"
+  },
+  "UM": {
+    "code": "UM",
+    "name": "Air Zimbabwe",
+    "bigLogo": "UM.gif",
+    "smallLogo": "smUM.gif"
+  },
+  "UN": {
+    "code": "UN",
+    "name": "Transaero Arlns",
+    "bigLogo": "UN.gif",
+    "smallLogo": "smUN.gif"
+  },
+  "UO": {
+    "code": "UO",
+    "name": "Hong Kong Express",
+    "bigLogo": "UO.gif",
+    "smallLogo": "smUO.gif"
+  },
+  "UP": {
+    "code": "UP",
+    "name": "Bahamasair",
+    "bigLogo": "UP.gif",
+    "smallLogo": "smUP.gif"
+  },
+  "UQ": {
+    "code": "UQ",
+    "name": "Oconnor Airlines",
+    "bigLogo": "UQ.gif",
+    "smallLogo": "smUQ.gif"
+  },
+  "UR": {
+    "code": "UR",
+    "name": "Ukraine National Air",
+    "bigLogo": "UR.gif",
+    "smallLogo": "smUR.gif"
+  },
+  "US": {
+    "code": "US",
+    "name": "US Airways",
+    "bigLogo": "US.gif",
+    "smallLogo": "smUS.gif"
+  },
+  "UT": {
+    "code": "UT",
+    "name": "Uta",
+    "bigLogo": "UT.gif",
+    "smallLogo": "smUT.gif"
+  },
+  "UU": {
+    "code": "UU",
+    "name": "Air Austral",
+    "bigLogo": "UU.gif",
+    "smallLogo": "smUU.gif"
+  },
+  "UV": {
+    "code": "UV",
+    "name": "SE Helicopters",
+    "bigLogo": "UV.gif",
+    "smallLogo": "smUV.gif"
+  },
+  "UW": {
+    "code": "UW",
+    "name": "Universal Airlines",
+    "bigLogo": "UW.gif",
+    "smallLogo": "smUW.gif"
+  },
+  "UX": {
+    "code": "UX",
+    "name": "Air Europa",
+    "bigLogo": "UX.gif",
+    "smallLogo": "smUX.gif"
+  },
+  "UY": {
+    "code": "UY",
+    "name": "Cameroon Airlines",
+    "bigLogo": "UY.gif",
+    "smallLogo": "smUY.gif"
+  },
+  "UZ": {
+    "code": "UZ",
+    "name": "Buraq Air Transport",
+    "bigLogo": "UZ.gif",
+    "smallLogo": "smUZ.gif"
+  },
+  "V0": {
+    "code": "V0",
+    "name": "Conviasa",
+    "bigLogo": "V0.gif",
+    "smallLogo": "smV0.gif"
+  },
+  "V3": {
+    "code": "V3",
+    "name": "Carpatair",
+    "bigLogo": "V3.gif",
+    "smallLogo": "smV3.gif"
+  },
+  "VA": {
+    "code": "VA",
+    "name": "Virgin Australia",
+    "bigLogo": "VA.gif",
+    "smallLogo": "smVA.gif"
+  },
+  "VB": {
+    "code": "VB",
+    "name": "Duo Airways",
+    "bigLogo": "VB.gif",
+    "smallLogo": "smVB.gif"
+  },
+  "VC": {
+    "code": "VC",
+    "name": "Servivensa",
+    "bigLogo": "VC.gif",
+    "smallLogo": "smVC.gif"
+  },
+  "VD": {
+    "code": "VD",
+    "name": "TAT European Airlines",
+    "bigLogo": "VD.gif",
+    "smallLogo": "smVD.gif"
+  },
+  "VE": {
+    "code": "VE",
+    "name": "Avensa",
+    "bigLogo": "VE.gif",
+    "smallLogo": "smVE.gif"
+  },
+  "VF": {
+    "code": "VF",
+    "name": "Valuair",
+    "bigLogo": "VF.gif",
+    "smallLogo": "smVF.gif"
+  },
+  "VG": {
+    "code": "VG",
+    "name": "VLM Airlines",
+    "bigLogo": "VG.gif",
+    "smallLogo": "smVG.gif"
+  },
+  "VH": {
+    "code": "VH",
+    "name": "Aeropostal",
+    "bigLogo": "VH.gif",
+    "smallLogo": "smVH.gif"
+  },
+  "VI": {
+    "code": "VI",
+    "name": "Vieques Air Link",
+    "bigLogo": "VI.gif",
+    "smallLogo": "smVI.gif"
+  },
+  "VJ": {
+    "code": "VJ",
+    "name": "Jatayu Airlines",
+    "bigLogo": "VJ.gif",
+    "smallLogo": "smVJ.gif"
+  },
+  "VK": {
+    "code": "VK",
+    "name": "Virgin Express",
+    "bigLogo": "VK.gif",
+    "smallLogo": "smVK.gif"
+  },
+  "VL": {
+    "code": "VL",
+    "name": "Air Via",
+    "bigLogo": "VL.gif",
+    "smallLogo": "smVL.gif"
+  },
+  "VM": {
+    "code": "VM",
+    "name": "Viaggio Air",
+    "bigLogo": "VM.gif",
+    "smallLogo": "smVM.gif"
+  },
+  "VN": {
+    "code": "VN",
+    "name": "Vietnam Airlines",
+    "bigLogo": "VN.gif",
+    "smallLogo": "smVN.gif"
+  },
+  "VO": {
+    "code": "VO",
+    "name": "Tyrolean Airways",
+    "bigLogo": "VO.gif",
+    "smallLogo": "smVO.gif"
+  },
+  "VP": {
+    "code": "VP",
+    "name": "Vasp Airlines",
+    "bigLogo": "VP.gif",
+    "smallLogo": "smVP.gif"
+  },
+  "VQ": {
+    "code": "VQ",
+    "name": "Vintage Props And Jets",
+    "bigLogo": "VQ.gif",
+    "smallLogo": "smVQ.gif"
+  },
+  "VR": {
+    "code": "VR",
+    "name": "TACV Airlines",
+    "bigLogo": "VR.gif",
+    "smallLogo": "smVR.gif"
+  },
+  "VS": {
+    "code": "VS",
+    "name": "Virgin Atlantic",
+    "bigLogo": "VS.gif",
+    "smallLogo": "smVS.gif"
+  },
+  "VT": {
+    "code": "VT",
+    "name": "Air Tahiti",
+    "bigLogo": "VT.gif",
+    "smallLogo": "smVT.gif"
+  },
+  "VU": {
+    "code": "VU",
+    "name": "Societe Nouvelle Air",
+    "bigLogo": "VU.gif",
+    "smallLogo": "smVU.gif"
+  },
+  "VV": {
+    "code": "VV",
+    "name": "Aerosvit Airlines",
+    "bigLogo": "VV.gif",
+    "smallLogo": "smVV.gif"
+  },
+  "VW": {
+    "code": "VW",
+    "name": "Transportes Aeromar",
+    "bigLogo": "VW.gif",
+    "smallLogo": "smVW.gif"
+  },
+  "VX": {
+    "code": "VX",
+    "name": "Aces Airline",
+    "bigLogo": "VX.gif",
+    "smallLogo": "smVX.gif"
+  },
+  "VY": {
+    "code": "VY",
+    "name": "Vueling Air",
+    "bigLogo": "VY.gif",
+    "smallLogo": "smVY.gif"
+  },
+  "VZ": {
+    "code": "VZ",
+    "name": "Mytravel Airways",
+    "bigLogo": "VZ.gif",
+    "smallLogo": "smVZ.gif"
+  },
+  "W3": {
+    "code": "W3",
+    "name": "Arik Air",
+    "bigLogo": "W3.gif",
+    "smallLogo": "smW3.gif"
+  },
+  "W5": {
+    "code": "W5",
+    "name": "Mahan Airlines",
+    "bigLogo": "W5.gif",
+    "smallLogo": "smW5.gif"
+  },
+  "WA": {
+    "code": "WA",
+    "name": "KLM Cityhopper",
+    "bigLogo": "WA.gif",
+    "smallLogo": "smWA.gif"
+  },
+  "WB": {
+    "code": "WB",
+    "name": "Rwandair Express",
+    "bigLogo": "WB.gif",
+    "smallLogo": "smWB.gif"
+  },
+  "WC": {
+    "code": "WC",
+    "name": "Islena Airlines",
+    "bigLogo": "WC.gif",
+    "smallLogo": "smWC.gif"
+  },
+  "WD": {
+    "code": "WD",
+    "name": "Das Air Limited",
+    "bigLogo": "WD.gif",
+    "smallLogo": "smWD.gif"
+  },
+  "WE": {
+    "code": "WE",
+    "name": "Rheintaflug Seewald",
+    "bigLogo": "WE.gif",
+    "smallLogo": "smWE.gif"
+  },
+  "WF": {
+    "code": "WF",
+    "name": "Wideroes Flyveselskap",
+    "bigLogo": "WF.gif",
+    "smallLogo": "smWF.gif"
+  },
+  "WG": {
+    "code": "WG",
+    "name": "Wasaya Airways LP",
+    "bigLogo": "WG.gif",
+    "smallLogo": "smWG.gif"
+  },
+  "WH": {
+    "code": "WH",
+    "name": "China Northwest",
+    "bigLogo": "WH.gif",
+    "smallLogo": "smWH.gif"
+  },
+  "WI": {
+    "code": "WI",
+    "name": "U-land Airlines",
+    "bigLogo": "WI.gif",
+    "smallLogo": "smWI.gif"
+  },
+  "WJ": {
+    "code": "WJ",
+    "name": "Air Labrador",
+    "bigLogo": "WJ.gif",
+    "smallLogo": "smWJ.gif"
+  },
+  "WK": {
+    "code": "WK",
+    "name": "American Falcon",
+    "bigLogo": "WK.gif",
+    "smallLogo": "smWK.gif"
+  },
+  "WL": {
+    "code": "WL",
+    "name": "Aeroperlas",
+    "bigLogo": "WL.gif",
+    "smallLogo": "smWL.gif"
+  },
+  "WM": {
+    "code": "WM",
+    "name": "Windward Is Airways",
+    "bigLogo": "WM.gif",
+    "smallLogo": "smWM.gif"
+  },
+  "WN": {
+    "code": "WN",
+    "name": "Southwest Airlines",
+    "bigLogo": "WN.gif",
+    "smallLogo": "smWN.gif"
+  },
+  "WO": {
+    "code": "WO",
+    "name": "World Airways",
+    "bigLogo": "WO.gif",
+    "smallLogo": "smWO.gif"
+  },
+  "WP": {
+    "code": "WP",
+    "name": "Aloha Islandair",
+    "bigLogo": "WP.gif",
+    "smallLogo": "smWP.gif"
+  },
+  "WQ": {
+    "code": "WQ",
+    "name": "Romanian Aviation",
+    "bigLogo": "WQ.gif",
+    "smallLogo": "smWQ.gif"
+  },
+  "WR": {
+    "code": "WR",
+    "name": "Royal Tongan Airlines",
+    "bigLogo": "WR.gif",
+    "smallLogo": "smWR.gif"
+  },
+  "WS": {
+    "code": "WS",
+    "name": "Westjet",
+    "bigLogo": "WS.gif",
+    "smallLogo": "smWS.gif"
+  },
+  "WT": {
+    "code": "WT",
+    "name": "Nigeria Airways",
+    "bigLogo": "WT.gif",
+    "smallLogo": "smWT.gif"
+  },
+  "WU": {
+    "code": "WU",
+    "name": "Tikal Jets Sa",
+    "bigLogo": "WU.gif",
+    "smallLogo": "smWU.gif"
+  },
+  "WV": {
+    "code": "WV",
+    "name": "Westeastair Ab",
+    "bigLogo": "WV.gif",
+    "smallLogo": "smWV.gif"
+  },
+  "WW": {
+    "code": "WW",
+    "name": "bmibaby",
+    "bigLogo": "WW.gif",
+    "smallLogo": "smWW.gif"
+  },
+  "WX": {
+    "code": "WX",
+    "name": "City Jet",
+    "bigLogo": "WX.gif",
+    "smallLogo": "smWX.gif"
+  },
+  "WY": {
+    "code": "WY",
+    "name": "Oman Air",
+    "bigLogo": "WY.gif",
+    "smallLogo": "smWY.gif"
+  },
+  "WZ": {
+    "code": "WZ",
+    "name": "West African Airlines",
+    "bigLogo": "WZ.gif",
+    "smallLogo": "smWZ.gif"
+  },
+  "X9": {
+    "code": "X9",
+    "name": "Avion Express",
+    "bigLogo": "X9.gif",
+    "smallLogo": "smX9.gif"
+  },
+  "XE": {
+    "code": "XE",
+    "name": "SBS Aircraft",
+    "bigLogo": "XE.gif",
+    "smallLogo": "smXE.gif"
+  },
+  "XF": {
+    "code": "XF",
+    "name": "Vladivostok Air",
+    "bigLogo": "XF.gif",
+    "smallLogo": "smXF.gif"
+  },
+  "XG": {
+    "code": "XG",
+    "name": "Air Mali International",
+    "bigLogo": "XG.gif",
+    "smallLogo": "smXG.gif"
+  },
+  "XJ": {
+    "code": "XJ",
+    "name": "Mesaba Aviation",
+    "bigLogo": "XJ.gif",
+    "smallLogo": "smXJ.gif"
+  },
+  "XK": {
+    "code": "XK",
+    "name": "C.a.c. Mediterranee",
+    "bigLogo": "XK.gif",
+    "smallLogo": "smXK.gif"
+  },
+  "XL": {
+    "code": "XL",
+    "name": "Lanecuador Aerolane",
+    "bigLogo": "XL.gif",
+    "smallLogo": "smXL.gif"
+  },
+  "XM": {
+    "code": "XM",
+    "name": "Alitalia Express",
+    "bigLogo": "XM.gif",
+    "smallLogo": "smXM.gif"
+  },
+  "XN": {
+    "code": "XN",
+    "name": "Axon Airlines",
+    "bigLogo": "XN.gif",
+    "smallLogo": "smXN.gif"
+  },
+  "XO": {
+    "code": "XO",
+    "name": "Xinjiang Airlines",
+    "bigLogo": "XO.gif",
+    "smallLogo": "smXO.gif"
+  },
+  "XP": {
+    "code": "XP",
+    "name": "Tahoe Air",
+    "bigLogo": "XP.gif",
+    "smallLogo": "smXP.gif"
+  },
+  "XQ": {
+    "code": "XQ",
+    "name": "Sun Express",
+    "bigLogo": "XQ.gif",
+    "smallLogo": "smXQ.gif"
+  },
+  "XR": {
+    "code": "XR",
+    "name": "Skywest Airlines",
+    "bigLogo": "XR.gif",
+    "smallLogo": "smXR.gif"
+  },
+  "XT": {
+    "code": "XT",
+    "name": "KLM Exel",
+    "bigLogo": "XT.gif",
+    "smallLogo": "smXT.gif"
+  },
+  "XU": {
+    "code": "XU",
+    "name": "African Express",
+    "bigLogo": "XU.gif",
+    "smallLogo": "smXU.gif"
+  },
+  "XV": {
+    "code": "XV",
+    "name": "Waltair I Linkoping Ab",
+    "bigLogo": "XV.gif",
+    "smallLogo": "smXV.gif"
+  },
+  "XW": {
+    "code": "XW",
+    "name": "China Xinhua Airlines",
+    "bigLogo": "XW.gif",
+    "smallLogo": "smXW.gif"
+  },
+  "XY": {
+    "code": "XY",
+    "name": "Air Nigeria",
+    "bigLogo": "XY.gif",
+    "smallLogo": "smXY.gif"
+  },
+  "XZ": {
+    "code": "XZ",
+    "name": "Flugfelag Austurlands",
+    "bigLogo": "XZ.gif",
+    "smallLogo": "smXZ.gif"
+  },
+  "YB": {
+    "code": "YB",
+    "name": "So African Exprs",
+    "bigLogo": "YB.gif",
+    "smallLogo": "smYB.gif"
+  },
+  "YC": {
+    "code": "YC",
+    "name": "Flight West Airlines",
+    "bigLogo": "YC.gif",
+    "smallLogo": "smYC.gif"
+  },
+  "YD": {
+    "code": "YD",
+    "name": "Gomelavia",
+    "bigLogo": "YD.gif",
+    "smallLogo": "smYD.gif"
+  },
+  "YE": {
+    "code": "YE",
+    "name": "Yanda Airlines",
+    "bigLogo": "YE.gif",
+    "smallLogo": "smYE.gif"
+  },
+  "YG": {
+    "code": "YG",
+    "name": "South Airlines",
+    "bigLogo": "YG.gif",
+    "smallLogo": "smYG.gif"
+  },
+  "YH": {
+    "code": "YH",
+    "name": "West Caribbean Airways",
+    "bigLogo": "YH.gif",
+    "smallLogo": "smYH.gif"
+  },
+  "YI": {
+    "code": "YI",
+    "name": "Air Sunshine",
+    "bigLogo": "YI.gif",
+    "smallLogo": "smYI.gif"
+  },
+  "YJ": {
+    "code": "YJ",
+    "name": "National Airlines",
+    "bigLogo": "YJ.gif",
+    "smallLogo": "smYJ.gif"
+  },
+  "YK": {
+    "code": "YK",
+    "name": "Kibris Turkish Airlines",
+    "bigLogo": "YK.gif",
+    "smallLogo": "smYK.gif"
+  },
+  "YL": {
+    "code": "YL",
+    "name": "Yamal Airlines",
+    "bigLogo": "YL.gif",
+    "smallLogo": "smYL.gif"
+  },
+  "YM": {
+    "code": "YM",
+    "name": "Montenegro Airlines",
+    "bigLogo": "YM.gif",
+    "smallLogo": "smYM.gif"
+  },
+  "YN": {
+    "code": "YN",
+    "name": "Air Creebec",
+    "bigLogo": "YN.gif",
+    "smallLogo": "smYN.gif"
+  },
+  "YO": {
+    "code": "YO",
+    "name": "Heli Air Monaco",
+    "bigLogo": "YO.gif",
+    "smallLogo": "smYO.gif"
+  },
+  "YP": {
+    "code": "YP",
+    "name": "Aero Lloyd",
+    "bigLogo": "YP.gif",
+    "smallLogo": "smYP.gif"
+  },
+  "YQ": {
+    "code": "YQ",
+    "name": "Euro Air Heli Svc",
+    "bigLogo": "YQ.gif",
+    "smallLogo": "smYQ.gif"
+  },
+  "YR": {
+    "code": "YR",
+    "name": "Scenic Airlines",
+    "bigLogo": "YR.gif",
+    "smallLogo": "smYR.gif"
+  },
+  "YS": {
+    "code": "YS",
+    "name": "Regional Cae",
+    "bigLogo": "YS.gif",
+    "smallLogo": "smYS.gif"
+  },
+  "YT": {
+    "code": "YT",
+    "name": "Air Togo",
+    "bigLogo": "YT.gif",
+    "smallLogo": "smYT.gif"
+  },
+  "YU": {
+    "code": "YU",
+    "name": "Dominair",
+    "bigLogo": "YU.gif",
+    "smallLogo": "smYU.gif"
+  },
+  "YV": {
+    "code": "YV",
+    "name": "Mesa Airlines",
+    "bigLogo": "YV.gif",
+    "smallLogo": "smYV.gif"
+  },
+  "YW": {
+    "code": "YW",
+    "name": "Air Nostrum",
+    "bigLogo": "YW.gif",
+    "smallLogo": "smYW.gif"
+  },
+  "YX": {
+    "code": "YX",
+    "name": "Midwest Express",
+    "bigLogo": "YX.gif",
+    "smallLogo": "smYX.gif"
+  },
+  "YY": {
+    "code": "YY",
+    "name": "Multi Ticket",
+    "bigLogo": "YY.gif",
+    "smallLogo": "smYY.gif"
+  },
+  "YZ": {
+    "code": "YZ",
+    "name": "Tacaecuador S.a.",
+    "bigLogo": "YZ.gif",
+    "smallLogo": "smYZ.gif"
+  },
+  "Z5": {
+    "code": "Z5",
+    "name": "GmG Airline",
+    "bigLogo": "6N.gif",
+    "smallLogo": "sm6N.gif"
+  },
+  "Z6": {
+    "code": "Z6",
+    "name": "Dniproavia",
+    "bigLogo": "Z6.gif",
+    "smallLogo": "smZ6.gif"
+  },
+  "ZA": {
+    "code": "ZA",
+    "name": "Astair Limited Company",
+    "bigLogo": "ZA.gif",
+    "smallLogo": "smZA.gif"
+  },
+  "ZB": {
+    "code": "ZB",
+    "name": "Monarch Airlines",
+    "bigLogo": "ZB.gif",
+    "smallLogo": "smZB.gif"
+  },
+  "ZC": {
+    "code": "ZC",
+    "name": "Royal Swazi National",
+    "bigLogo": "ZC.gif",
+    "smallLogo": "smZC.gif"
+  },
+  "ZD": {
+    "code": "ZD",
+    "name": "Flying Dandy",
+    "bigLogo": "ZD.gif",
+    "smallLogo": "smZD.gif"
+  },
+  "ZE": {
+    "code": "ZE",
+    "name": "Lineas Aereas Azteca",
+    "bigLogo": "ZE.gif",
+    "smallLogo": "smZE.gif"
+  },
+  "ZF": {
+    "code": "ZF",
+    "name": "Atlantic Air Honduras",
+    "bigLogo": "ZF.gif",
+    "smallLogo": "smZF.gif"
+  },
+  "ZG": {
+    "code": "ZG",
+    "name": "Air Express Limited",
+    "bigLogo": "ZG.gif",
+    "smallLogo": "smZG.gif"
+  },
+  "ZH": {
+    "code": "ZH",
+    "name": "Shenzhen Airlines",
+    "bigLogo": "ZH.gif",
+    "smallLogo": "smZH.gif"
+  },
+  "ZI": {
+    "code": "ZI",
+    "name": "Aigle Azur",
+    "bigLogo": "ZI.gif",
+    "smallLogo": "smZI.gif"
+  },
+  "ZJ": {
+    "code": "ZJ",
+    "name": "Teddy Air",
+    "bigLogo": "ZJ.gif",
+    "smallLogo": "smZJ.gif"
+  },
+  "ZK": {
+    "code": "ZK",
+    "name": "Great Lakes Aviation",
+    "bigLogo": "ZK.gif",
+    "smallLogo": "smZK.gif"
+  },
+  "ZL": {
+    "code": "ZL",
+    "name": "Regional Express",
+    "bigLogo": "ZL.gif",
+    "smallLogo": "smZL.gif"
+  },
+  "ZM": {
+    "code": "ZM",
+    "name": "Alliance Express Rwanda",
+    "bigLogo": "ZM.gif",
+    "smallLogo": "smZM.gif"
+  },
+  "ZN": {
+    "code": "ZN",
+    "name": "Air Bourbon",
+    "bigLogo": "ZN.gif",
+    "smallLogo": "smZN.gif"
+  },
+  "ZO": {
+    "code": "ZO",
+    "name": "Great Plains Airlines",
+    "bigLogo": "ZO.gif",
+    "smallLogo": "smZO.gif"
+  },
+  "ZQ": {
+    "code": "ZQ",
+    "name": "Caribbean Sun Airlines",
+    "bigLogo": "ZQ.gif",
+    "smallLogo": "smZQ.gif"
+  },
+  "ZR": {
+    "code": "ZR",
+    "name": "Muk Air",
+    "bigLogo": "ZR.gif",
+    "smallLogo": "smZR.gif"
+  },
+  "ZS": {
+    "code": "ZS",
+    "name": "Azzurra Air",
+    "bigLogo": "ZS.gif",
+    "smallLogo": "smZS.gif"
+  },
+  "ZT": {
+    "code": "ZT",
+    "name": "Air Zambezi",
+    "bigLogo": "ZT.gif",
+    "smallLogo": "smZT.gif"
+  },
+  "ZU": {
+    "code": "ZU",
+    "name": "Helios Airways",
+    "bigLogo": "ZU.gif",
+    "smallLogo": "smZU.gif"
+  },
+  "ZV": {
+    "code": "ZV",
+    "name": "Air Midwest",
+    "bigLogo": "ZV.gif",
+    "smallLogo": "smZV.gif"
+  },
+  "ZW": {
+    "code": "ZW",
+    "name": "Air Wisconsin",
+    "bigLogo": "ZW.gif",
+    "smallLogo": "smZW.gif"
+  },
+  "ZX": {
+    "code": "ZX",
+    "name": "Air Alliance",
+    "bigLogo": "ZX.gif",
+    "smallLogo": "smZX.gif"
+  },
+  "ZY": {
+    "code": "ZY",
+    "name": "Ada Air",
+    "bigLogo": "ZY.gif",
+    "smallLogo": "smZY.gif"
+  },
+  "ZZ": {
+    "code": "ZZ",
+    "name": "Multi Ticket",
+    "bigLogo": "ZZ.gif",
+    "smallLogo": "smYY.gif"
+  },
+  "GK": {
+    "code": "GK",
+    "name": "Jetstar Japan",
+    "bigLogo": "GK.gif",
+    "smallLogo": "smGK.gif"
+  },
+  "W6": {
+    "code": "W6",
+    "name": "Wizz Air",
+    "bigLogo": "W6.gif",
+    "smallLogo": "smW6.gif"
+  }
+}

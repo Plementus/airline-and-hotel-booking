@@ -1,0 +1,123 @@
+@import helper._
+@(form: Form[CmsContainers])
+@layouts.admin("Create/Edit Container", scripts) {
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-name">Create/Edit Container</span>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-3">
+                @views.html.console.cms.__categories.render()
+            </div>
+            <div class="col-md-9 row">
+                <div class="col-md-8">
+                   @* @helpers._error(form)*@
+                    @helpers._flash.render()
+                    @helper.form(action = controllers.console.cms.routes.ContainerController.postCreate(), 'enctype -> "multipart/form-data") {
+                        @CSRF.formField
+                        @if(form.get() != null) {
+                            <input type="hidden" value="@form.get().id" name="id" />
+                        }
+                        @select(form("category_id.id"), options(CmsContentCategories.options(request().getQueryString("cat_id"))), '_label -> "Container Category", 'class -> "form-control chosen-select")
+                        @helper.inputText(form("name"), 'class -> "form-control", '_label -> "Container Name")
+                        @helper.select(form("display_as_html"), Seq("No" -> "No", "Yes" -> "Yes"), 'checked -> "checked", 'class -> "form-control display_html", '_label -> "Display as WYSIWIG?")
+                        @helper.textarea(form("html_code"), 'class -> "form-control", 'rows -> "10", '_label -> "HTML Content (2MB Max. Upload Size)")
+                        @helper.select(form("is_publish"), Seq("Yes" -> "Yes", "No" -> "No"), 'class -> "form-control", '_label -> "Publish Container")
+                        @helper.textarea(form("description"),'class -> "form-control", 'rows -> "5", '_label -> "Container Description (Max Of 500 Characters)")
+                        @*<button type="submit" name="submit" class="btn btn-primary">Save</button>*@
+                        <button class="btn btn-success mg2 pull-right" name="action" value="save" type="submit">Save</button>
+                        <button class="btn btn-success mg2 pull-right" name="action" value="save_continue" type="submit">
+                            Save and Continue Edit</button>
+                        <span><a href="@controllers.console.cms.routes.ContainerController.getIndex" class="btn btn-default">Cancel</a></span>
+                    }
+                </div>
+                <div style="min-height: 450px; overflow-y: scroll;" class="col-md-4 pull-right">
+                 @if(form.get().id != null) {
+                     <b>
+                        <p>Click The Button Bellow To Preview</p>
+                     </b>
+                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                         <span class="glyphicon glyphicon-hand-right" aria-hidden="true">&nbsp;</span> @form.get().name
+                     </button>
+
+                     <div style="overflow-x:hidden;" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                         <div class="modal-dialog"  style="width:100% !important;float:left;" role="document">
+                             <div class="modal-content" style="width:auto !important;">
+                                 <div class="modal-header">
+                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                     </button>
+                                     <h4 class="modal-title" id="myModalLabel"><b>@form.get().name</b></h4>
+                                 </div>
+                                 <div class="modal-body">
+                                    @Html(form.get().html_code)
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                    }
+                  @*  <a href="/preview-container?id=@form.get().id" class=“ajax”>View Modal</a>*@
+                    <h4><strong>Template Snippet</strong></h4>
+                    <p class="text-muted">Copy and Paste Snippet to HTML Container</p>
+                    <hr />
+                    <p>Flight Booking Engine
+                        <code>{{flightBookingEngine}}</code>
+                    </p>
+                    <p>Hotels Booking Engine
+                        <code>{{hotelBookingEngine}}</code>
+                    </p>
+                    <p>Flight + Hotels Booking Engine
+                        <code>{{flightHotelBookingEngine}}</code>
+                    </p>
+                    <p>Flight Packages
+                        <code>{{flightPackages}}</code>
+                    </p>
+                    <p>Hotel Packages
+                        <code>{{hotelPackages}}</code>
+                    </p>
+                    <p>Flight + Hotels Packages
+                        <code>{{flightHotelPackages}}</code>
+                    </p>
+                    <p>Logo
+                        <code>{{logo}}</code>
+                    </p>
+                    <p>Menu
+                        <code>{{menu}}</code>
+                    </p>
+                    <p>Currency
+                        <code>{{currency}}</code>
+                    </p>
+                    <p>Shopping Cart
+                        <code>{{shoppingCart}}</code>
+                    </p>
+                    <p>CSRF Token
+                        <code>{{csrfToken}}</code>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@scripts = {
+    <script>
+        $(function() {
+            $('select[name=display_as_html]').on('change', function() {
+                var isHtml = false, summernote = $('#html_code');
+                if($(this).val() === 'Yes') {
+                    isHtml = true;
+                } else {
+                    isHtml = false;
+                }
+                if(isHtml === false) {
+//                    summernote.destroy();
+//                    summernote.summernote('destroy');
+                } else {
+                    summernote.summernote({
+                        minHeight: 200,
+                        height: 200
+                    });
+                }
+            });
+        })
+    </script>
+}

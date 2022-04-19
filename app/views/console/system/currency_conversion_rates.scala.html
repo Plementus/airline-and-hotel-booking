@@ -1,0 +1,49 @@
+@import helper._
+@layouts.admin("Currency Conversion Rates") {
+    <div class="row panel">
+        <div class="panel-body">
+            <div class="col-md-8">
+                @views.html.helpers._flash.render()
+                <div class="paneml-heading">
+                    <header><h3>Records</h3></header>
+                </div>
+                <div class="table">
+                    <table class="table table-striped table-responsive">
+                        <thead>
+                            <tr>
+                                <td>Conversion Rate</td>
+                                <td>Per Currency</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>USD</td>
+                                <td>@core.ControlPanel.getInstance().getMetaValue(core.ControlPanelMeta.usd_conversion_rate)/USD</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="paneml-heading">
+                    <header><h3>Currency Conversion Rates</h3></header>
+                </div>
+                <div class="module_content">
+                @helper.form(action = controllers.console.routes.SystemController.postCurrencyConversion()) {
+                    @CSRF.formField
+                    <label>Conversion Rate</label>
+                    <input type="number" name="conversion_rate" class="form-control" />
+                    <div class="form-group">
+                        <label>Per Currency:</label>
+                        <select name="currency" class="form-control">
+                            <option value="USD">USD</option>
+                        </select>
+                    </div>
+                    <br /> <br />
+                    <button type="submit" name="submit" class="btn form-control btn-primary">Submit</button>
+                }
+                </div>
+            </div>
+        </div>
+    </div>
+}

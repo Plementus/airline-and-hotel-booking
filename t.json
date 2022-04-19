@@ -1,0 +1,119 @@
+{
+  "airItineraryWSResponse": {
+    "originDestinationWSResponses": [
+      {
+        "flightSegmentWSResponses": [
+          {
+            "departureAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+            "arrivalAirport": "Abuja-Nnamdi Azikiwe Intl, Nigeria",
+            "departureAirportCode": "LOS",
+            "arrivalAirportCode": "ABV",
+            "departureDateTime": "2016-03-06T09:00:00",
+            "arrivalDateTime": "2016-03-06T10:15:00",
+            "duration": 0,
+            "marketingAirline": "Arik Air",
+            "marketingAirlineCode": "W3",
+            "cabin": "javax.xml.bind.JAXBElement@36130330",
+            "flightNumber": "724",
+            "resBookDesigCode": "L",
+            "numberInParty": 1,
+            "stopQuantity": 0,
+            "infoSource": "9",
+            "operatingAirline": {
+              "value": "Arik Air",
+              "companyShortName": null,
+              "travelSector": null,
+              "code": "W3",
+              "codeContext": null,
+              "flightNumber": null
+            },
+            "rph": "1",
+            "marriageGrp": null,
+            "eticketEligibility": "Eligible"
+          }
+        ],
+        "originAirport": "Lagos-Murtala Muhammed Intl, Nigeria",
+        "destinationAirport": "Abuja-Nnamdi Azikiwe Intl, Nigeria",
+        "originAirportCode": "LOS",
+        "destinationAirportCode": "ABV",
+        "arrivalDateTime": "2016-03-06T10:15:00",
+        "departureDateTime": "2016-03-06T09:00:00",
+        "duration": 0,
+        "marketingAirline": "Arik Air",
+        "marketingAirlineCode": "W3",
+        "cabin": null,
+        "numberOfStops": 0
+      }
+    ],
+    "directionIndicator": "OneWay"
+  },
+  "pricingInfoWSResponse": {
+    "baseFare": 12560.0,
+    "tax": 16988.0,
+    "totalFare": 25548.0,
+    "currencyCode": "NGN",
+    "decimalPlaces": 2,
+    "pricingSource": "Published",
+    "adultBaseFair": 12560.0,
+    "childrenBaseFair": 0.0,
+    "infantBaseFair": 0.0,
+    "adultTaxFair": 16988.0,
+    "childrenTaxFair": 0.0,
+    "infantTaxFair": 0.0,
+    "adultTotal": 29548.0,
+    "childrenTotal": 0.0,
+    "infantTotal": 0.0
+  },
+  "ticketingInfoWSResponse": {
+    "ticketTimeLimit": {
+      "dayOfYear": 65,
+      "dayOfWeek": "SATURDAY",
+      "month": "MARCH",
+      "dayOfMonth": 5,
+      "year": 2016,
+      "monthValue": 3,
+      "hour": 9,
+      "minute": 0,
+      "second": 0,
+      "nano": 0,
+      "chronology": {
+        "id": "ISO",
+        "calendarType": "iso8601"
+      }
+    },
+    "ticketType": "eTicket"
+  },
+  "gdsPricingCommission": {
+    "gdsName": "AMADEUS",
+    "pricingInfoWSResponse": {
+      "baseFare": 12560.0,
+      "tax": 16988.0,
+      "totalFare": 25548.0,
+      "currencyCode": "NGN",
+      "decimalPlaces": 2,
+      "pricingSource": "Published",
+      "adultBaseFair": 12560.0,
+      "childrenBaseFair": 0.0,
+      "infantBaseFair": 0.0,
+      "adultTaxFair": 16988.0,
+      "childrenTaxFair": 0.0,
+      "infantTaxFair": 0.0,
+      "adultTotal": 29548.0,
+      "childrenTotal": 0.0,
+      "infantTotal": 0.0
+    },
+    "gdsPricingCommissionRecord": null
+  },
+  "airline": "Arik Air",
+  "airlineCode": "W3",
+  "cabin": null,
+  "index": 0,
+  "ticketingInfo": {
+    "ticketAdvisory": [],
+    "ticketTimeLimit": "2016-03-04T23:59:00",
+    "ticketType": null,
+    "eticketNumber": null
+  },
+  "objectSerializer": null,
+  "gds": "Amadeus"
+}

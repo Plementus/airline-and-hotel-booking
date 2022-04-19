@@ -1,0 +1,46 @@
+@import controllers._
+@(airlineFlightMarkUpDown: List[AirlineFlightMarkUpDown])
+@layouts.admin("Airline Flight Markups") {
+    <div class="panel">
+        <header class="panel-heading">
+            <h2 class="panel-name">Manage Flight Markup/down</h2>
+            <br /><a href="@controllers.console.routes.AirlineFlightMarkDirectionController.getCreate()" class="btn btn-default"><i class="fa fa-plus"></i> Create New Airline Markup/down</a><br />
+        </header>
+        <div class="panel-body">
+        @views.html._include._dtable.render("Airline Flight Markups", Array("ID", "Incentive Title", "Airline Incentive", "MarkUp/Down Rule", "Apply Coupon", "Display GDS Fare?", "Mark Fare", "User", "Created At", "Action"), tBody())
+        </div>
+    </div>
+}
+@tBody() = {
+    @for((flightMarkup, index) <- airlineFlightMarkUpDown.zipWithIndex) {
+        <tr>
+            <td>@flightMarkup.id</td>
+            <td><a href="@console.routes.AirlineIncentiveController.getIndex?id=@flightMarkup.airline_incentive_id.id" target="_blank">@flightMarkup.airline_incentive_id.airline_incentive_prop.title</a></td>
+            <td>@flightMarkup.airline_incentive_id.value</td>
+            <td><a href="@console.AirlineFlightMarkDirectionController.getIndex(flightMarkup.flight_markup_down_rule_id.id)" target="_blank">@flightMarkup.flight_markup_down_rule_id.title</a></td>
+            <td>@flightMarkup.apply_coupon</td>
+            <td>@flightMarkup.display_gds_fare</td>
+            <td class="text-danger">
+            @if(flightMarkup.is_fare_type_markup) {
+                <small>@flightMarkup.ft_direction.name.replaceAll("_", " ").toLowerCase() / @flightMarkup.ft_fare_option.name.replaceAll("_", " ").toLowerCase() / @flightMarkup.ft_value @flightMarkup.ft_value_type.name.replaceAll("_", " ").toLowerCase()</small>
+            } else {
+                @if(flightMarkup.adt_value > 0) {
+                    <small>@flightMarkup.adt_direction.name.replaceAll("_", " ").toLowerCase() / @flightMarkup.adt_fare_option.name.replaceAll("_", " ").toLowerCase() / @flightMarkup.adt_value @flightMarkup.adt_value_type.name.replaceAll("_", " ").toLowerCase()</small><br />
+                }
+                @if(flightMarkup.chd_value > 0) {
+                    <small>@flightMarkup.chd_direction.name.replaceAll("_", " ").toLowerCase() / @flightMarkup.chd_fare_option.name.replaceAll("_", " ").toLowerCase() / @flightMarkup.chd_value @flightMarkup.chd_value_type.name.replaceAll("_", " ").toLowerCase()</small><br />
+                }
+                @if(flightMarkup.inf_value > 0) {
+                    <small>@flightMarkup.inf_direction.name.replaceAll("_", " ").toLowerCase() / @flightMarkup.inf_fare_option.name.replaceAll("_", " ").toLowerCase() / @flightMarkup.inf_value @flightMarkup.inf_value_type.name.replaceAll("_", " ").toLowerCase()</small><br />
+                }
+            }
+            </td>
+            <td><div class="nameAvatar">@org.apache.commons.lang3.text.WordUtils.initials(flightMarkup.auth_user_id.last_name)@org.apache.commons.lang3.text.WordUtils.initials(flightMarkup.auth_user_id.first_name)</div></td>
+            <td>@flightMarkup.created_at.toLocaleString</td>
+            <td>
+                <span><a href="@console.routes.AirlineFlightMarkDirectionController.getCreate(flightMarkup.id)" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a></span>
+                <span><a href="@console.routes.AirlineFlightMarkDirectionController.getDelete(flightMarkup.id)" class="btn btn-xs btn-danger"><i class="fa fa-time"></i> Delete</a></span>
+            </td>
+        </tr>
+    }
+}

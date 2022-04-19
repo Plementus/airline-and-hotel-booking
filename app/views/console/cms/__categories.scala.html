@@ -1,0 +1,32 @@
+<link rel="stylesheet" type="text/css" href="@routes.Assets.at("vendor/plugins/jsTree/themes/default/style.css")" />
+@defining(CmsContentCategories.find.all()) { categories =>
+    <div class="pd10 bg-muted">
+        <h4>Categories</h4>
+        @if(categories.size() != 0) {
+            <div id="categories">
+            </div>
+            <script type="text/javascript" src="@routes.Assets.at("v1/js/jquery-2.1.1.min.js")"></script>
+            <script src="@routes.Assets.at("vendor/plugins/jsTree/jstree.min.js")"></script>
+            <script>
+              $(function() {
+                  $('#categories').on('changed.jstree', function (e, data) {
+                    var i, j, selected = '', cat_id = null;
+                    for(i = 0, j = data.selected.length; i < j; i++) {
+                      selected = data.instance.get_node(data.selected[i]).text;
+                    }
+                    cat_id = data.node.id;
+                    window.location.href = "?u_a=cat&cat_id="+cat_id+"&cat_name="+selected;
+                  }).jstree({ 'core' : {
+                        'data' : [
+                            @for(category <- categories) {
+                               { "id" : "@category.id", "parent" : "@if(category.parent_id == null) {#} else {@category.parent_id.id}", "text" : "@category.name", 'state' : { 'opened': true, 'selected' : false } },
+                           }
+                        ]
+                  }});
+              });
+            </script>
+        } else {
+            <h5><strong>Not Category available</strong></h5>
+        }
+    </div>
+}

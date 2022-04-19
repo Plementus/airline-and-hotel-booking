@@ -1,0 +1,188 @@
+@layouts.main("Flight", scripts) {
+    <section class="search-section" @defining(core.ControlPanel.getInstance().getMetaValue(core.ControlPanelMeta.bg_img_flight)) { cp => @if(cp !=null) { style="background: url(@routes.Assets.at("data_bank/"+cp)) no-repeat center top; background-size: cover; padding-top: 30px; padding-bottom:15px;"} }>
+        <div class="container">
+            @views.html._include._flight_form.render()
+        </div>
+    </section>
+    <section class="container">
+        <div class="services">
+            <h2 class="text-center"><strong>Top Flights <b>Best Rated Flights Destinations &amp; Offers</b> </strong></h2><hr />
+            <div class="row">
+                <div class="col-sm-4 col-md-4 col-xs-12">
+                    <div class="service-list">
+                        <img src="@routes.Assets.at("v1/images/thumb1.jpg")" alt="" />
+                        <div class="service-link-box">
+                            <div class="transparent-content-outer">
+                                <div class="transparent-content">
+                                    <h2>STAY AHEAD</h2>
+                                    <h3>TOP DEALS <span>OF THE DAY</span></h3>
+                                    <p class="hidden-xs hidden-sm">Download smartphone app</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4 col-xs-12">
+                    <div class="service-list">
+                        <img src="@routes.Assets.at("v1/images/thumb2.jpg")" alt="" />
+                        <div class="service-link-box service-box2 blue-section">
+                            <div class="transparent-content-outer">
+                                <div class="transparent-content">
+                                    <div class="blue-content">
+                                        <h2>Browse the</h2>
+                                        <h3><span>Most affordable</span> TOUR PAckages </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4 col-xs-12">
+                    <div class="service-list">
+                        <img src="@routes.Assets.at("v1/images/thumb3.jpg")" alt="" />
+                        <div class="service-link-box service-box3">
+                            <div class="transparent-content-outer">
+                                <div class="transparent-content">
+                                    <p>Enjoy 3 days and 2 nights stay at the</p>
+                                    <h3>JW Marriott Marquis Dubai</h3>
+                                    <a href="#">BOOK NOW <i class="icon icon-arrow-circle-o-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-section">
+                <div class="row">
+                    <div class="col-sm-6  col-md-6 col-xs-12">
+                        <div class="service-list">
+                            <img src="@routes.Assets.at("v1/images/img1.jpg")" alt="" />
+                            <div class="service-link-box">
+                                <div class="transparent-content-outer">
+                                    <div class="transparent-content">
+                                        <h3><span>New York to <br />Barcelona</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6  col-md-6 col-xs-12">
+                        <div class="service-list">
+                            <img src="@routes.Assets.at("v1/images/img2.jpg")" alt="" />
+                            <div class="service-link-box">
+                                <div class="transparent-content-outer">
+                                    <div class="transparent-content">
+                                        <h3><span>New York to Bangkok</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-xs-12">
+                        <div class="service-list">
+                            <img src="@routes.Assets.at("v1/images/img3.jpg")" alt="" />
+                            <div class="service-link-box">
+                                <div class="transparent-content-outer">
+                                    <div class="transparent-content">
+                                        <h3><span>New York to <br />Rome</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-xs-12">
+                        <div class="service-list">
+                            <img src="@routes.Assets.at("v1/images/img4.jpg")" alt="" />
+                            <div class="service-link-box">
+                                <div class="transparent-content-outer">
+                                    <div class="transparent-content">
+                                        <h3><span>New York to <br />Milan</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row no-space">
+                    <div class="col-sm-6 col-md-6">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6 col-xs-12">
+                                <div class="service-list">
+                                    <img src="@routes.Assets.at("v1/images/img5.jpg")" alt="" />
+                                    <div class="service-link-box">
+                                        <div class="transparent-content-outer">
+                                            <div class="transparent-content">
+                                                <h3><span>New York to <br />Netherlands</span></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-xs-12">
+                                <div class="service-list">
+                                    <img src="@routes.Assets.at("v1/images/img6.jpg")" alt="" />
+                                    <div class="service-link-box">
+                                        <div class="transparent-content-outer">
+                                            <div class="transparent-content">
+                                                <h3><span>New York to <br />Santorini</span></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-6 col-xs-12">
+                                <div class="service-list">
+                                    <img src="@routes.Assets.at("v1/images/img7.jpg")" alt="" />
+                                    <div class="service-link-box">
+                                        <div class="transparent-content-outer">
+                                            <div class="transparent-content">
+                                                <h3><span>New York to <br />Salzburg</span></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-xs-12">
+                                <div class="service-list">
+                                    <img src="@routes.Assets.at("v1/images/img8.jpg")" alt="" />
+                                    <div class="service-link-box">
+                                        <div class="transparent-content-outer">
+                                            <div class="transparent-content">
+                                                <h3><span>New York to <br />Paris</span></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6  col-md-6 col-xs-12">
+                        <div class="service-list">
+                            <img src="@routes.Assets.at("v1/images/img9.jpg")" alt="" />
+                            <div class="service-link-box">
+                                <div class="transparent-content-outer">
+                                    <div class="transparent-content">
+                                        <h3><span>New York to <br />London</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        .radio-tabs .radio-custom label, li label{
+            color: #FFF;
+        }
+    </style>
+}
+
+@scripts = {
+    <script type="text/javascript" src="@routes.Assets.at("my_js/jsAuthReg.js")"></script>
+}

@@ -1,0 +1,42 @@
+@(users: java.util.List[Users])
+@layouts.admin("View Users List", scripts) {
+    <article class="module width_full">
+        <header><h3>Create New User</h3></header>
+        <div class="module_content">
+            @helpers._flash.render()
+            <table id="table-basic" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Full Name</th>
+                        <th>Email </th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Phone</th>
+                        <th>Date Created</th>
+                        <th width="15%">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @if(users.size() != 0) {
+                    @for(user: Users <- users) {
+                        <tr>
+                            <td>@user.id</td>
+                            <td>@user.prefix @user.first_name @user.last_name</td>
+                            <td>@user.email</td>
+                            <td>@user.role_code.role_title</td>
+                            <td>@if(user.is_verify.eq(YesNoEnum.Yes)){ <span class="btn btn-xs btn-success">Verified</span> } else { <span class="btn btn-xs btn-danger">Unverified</span> }</td>
+                            <td>@user.phone</td>
+                            <td>@user.updated_at.format("dd-MM-yyyy")</td>
+                            <td>@user.created_at.format("dd-MM-yyyy")</td>
+                        </tr>
+                    }
+                }
+                </tbody>
+            </table>
+        </div>
+    </article>
+}
+@scripts = {
+
+}

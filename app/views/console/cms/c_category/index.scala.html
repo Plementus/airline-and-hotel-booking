@@ -1,0 +1,74 @@
+@(list: List[CmsContentCategories])
+@layouts.admin("Content Category", scripts) {
+    <div class="panel">
+        <header class="panel-heading">
+            <h2 class="panel-name">Content Categories</h2>
+            <br /><a href="@controllers.console.cms.routes.ContentCategoryController.getCreate()" class="btn btn-default"><i class="fa fa-plus"></i> Create New Category</a><br />
+        </header>
+        <div class="panel-body">
+            @helpers._flash.render()
+            <table class="table table-striped table-bordered table-hover" id="datatable" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th hidden></th>
+                        <th>Parent Category</th>
+                        <th>Name</th>
+                        <th>URL Visible</th>
+                        <th>Last Update</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @if(list != null && list.size() != 0) {
+                    @for(item <- list) {
+                        <tr>
+                            <td hidden>@item.id</td>
+                            <td>@item.breadcrumb_str</td>
+                            <td>@item.name</td>
+                            <td>
+                            @if(item.is_url != null) {
+                                @item.is_url.name()
+                            } else {
+                                @YesNoEnum.No.name()
+                            }
+                            </td>
+                            <td>@item.updated_at.toGMTString</td>
+                            <td>
+                                <span><a href="@controllers.console.cms.routes.ContentCategoryController.getCreate(item.id)" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a></span>
+                                <span><a href="@controllers.console.cms.routes.ContentCategoryController.getDelete(item.id)" class="btn btn-xs btn-danger"><i class="fa fa-times"></i> Delete</a></span>
+                            </td>
+                        </tr>
+                    }
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+@scripts = {
+    <!-- Datatables -->
+    <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datatables/media/js/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datatables/media/js/dataTables.bootstrap.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js")"></script>
+    <script>
+             $('#datatable').DataTable({
+                "aoColumnDefs": [{
+                    'bSortable': true,
+                    'aTargets': [-1]
+                }],
+                "processing": true,
+                "order": [[ 0, "desc" ]],
+                "oLanguage": {
+                    "oPaginate": {
+                        "sPrevious": "",
+                        "sNext": ""
+                    }
+                },
+                "iDisplayLength": 25,
+                "aLengthMenu": [
+                    [10, 25, 50, -1],
+                    [10, 25, 50, "All"]
+                ]
+            });
+      </script>
+}

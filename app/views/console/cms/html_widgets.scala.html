@@ -1,0 +1,74 @@
+@(cmsLinks: java.util.List[CmsHtmlWidgets])
+@layouts.admin("HTML Widgets", scripts, "tables-datatables-page") {
+    <div class="row">
+        @helpers._flash.render()
+        <div class="col-md-12">
+            <div class="panel panel-visible">
+                <div class="panel-heading">
+                    @*<h2 class="panel-name hidden-xs"><strong>Links</strong></h2><div class="clearfix"></div>*@
+                    <a href="@controllers.console.cms.routes.ApplicationController.getCreateWidget()" class="btn btn-default"><i class="fa fa-plus"></i> Create New HTML Widget</a><br />
+                </div>
+                <div class="panel-body pn">
+                    <table class="table table-striped table-bordered table-hover" id="datatable3" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Author</th>
+                                <th>Last Update</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @defining(cmsLinks) { links =>
+                              @if(cmsLinks.size() != 0) {
+                                  @for(item <- links) {
+                                      <tr>
+                                          <td>#@item.id</td>
+                                          <td>@item.name</td>
+                                          <td>@item.auth_user_id.first_name @item.auth_user_id.last_name</td>
+                                          <td>@item.updated_at.toLocaleString</td>
+                                          <td>
+                                              <span><a href="" class="btn btn-xs btn-default"> Copy to Clipboard</a> </span>
+                                              <span><a href="@controllers.console.cms.routes.ApplicationController.getCreateWidget(item.id)" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a> </span>
+                                              <span><a href="@controllers.console.cms.routes.ApplicationController.getDeleteWidget(item.id)" class="btn btn-xs btn-danger"><i class="fa fa-times"></i> Delete</a> </span>
+                                          </td>
+                                      </tr>
+                                  }
+                              }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
+@scripts = {
+
+    <!-- Datatables -->
+    <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datatables/media/js/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datatables/media/js/dataTables.bootstrap.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("vendor/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js")"></script>
+    <script>
+             $('#datatable3').dataTable({
+                "aoColumnDefs": [{
+                    'bSortable': true,
+                    'aTargets': [-1]
+                }],
+                "processing": true,
+                "oLanguage": {
+                    "oPaginate": {
+                        "sPrevious": "",
+                        "sNext": ""
+                    }
+                },
+                "iDisplayLength": 10,
+                "aLengthMenu": [
+                    [10, 25, 50, -1],
+                    [10, 25, 50, "All"]
+                ]
+            });
+      </script>
+}

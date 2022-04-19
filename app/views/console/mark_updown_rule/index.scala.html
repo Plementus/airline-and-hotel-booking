@@ -1,0 +1,87 @@
+@import controllers._
+@(incentives: List[FlightMarkUpDownRules])
+@layouts.admin("Flight Markup Rules") {
+    <div class="panel">
+        <header class="panel-heading">
+            <h2 class="panel-name">Flight Markup</h2>
+            <br /><a href="@controllers.console.routes.FlightMarkUpDownRuleController.getCreate()" class="btn btn-default"><i class="fa fa-plus"></i> Flight Markup Rules</a><br />
+        </header>
+        <div class="panel-body">
+            @views.html._include._dtable.render("Flight Markup Rules", Array("ID", "Title", "Ticket Pol.", "Sales Cat.", "Locale", "Cabin Class", "Trip Type", "Inc. Conn. Airl.", "Req. Hotel Combo", "Dep. Airports", "Arr. Airports", "", "Auth User", "Action"), tBody())
+        </div>
+    </div>
+}
+@tBody() = {
+    @for((markup, index) <- incentives.zipWithIndex) {
+        <tr>
+            <td>@markup.id</td>
+            <td>@markup.title</td>
+            <td>@markup.ticket_policy.name</td>
+            <td>@markup.sales_category.name()</td>
+            <td>@if(markup.ticket_locale.equals(TicketLocale.Both)) { Local &amp; Int. } else { @markup.ticket_locale.name() }</td>
+            <td>
+                @if(markup.cabin_classes != null) {
+                    <small>
+                    @for(cabin <- markup.cabin_classes.split("<<>>")) {
+                        <li>@cabin</li>
+                    }
+                    </small>
+                } else {
+                    Not Avail.
+                }
+            </td>
+            <td>
+            @if(markup.trip_types != null) {
+                <small>
+                @for(tripType <- markup.trip_types.split("<<>>")) {
+                    <li>@tripType</li>
+                }
+                </small>
+            } else {
+                Not Avail.
+            }
+            </td>
+            <td>@markup.incl_connecting_airline</td>
+            <td>@markup.hotel_incl</td>
+            <td>
+                @if(markup.departure_airports != null) {
+                    <small>
+                    @for(dpA <- markup.departure_airports.split("<<>>")) {
+                        <li>@dpA</li>
+                    }
+                    </small>
+                } else {
+                    N/A
+                }
+            </td>
+            <td>
+                @if(markup.departure_airports != null) {
+                    <ol>
+                    @for(arrA <- markup.departure_airports.split("<<>>")) {
+                        <li>@arrA</li>
+                    }
+                    </ol>
+                } else {
+                    N/A
+                }
+            </td>
+            @*<td><a href="@console.routes.FlightMarkUpDownRuleController.getViewPriceInfo(markup.id)" class="ajax btn btn-xs btn-default" data-placement="top" data-toggle="tooltip" name="View Price Markup">Price Rule</a></td>*@
+            <td>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Airlines <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="@console.routes.AirlineFlightMarkDirectionController.getCreate(0, markup.id)" data-placement="top" data-toggle="tooltip" name="Connect to Airline"><i class="fa fa-plane"></i> Connect to Airlines</a></li>
+                        <li><a href="@console.routes.AirlineFlightMarkDirectionController.getIndex(markup.id)" data-placement="top" data-toggle="tooltip" name="Check Connected Airline"><i class="fa fa-plane"></i> Check Connected Airlines</a></li>
+                    </ul>
+                </div>
+            </td>
+            <td><div class="nameAvatar">@org.apache.commons.lang3.text.WordUtils.initials(markup.auth_user_id.last_name)@org.apache.commons.lang3.text.WordUtils.initials(markup.auth_user_id.first_name)</div></td>
+            <td>
+                <span><a href="@console.routes.FlightMarkUpDownRuleController.getEdit(markup.id)" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Manage</a></span>
+                <span><a href="@console.routes.FlightMarkUpDownRuleController.getDelete(markup.id)" class="btn btn-xs btn-danger"><i class="fa fa-time"></i> Delete</a></span>
+            </td>
+        </tr>
+    }
+}

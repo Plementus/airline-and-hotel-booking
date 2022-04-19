@@ -1,0 +1,129 @@
+@import helper._
+@(userForm: Form[Users], agentForm: Form[B2bUsers])
+@layouts.swift_auth("Register an Affiliate Account", scripts) {
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-xs-12" >
+                <div class="form-section" style="max-width: auto">
+                    @helpers._error(userForm)
+                    @helpers._error(agentForm)
+                    @helpers._flash.render()
+                    <h2>Create New <b>Swift</b> Account</h2>
+                    @*<p><code>*</code> field are required</p>*@
+                    <form action="@controllers.routes.AuthenticationController.postRegister()" enctype="multipart/form-data" method="post" class="form row" id="swift-register" data-validate="parsley">
+                    @CSRF.formField
+                    <input type="hidden" name="action_type" value="swift" />
+                    <div class="col-md-3">
+                    @helper.inputText(userForm("email"), '_label -> "Email Address", 'placeholder -> "Enter your email", 'class -> "form-control affiliate_register", '_showConstraints -> false)
+                    </div>
+                    <div class="col-md-3">
+                    @helper.inputPassword(userForm("password"), '_label -> "Password", 'placeholder -> "Password", 'class -> "form-control", '_showConstraints -> false)
+                    </div>
+                    <div class="col-md-3">
+                        <label>Retype Password</label>
+                        <input type="password" name="retype_password" class="form-control" placeholder="Retype Password" />
+                    </div>
+                    <div class="col-md-3">
+                    @helper.inputText(userForm("first_name"), '_label -> "First Name", 'placeholder -> "First Name", 'class -> "form-control", '_showConstraints -> false)
+                    </div>
+                    <div class="col-md-3">
+                    @helper.inputText(userForm("last_name"), '_label -> "Last Name", 'placeholder -> "Last Name", 'class -> "form-control", '_showConstraints -> false)
+                    </div>
+                    <div class="col-md-3">
+                    @helper.inputText(userForm("phone"), '_label -> "Personal Phone", 'placeholder -> "e.g. 08100000000", 'class -> "form-control", '_showConstraints -> false)
+                    </div>
+                    <div class="col-md-3">
+                    @helper.inputText(userForm("dob"), '_label -> "Date of Birth", 'placeholder -> "Date of Birth", 'type -> "date", 'class -> "form-control", '_showConstraints -> false)
+                    </div>
+                    <div class="col-md-3">
+                    @helper.select(userForm("gender"), Seq("MALE" -> "Male", "FEMALE" -> "Female"), '_label -> "Gender", 'class -> "form-control", '_showConstraints -> false)
+                    </div>
+
+                    <div class="clearfix"></div><br />
+                    <h4><strong>Corporate Details</strong></h4>
+                    <div class="col-md-3">
+                    @helper.inputText(agentForm("company_name"), '_label -> "Company Name", 'placeholder -> "Company Name", 'class -> "form-control", '_showConstraints -> false)
+                    </div>
+                    <div class="col-md-3">
+                    @helper.inputText(agentForm("website_url"), '_label -> "Company URL", 'placeholder -> "Company URL", 'class -> "form-control", '_showConstraints -> false)
+                    </div>
+                    <div class="col-md-3">
+                    @helper.inputText(agentForm("tax_number"), '_label -> "Tax Number", 'placeholder -> "Tax Number", 'class -> "form-control", '_showConstraints -> false)
+                    </div>
+                    <div class="col-md-3">
+                    @helper.inputText(agentForm("physical_address"), '_label -> "Company Address", 'placeholder -> "Company Address", 'class -> "form-control", '_showConstraints -> false)
+                    </div>
+                    <div class="col-md-3">
+                    @helper.inputText(agentForm("postal_code"), '_label -> "Postal Code", 'placeholder -> "Postal Code", 'class -> "form-control", '_showConstraints -> false)
+                    </div>
+                    <div class="col-md-3">
+                    @helper.inputText(agentForm("corporate_phone1"), '_label -> "Contact Phone 1", 'placeholder -> "Contact Phone 1", 'class -> "form-control", '_showConstraints -> false)
+                    </div>
+                    <div class="col-md-3">
+                    @helper.inputText(agentForm("corporate_phone2"), '_label -> "Contact Phone 2", 'placeholder -> "Contact Phone 2", 'class -> "form-control", '_showConstraints -> false)
+                    </div>
+                    <div class="col-md-3">
+                        <label>Company Logo (Optional)</label>
+                        <input type="file" class="form-control" accept="image/*" name="logo">
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-md-3">
+                        <label>Select a Country</label>
+                        <select name="country_id" class="form-control chosen-select">
+                            <option>Select a Country</option>
+                            @for(country: Countries <- Countries.find.all()) {
+                                <option value="@country.id.toString">@country.name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                    @helper.select(agentForm("state"), Seq("" -> "Select a State"), 'required -> "required", 'label -> "State", '_label -> "State", 'class -> "form-control", '_showConstraints -> false)
+                    </div>
+                    <div class="col-md-3">
+                    @helper.inputText(agentForm("city"), '_label -> "City", 'placeholder -> "City", '_label -> "City", 'class -> "form-control", '_showConstraints -> false)
+                    </div>
+                    <div class="col-md-3">
+                        <label>Where did you hear about us?</label>
+                        <select class="form-control" name="referral">
+                            <option>Select an Option</option>
+                            <option value="google">Google</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="youtube">YouTube</option>
+                            <option value="friend">Friend</option>
+                            <option value="outdoor_advert">Outdoor Advertisement</option>
+                            <option value="twitter">Twitter</option>
+                            <option value="tfx_staff">TravelFix Staff</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 tfx_staff_code_div" style="display : none">
+                        <label>TravelFix Staff Code</label>
+                        <input class="form-control" type="text" name="tfx_staff_code" placeholder="e.g. TFX_1234567" />
+                    </div>
+                    <div class="col-md-3 other_div" style="display : none">
+                        <label>Specify Other</label>
+                        <input class="form-control" type="text" name="other_referral"/>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary submit">Create Account</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12" style="margin: 15px auto;">
+                <h4><strong>Already have a swift account?</strong></h4><hr />
+                <h2 class="heading">Login</h2>
+                Click <a class="text-primary" href="@routes.AuthenticationController.getSwiftLogin()">here</a> to login to your Swift account
+            </div>
+        </div>
+    </div>
+}
+
+@scripts = {
+    <script src="@routes.Assets.at("my_js/jsAuthReg.js")" type="text/javascript"></script>
+    <script>
+        $('form').parsley();
+    </script>
+}

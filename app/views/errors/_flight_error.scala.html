@@ -1,0 +1,19 @@
+@(message: String)
+@layouts.main("Flight Result") {
+    <div class="container spacer30">
+        <div class="medium-container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-xs-12 text-center">
+                    <img src="@routes.Assets.at("v1/images/technology.png")" class="img img-responsive" style="margin: 0 auto; width: 14em; margin-top: 10px;" /><hr />
+                    <h1>Oops!</h1>
+                    <h4>@message</h4>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <section class="search-bar flight-search">
+            <h2 class="heading2">Search Again</h2>
+            @views.html._include._flight_form.render()
+        </section>
+    </div>
+}

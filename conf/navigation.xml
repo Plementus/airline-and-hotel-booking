@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <!--AdminUser Navigation-->
+    <admin>
+        <dashboard>
+            <title>Dashboard</title>
+            <role>ALL</role>
+            <url>/dashboard</url>
+            <class>fa fa-dashboard</class>
+        </dashboard>
+        <users>
+            <title>Users</title>
+            <role>ALL</role>
+            <url>#</url>
+            <class>fa fa-users</class>
+            <pages>
+                <users>
+                    <title>User &amp; Customers</title>
+                    <role>ALL</role>
+                    <class>fa fa-</class>
+                    <url>/admin/users</url>
+                </users>
+                <roleandgroup>
+                    <title>User Roles &amp; Groups</title>
+                    <role>ALL</role>
+                    <class>fa fa-</class>
+                    <url>/admin/users/users-group</url>
+                </roleandgroup>
+                <accesscontrol>
+                    <title>User Privilege &amp; Access Controls</title>
+                    <class>fa fa-</class>
+                    <role>SU_ADMIN</role>
+                    <url>/admin/users/access-control</url>
+                </accesscontrol>
+            </pages>
+        </users>
+    </admin>
+    
+</root>
